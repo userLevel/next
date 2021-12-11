@@ -1,0 +1,542 @@
+{\rtf0\ansi{\fonttbl\f0\fnil Times-Roman;\f1\ftech Symbol;\f2\fmodern Ohlfs;}
+\paperw16220
+\paperh15460
+\margl120
+\margr0
+\f0\b0\i0\ul0\ql\fs24\fi0\li0\gray0\up0\dn0 Release 2.0  Copyright 
+\f1 ã
+\f0 1991 by NeXT Computer, Inc.  All Rights Reserved.\
+\
+
+\pard\tx2620\tx3120\tx3620\fs16\li2100 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\pard\fs56\li2100 Chapter 9\
+The Interface to the File System\
+
+\fs16 \
+\
+\
+\
+\
+\
+\
+\
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 One of the goals of the NeXTstep user interface is to provide a simple, graphical interface to the UNIX operating system.  This is largely the responsibility of the Workspace Manager, the application that's brought to the screen after the user logs in.  More specifically, the Workspace Manager provides a graphical interface to the file system.  It's a substitute for a UNIX command interpreter (or ªshellº) that locates files, displays folder contents, associates files with applications and icons, launches applications, and keeps track of the user's home folder and working environment.  It lets users manage files by manipulating their iconic representations.\
+
+\fs16 \
+\
+
+\fs28 For command-line interaction with the operating system, users can put up a window that emulates a VT-100 terminal and runs a standard shell.  This window is provided by the Terminal application, which can be launched from the Workspace Manager.\
+
+\fs16 \
+\
+
+\fs28 Terminal is documented in the <Development Tools> manual.  The Workspace Manager is documented in the 
+\i User's Reference Manual
+\i0 .\
+
+\fs16 \
+\
+
+\pard\b\li100 \
+\
+\
+
+\fs36 How the File System Is Organized\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 The file system on a NeXT computer is arranged very much like a traditional UNIX file system.  However, by default, when users view the file system in the Workspace Manager, they won't see many of the traditional UNIX directories.  (Directories in the NeXTstep user interface are called 
+\i folders.
+\i0 )  Instead, they'll see only a small number of folders that organize the tools and information they most need.  Under the root (/) folder, they'll find the following folders:\
+
+\fs16 \
+\
+
+\pard\tx3120\tx3620\tx4120\fs28\li2620 LocalAdmin\
+LocalApps\
+LocalDeveloper\
+LocalLibrary\
+me\
+Net\
+NextAdmin\
+NextApps\
+NextDeveloper\
+NextLibrary\
+
+\i user\
+
+\fs16 \
+\
+
+\pard\b\i0\li1100 \
+\
+\
+
+\fs36 Home Folders\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 In the list above, the folder labeled ª
+\i user
+\i0 º stands for the user's home folder.  The home folders of other users may also be visible.  As is traditional, home folders bear the name of the userÐthe name that the user logs in under.  By default, the user's name is 
+\b me
+\b0 , and the home folder is 
+\b /me
+\b0 .\
+
+\fs16 \
+\
+
+\fs28 If a machine is connected to a file server over a network, users' home folders would more likely be located somewhere on the file server.  The figure above simply illustrates the default location for a home folder and where it would be located if it were on the startup disk.  Home folders on remote machines are accessed through the 
+\b Net
+\b0  folder described below.\
+
+\fs16 \
+\
+
+\fs28 When typing in a file name, users can specify their home folder as ª~º.  For example, 
+\b ~/Apps
+\b0  refers to the 
+\b Apps
+\b0  folder that's in the home folder of the current user.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 NeXT Folders\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Four of the top-level folders begin with a ªNextº prefixÐ
+\b NextApps
+\b0 , 
+\b NextAdmin
+\b0 , 
+\b NextDeveloper
+\b0 , and 
+\b NextLibrary
+\b0 .  They contain documents, resources, and applications that are bundled with the computer.  \
+
+\fs16 \
+\
+
+\fs28 The 
+\b NextApps
+\b0  folder contains supported applications for NeXTstep users.  In it you'll find general-interest applications like Webster, Preferences, Mail, and PrintManager, as well as applications used for programming, such as Interface Builder and Edit.  The programming applications in 
+\b NextApps
+\b0  are ones that even users who don't consider themselves to be ªprogrammersº might be interested in.\
+
+\fs16 \
+\
+
+\fs28 The 
+\b NextAdmin
+\b0  folder also contains supported applications, but ones that will be used mainly by system administrators and network managers.  They're not for general users like those in 
+\b NextApps
+\b0 .\
+
+\fs16 \
+\
+
+\b\fs28 NextDeveloper
+\b0  contains up to three folders:\
+
+\fs16 \
+\
+
+\pard\tx5140\tx6640\tx8660\tx10680\fs28\fi-2520\li5140 Apps	Holds applications that will be used solely by programmers; this folder might not exist on all systems.  Debuggers, profiling tools, language-specific editors, and other window-based programming tools belong here.  Like all other applications in the four ªNextº folders, these applications can be run from the Workspace Manager; command-line debuggers and profiling tools are in standard UNIX folders such as 
+\b /bin
+\b0  and 
+\b /usr/bin
+\b0 .\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx6640\tx6640\tx8660\tx8660\tx10680\tx10680\fs28\fi-2520\li5140 Demos	Contains programs that demonstrate the capabilities of the NeXT computer.  These aren't full applications and aren't supported by NeXT.  However, they include games and utilities that users, not just developers, may find interesting.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Examples	Contains source code for example programs; this folder might not exist on all systems.  Its folders contain source code that you can study and compile.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 The 
+\b NextLibrary
+\b0  folder contains resource files organized into several folders.  Some of the files and folders aren't on every system.  Typical folders include 
+\b /NextLibrary/Documentation
+\b0 , which holds NeXT technical documentation, and 
+\b /NextLibrary/Fonts
+\b0 , which holds the PostScript fonts available to all applications.  \
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Local and Personal Folders\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 The four folders with a ªNextº prefix can be matched by four identical folders with a ªLocalº prefix.  Internally, these four folders are organized like their ªNextº counterparts.  But instead of containing files supplied by NeXT, they hold information and applications provided for all users at a local site.  Any user who logs in to a machine, or boots from it over a network, has access to its ªLocalº folders.  If you add a new font for all users of your network, for example, it would reside in
+\b  /LocalLibrary/Fonts
+\b0 .\
+
+\fs16 \
+\
+
+\fs28 ªLocalº folders are created as they're needed.  They're not included on the release disk.\
+
+\fs16 \
+\
+
+\fs28 Users can add unprefixed 
+\b Library
+\b0  and 
+\b Apps
+\b0  folders in their home folders to hold information and applications that they alone have access to.  Users who develop utilities for their own use or purchase private copies of a word processor and spreadsheet, for example, should put them in 
+\b ~/Apps
+\b0 .\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Net\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 The 
+\b Net
+\b0  folder gives the user access to file systems that are physically located on remote machines.  The immediate folders under 
+\b Net
+\b0  name the machines where the file systems are located.  The next level of folders name the root folders of the file systems on those machines.  For example, 
+\b /Net/willow/misc
+\b0  is where the 
+\b misc
+\b0  file system located on the 
+\b willow
+\b0  computer would be mounted.\
+
+\fs16 \
+\
+
+\b\fs28 Net
+\b0  contains folders only if the user's computer is set up to be connected to other machines over a network.\
+
+\fs16 \
+\
+
+\fs28 All the folders in the root (/) folder, including 
+\b Net
+\b0 , are physically located on the disk that the user's machine was booted from.  If a user boots from a local hard disk, for example, 
+\b NextLibrary
+\b0  and all its folders will be stored on the local disk.  Remote folders are mounted only under 
+\b Net
+\b0 .\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Paths\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 In UNIX, an environmental variable, 
+\b path
+\b0 , holds an ordered set of folders that are searched for executable files.  The default path used by the Workspace Manager lists these six folders:\
+
+\fs16 \
+\
+
+\pard\tx4620\tx6640\tx8660\tx10680\fs28\li2620 ~/Apps\
+/LocalApps\
+/NextApps\
+/NextDeveloper/Apps\
+/NextAdmin\
+/NextDeveloper/Demos\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 The Workspace Manager uses this path in three ways:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	To find the icons it should display for files associated with a particular application.  Icon information is embedded within a segment of the application executable.\
+
+\fs16 \
+\
+
+\fs28 ·	To find the application it should launch when the user double-clicks on a file.\
+
+\fs16 \
+\
+
+\fs28 ·	To find services offered by applications.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Before using the search path to find which executable to launch, the Workspace Manager first looks in the dock.  Each application icon in the dock represents a particular application residing in a particular folder on disk.  By putting an icon in the dock, the user has indicated a preference for that version of the application over any others.\
+
+\fs16 \
+\
+
+\fs28 If an application isn't in the dock, the Workspace Manager looks next in the current working folder, the folder containing the file the user wants to open.  Only after failing to find the application there does it turn to the path listed above.\
+
+\fs16 \
+\
+
+\fs28 In the path, the Workspace Manager looks first in the 
+\b Apps
+\b0  folder of the current user's home folder.  That's where the user's own applications would be.  It next looks in the 
+\b /LocalApps
+\b0  folder for site-wide software, then in the 
+\b /NextApps
+\b0 , 
+\b /NextDeveloper/Apps
+\b0 , 
+\b /NextAdmin
+\b0 , and 
+\b /NextDeveloper/Demos
+\b0  folders for NeXT-supplied software.  This ordering of folders lets users customize their software to override site-wide software, and lets site-wide software override software supplied by NeXT.\
+
+\fs16 \
+\
+
+\fs28 Users can alter the path shown above for the Workspace Manager by setting a value for the ApplicationPaths parameter in their defaults database.  You might do this, for example, to add a 
+\b /LocalAdmin
+\b0  or 
+\b /LocalDeveloper/Apps
+\b0  folder to the path.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 File Name Extensions\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 NeXTstep applications use file name extensions to identify types of files.  The extension consists of the last period in the file name and all characters following it.  For example, Mail uses the ª.mboxº file name extension to identify its mailboxes.  Typical mailbox names are ªActive.mboxº and ªOutgoing.mboxº.\
+
+\fs16 \
+\
+
+\fs28 The Workspace Manager uses file name extensions not only to identify particular types of files, but also to associate document files with applications.  Every application that defines its own data file format should append an identifying extension to the names of its document files.\
+
+\fs16 \
+\
+
+\fs28 Folders can also have file name extensions.  For example, a ª.mboxº file might actually be a folder.  Such a folder is called a 
+\i file package
+\i0  because the Workspace Manager presents it to users as if it were a file.  Because users normally don't look inside a file package (unless they explicitly open it as a folder), they're not likely to alter or reorganize its contents.  The ªUsing File Packagesº section below describes when you should use file packages.\
+
+\fs16 \
+\
+
+\pard\b\li100 \
+\
+\
+
+\fs36 Using Paths\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 If your application needs to look up data that could be in several places on the system, it should use an ordered path similar to the one used by the Workspace Manager.  For example, if an application requires a particular template file that might be supplied either by the user or by the system administrator, it should search for it first in a folder under 
+\b ~/Library
+\b0 , and then in the same folder under 
+\b /LocalLibrary
+\b0 .  \
+
+\fs16 \
+\
+
+\pard\b\li100 \
+\
+\
+
+\fs36 Using File Name Extensions\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Your application should use its own unique file name extensions to identify (and help the Workspace Manager identify) its documents.  Your extension (after the initial period) can include only alphabetic and numeric characters and should be at least three characters long.  (NeXT reserves all extensions of under three characters for its own use.)  For example, ª.exampleº is an acceptable extension, but ª.egº is not, since it has only two characters after the period.\
+
+\fs16 \
+\
+
+\fs28 To request that an extension be registered and reserved for your use, write to:\
+
+\fs16 \
+\
+
+\pard\tx3120\tx3620\tx4120\fs28\li2620 NeXT Technical Services\
+Extension Registry\
+900 Chesapeake Drive\
+Redwood City, CA 94063\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 You can also send your request by electronic mail to 
+\b ask_next@NeXT.COM
+\b0  or ...
+\b !next!ask_next
+\b0 .\
+
+\fs16 \
+\
+
+\fs28 The request should include the following information:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	The file name extension you want to register.  List a first and a second choice.\
+·	The name of the application the request is for.\
+·	Your name and the name of your company.\
+·	Your postal address and your electronic mail address, if you have one.\
+·	Your telephone number.\
+
+\pard\tx2620\tx3120\tx3620\fs16\li2100 \
+\
+
+\fs28 You'll be informed when the extension is registered, or if it can't be for any reason.  NeXT Technical Services will make the list of registered extensions available to you so that you can choose an extension not already assigned.\
+
+\fs16 \
+\
+
+\fs28 Registering a file name extension reserves it for your use.  If you fail to register an extension that you intend to use, someone else may register and use it instead.\
+
+\fs16 \
+\
+
+\pard\b\li100 \
+\
+\
+
+\fs36 Using File Packages\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 An application should create a file package when it has a group of files that it needs to keep together.  For example, if your application displays help information that's stored in independent text files, or if it makes use of a private utility program, or if it just loads archived objects from Interface Builder ª.nibº files, you may want to keep these auxiliary files in close proximity to the application executable.  A file package (with the ª.appº file name extension) is the way to do it.\
+
+\fs16 \
+\
+
+\fs28 Similarly, if your application creates documents that are split into more than one fileÐfor example, if text is in one file and artwork in anotherÐthese files can also be grouped in a file package.\
+
+\fs16 \
+\
+
+\fs28 File packages for documents should bear the same extension that's assigned to the application's document files.  For example, if a word processor uses a file package to store a document that has artwork, then the file package's extension should be the same as if the document had no artwork and was thus in a single file. \
+
+\fs16 \
+\
+
+\fs28 Opening and naming files within a document file package is entirely the application's responsibility.\
+
+\fs16 \
+\
+
+\pard\b\li100 \
+\
+\
+
+\fs36 Creating Unrequested Files and Folders\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Applications sometimes need to create files and folders for a user, other than as the result of a Save command.\
+
+\fs16 \
+\
+
+\fs28 If the files are associated with a particular document, they should be grouped with that document and placed in a file package.\
+
+\fs16 \
+\
+
+\fs28 Otherwise, where the files are located and what they're named depends on whether the user needs to have direct access to them:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	If the user never needs to get at the files or folders independently of using the application that creates them, they should be placed in the user's home folder but preceded by a dot prefix so they stay hidden from view.  If an application needs to create many such files, it should put them in its own folder, similar to the 
+\b .NeXT
+\b0  folder.\
+
+\fs16 \
+\
+
+\fs28 ·	If the user might sometimes need to get at the files or folders independently of the application that creates them (for example, template files), they should be placed in the user's home folder, but only after the user has been informed that they're being created.  If possible, the panel that conveys this information should give the user the opportunity to choose another name and location for the file or folder.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 The guiding principle here is that the user's home folder belongs to the user.  An application should not leave anything there that belongs to it, not to the user.  And when creating something that the user must live with, it should at least let the user know.\
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+}

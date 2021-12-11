@@ -1,0 +1,25 @@
+Emacs Commands
+
+
+In addition to letting you edit text using menu commands (and their keyboard equivalents), Edit also supports several Emacs-style editing commands that can be typed from the keyboard. 
+
+For Emacs commands, the Key Bindings On option must be set with the Preferences command in the Info menu. (To find this option, choose Global Options from the pop-up list at the top of the Preferences panel.)
+
+The table below lists the key combination corresponding to each command and a description of what the command does.  
+
+Command	Action
+Control-B	Moves back one character
+Control-F	Moves forward one character
+Alternate-b	Moves back one word 
+Alternate-f	Moves forward one word 
+Control-A	Moves to beginning of line 
+Control-E	Moves to end of line 
+Control-D	Deletes next character
+Control-H	Deletes previous character
+Alternate-d	Deletes to end of current (or next) word
+Alternate-h	Deletes to beginning of current (or previous) word
+Control-K	Deletes forward to end of line
+Alternate-<	Moves to beginning of text
+Alternate->	Moves to end of text
+Control-N	Moves down one line 
+Control-P	Moves up one line 

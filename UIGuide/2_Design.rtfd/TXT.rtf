@@ -1,0 +1,575 @@
+{\rtf0\ansi{\fonttbl\f0\fnil Times-Roman;\f1\ftech Symbol;\f2\fmodern Ohlfs;}
+\paperw16220
+\paperh14500
+\margl120
+\margr0
+\f0\b0\i0\ul0\ql\fs24\fi0\li0\gray0\up0\dn0 Release 2.0  Copyright 
+\f1 ã
+\f0 1991 by NeXT Computer, Inc.  All Rights Reserved.\
+\
+
+\pard\tx2620\tx3120\tx3620\fs16\li2100 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\pard\fs56\li2100 Chapter 2\
+Designing NeXTstep Applications\
+
+\fs16 \
+\
+\
+\
+\
+\
+\
+\
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 To design a NeXTstep application that has a clear, consistent user interface, you need to understand the NeXTstep design philosophy.  This chapter starts off with this philosophy, and then gives some pointers in designing your application.\
+
+\fs16 \
+\
+
+\pard\b\li100 \
+\
+\
+
+\fs36 Design Philsophy\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 A user interface must meet the needs of both novice and experienced users:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	For the novice or infrequent user, it must be simple and easy both to learn and to remember.  It shouldn't require any relearning after an extended absence from the computer.\
+
+\fs16 \
+\
+
+\fs28 ·	For the more experienced user, it must be fast and efficient.  Nothing in the user interface should get in the way or divert the user's attention from the task at hand.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 The challenge is to accommodate both these goals in ways that don't conflictÐto combine simplicity with efficiency.\
+
+\fs16 \
+\
+
+\fs28 A graphical (window-based) user interface is well suited to this task.  Because graphical objects can be endowed with recognizable features of real objects, users can borrow on their everyday experience when they approach the computer.  Graphical buttons work like you'd expect real buttons to work, windows behave much like separate tablets or sheets of paper, sliders and other graphical objects act like their physical counterparts off-screen.  The computer becomes less an entirely new world with its own rules, and more an extension of the more familiar world away from the computer screen.\
+
+\fs16 \
+\
+
+\fs28 This not only makes the user interface easier to learn and remember, it also permits operations to be simpler and more straightforward.  Picking an option is as easy as flicking a switch; resizing a window is as direct and simple as pulling on a tab.  The same attributes of the user interface that provide simplicity for novice users can also result in efficiency for more expert users.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Basic Principles\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 The NeXTstep user interface is designed with certain basic principles in mind.  Four are especially important:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	The interface should be consistent across all applications.\
+·	The user is in charge of the workspace and its windows.\
+·	The interface should feel natural to the user.\
+·	The mouse (not the keyboard) is the primary instrument for user input.\
+
+\pard\tx2620\tx3120\tx3620\fs16\li2100 \
+\
+
+\fs28 Each of these principles is discussed in more detail in the sections that follow.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Consistency\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 When all applications have the same basic user interface, every application benefits.  Consistency makes each application easier to learn, thus increasing the likelihood of its acceptance and use.\
+
+\fs16 \
+\
+
+\fs28 Just as drivers become accustomed to a set of conventions on public highways, so users tend to learn and rely on a set of conventions for their interaction with a computer.  Although different applications are designed to accomplish different tasks, they all share, to one degree or another, a set of common operationsÐselecting, editing, scrolling, setting options, making choices from a menu, managing windows, and so on.  Reliable conventions are possible only when these operations are the same for all applications.\
+
+\fs16 \
+\
+
+\fs28 The conventions permit users (like drivers) to develop a set of habits, and to act almost instinctively in familiar situations.  Instead of being faced with special rules for each application (which would be like each town defining its own rules of the road), users can carry knowledge of how one application works on to the next application.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 User Control\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 The workspace and the tools for working in it (the keyboard and mouse) belong to the user, not to any one application.  Users should always be free to choose which application and which window they will work in, and to rearrange windows in the workspace to suit their own tastes and needs.\
+
+\fs16 \
+\
+
+\fs28 When working in an application, the user should be afforded the widest possible freedom of action.  It's inappropriate for an application to arbitrarily restrict what the user can do.  If an action makes sense, it should be allowed.\
+
+\fs16 \
+\
+
+\fs28 In particular, applications should avoid setting up arbitrary ªmodes,º periods when only certain actions are permitted.  Modes often make programming tasks easier, but they usurp the user's prerogative of deciding what will be done.  They can thus feel annoying and unreasonable to users who aren't concerned with implementation details.\
+
+\fs16 \
+\
+
+\fs28 On occasion, however, modes are a reasonable approach to solving a problem.  Because they let the same action have different results in different contexts, they can be used to extend functionality.  When permitted, a mode should be freely chosen, provide an easy way out, be visually apparent, and keep the user in control.  In the NeXTstep user interface, modes are used in only three situations:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	In the modal tool paradigm, discussed under ªAction Paradigmsº below\
+·	In attention panels, discussed in Chapter 5, ªPanelsº\
+·	In ªspring-loadedº modes that last only while the user holds a key or mouse button down\
+
+\pard\b\fs16\li2100 \
+\
+\
+\
+\
+
+\fs28 Naturalness\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 The great advantage of a graphical user interface is that it can feel natural to the user.  The screen becomes a visual metaphor for the real world; the objects it displays can be manipulated in ways that reflect the ways familiar objects in the real world are manipulated.  This is what's meant when a user interface is said to be ªintuitiveºÐit behaves as we expect it would based on our experience with real objects in the real world.\
+
+\fs16 \
+\
+
+\fs28 The similarity of graphical to real objects is at a fundamental rather than a superficial level.  Graphical objects don't need to resemble physical objects in every detail.  But they do need to behave in ways that our experience with real objects would lead us to expect.\
+
+\fs16 \
+\
+
+\fs28 For example, objects in the real world stay where we put them; they don't disappear and reappear again, unless someone causes them to do so.  The user should expect no less from graphical objects.  Similarly, although a graphical dial or switch doesn't have to duplicate all the attributes of a real dial or switch, it should be immediately recognizable by the user and should be used for the sorts of operations that real dials and switches are used for.\
+
+\fs16 \
+\
+
+\fs28 Each application should try to maximize the intuitiveness of its user interface.  Its choice of graphical objects should be appropriate to the tasks at hand, and users should feel at home with the operations they're asked to perform.  The more natural and intuitive the user interface, the more successful an application can be.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Using the Mouse\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 All aspects of the user interface are represented by graphical objects displayed on-screen, and all graphical objects are operated mainly by the mouse, not the keyboard.  The keyboard is principally used for entering text; the mouse is the more appropriate instrument for a graphical interface.\
+
+\fs16 \
+\
+
+\fs28 Nevertheless, it's often a good idea to provide keyboard alternatives to mouse actions (see ªKeyboard Alternativesº in Chapter 3, ªUser Actions: The Keyboard and Mouseº).  They can be efficient shortcuts for experienced users.  Keyboard alternatives are always optional, however; visual representations on the screen never are.  A keyboard operation without a corresponding mouse-oriented operation on-screen isn't allowed.\
+
+\fs16 \
+\
+
+\fs28 One of the goals of the user interface is to extend to mouse operations the same naturalness and consistency that the keyboard provides for experienced typists.  This is possible only if mouse operations follow established paradigms that users can come to rely on.  The next section defines the paradigms used in the NeXTstep user interface.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Action Paradigms\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Graphical user interfaces such as NeXTstep work best when there are well-defined paradigms for using the mouse.  The paradigms must be broad enough to encompass actions for the widest possible variety of applications, yet precise and limited enough so that users are always aware of what actions are possible and appropriate.  \
+
+\fs16 \
+\
+
+\fs28 The NeXTstep user interface supports these three paradigms of mouse action:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	Direct manipulation \
+·	Targeted action \
+·	Modal tool\
+
+\pard\b\fs16\li2100 \
+\
+\
+\
+\
+
+\fs28 Direct Manipulation\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Most objects respond directly to manipulation with the mouseÐa button is highlighted when pressed, a window comes forward when clicked, the knob of a slider moves when dragged.  Direct manipulation is the most intuitive of the action paradigms and the one best suited for modifying the position and size of graphical objects.  Windows, for example, are reordered, resized, and moved only through direct manipulation.\
+
+\fs16 \
+\
+
+\fs28 By directly manipulating icons that represent documents, applications, mail messages, or other objects stored in the computer's memory, users can manipulate the objects the icons represent.  For example, dragging an icon to a new location can change the position of a file in the file system's hierarchy.\
+
+\fs16 \
+\
+
+\fs28 Even objects that use the targeted action or modal tool paradigm must respond to direct manipulation.  For example, although buttons and menu commands can't be resized or moved, they nevertheless respond to direct manipulation as a way of giving feedback to the user.  The responseÐmainly highlightingÐshows that the user's action has successfully invoked one of the other paradigms.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Targeted Action\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 ControlsÐbuttons, scrollers, and the likeÐare vehicles for the user to give instructions to an application.  By manipulating a control object, the user controls what the application does.  Clicking a close button, for example, not only causes the button to become highlighted, it also removes the window from the screen.  The button is simply a control deviceÐlike a light switch or a steering wheelÐthat lets the user carry out a certain action.\
+
+\fs16 \
+\
+
+\fs28 All controls have one thing in common:  they act on a target.  Some control objects (such as the Quit menu command) act on an entire application.  Others (such as the close button in a window's title bar) act on a window.  Still others (such as the Cut menu command) act on a subset of a window's contents (such as text) that the user has selected.\
+
+\fs16 \
+\
+
+\fs28 Sometimes the user must explicitly select the target, and sometimes not.  When the user selects the target, it's usually editable graphics or text.  However the target can also be another type of object, such as a window (the target of the Close Window menu command) or a file icon (the target of Workspace Manager's Destroy command).\
+
+\fs16 \
+\
+
+\fs28 When the user needs to explicitly select a targetÐno matter whether it's a window or a line of textÐthe user always selects the target before choosing the control.  For example, a user might select a range of text in a file, then choose the Cut command from the Edit menu to remove it.\
+
+\fs16 \
+\
+
+\fs28 Targeted action with explicit selection is the normal paradigm for controlling or operating on objects.  It has the advantage that a sequence of different actions can apply to the same target.  For example, selected text can be changed first to a different font, then to a different point size, and then perhaps copied to the pasteboard.  Another advantage is that a single control can act on a number of different user-selected targets, making it extremely efficient and powerful.  The Cut command, for example, can delete text, as well as graphics, icons, and other objects.\
+
+\fs16 \
+\
+
+\fs28 In situations where direct manipulation is the most natural way to do an operation, it's preferable to targeted action.  However, since direct manipulation isn't sufficient for many operations, targeted action is the most commonly used paradigm.  For example, although direct manipulation is an easy, natural way to resize a window (by dragging), it normally isn't easy or natural to set the size of text by dragging the letters to a new height.  (See Chapter 7, ªControls,º for more on control objects.)\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Modal Tool\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 In the modal tool paradigm, users can change the meaning of subsequent mouse actions by selecting an appropriate tool, often displayed in a palette with several other tools.  Each tool controls a certain set of operations that are enabled only after it's chosen.  For example, a graphics editor might provide one tool for drawing circles and ovals, another for rectangles, and still another for simple lines.  Depending on which tool is chosen, mouse actions (clicking and dragging) will produce very different visual results.  The cursor assumes a different shape for each tool, so that it's apparent which one has been selected, and the tool itself remains highlighted.\
+
+\fs16 \
+\
+
+\fs28 Each tool sets up a 
+\i mode
+\i0 Ða period of time when the user's actions are interpreted in a special way.  A mode limits the user's freedom of action to a subset of all possible actions, and for that reason is usually undesirable.  But in the modal tool paradigm, the mode is mitigated by a number of factors:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	The mode isn't hidden; the altered shape of the cursor and highlighted state of the tool make it apparent which actions are appropriate.\
+
+\fs16 \
+\
+
+\fs28 ·	The mode isn't unexpected; it's the result of a direct user choice, not the by-product of some other action.\
+
+\fs16 \
+\
+
+\fs28 ·	The way out of the mode (usually clicking in another tool) is apparent and easy.  It's available to the user at any time.\
+
+\fs16 \
+\
+
+\fs28 ·	The mode mimics the way things are done in the real world.  Artists and workers choose an appropriate tool (whether it's a brush, a hammer, a pen, or a telephone) for the particular task at hand, finish the task, and choose the next tool. \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 The modal tool paradigm is appropriate when a particular type of operation is likely to be repeated for some length of time (for example, drawing lines).  It's not appropriate if the user would be put in the position of constantly choosing a new tool before each action.\
+
+\fs16 \
+\
+
+\fs28 Below is a typical palette of modal tools, along with the cursor that shows that a mode is in effect.\
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic13753 F0.tiff \width3840 \height1860
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\b\li1100 \
+\
+\
+
+\fs36 Extensions\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Users will come to count on a basic set of familiar operations throughout the user interface.  It's each application's responsibility to make the action paradigms it uses apparent to the userÐcontrols should look like controls (like objects that fit into the targeted-action paradigm), palettes of tools should be self-evident, and so on.\
+
+\fs16 \
+\
+
+\fs28 An application should also make certain that its paradigms fit the action.  It wouldn't be appropriate, for example, to force users to choose a ªmoving toolº or a control just to move an object.  Graphical objects should move, as real objects do, through direct manipulation.\
+
+\fs16 \
+\
+
+\fs28 Properly used, the paradigms described above can accommodate a wide variety of applications.  Yet over time, as programmers develop innovative software, new and unanticipated operations might require extending the user interface.\
+
+\fs16 \
+\
+
+\fs28 An extension should be a last resort.  All possible solutions within the standard user interface described in this chapter should be exhausted first.  Added functionality must be carefully weighed against the ill effects of eroding inter-application consistency for the user.  Any extension should be clearly different to the user from existing paradigms.\
+
+\fs16 \
+\
+
+\fs28 If an extension is required, it should be designed to grow naturally out of the standard user interface, and must adhere to the general principles discussed above.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Testing User Interfaces\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 The success of an application's interface depends on real users.  There's no substitute for having users try out the interfaceÐeven before there's any functionality behind itÐto see whether it makes sense to them and lets them accomplish what they want.  See the ªReferencesº section below for books that give more information on user testing.\
+
+\fs16 \
+\
+
+\fs28 To help you check your user interface for consistency with the user interface guidelines, <a nonexistent appendix> has a checklist of what to look for.  Although the checklist is useful, it's no substitute for good design and user testing.  Still, the checklist can help make you aware of some potential pitfalls in the application.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 References\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 A number of books, papers, and articles describe user interface concepts.  A small list is below; many of the publications have bibliographies that can lead you to other sources.\
+
+\fs16 \
+\
+
+\fs28 <To be supplied later>\
+
+\fs16 \
+\
+
+\pard\b\li100 \
+\
+\
+
+\fs36 Designing Your Application\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\i\fs28\li2100 <<Most of the rest of this chapter has not been written.  The proposed outline is something like:>>\
+
+\fs16 \
+\
+
+\pard\tx3120\b\i0\fs28\fi-1020\li3120 Determining Your Application's Functionality\
+
+\b0 Required Functionality\
+Recommended Functionality\
+Document-Oriented Functionality\
+
+\pard\tx2620\tx3620\fi-1520\li3620 	Providing a Default Document\
+	Uneditable Documents\
+
+\pard\tx3120\b\fs16\fi-1020\li3120 \
+
+\fs28 Choosing How Functionality Is Accessed\
+
+\fs16 \
+
+\fs28 Deciding Between Immediate Action and Confirmation\
+
+\fs16 \
+
+\fs28 Minimizing User Actions\
+
+\b0 Making a Click Unnecessary\
+
+\b\fs16 \
+
+\fs28 Working Well with Other Applications\
+
+\i\fs16\fi0\li2100 \
+\
+\
+\
+\
+
+\fs28 Providing a Default Document\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\i0\fs28\li2100 If the user launches an application by double-clicking a document icon, the application should open the document and display it.\
+
+\fs16 \
+\
+
+\fs28 If the user doesn't supply a document (by launching the application by double-clicking an application icon rather than a document icon), the application should, if appropriate, provide the user with a new document to work in (perform an implicit New command).  This is much friendlier to a new user than simply putting a menu on-screen.  Users should be permitted to disable this behavior through a preference.\
+
+\fs16 \
+\
+
+\fs28 It's almost always appropriate for general-purpose applications to perform an implicit New command.  However, it's not appropriate if the application can't produce a new document without user input.  It's also not appropriate if producing a new document has side effects (such as modifying the file system by creating a new folder or adding a file that might persist even if the user decided not to save the new document.)\
+
+\fs16 \
+\
+
+\fs28 When an application is launched automatically at login or from another application, it should not perform an implicit New command.\
+
+\fs16 \
+\
+
+\fs28 If the user opens another document without touching the new one that was provided at startup, the application could automatically close the new one.  But this is not a requirement of the user interface.\
+
+\fs16 \
+\
+
+\pard\b\i\li2100 \
+\
+\
+
+\fs28 Uneditable Documents\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\i0\fs28\li2100 If a document is opened that the application won't allow the user to save (even with a Save As command), it should not permit the user to edit the document on-screen.  Waiting until the user is ready to save changes is too late.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Choosing How Functionality Is Accessed\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 <This section will discuss when to use menus vs. panels vs. windows, and how to place the functionality in the panel or window.>\
+
+\fs16 \
+\
+
+\fs28 The ordinary windows where the main work of an application is done are known as 
+\i standard windows
+\i0 .  They're what users normally think of when ªwindowsº (without any modifier) are referred to.  Standard windows are the most widely used type of window and the principal type for all applications.  If an application lets the user edit files, each file will be displayed in a separate standard window.  If the application is a game, the game board will be in a standard window, and if the application is a simple accessory like a clock, the clock face will occupy a small standard window of its own.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Making a Click Unnecessary\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 When an application designates a new key window for the user to work in, as it does when the current key window is closed or miniaturized, it simulates the action of a mouse click by bringing the window forward.  Whenever an application acts on the user's behalf, its action should do exactly what the user's action would have done.\
+
+}

@@ -1,0 +1,1741 @@
+{\rtf0\ansi{\fonttbl\f0\fnil Times-Roman;\f1\ftech Symbol;\f3\fswiss Helvetica;\f2\fmodern Ohlfs;}
+\paperw16220
+\paperh13060
+\margl120
+\margr0
+\f0\b0\i0\ul0\ql\fs24\fi0\li0\gray0\up0\dn0 Release 2.0  Copyright 
+\f1 ã
+\f0 1991 by NeXT Computer, Inc.  All Rights Reserved.\
+\
+
+\pard\tx2620\tx3120\tx3620\fs16\li2100 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\pard\fs56\li2100 Chapter 6\
+Menus\
+
+\fs16 \
+\
+\
+\
+\
+\
+\
+\
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Menus provide users a point of entry for all the functionality of an application, its obscure and common features alike.  Because of this special role, they behave in a special way:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	All the visible menus for an application disappear when the user starts working in another application.  They reappear when the user returns to the application.  (Menus that weren't previously on-screen don't reappear.)\
+
+\fs16 \
+\
+
+\fs28 ·	Menus are segregated into two of the frontmost tiers of on-screen windows.  They appear to float above everything else on-screen except attention panels and spring-loaded windows such as pop-up lists.\
+
+\fs16 \
+\
+
+\fs28 ·	Menus can't be miniaturized.  They don't need to be, since they're small and can be easily retrieved after they've been closed.\
+
+\fs16 \
+\
+
+\fs28 ·	Menus are hierarchically arranged.  Choosing a command in one menu can produce another menu with its own list of commands.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 The first three of these points were discussed earlier in this manual.  (See ªThe Active Application,º ªWindow Ordering,º and ªMiniaturizing Windowsº in Chapter 4, ªThe Window Interface to Applications.º) \
+
+\fs16 \
+\
+
+\fs28 Applications should make use of the menu system's hierarchy to arrange commands in distinct, functionally identifiable menus.  A well-defined set of hierarchical menus aids users both in finding the commands they need and in understanding the structure of the application.\
+
+\fs16 \
+\
+
+\pard\b\li100 \
+\
+\
+
+\fs36 How Menus Work\
+
+\fs16 \
+\
+
+\b0\li0 \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic1491 F4.eps \width11820 \height3580
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 The main purpose of menus is to provide commands for the user to choose.  To choose a menu command, the user presses the mouse button as the cursor points anywhere within the content area of the menu and releases it as the cursor points to the desired command.  This can be as simple as clicking the command, or the user can drag through the menu, from command to command.  Each command that comes under the cursor while the mouse button is down is highlighted.\
+
+\fs16 \
+\
+
+\fs28 Instead of using the mouse, the user can often use a keyboard alternative to choose a command.  A keyboard alternative is a combination of a character and the Command key.  For example, holding down the Command key and pressing the 
+\b p
+\b0  key is the standard keyboard alternative for the Print command.  Keyboard alternatives are discussed in detail in Chapter 3, ªUser Actions: The Keyboard and Mouse.º\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+{\f3\b0\li2120{\NeXTGraphic2363 EPS12_13_1.eps \width13760 \height660
+}
+¬}\f3\b0\i0\ul0\ql\fs16\fi0\li2120\gray0\up0\dn0 \
+
+\b\fs28\li2620 Programming Note:  Menus and the Application Kit\
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\b0\fs24\li2620 The Application Kit takes care of everything discussed in the ªHow Menus Workº section of this chapter.  Specifically, it provides the following functionality:\
+
+\fs16 \
+
+\fs24\fi-520\li3120 ·	All aspects of displaying and hiding menus and menu commands (although you must specify when a command should be disabled), including tearing off submenus.\
+
+\fs16 \
+
+\fs24 ·	Letting you associate menu commands with menus\
+
+\fs16 \
+
+\fs24 ·	Making sure the keyboard alternative works.\
+
+\fs16 \
+
+\fs24 ·	Detecting when the user chooses a menu command and reacting appropriately (such as by highlighting and bringing up a panel)\
+
+\fs16 \
+
+\fs24\fi0\li2620 Much of this functionality can also be accessed through Interface Builder.  For example, to associate an application-specific command with a menu, the programmer can simply drag a menu command from the Palettes window into the menu.  You can then change the name of the command, give it a keyboard alternative if necessary, and associate an action with the command.\
+
+\fs16 \
+
+\pard \
+
+{\f0\li2120{\NeXTGraphic3327 EPS12_14_1.eps \width13760 \height660
+}
+¬}\f0\b0\i0\ul0\ql\fs16\fi0\li2120\gray0\up0\dn0 \
+
+\pard\tx2620\tx3120\tx3620\li2100 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\pard\f3\li2620 \
+
+\f0\b\fs36\li1100 The Main Menu\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Every NeXTstep application has at least one menu, its main menu.  If an application has just a main menu, it holds all the commands for the application.  If the application has more than one menu, all but the main menu are submenus of another menu.  Through the hierarchical arrangement of submenus, the main menu gives the user access to all the menus of the application.\
+
+\fs16 \
+\
+
+\fs28 Because the main menu is at the top of the menu hierarchy, it lacks a close button and always remains on-screen when its application is active.\
+
+\fs16 \
+\
+
+\fs28 By default, when an application is first launched, its main menu appears in the upper left corner of the screen.  Users can change this default location with the Preferences application.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Bringing the Main Menu to the Cursor \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 If the user enables one of the mouse buttons (with the Preferences application), it can be used to gain quick access to the main menu.  When the user presses the enabled mouse button (except when the cursor is over an application icon), a copy of the main menu for the active application appears under the cursor.  The copy stays on-screen until the mouse button is released.\
+
+\fs16 \
+\
+
+\fs28 To begin, the cursor lies directly over the main menu's title bar.  The user can drag down into the menu (and into its submenus) to choose a command.  When the mouse button is released, the copy and any submenus disappear.\
+
+\fs16 \
+\
+
+\fs28 See ªLeft and Right Orientationº in Chapter 3, ªUser Actions:  The Keyboard and Mouse,º for more information on enabling mouse buttons.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Submenus\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 The main menu is the only menu in an application that isn't a submenu.  Every other menu is a submenu of another menu, which is its 
+\i supermenu
+\i0  in the application's hierarchy of menus.  \
+
+\fs16 \
+\
+
+\fs28 Each submenu is associated with a particular command in its supermenu.  The submenu becomes visible and 
+\i attaches
+\i0  to its supermenu when the user chooses the command that it's associated with.\
+
+\fs16 \
+\
+
+\fs28 The user can drag from a controlling command into a submenu to choose one of the submenu's commands.  As long as the mouse button is held down, the submenu remains visible and the controlling command stays highlighted.  But once the mouse button goes up and the command has been executed, the submenu disappears.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Keeping a Submenu Attached\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 The easiest way to attach a submenu is simply to click its controlling command, but the user can also drag to the controlling command and release the mouse button while the cursor's still above it.  The controlling command for an attached submenu stays highlighted to indicate that the submenu is attached.\
+
+\fs16 \
+\
+
+\fs28 A supermenu and its attached submenu act like a single window.  User actions that move or close the supermenu also move and close the submenu; an attached submenu has no close button of its own.  A submenu attached to the main menu is assigned to the same window tier as the main menu.\
+
+\fs16 \
+\
+
+\fs28 An attached submenu can also have its own submenu attached.  This is illustrated below.  The Librarian menu is attached to Services, and Services is attached to the main menu.  Moving the main menu serves to move all three.\
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic6411 F1.tiff \width6100 \height2860
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\b\li2100 \
+\
+\
+
+\fs28 Tearing Off an Attached Submenu\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 The user can 
+\i tear off
+\i0  an attached submenu by dragging it away from its supermenu.  Moving it free of its supermenu gives it an independent life on-screen.  As a sign of its independence, it gets, for the first time, its own close button.  The close button identifies the menu as a torn-off submenu.  (Any submenus that were, directly or indirectly, attached to the torn-off submenu move with it and remain attached.)\
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic6873 F0.eps \width9860 \height3340
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 The idea is for users to attach a submenu, then tear it off and move it to a desired location if they want it to stay on-screen.  Once a submenu has been torn away from its supermenu, it stays where the user puts it.  To reattach the submenu, the user must close it and then choose its controlling command.  \
+
+\fs16 \
+\
+
+\fs28 If the user presses the mouse button while the cursor is over the command that controls the torn-off submenu, a copy of the submenu temporarily appears next to its supermenu.\
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic7367 F11.eps \width9700 \height3860
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\b\li2100 \
+\
+\
+
+\fs28 Removing a Submenu from the Screen\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Assuming its application is active, an attached submenu can be removed from the screen in three ways:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	By again choosing its controlling command.  Choosing the Librarian command in the detached Services menu in the figure above causes the Librarian submenu to disappear.\
+
+\fs16 \
+\
+
+\fs28 ·	By choosing any other command in the supermenu.\
+
+\fs16 \
+\
+
+\fs28 ·	By removing its supermenu from the screen.  For example, when a torn-off supermenu is closed, its attached submenu disappears from the screen.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 A torn-off submenu is removed from the screen by clicking its close button.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Commands\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 A menu can display several different kinds of commands, all of which use the targeted action paradigm.  Some commands require the user to select the targetÐCopy, Paste, and Miniaturize, for example.  OthersÐsuch as Hide, Quit, and InfoÐdon't require a selection; the target it built into the program.\
+
+\fs16 \
+\
+
+\fs28 When a command is chosenÐwhether it's clicked or activated by a keyboard alternativeÐit's highlighted.  Keyboard alternatives can also operate commands in off-screen menus.  When they do, the menu's controlling command (or, if the supermenu isn't visible, the supermenu's controlling command) is highlighted.  This ensures users of immediate, visual feedback that the keyboard alternative has in fact invoked the command.\
+
+\fs16 \
+\
+
+\fs28 Some commands control submenus.  The action of the command is simply to attach the submenu to the menu.  These commmands are marked by the submenu symbol .\
+
+\fs16 \
+\
+
+\fs28 Many commands cause panels or standard windows to appear on-screen:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	Some bring up a standard windowÐthe New command in the Document menu, for example, or the Console command in the Workspace Manager's Tools menu.\
+
+\fs16 \
+\
+
+\fs28 ·	Some put an attention panel on-screen to help clarify or complete the command.  For example, the Save As command produces a panel that asks the user to type in the name of the file where the document should be saved.\
+
+\fs16 \
+\
+
+\fs28 ·	Others bring up a panel that can stand on its own, independent of the command that produced it.  Sometimes the panel simply imparts information to the userÐa Help panel, for example.  But usually it acts as a control panel where the user can give instructions to the applicationÐthe Font and Find panels, for example.  Such panels are similar to submenus in that they open a range of options to the user.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 If a menu command controls a submenu, it remains highlighted as long as the submenu is attached.  If it controls an attention panel, it remains highlighted until the panel is dismissed from the screen.  Commands don't stay highlighted if they bring up a panel that isn't an attention panel.\
+
+\fs16 \
+\
+
+\fs28 The programmer can designate that a command be disabled, as described below in the section ªDisabling Invalid Commands.º  Disabled commands have a dark gray foreground (instead of the usual black) on the usual light gray background.  They're completely inoperative and don't highlight in response to user actions.  \
+
+\fs16 \
+\
+
+\pard\b\li100 \
+\
+\
+
+\fs36 Implementing Menus\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 The Application Kit provides much of the user interface to menus, leaving you the task of determining application-specific characteristics such as:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	The menu hierarchy\
+·	The names of menu commands\
+·	When each menu command is valid\
+·	Keyboard alternatives \
+
+\pard\tx2620\tx3120\tx3620\fs16\li2100 \
+\
+
+\fs28 This section describes standards for the menu hierarchy and for naming menu commands.  When a command isn't valid, it should be disabled, as described later in this chapter.  Chapter 3, ªUser Actions: The Keyboard and Mouse,º lists all the standard and recommended keyboard alternatives.\
+
+\fs16 \
+\
+
+\fs28 Interface Builder can help you create menus, some of which have actions or submenus already associated with them.  For example, by dragging the Windows menu into your main menu, you give your application the full functionality described in ªThe Windows Menu,º below.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Designing the Menu Hierarchy\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 When designing the menu hierarchy, you should start with the standard menus described later in this chapterÐin particular, the main menu.  Having standard menus, as much as possible, is one of the easiest and best ways to ensure consistency between applications.\
+
+\fs16 \
+\
+
+\fs28 Since menus need to be easily accessible to the user, you should try to keep your application's menu hierarchy as shallow as possible.  In general, a menu should be located no more than two steps away from the main menu.  It's even better to have menus no more than one step away, as long as they don't grow too long or confusing as a result. \
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic11814 F21.eps \width10800 \height3360
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 A menu should never have less than two commands unless it grows and shrinks dynamically and happens to shrink to less than two.  If an application has a menu with only one item in it, that item should be bumped up one level and replace the command that brings up the menu.  (A specific example of this is discussed below under ªThe Info Menu.º)\
+
+\fs16 \
+\
+
+\fs28 A menu can have as many submenus as it has commands, although only one can be attached at a time.  A menu should appear only once in the menu hierarchy; it should not be the submenu of two menus.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Choosing Command Names\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Command names should be short, consisting of a single word if possible, a short phrase if not.  Avoid abbreviations in commands, especially those that aren't standardized or widely used.  Applications in the same language should follow the same capitalization rules.  For English, commands are capitalized as they would be in a titleÐthe first and last words begin with uppercase letters; as well as major words in between.\
+
+\fs16 \
+\
+
+\fs28 Each command name should be unique.  No two commands, even if they're in different menus, should be worded alike. \
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Commands that Perform Actions\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Wherever possible, the first word of an action command should be a verb, so the command reads like a short imperative sentence for the action it performs.  Examples include Hide, Open, Save As, and Revert to Saved.\
+
+\fs16 \
+\
+
+\fs28 Some menu commands have different results, depending on the application's state.  The name of such a command should change so that it always describes what the command will do.  The clearest way to do this is to change the command's verb.  Some examples of good names follow:\
+
+\fs16 \
+\
+
+\pard\tx4620\tx7140\tx8660\tx10680\b\fs28\li2620 First State	Second State	Notes\
+
+\pard\tx4620\tx4620\tx7140\tx7140\tx8660\tx8660\tx10680\tx10680\b0\li2620 Show Ruler	Hide Ruler	\
+Show Grid	Hide Grid	\
+Use Grid	Ignore Grid
+\i 	Don't
+\i0  use ªGrid Onº and ªGrid Offº\
+Bold	Unbold	ªBoldº is treated like a verb in this command\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Avoid using two menu commands instead of changing the menu command's name.  For example, you shouldn't have a Show Ruler command followed by a Hide Ruler command, where one of the commands is always disabled.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Commands that Bring Up Panels\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 With one exception, a command that always brings up a panel must have three dots immediately following its name (for example, ªPreferences...º).  The exception happens when the panel is a warning panelÐsuch as one that comes up when the user tries to revert to a saved version of a document.  Because the user could complete the action if the warning panel weren't there, it's inaccurate to imply that the command brings up a useful panel.  Also, users who are new to an application sometimes tend to look at all of its panels (by choosing menu commands with ª...º); you don't want to encourage users to choose commands that are so dangerous that they require warning panels.  For example, the Workspace Manager's Log Out command doesn't have three dots, even though it always brings up a warning panel.  \
+
+\fs16 \
+\
+
+\fs28 Do 
+\i not
+\i0  put three dots after commands that only bring up a standard window (like the New Viewer command in the Workspace Manager, or the New command in the standard Document menu).\
+
+\fs16 \
+\
+
+\pard\b\fs28\li2100 Note:  
+\b0 Use three periods (not the ellipsis character) to produce the three dots.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 If the purpose of a command is to perform an action, and the panel comes up only to help complete the action, then the command should be named for the action, not for the panel.  (The panel is then given a name that reflects the command name.)  In this case, use the guidelines for naming described above in ªCommands that Perform Actions.º  For example, the standard Save, Save As, and Save To commands are action commands that happen to bring up a panel (which is called the Save panel).\
+
+\fs16 \
+\
+
+\fs28 If the purpose of the command is to bring up the panel, then the command is named after the panel.  This usually results in a noun phrase as a name, instead of the verb phrase that's usually used for action commands.  For example, the Preferences command brings up the Preferences panel, and the Spelling command brings up the Spelling panel.\
+
+\fs16 \
+\
+
+\fs28 A command that brings up a panel shouldn't usually have ªPanelº in its name, since the three dots already indicate that it brings up a panel.  However, you can add ªPanelº if the command's name would otherwise be identical to another command's name.  For example, when the command that brings up the Info panel is in the ªInfoº menu, the command is named ªInfo Panel.º  When an application has no Info menu, the command is named just ªInfo.º\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Commands that Bring Up Submenus\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Commands that bring up submenus usually begin with nouns, but verbs or adjectives are acceptable if they're more clear.  Every submenu command in a menu should have a name that's clearly different from every other command in the menu, so that the user can guess what each submenu contains by its name.  For example, it's a bad idea to have under the main menu both a Tools menu and a Utilities menu, since most users won't be able to remember which is which.\
+
+\fs16 \
+\
+
+\fs28 If a command brings up a menu of actions, it might be appropriate to have the command name the ªtargetº of the actions.  The Document menu uses this scheme:  the Open command can be read as ªOpen Document,º the New command can be read as ªNew Document,º and so on.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Commands that Bring Up Standard Windows\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 A command that brings up a standard window should either start with ªNewº (as in the standard New command described under ªThe Document Menu,º below) or match the title of the window.  For example, the Workspace Manager has a New Viewer command under its View menu.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Sample Command Names\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Some sample commands follow:\
+
+\fs16 \
+\
+
+\pard\tx4620\tx6900\f3\fs28\li2620 Cut\
+Font  	(attaches the Font menu)\
+Font Panel...  	(brings up the Font panel)\
+Hide\
+Info Panel...	(brings up the Info panel; used only when ªInfoº is already used)\
+New	(brings up a new document in a standard window)\
+Preferences...  	(brings up the Preferences panel)\
+Save As...	(an action command that happens to bring up a panel)\
+Select All\
+Show Graphics	(switches to Hide Graphics when graphics are already visible)\
+
+\pard\f0\b\fs16\li1100 \
+\
+\
+\
+\
+
+\fs36 Disabling Invalid Commands\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 When a menu command won't work, it should either be disabled or bring up an explanatory panel.  For example, when a text editor has no documents open, it should disable its Save and Close commands, as shown below.\
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic18060 F2.tiff \width2400 \height2860
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 If a disabled command is in a submenu and is usually chosen using a keyboard alternative, it might be a good idea to have the keyboard alternative result in a beep.  This helps users know that the command isn't valid.\
+
+\fs16 \
+\
+
+\fs28 If the command brings up an explanatory panel, the panel should explain why the command is inappropriate and offer assistance.  The panel must provide more information than just that the command won't work, since that information can more directly be conveyed by disabling the command.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Graphical Devices in Menu Commands\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 The area to the right of a command can be used only to display a keyboard alternative or a submenu symbol.  (Commands that control submenus can't have keyboard alternatives.)  No other graphical devices are permitted in this area.\
+
+\fs16 \
+\
+
+\fs28 In addition, menu commands should not use arbitrary graphical devices, such as check marks, to show state.  There's almost always a more appropriate way to display current state in our interfaceÐfor example, by using buttons or check boxes in a panel or by designing objects that can be directly manipulated (such as those in Edit's ruler).\
+
+\fs16 \
+\
+
+\pard\b\li100 \
+\
+\
+
+{\b0\li2120{\NeXTGraphic19191 EPS12_15_1.eps \width13760 \height660
+}
+¬}\f0\b0\i0\ul0\ql\fs16\fi0\li2120\gray0\up0\dn0 \
+
+\f3\b\fs28\li2620 Programming Note:  Implementing Commands\
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\b0\fs24\li2620 Many menu commands are standard, as described in the ªStandard Menus and Commandsº section.  Many of these standard commands and much of their behavior are supplied by the Application Kit and Interface Builder.  The Application Kit even automatically changes the names of some commands, such as changing Bold to Unbold, and disables some commands when they're invalid, such as Heavier.  (Both commands are in the Font menu, which is described below.)  However, you should double-check that each menu command works correctly. \
+
+\fs16 \
+
+\pard \
+
+{\f0\li2120{\NeXTGraphic19763 EPS12_2_1_1.eps \width13760 \height660
+}
+¬}\f0\b0\i0\ul0\ql\fs16\fi0\li2120\gray0\up0\dn0 \
+
+\pard\tx2620\tx3120\tx3620\li2100 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\pard\f3\li2620 \
+
+\f0\b\fs36\li100 Standard Menus and Commands\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 There's a great deal to be gained if commands shared by most applications are arranged similarly in similar menus.  This section gives the standard arrangement of menus and commands for NeXTstep applications.\
+
+\fs16 \
+\
+
+\pard\b\fs28\li2100 Note:  
+\b0 This chapter shows the U.S. English command names.  For each language, the standard command names should be consistent.  For example, ªQuitº is ªQuitterº in every French application.\
+
+\fs16 \
+\
+
+\b\li1100 \
+\
+\
+
+\fs36 The Main Menu\
+
+\fs16 \
+\
+
+\b0\fs28\li0 \
+
+{\li2120{\NeXTGraphic20224 F12.tiff \width1880 \height4460
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Every application should lay out its main menu as described in this section.  \
+
+\fs16 \
+\
+
+\fs28 The title of the main menu should be the name of the application, shortened somehow if the name is too long.  For example, Interface Builder's main menu is named ªIBº because naming it ªInterface Builderº would needlessly waste screen space.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx6640\tx8660\tx10680\b\fs28\li2620 Command 	Action\
+
+\pard\tx5140\tx5140\tx6640\tx6640\tx8660\tx8660\tx10680\tx10680\b0\fi-2520\li5140 Info	Attaches the Info menu, which contains commands that give general information about the application, as well as let the user set general preferences about how the application works.  Info is the first command in the main menu in part because it can be read in conjunction with the application name in the title bar (for example, ªInfo about Edit,º ªInfo about Draw,º and so on).  See ªThe Info Menu,º below.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Document	Attaches the Document menu, which has commands that affect a document as a wholeÐopening, saving, and closing, for example.  This menu is named differently in different applications, so it's important that the command be in a prominent, well-defined location (second).  See ªThe Document Menu,º below.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Edit 	Attaches the Edit menu, which contains commands affecting the current selection.  Every application that can have editable documents or selectable text must have this menu.  See ªThe Edit Menu,º below.  \
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Format	Attaches the Format menu, which contains commands affecting the layout of documents, including the font and paragraph format of text and the arrangement of graphic images.  See ªThe Format Menu,º below.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Windows	Attaches the Windows menu, which contains commands affecting the windows that belong to the application.  See ªThe Windows Menu,º below.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Print...  	Brings up a panel that permits the user to print or fax a document.  This panel is defined in the Application Kit.  You can omit the Print command if your application doesn't print.  In general, the Print command is assumed to print the document in the main window.  If a panel can be printed out (for example, one that contains a registration form), then to avoid confusion the panel might contain its own Print button.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Services	Attaches the Services menu.  This menu lets the user choose services provided by the system or by other applications.  See ªThe Services Menu,º below.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Hide 	Hides all the windows of the application.  See ªHiding and Retrieving Windowsº in Chapter 4, ªThe Window Interface to Applications.º  \
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Quit 	Terminates the application.  If quitting the application might cause the user to lose work, then the application should bring up a Quit panel.  Otherwise, the application should not require confirmation of a Quit command.  (See ªThe Quit Panelº in Chapter 5.)\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 The Info, Services, Hide, and Quit commands should be in the main menu of every application.  The other commands described above should be included when appropriate. \
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Adding to the Main Menu\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 The main menu works best when it's short (so that commands are easy to find) and narrow (so that it doesn't take up much screen space).  Applications should try to have not many more than eleven or twelve commands in the main menu.\
+
+\fs16 \
+\
+
+\fs28 The main menu is also, for the most part, a menu of menus.  Commands that are added to the main menu should typically be ones that bring up submenus.\
+
+\fs16 \
+\
+
+\fs28 When designing your application's user interface, you can move a command that the guidelines place in a submenu up one level to the main menu, provided that:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	The main menu is short enough to accommodate another command.\
+
+\fs16 \
+\
+
+\fs28 ·	The command provides functionality that's considered central, even crucial, to the application.  For example, a text editor might bring the Font command up to the main menu from the Format menu, but a spreadsheet would not.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Like any other command that's added to the main menu, a command that's raised from a submenu should generally control another submenu.\
+
+\fs16 \
+\
+
+\fs28 When a command is promoted to the main menu, it should, for continuity, be located immediately after the command for the submenu it would otherwise be in.  For example, if the Font command is raised from the Format menu, it follows the Format command.  If the Find command is promoted from the Edit menu, it follows the Edit command, as shown below.\
+
+\fs16 \
+\
+
+\pard\fs28 \
+
+{\li2120{\NeXTGraphic24403 F13.eps \width2860 \height4040
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\b\li1100 \
+\
+\
+
+\fs36 The Info Menu\
+
+\fs16 \
+\
+
+\b0\fs28\li0 \
+
+{\li2120{\NeXTGraphic24427 F3.tiff \width2140 \height2460
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 The Info menu contains commands that let the user get and set information about the application, as a whole.  A License command is an example of the kind of command that could be added to this menu.\
+
+\fs16 \
+\
+
+\pard\tx4620\tx6640\tx8660\tx10680\b\fs28\li2620 Command 	Action\
+
+\fs16 \
+\
+
+\pard\tx5140\tx6640\tx8660\tx10680\b0\fs28\fi-2520\li5140 Info Panel...  	Brings up a panel that displays a small amount of basic information about the application.  (See ªThe Info Panel,º  in Chapter 5, ªPanels.º)\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx6640\tx6640\tx8660\tx8660\tx10680\tx10680\fs28\fi-2520\li5140 Show Menus	Displays and tiles all the application's menus.  There's currently no support for this command in the Application Kit; applications can implement it or not as they see fit.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Preferences...	Brings up the application's Preferences panel, which permits the user to customize the application.  (See ªThe Preferences Panelº in Chapter 5.)\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Help...  	Brings up a panel with helpful information on how to use the application, or with instructions on how to get that help.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 If an application doesn't support any of the commands in the Info menu except Info Panel, it should omit the menu and make the Info command bring up the panel instead.  (The command would then be followed by three dots.)\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 The Document Menu\
+
+\fs16 \
+\
+
+\b0\fs28\li0 \
+
+{\li2120{\NeXTGraphic25536 F14.tiff \width2420 \height4060
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 This menu contains commands that affect a document as a whole.  Commands affecting selected contents of a document are mainly in the Edit menu.  Applications that don't open or save documents of some kind and don't have a New command don't have this menu.\
+
+\fs16 \
+\
+
+\fs28 The title of this menu (the second command in the main menu) should indicate the kind of thing that the Open command opens and the Save command saves.  It might be ªDocument,º ªProject,º ªFile,º ªModelº (for spreadsheets), ªGameº (for games), or ªShellº (for a terminal emulator).  Never call this menu ªWindow,º since a menu called ªWindowsº is standard in most applications.  See <non-existent writeup in Chapter 2> for more guidelines on choosing the title of the Document menu.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx6640\tx8660\tx10680\b\fs28\li2620 Command 	Action\
+
+\pard\tx5140\tx5140\tx6640\tx6640\tx8660\tx8660\tx10680\tx10680\b0\fi-2520\li5140 Open...  	Brings up the Open panel so the user can open a file.  Opening a file also opens a window (or windows) to display it in.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 New 	Opens a new, unnamed file and a window to display it in.  The document should be labeled ªUNTITLEDº (all caps and no file name extension).  An application can follow this with an appropriate noun, for example, ªUNTITLED PROJECTº or with a number to distinguish it from other new documents, for example "UNTITLED-1".\
+
+\pard\tx2620\tx3120\tx3620\fs16\li2100 \
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 	The directory of the new document should be the directory of the current (that is, previous to the New command) main window, or, if there is no main window, the user's home directory.\
+
+\fs16 \
+\
+
+\fs28 Save 	Saves any changes in the document displayed in the current main window to a file (writes them to the disk).  If the document has never been saved to disk, this command should have the same effect as the Save As command.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Save As...  	Saves the document displayed in the main window, as changed, by writing it to a new file with a name supplied by the user.  The document displayed in the main window corresponds to the new file, and the window's title is changed accordingly.  This command places a Save panel on-screen that asks the user to type in a file name or cancel the command.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Save To...  	Saves the document displayed in the main window, as changed, by writing it to a new file with a name supplied by the user.  In this respect, Save To is identical to the Save As command.  However, Save To doesn't replace the window's current file with the new one.  You can choose whether to implement Save As or Save To or both in your application.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Save All	Saves every document that's open in the application.  This is a shortcut for performing the Save command on every open document.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Revert to Saved	Replaces the current version of the document displayed in the main window with the version saved on disk.  This undoes any changes made to the document since it was last saved.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Close	Closes the document in the main window, and all the windows used to display that document.  In other words, it's completely parallel to the Open command.  See ªThe Windows Menu,º below, for information on a related command, Close Window.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 If an application uses more than one window to display a document, it could add a Miniaturize command to ªminiaturizeº all the windows associated with the currently selected document (the document of the key window) into a single miniwindow.  A standard command already exists (Miniaturize Window in the Windows menu) to miniaturize a single window.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 The Edit Menu\
+
+\fs16 \
+\
+
+\b0\li0 \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic28852 F5.tiff \width2300 \height4860
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 The Edit menu contains commands that alter the selection in the current key window (or in the main window if the key window doesn't respond to the command).  Each command should be dimmed when it can't operate on the current selection.  Because users usually use the keyboard for Cut, Copy, Paste, and Delete, they aren't likely to know when these commands are dimmed, so the application should beep when the user tries one of these commands at the wrong time.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx6640\tx8660\tx10680\b\fs28\li2620 Command 	Action\
+
+\pard\tx5140\tx5140\tx6640\tx6640\tx8660\tx8660\tx10680\tx10680\b0\fi-2520\li5140 Cut 	Deletes the current selection and copies it to the pasteboard.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Copy 	Copies the current selection to the pasteboard without deleting it.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Paste 	Replaces the current selection with the contents of the pasteboard.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Paste As 	Attaches a submenu that permits the user to paste the current contents of the pasteboard into the document in a specified data type.  The submenu lists the possible data types, as discussed in ªThe Paste As Menu,º below.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Delete 	Deletes the current selection without copying it to the pasteboard (thus leaving the contents of the pasteboard intact).  The Delete key has the same effect.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Undo 	Undoes the last editing change.  This usually means all changes since the user last made a selection, including the selection of an insertion point.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Find	Attaches the Find menu, which contains commands related to the Find panel.  See ªThe Find Menu,º below.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Spelling...	Brings up the Spelling panel.  \
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Check Spelling	Finds the next misspelled word without bringing up the Spelling panel.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Select All 	Makes the entire contents of the file the current selection.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Applications that permit the user to edit text or graphics should support at least the Cut, Copy, Paste, and Select All commands.  It's strongly recommended that you also implement the Undo command.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+{\b0\li2120{\NeXTGraphic30640 EPS12_3_1.eps \width13760 \height660
+}
+¬}\f0\b0\i0\ul0\ql\fs16\fi0\li2120\gray0\up0\dn0 \
+
+\f3\b\fs28\li2620 Programming Note:  The Edit Menu\
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\b0\fs24\li2620 To get this menu, you can just drag it in from Interface Builder's Palettes window.  It's already hooked up to the Text object, which automatically provides all the menu's functionality except for Find, Paste As, and Undo.   \
+
+\fs16 \
+
+\pard \
+
+\pard\tx2620\tx3120\tx3620\f0\li2100 \
+\
+
+{\pard\fs28\li2120{\NeXTGraphic30906 EPS12_5_1.eps \width13760 \height660
+}
+¬}\pard\tx2620\tx3120\tx3620\f0\b0\i0\ul0\fs28\li2120 \
+
+\fs16\li2100 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\pard\f3\li2620 \
+
+\f0\b\fs28\li2100 The Paste As Menu\
+
+\fs16 \
+\
+
+\b0\li0 \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic30936 F6.tiff \width1660 \height1260
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 The Paste As menu is rarely needed because applications can take care of pasteboard data types without user intervention.  However, sometimes it's useful for the user to be able to specify the format in which data is pasted.  For example, the user of a page layout program might want to choose whether text is pasted as ASCII or Rich Text Format (RTF), or whether graphics are pasted as EPS or TIFF.  \
+
+\fs16 \
+\
+
+\fs28 This menu should include only the types appropriate for its application.  As usual, the programmer should disable invalid menu commands.  For example, when the pasteboard contains only text data, any graphics formats should be disabled.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Spell Checking\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 The Spelling and Check Spelling commands in the Edit menu are intended to provide a uniform interface for spell checking that in many ways parallels the interface for Find.  (Find is discussed under ªThe Find Menu,º below.)  These spell-checking commands are supported by the Application Kit's Text object; custom objects will need custom code for spell checking.\
+
+\fs16 \
+\
+
+\fs28 The Spelling command brings up the Spelling panel, which is described in Chapter 5.  The Check Spelling command is equivalent to the button on the panel that searches for and selects the next misspelled word in the main window; it permits the user to find the next misspelled word without bringing up the panel.  If the application can't find the next misspelled word until the user takes some action within the Spelling panel (for example, loads a dictionary), Check Spelling brings up the panel.  (This is parallel behavior to Save bringing up a panel when the user must first supply a file name, or Find Next bringing up the Find panel if the user needs to enter a text string to search for.)\
+
+\fs16 \
+\
+
+\fs28 If an application has spelling options that can't be accommodated in a panel, Spelling and Check Spelling should be replaced by a Spelling command that brings up a submenu.  That menu might then have Spelling Panel and Check Spelling commands.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 The Find Menu\
+
+\fs16 \
+\
+
+\b0\fs28\li0 \
+
+{\li2120{\NeXTGraphic32933 F7.tiff \width2620 \height2860
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Applications that display large amounts of text are encouraged to include a Find menu like the one illustrated above.  Other applications might also find this menu useful, but because it's designed most specifically for text, a variation of it might better meet their needs.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx6640\tx8660\tx10680\b\fs28\li2620 Command 	Action\
+
+\pard\tx5140\tx5140\tx6640\tx6640\tx8660\tx8660\tx10680\tx10680\b0\fi-2520\li5140 Find Panel...  	Brings up the Find panel, makes it the key window, and selects everything in the text field labeled ªFindº so that the user can easily enter new text.  If the panel is already on-screen, the command brings it to the front, makes it the key window, and selects the Find field.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Find Next	Searches forwards for the next occurrence of the string in the panel's Find field.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Find Previous	Searches backwards for the previous occurrence of the string in the panel's Find field.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Enter Selection	Enters the current selection into the panel's Find field so that Find Next and Find Previous can search for it.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Jump to Selection	Scrolls to display the beginning of the current selection.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Find Next and Find Previous begin searching at the current selection.  If the search is successful, the text that's found is selected and becomes the starting point for the subsequent search.  Neither command requires the Find panel to be on-screen.  However, if the panel's Find field is empty, Find Next and Find Previous both bring up the Find panel, make it the key window, and select its Find field.  This is exactly what the Find Panel command does.  These other commands do it as convenience to the user, who has indicated an intention to do a search.\
+
+\fs16 \
+\
+
+\fs28 The Find panel is further described in Chapter 5.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 The Format Menu\
+
+\fs16 \
+\
+
+\b0\fs28\li0 \
+
+{\li2120{\NeXTGraphic34567 F8.tiff \width2220 \height2060
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx5140\tx6640\tx8660\tx10680\b\fs28\li2620 Command 	Action\
+
+\pard\tx5140\tx5140\tx6640\tx6640\tx8660\tx8660\tx10680\tx10680\b0\fi-2520\li5140 Font 	Brings up the Font menu, which has commands to alter the font of the current selection.  (See ªThe Font Menuº below.)\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Text	Attaches the Text menu, which lets the user choose the format of the selected blocks of text.  (See ªThe Text Menuº below.)\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Page Layout...	Brings up the Page Layout panel, which lets users determine how documents are to be printed and displayed on the screen. \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 The Format menu should hold the principal formatting commands needed by users of the application.  For applications that deal mainly in numbers, they may be commands that format the text display of floating-point numbers or the graphical display of numeric data.  For text processors, they may include the commands that would otherwise go into the Text menu, plus others.\
+
+\fs16 \
+\
+
+\fs28 If an application promotes the Font command to the main menu and has no other commands to add to the Format menu, the Format menu would become little more than a container for the Text menu.  In this circumstance, the commands that would otherwise go into the Text menu should be placed directly in the Format menu.  A separate Text menu is needed only when there's reason to isolate these commands from other formatting commands or to shorten what would otherwise be an excessively long Format menu.\
+
+\fs16 \
+\
+
+\fs28 When commands from the Text menu are placed in the Format menu, they should follow the Page Layout command, so that the Copy Ruler and Paste Ruler commands end the menu.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 The Font Menu\
+
+\fs16 \
+\
+
+\b0\fs28\li0 \
+
+{\li2120{\NeXTGraphic36052 F10.tiff \width2020 \height6060
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Applications that support text entry and editing should provide a Font menu and Font panel.  The Font panel is described in Chapter 5; it contains controls that let users set and preview fonts.  The Font menu has a command to bring up the panel, and commands to make common adjustments to a font.\
+
+\fs16 \
+\
+
+\fs28 Each command alters one aspect of the font, such as its size or style, while leaving other aspects intact.  The Font menu and Font panel target currently selected text; the Preferences panel should be used to alter the default font. \
+
+\fs16 \
+\
+
+\pard\tx5140\tx6640\tx8660\tx10680\b\fs28\li2620 Command 	Action\
+
+\pard\tx5140\tx5140\tx6640\tx6640\tx8660\tx8660\tx10680\tx10680\b0\fi-2520\li5140 Font Panel...  	Brings up the Font panel.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Bold	Makes the current selection bold, if it's not bold already, and makes it unbold if it is.  The name of the command must alternate between ªBoldº and ªUnboldº depending on the selection.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Italic	Makes the current selection italic or ªoblique,º if it isn't already, and makes it unitalic if it is.  The name of the command must alternate between ªItalicº and ªUnitalicº depending on the selection.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Underline	Underlines the current selection, if it isn't already underlined, and removes the underlining if it is.  When the current selection is already underlined, the command name must change to ªUnunderline.º\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Larger	Makes the current selection one point larger.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Smaller	Makes the current selection one point smaller.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Heavier	Uses a heavier typeface to display the current selection.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Lighter	Uses a lighter typeface to display the current selection.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Superscript	Moves the currently selected text up an appropriate amount for a superscript.  Choosing the command again moves the text that much higher.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Subscript	Moves the currently selected text down an appropriate amount for a subscript.  Choosing the command again moves the text that much lower.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Unscript	Returns the selected superscripted or subscripted text to its normal, unscripted state.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Copy Font	Copies from the current selection all the text attributes listed in this menu, including font family, font size, bold, italic, underlining, superscript, and subscript.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Paste Font	Alters the current selection so that it has all the font attributes previously copied with the Copy Font command.\
+
+\fs16 \
+\
+
+\pard\b\fs28\li2100 Note:  
+\b0 If the current selection is an insertion point, all the commands in the Font menu affect the next set of characters inserted, rather than any existing text, unless the text area can contain only one font. If an area of text can have only one font, then the Font menu and panel change the font of all the text in the area.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 The only required commands in this menu are Font Panel, Copy Font, and Paste Font, although frequently used commands like Bold and Italic should almost always be present.  Applications that are not text intensive may decide to omit some of the less frequently used commands, such as Heavier and Lighter.\
+
+\fs16 \
+\
+
+\fs28 Each command leaves the other font attributes intact.  For example, Bold will change 11-point Times Roman to 11-point Times Bold and 24-point Courier Oblique to 24-point Courier Bold Oblique.\
+
+\fs16 \
+\
+
+\fs28 If there's more than one font in the selection, Larger and Smaller change each to be one point larger or smaller than its current size.  The other commands make only the change that's appropriate for the first character in the selection.  For example, if the first character in a multifont selection is italic, the (Un)italic command will remove the italic trait from all the text in the selection, but won't change any text that isn't italic.  If the first character isn't italic, the same command (but now called ªItalicº) will italicize the entire selection, but won't alter any text that's already italic.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+{\f3\b0\li2120{\NeXTGraphic39672 EPS12_12_1.eps \width13760 \height660
+}
+¬}\f3\b0\i0\ul0\ql\fs16\fi0\li2120\gray0\up0\dn0 \
+
+\b\fs28\li2620 Programming Note:  The Font Menu\
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\b0\fs24\li2620 By dragging this menu in from Interface Builder's Palettes window, you get this menu and its functionality almost for free (from the Text object).  Still, you should make sure that every command works, dims, and changes it name as it should.   \
+
+\fs16 \
+
+\pard \
+
+{\f0\fs28\li2120{\NeXTGraphic39955 EPS12_8_1.eps \width13760 \height660
+}
+¬}\f0\b0\i0\ul0\ql\fs28\fi0\li2120\gray0\up0\dn0 \
+
+\pard\tx2620\tx3120\tx3620\fs16\li2100 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\pard\f3\li2620 \
+
+\f0\b\fs36\li1100 The Text Menu\
+
+\fs16 \
+\
+
+\b0\fs28\li0 \
+
+{\li2120{\NeXTGraphic39980 F9.tiff \width1900 \height3660
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 The Text menu is a collection of formatting commands that affect text.  All the Text menu commands are supported by the Application Kit's Text object.  These commands can be isolated into a Text submenu, as shown here, or be included directly in the Format menu.  If you have other formatting commands that are more important to your application, those commands, rather than these, should go in the Format menu.  \
+
+\fs16 \
+\
+
+\pard\tx5140\tx6640\tx8660\tx10680\b\fs28\li2620 Command 	Action\
+
+\pard\tx5140\tx5140\tx6640\tx6640\tx8660\tx8660\tx10680\tx10680\b0\fi-2520\li5140 Align Left  	Aligns the text with the left margin (ªragged rightº).\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Center	Centers the text between the left and right margins.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Align Right	Aligns the text with the right margin (ªragged leftº).\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Justify	Aligns the text with both the left and right margins.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Show Ruler	Displays a ruler in the text area, if the ruler isn't currently visible, otherwise this command hides the ruler.  The name must alternate between ªShow Rulerº and ªHide Ruler,º depending upon the state of the text area.  The ruler is a scale containing controls that affect the format of a paragraph (such as margins and tabs).\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Copy Ruler	Copies the ruler settings in the first paragraph of the selected text.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Paste Ruler	Alters the paragraphs containing the text selection to have the settings most recently copied with the Copy Ruler command.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 An application that has many other text-related commands, such as a word processor, can arrange all its text-formatting commands within the Format menu, as best fits its needs.  (See also the discussion of the Format menu above.)\
+
+\fs16 \
+\
+
+\fs28 However, for consistency, all applications should, as far as possible, retain the command names shown above for the Text menu, no matter how the commands are arranged.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 The Windows Menu\
+
+\fs16 \
+\
+
+\b0\fs28\li0 \
+
+{\li2120{\NeXTGraphic41668 F16.tiff \width4200 \height2060
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 The Windows menu contains commands affecting the windows that belong to the application.  You can replace this menu with one more suitable for your application.  For example, an application that has multiple windows per document might have its own tools to organize the windows.\
+
+\fs16 \
+\
+
+\pard\tx5380\tx6640\tx8660\tx10680\b\fs28\fi-2780\li5380 Command 	Action\
+
+\fs16 \
+\
+
+\pard\tx5380\tx5380\tx6640\tx6640\tx8660\tx8660\tx10680\tx10680\b0\fs28\fi-2780\li5380 Arrange in Front	Stacks and offsets all the application's document windows (those that can become the main window and are created using Open and New commands) at the front of the screen.  While this command is recommended, it isn't mandatory.\
+
+\fs16 \
+\
+
+\pard\tx5380\tx5380\tx5380\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\fs28\fi-2780\li5380 Miniaturize Window	Miniaturizes the key window (if it has a miniaturize button).  The affected window need not be a document window.\
+
+\fs16 \
+\
+
+\pard\tx5380\tx5380\tx5380\tx5380\tx6640\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\tx10680\fs28\fi-2780\li5380 Close Window	Closes the key window (if it has a close button).  If the window is the last one (or only one) open displaying a document, it also closes the document, just as the Close command would.  (See ªThe Document Menu,º above, for a description of the Close command.)\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 The commands in this menu bring windows to the front of the screen and, in the case of the last two commands, remove them.  Other kinds of commands, even if they affect windows in some way, should be located elsewhere in the menu hierarchy.  \
+
+\fs16 \
+\
+
+\fs28 You can replace Arrange in Front with an Arrange command that brings up a panel or menu giving the user more choices concerning which windows to arrange and how they should be tiled or stacked.\
+
+\fs16 \
+\
+
+\fs28 The commands inserted below Arrange in Front list document windows.  Each command brings one window to the front and, if possible, makes it the key window.  The Application Kit creates this list and dynamically adds a command for each document window when it's opened.  An example of these dynamically-created commands is below.  Because the Application Kit creates the command names from the title bar of each window, improperly titled windows can lead to the Windows menu becoming confusing or too wide.  Window titles are discussed in the ªChoosing a Titleº section of Chapter 4. \
+
+\fs16 \
+\
+
+\pard\fs28 \
+
+{\li2120{\NeXTGraphic43654 F15.tiff \width3780 \height2860
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\b\li1100 \
+\
+\
+
+{\b0\li2120{\NeXTGraphic43661 EPS12_7_1.eps \width13760 \height660
+}
+¬}\f0\b0\i0\ul0\ql\fs16\fi0\li2120\gray0\up0\dn0 \
+
+\f3\b\fs28\li2620 Programming Note:  The Windows Menu\
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\b0\fs24\li2620 This menu and all of its functionality are provided for you.  All you have to do is drag the Windows command into your main menu from Interface Builder's Palettes window.   \
+
+\fs16 \
+
+\pard \
+
+{\f0\li2120{\NeXTGraphic43876 EPS12_9_1.eps \width13760 \height660
+}
+¬}\f0\b0\i0\ul0\ql\fs16\fi0\li2120\gray0\up0\dn0 \
+
+\pard\tx2620\tx3120\tx3620\li2100 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\pard\f3\li2620 \
+
+\f0\b\fs36\li1100 The Services Menu\
+
+\fs16 \
+\
+
+\b0\fs28\li0 \
+
+{\li2120{\NeXTGraphic43905 F17.tiff \width3100 \height3260
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 This required menu contains commands that invoke services provided by the system or by other applications.  All the commands in the menu are placed there by the Application Kit from information furnished by service providers (so there's no need to specify where commands should be added). \
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Providing Services\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Applications can specify how commands that request their services should be worded.  The following guidelines apply:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	Each command should begin with a verb and should name the application that will respond to the request.  If the name of the application can be interpreted as a verb, it can be the first word of a command phrase (for example, Chart Selection for an application named ªChartº).  Otherwise, the verb that begins the command should be followed by a preposition and the name of the responding application (Open from Workspace, Define in Webster).\
+
+\fs16 \
+\
+
+\fs28 ·	If an application responds to more than one service request, it can arrange the commands in a submenu under the application's name.  Commands in the submenu don't have to name the application, but should, like all other commands, begin with a verb.\
+
+\fs16 \
+\
+
+\pard\tx3120\tx3620\tx4120\fs28\li2620 However, if the application name is commonly interpreted as a verb, the submenu commands can consist of words that would meaningfully follow the application name in a phrase, much as the commands in the Paste As menu.  For example:\
+
+\fs16 \
+\
+
+\pard\fs28 \
+
+{\li2120{\NeXTGraphic45278 F19.tiff \width1760 \height1260
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+\
+
+\fs28 \
+
+{\li2120{\NeXTGraphic45284 F20.eps \width2860 \height2020
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Service requests conditionally
+\i  
+\i0 activate the other application, but only if user input might be required.  For example, Webster is likely to require the user to scroll the display, but the Workspace Manager doesn't need the user's help to get a file opened.  The application that opens the file will become active, but the Workspace Manager won't.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+{\b0\li2120{\NeXTGraphic45640 EPS12_10_1.eps \width13760 \height660
+}
+¬}\f0\b0\i0\ul0\ql\fs16\fi0\li2120\gray0\up0\dn0 \
+
+\f3\b\fs28\li2620 Programming Note:  The Services Menu\
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\b0\fs24\li2620 To take advantage of services provided by other applications, you should first drag the Services menu from Interface Builder's Palettes window.  Then, if you use the Text object in your application, your application automatically gets many services for free.  Your application can get more kinds of services if you write a few lines of code.\
+
+\fs16 \
+
+\fs24 To put its services into other applications, your application advertises its services in a section of its executable file.  These services are automatically included in the menus of any applications that can accept them. \
+
+\fs16 \
+
+\pard \
+
+{\f2\fs28\li2120{\NeXTGraphic46247 EPS12_11_1.eps \width13760 \height660
+}
+¬}\f2\b0\i0\ul0\ql\fs28\fi0\li2120\gray0\up0\dn0 \
+
+\pard\tx2620\tx3120\tx3620\f0\fs16\li2100 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\pard\f3\li2620 \
+
+\f0\b\fs36\li1100 Adding a Tools Menu\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Since it's easiest for users to find a command if it's arranged in a submenu with other functionally related commands, commands that bring up panels and special, non-document windows should be located throughout the menu hierarchy as appropriate.  For example, the Font Panel command is in the Font menu, the Open command is in the Document menu, and Page Layout is in the Format menu.\
+
+\fs16 \
+\
+
+\fs28 However, if a window or panel is an independent tool that encapsulates a functional domain all its own, it may be difficult to group it with other commands.  Examples are the palettes in a graphics program, the Inspector in Interface Builder, and the Console in the Workspace Manager.  If your application has two or more such commands, you should consider collecting them together in a Tools menu.  An example from the Workspace Manager is illustrated below.\
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic47129 F18.tiff \width1960 \height2060
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 However, the Tools menu should not be considered a default location for commands that bring up windows or panels.  If a window or panel isn't perceived to be a tool, its command should go elsewhere.  If a command can be functionally grouped, it should be.\
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+}

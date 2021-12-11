@@ -1,0 +1,115 @@
+Emacs Key Bindings
+
+Emacs is an interactive, customizable, richly featured code editor that is popular among many programmers, especially UNIX programmers. Project Builder's code editor incorporates many common Emacs commands.
+
+You issue Emacs commands with the Control key (Ctl) or the Escape (Esc) key, but how you give the command differs with each key. You press the Control key just before the character key, and keep pressing them together. For Escape commands, press the Escape key first, then press the character key. Also, some commands begin with Control-x and are followed by a separate key press. The separation of the final character in Control-x and Escape commands is represented by a space.
+
+Notes: 
+
+·	On OpenStep for Windows, many Emacs key bindings conflict with the standard bindings for Control keys on Windows applications (for example, Ctl-v is scroll forward in Emacs but is Paste in Windows). Windows key binding override any corresponding Emacs key bindings.
+
+·	To use the Emacs commands that begin with the Escape key (Esc), you must select the ªAct as Emacs Meta keyº option in the Key Bindings preferences display. 
+
+Moving Around
+
+
+Command	What It Does
+
+Ctl-f	Move forward one character
+
+Ctl-b	Move backward one character
+
+Esc f	Move forward one word
+
+Esc b	Move backward one word
+
+Ctl-n	Move to the next line
+
+Ctl-p	Move to the previous line
+
+Ctl-e	Move to the end of the line
+
+Ctl-a	Move to the beginning of the line
+
+Ctl-v	Scroll foward a ªpageº
+
+Esc v	Scroll backward a ªpageº
+
+Esc >	Go to the end of the edited file
+
+Esc <	Go to the beginning of the edited file
+
+Ctl-l	Center cursor in middle of displayed code
+
+Ctl-x Ctl-x	Exchange point and mark (return to mark)
+
+Ctl-s	Search forward incrementally
+
+Ctl-r	Search backward incrementally
+
+Editing, Deleting, and Copying
+
+
+Command	What It Does
+
+Ctl-d	Delete character under cursor
+
+Ctl-k	Delete (kill) to end of line
+
+Ctl-y	Paste (yank) contents of kill buffer
+
+Esc-d	Delete next word or to end of current word
+
+Esc-Del	Delete previous word
+
+Ctl-x u	Undo last change (applies successive undos)
+
+Ctl-i	Indent line
+
+Esc w 	Copy region
+
+Esc y	Yank-pop: paste previously cut text in kill buffer
+
+Files and Views (Buffers)
+
+
+Command	What It Does
+
+Ctl-x 2	Split current view into two views (Split command)
+
+Ctl-x 1	Make one view (Maximize command)
+
+Ctl-x o	Edit in other view
+
+Ctl-x Ctl-b	Open Loaded Files panel
+
+Ctl-x b	Next loaded file
+
+Ctl-x Ctl-f	Display Open Quickly panel
+
+Ctl-x Ctl-s	Save current view to file
+
+Ctl-x Ctl-w	Write to file (Save As)
+
+Ctl-x s	Save all loaded files
+
+Ctl-x i 	Insert file
+
+Ctl-x k	Close current file
+
+Miscellaneous
+
+
+Command	What It Does
+
+Ctl-x space	Sets a mark which, with point, marks a region.
+
+Ctl-x `	Go to next error (as displayed in Build panel exception browser)
+
+Ctl-x p 	Go to previous error
+
+Esc .	Find definition of current symbol using Project Find panel (as identified by location of cursor)
+
+Ctl-q	Quote next character (for example, a control sequence)
+
+Ctl-g	Quit current command

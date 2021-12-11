@@ -1,0 +1,27 @@
+
+NeXTSTEP Edit
+
+Command			Action
+
+Control–b		Move back one character (⎈b or ⌃b)
+Control–f		Move forward one character
+Alternate–b		Move back one word (⎇b)
+Alternate–f		Move forward one word
+Control–a		Move to beginning of line
+Control–e		Move to end of line
+Control–d		Delete next character
+Control–h		Delete previous character
+Alternate–d		Delete to end of current (or next) word
+Alternate–h		Delete to beginning of current (or previous) word
+Control–k		Delete forward to end of line
+Alternate–<		Move to beginning of text
+Alternate–>		Move to end of text
+Control–n		Move down one line
+Control–p		Move up one line
+Command–f		Open find panel
+Command–e		Open find panel with selected text
+Command–g		Search forward
+Command–d		Search backward
+Command–j		Jump to location of current selection
+Command-a		Select all
+

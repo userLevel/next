@@ -1,0 +1,165 @@
+/* StandardKeyBindings.dict - OPENSTEP for Mach version */
+
+/*
+        Binding keys are a single letter with optional modifiers.  Standard \ooo and \Uxxxx 
+        escape sequences are recognized.  Modifier characters can precede the actual character. 
+        Valid modifier characters are:
+            ^ = NSControlKeyMask
+            ~ = NSAlternateKeyMask
+            $ = NSShiftKeyMask
+            # = NSNumericPadKeyMask
+            @ = NSCommandKeyMask (only allowed for function keys)
+
+        If you wish to bind one of the characters used as a modifier, use must precede it 
+        with a backslash to keep it from being treated as a modifier flag.
+            
+*/
+
+{
+    /* All otherwise unbound control and command characters are no-ops */
+    "^" = "noop:";
+    "@" = "noop:";
+    
+    /* Keyboard UI related bindings */
+    /* The following bindings are somewhat special.  You really shouldn't change them unless you know what you're doing.  Don't use control modifiers here for special keys that generate control characters (ie ^m for the Return key) because you don't hold control while typing Return!  In fact, since the key binding manager looks at the unmodified characters for an event to determine matchine, it is possible to distinguish between Ctrl-i and Tab, for instance, because although the modified character for both keys is 0x09, the unmodified character for Ctrl-i is actually 'i'. */
+    "\015" = "insertNewline:";  /* carriage return */
+    "\012" = "insertNewline:";  /* new line */
+    "\003" = "insertNewline:";  /* enter (!) */
+    "\011" = "insertTab:";  /* tab */
+    "\031" = "insertBacktab:";  /* backtab (!) */
+    
+    "~\015" = "insertNewlineIgnoringFieldEditor:";  /* alt-carriage return */
+    "~\012" = "insertNewlineIgnoringFieldEditor:";  /* alt-new line */
+    "~\003" = "insertNewlineIgnoringFieldEditor:";  /* alt-enter (!) */
+    "~\011" = "insertTabIgnoringFieldEditor:";  /* alt-tab */
+
+    "\033" = "complete:";  /* escape */
+    
+    /* Emacs bindings */
+    /* Note that on Mach we do not bind any of the meta emacs bindings like alt-f for moveWordForward:.  This is because to do so masks the ability to type European and Symbol characters.  A sample of how to add these yourself should be available. */
+    "^f" = "moveForward:";  /* logical */
+    "^b" = "moveBackward:";  /* logical */
+    "^p" = "moveUp:";
+    "^n" = "moveDown:";
+    "^a" = "moveToBeginningOfParagraph:";
+    "^e" = "moveToEndOfParagraph:";
+
+    "^l" = "centerSelectionInVisibleArea:";
+    "^v" = "pageDown:";
+
+    "^d" = "deleteForward:";
+    "^h" = "deleteBackward:";
+    "\010" = "deleteBackward:";  /* backspace */
+    "\177" = "deleteBackward:";  /* delete */
+    "^k" = "deleteToEndOfParagraph:";
+    "^y" = "yank:";
+
+    "^t" = "transpose:";
+    "^o" = ("insertNewlineIgnoringFieldEditor:", "moveBackward:");
+
+    /* Arrow keys with all kinds of modifiers */
+    "\UF702" = "moveLeft:"; /* physical, left arrow key */
+    "\UF703" = "moveRight:"; /* physical, right arrow key */
+    "\UF700" = "moveUp:"; /* up arrow key */
+    "\UF701" = "moveDown:"; /* down arrow key */
+
+    "^\UF702" = "moveToBeginningOfLine:";  /* ctrl-left */
+    "^\UF703" = "moveToEndOfLine:";  /* ctrl-right */
+    "^\UF700" = "pageUp:";  /* ctrl-up */
+    "^\UF701" = "pageDown:";  /* ctrl-down */
+
+    "~\UF702" = "moveWordBackward:";  /* alt-left */
+    "~\UF703" = "moveWordForward:";  /* alt-right */
+    "~\UF700" = ("moveUp:", "moveWordBackward:");  /* alt-up, not ideal */
+    "~\UF701" = ("moveDown:", "moveWordForward:");  /* alt-down, not ideal */
+
+    "$\UF702" = "moveBackwardAndModifySelection:";  /* shift-left */
+    "$\UF703" = "moveForwardAndModifySelection:";  /* shift-right */
+    "$\UF700" = "moveUpAndModifySelection:";  /* shift-up */
+    "$\UF701" = "moveDownAndModifySelection:";  /* shift-down */
+
+    "~$\UF702" = "moveWordBackwardAndModifySelection:";  /* alt-shift-left */
+    "~$\UF703" = "moveWordForwardAndModifySelection:";  /* slt-shift-right */
+    "~$\UF700" = ("moveUpAndModifySelection:", "moveWordBackwardAndModifySelection:");  /* alt-shift-up, not ideal */
+    "~$\UF701" = ("moveDownAndModifySelection:", "moveWordForwardAndModifySelection:");  /* alt-shift-down, not ideal */
+
+    "^~\UF700" = ("pageUp:", "moveWordBackward:");  /* ctrl-alt-up, not ideal */
+    "^~\UF701" = ("pageDown:", "moveWordForward:");  /* ctrl-alt-down, not ideal */
+
+    /* Function keys */
+    /* Most function keys are bound to noop:  a few, actually do useful things */
+    "\UF728" = "deleteForward:";  /* Delete */
+    "\UF729" = "moveToBeginningOfParagraph:";  /* Home */
+    "\UF72B" = "moveToEndOfParagraph:";  /* End */
+    "^\UF729" = "moveToBeginningOfDocument:";  /* Cmd-Home */
+    "^\UF72B" = "moveToEndOfDocument:";  /* Cmd-End */
+    "$\UF729" = "moveToBeginningOfParagraphAndModifySelection:";  /* Shift-Home */
+    "$\UF72B" = "moveToEndOfParagraphAndModifySelection:";  /* Shift-End */
+    "\UF72C" = "pageUp:";  /* Page Up */
+    "\UF72D" = "pageDown:";  /* Page Down */
+    "\UF739" = ("moveToBeginningOfLine:", "deleteToEndOfLine:");  /* Clear Line */
+    "\UF705" = "complete:";  /* F2 */
+
+    "\UF704" = "noop:";  /* F1 */
+    "\UF706" = "noop:";  /* F3 */
+    "\UF707" = "noop:";  /* F4 */
+    "\UF708" = "noop:";  /* F5 */
+    "\UF709" = "noop:";  /* F6 */
+    "\UF70A" = "noop:";  /* F7 */
+    "\UF70B" = "noop:";  /* F8 */
+    "\UF70C" = "noop:";  /* F9 */
+    "\UF70D" = "noop:";  /* F10 */
+    "\UF70E" = "noop:";  /* F11 */
+    "\UF70F" = "noop:";  /* F12 */
+    "\UF710" = "noop:";  /* F13 */
+    "\UF711" = "noop:";  /* F14 */
+    "\UF712" = "noop:";  /* F15 */
+    "\UF713" = "noop:";  /* F16 */
+    "\UF714" = "noop:";  /* F17 */
+    "\UF715" = "noop:";  /* F18 */
+    "\UF716" = "noop:";  /* F19 */
+    "\UF717" = "noop:";  /* F20 */
+    "\UF718" = "noop:";  /* F21 */
+    "\UF719" = "noop:";  /* F22 */
+    "\UF71A" = "noop:";  /* F23 */
+    "\UF71B" = "noop:";  /* F24 */
+    "\UF71C" = "noop:";  /* F25 */
+    "\UF71D" = "noop:";  /* F26 */
+    "\UF71E" = "noop:";  /* F27 */
+    "\UF71F" = "noop:";  /* F28 */
+    "\UF720" = "noop:";  /* F29 */
+    "\UF721" = "noop:";  /* F30 */
+    "\UF722" = "noop:";  /* F31 */
+    "\UF723" = "noop:";  /* F32 */
+    "\UF724" = "noop:";  /* F33 */
+    "\UF725" = "noop:";  /* F34 */
+    "\UF726" = "noop:";  /* F35 */
+    "\UF727" = "noop:";  /* Insert */
+    "\UF72A" = "noop:";  /* Begin */
+    "\UF72E" = "noop:";  /* Print Screen */
+    "\UF72F" = "noop:";  /* Scroll Lock */
+    "\UF730" = "noop:";  /* Pause */
+    "\UF731" = "noop:";  /* Sys Req */
+    "\UF732" = "noop:";  /* Break */
+    "\UF733" = "noop:";  /* Reset */
+    "\UF734" = "noop:";  /* Stop */
+    "\UF735" = "noop:";  /* Menu */
+    "\UF736" = "noop:";  /* User */
+    "\UF737" = "noop:";  /* System */
+    "\UF738" = "noop:";  /* Print */
+    "\UF73A" = "noop:";  /* Clear Display */
+    "\UF73B" = "noop:";  /* Insert Line */
+    "\UF73C" = "noop:";  /* Delete Line */
+    "\UF73D" = "noop:";  /* Insert Char */
+    "\UF73E" = "noop:";  /* Delete Char */
+    "\UF73F" = "noop:";  /* Prev */
+    "\UF740" = "noop:";  /* Next */
+    "\UF741" = "noop:";  /* Select */
+    "\UF742" = "noop:";  /* Execute */
+    "\UF743" = "noop:";  /* Undo */
+    "\UF744" = "noop:";  /* Redo */
+    "\UF745" = "noop:";  /* Find */
+    "\UF746" = "noop:";  /* Help */
+    "\UF747" = "noop:";  /* Mode Switch */
+
+}

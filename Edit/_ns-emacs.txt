@@ -1,0 +1,75 @@
+NeXTSTEP
+
+You issue Emacs commands with the Control key (Ctl) or the Escape (Esc) key, but how you give the command differs with each key. You press the Control key just before the character key, and keep pressing them together. For Escape commands, press the Escape Key first, then press the character key. Also, some commands begin with Control-x and are followed by a separate key press. The separation of the final character in Control-x and Escape commands isrepresented by a space.
+
+⎈ -> Control
+⎇ -> Alternate
+⎋ -> Escape
+
+
+Ctl-b 				move back one character
+Ctl-f 				move forward one character
+Esc f 	  Alt-f		move forward one word
+Esc b 	  Alt-b		move backward one word
+Ctl-a 				move to beginning of line
+Ctl-n 				move to the next line
+Ctl-p 				move to the previous line
+Ctl-e 				move to the end of the line
+Ctl-a 				move to the beginning of the line
+Esc a				move to the beginning of the sentence
+Esc e				move to the end of the sentence
+Esc }				move to the end of the paragraph
+Esc {				move the the beginning of the paragraph
+Ctl-v 				scroll forward one screen (cursor doesn't change)
+Esc v 				scroll backward one screen ( " )
+Esc > 	  Alt->		go to the end of the file
+Esc < 	  Alt-<		go to the beginning of the file
+Ctl-l 				center cursor in middle of screen
+Ctl-x Ctl-x 		exchange point and mark (return to mark)
+Ctl-s 				search forward incrementally
+Ctl-r				search backward incrementally
+Ctl-d				delete character under cursor (next character)
+Ctl-h				delete previous character
+Ctl-k				delete (kill) to end of line
+Ctl-0 C-k			delete (kill) to beginning of line
+Esc k				delete (kill) to end of sentence
+Ctl-x Del			delete (kill) backward to beginning of sentence
+Esc h Ctl-w			delete (kill) paragraph
+Ctl-y				paste (yank) contents of kill buffer
+Esc d	  Alt-d		delete next word or to end of current word
+Esc Del	  Alt-h		delete previous word
+Ctl-x u				undo last change (applies successive undos)
+Ctl-i				indent line
+Esc w	  Cmd-c		copy region
+Esc y	  Cmd-v		yank (paste previously cut text)
+Ctl-x 2 			split view
+Ctl-x 1 			combine view
+Ctl-x Ctl-s 		save current view to file
+Ctl-x Ctl-w 		write to file (save as)
+Ctl-x k 			close current file
+Ctl-x 				space set mark
+Ctl-q 				quit current command
+Cmd–f				open find panel
+Cmd–e				Open find panel with selected text
+Cmd–g				Search forward
+Cmd–d				Search backward
+Cmd–j				Jump to location of current selection
+Cmd-a				Select all
+Cmd-c				Copy to pasteboard
+Cmd-n				Create a new document
+Cmd-o				Open a document
+Cmd-q				Quit the current application
+Cmd-s				Save the current document
+Cmd-S				Save as...
+Cmd-v 				Paste from pasteboard
+Cmd-w				Close the current document
+Cmd-x				Cut to pasteboard
+Cmd-z				Undo the last action
+Cmd-u				Revert to saved
+Cmd-]				Nest
+Cmd-[				Unnest
+Cmd-0				Contract all
+Cmd-9				Expand all
+Cmd-^				Close ancestors
+Cmd-&				Expand ancestors
+Cmd-?				Help

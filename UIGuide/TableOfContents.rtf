@@ -1,0 +1,411 @@
+{\rtf0\ansi{\fonttbl\f0\fnil Times-Roman;\f1\ftech Symbol;\f2\fmodern Ohlfs;}
+\paperw16220
+\paperh14020
+\margl120
+\margr0
+\f0\b0\i0\ul0\ql\fs24\fi0\li0\gray0\up0\dn0 Release 2.0  Copyright 
+\f1 ã
+\f0 1991 by NeXT Computer, Inc.  All Rights Reserved.\
+\
+
+\pard\tx2620\tx3120\tx3620\fs16\li2100 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\pard\tx3120\b\fs28\fi-1020\li3120 7	Chapter 1:  A Visual Guide to the User Interface \
+
+\b0 9	An Application's Windows\
+
+\pard\tx3620\fi-1520\li3620 9	Standard Windows\
+10	Panels\
+11	Menus\
+11	Miniwindows\
+12	Application Icons\
+
+\pard\tx3120\fi-1020\li3120 13	Controls\
+
+\pard\tx3620\fi-1520\li3620 13	Buttons\
+14	Text Fields\
+15	Sliders\
+15	Color Wells\
+15	Scrollers\
+16	Browsers and Selection Lists\
+
+\pard\tx3120\b\fs16\fi-1020\li3120 \
+\
+
+\fs28 17	Chapter 2:  Designing NeXTstep Applications \
+
+\b0 17	Design Philsophy\
+
+\pard\tx3620\fi-1520\li3620 18	Basic Principles\
+
+\pard\tx4120\fi-2020\li4120 18	Consistency\
+18	User Control\
+19	Naturalness\
+19	Using the Mouse\
+
+\pard\tx3620\fi-1520\li3620 20	Action Paradigms\
+
+\pard\tx4120\fi-2020\li4120 20	Direct Manipulation\
+21	Targeted Action\
+21	Modal Tool\
+
+\pard\tx3620\fi-1520\li3620 22	Extensions\
+23	Testing User Interfaces\
+23	References\
+
+\pard\tx3120\fi-1020\li3120 24	Designing Your Application\
+
+\pard\tx3620\fi-1520\li3620 24	Providing a Default Document\
+
+25	Uneditable Documents\
+25	Choosing How Functionality Is Accessed\
+25	Making a Click Unnecessary\
+
+\pard\tx3120\b\fs16\fi-1020\li3120 \
+\
+
+\fs28 27	Chapter 3:  User Actions:  The Keyboard and Mouse \
+
+\b0 28	How the Keyboard and Mouse Work\
+
+\pard\tx3620\fi-1520\li3620 28	The Keyboard\
+
+\pard\tx4120\fi-2020\li4120 28	Modifier Keys\
+29	Keyboard Alternatives\
+
+\pard\tx3620\fi-1520\li3620 30	The Mouse\
+
+\pard\tx4120\fi-2020\li4120 31	Clicking\
+31	Multiple-Clicking\
+31	Dragging\
+32	Pressing\
+32	Mouse Responsiveness\
+32	Left and Right Orientation\
+
+\pard\tx3620\fi-1520\li3620 33	Selection\
+
+\pard\tx4120\fi-2020\li4120 33	Dragging to Select\
+34	Clicking to Select\
+34	Multiple-Clicking to Select\
+34	Extending the Selection\
+
+\pard\tx4620\fi-2520\li4620 34	Continuous Extension\
+35	Discontinuous Extension\
+
+\pard\tx4120\fi-2020\li4120 36	How the Arrow Keys Affect a Text Selection\
+
+\pard\tx3120\fi-1020\li3120 37	Implementing Special Keys\
+
+\pard\tx3620\fi-1520\li3620 37	Special Character Keys\
+
+\pard\tx4120\fi-2020\li4120 37	Handling Arrow Characters\
+
+\pard\tx3620\fi-1520\li3620 38	Special Command-Key Combinations\
+38	Choosing Keyboard Alternatives\
+
+\pard\tx4120\fi-2020\li4120 39	Reserved Keyboard Alternatives\
+39	Required Keyboard Alternatives\
+40	Recommended Keyboard Alternatives\
+40	Creating Application-Specific Keyboard Alternatives\
+
+\pard\tx4620\fi-2520\li4620 41	Choosing the Character\
+42	Using the Alternate Key\
+42	Determining the Action that Is Performed\
+
+\pard\tx3120\fi-1020\li3120 43	Implementing Mouse Actions\
+
+\pard\tx3620\fi-1520\li3620 43	Reacting to Clicking\
+
+\pard\tx4120\fi-2020\li4120 43	The First Click in a Window\
+
+\pard\tx3620\fi-1520\li3620 44	When to Act on a Double-Click Instead of a Single Click\
+45	When to Use Multiple-Clicking\
+
+\pard\tx4120\fi-2020\li4120 45	Dragging from a Multiple-Click\
+
+\pard\tx3620\fi-1520\li3620 46	How to Use Dragging\
+
+\pard\tx4120\fi-2020\li4120 46	Moving an Object\
+46	Defining a Range\
+47	Sliding from Object to Object\
+
+\pard\tx3620\fi-1520\li3620 47	When to Use Pressing\
+48	Using Modifier Keys with the Mouse\
+
+\pard\tx3120\fi-1020\li3120 49	Managing the Cursor\
+
+\pard\tx3620\fi-1520\li3620 49	Changing the Cursor            \
+49	Hiding the Cursor\
+
+\pard\tx3120\fi-1020\li3120 50	Implementing Selection\
+
+\pard\tx3620\fi-1520\li3620 50	When Discontinuous Selection Isn't Implemented\
+50	The Range that Dragging Should Select\
+51	Implementing the Modified Arrow Keys\
+
+\pard\tx4120\fi-2020\li4120 51	Control-Arrow Combinations\
+51	Shift-Arrow Combinations\
+52	Alternate-Arrow Combinations\
+52	Other Arrow Key Combinations\
+
+\pard\tx3120\b\fs16\fi-1020\li3120 \
+\
+
+\fs28 53	Chapter 4:  The Window Interface to Applications \
+
+\b0 54	How Windows Work\
+
+\pard\tx3620\fi-1520\li3620 54	Window Order\
+56	Window Behavior\
+
+\pard\tx4120\fi-2020\li4120 57	Reordering\
+57	Moving\
+58	Resizing\
+59	Closing\
+59	Miniaturizing\
+60	Hiding and Retrieving Windows\
+
+\pard\tx3620\fi-1520\li3620 60	Application and Window Status\
+
+\pard\tx4120\fi-2020\li4120 61	The Active Application\
+
+\pard\tx4620\fi-2520\li4620 61	Application Activation\
+62	Application Deactivation\
+
+\pard\tx4120\fi-2020\li4120 63	The Key Window\
+64	The Main Window\
+65	How Windows Become Key Window and Main Window\
+
+\pard\tx4620\fi-2520\li4620 66	In the Active Application\
+66	When an Application Is Activated\
+
+\pard\tx4120\fi-2020\li4120 66	The Results of Clicking in a Window\
+
+\pard\tx3120\fi-1020\li3120 68	Implementing Standard Windows\
+
+\pard\tx3620\fi-1520\li3620 68	Choosing a Title\
+68	Implementing the Resize Bar\
+69	Implementing the Miniaturize Button \
+69	Implementing the Close Button \
+
+\pard\tx3120\fi-1020\li3120 71	Implementing Window and Application Status\
+
+\pard\tx3620\fi-1520\li3620 71	Choosing the Key Window\
+71	Activating an Application\
+
+\pard\tx3120\b\fs16\fi-1020\li3120 \
+\
+
+\fs28 73	Chapter 5:  Panels \
+
+\b0 74	How Panels Work\
+
+\pard\tx3620\fi-1520\li3620 74	Ordinary Panels\
+74	Attention Panels\
+
+\pard\tx3120\fi-1020\li3120 76	Implementing Ordinary Panels\
+
+\pard\tx3620\fi-1520\li3620 76	Window Considerations\
+
+\pard\tx4120\fi-2020\li4120 76	The Close Button\
+76	The Miniaturize Button\
+76	The Resize Bar\
+76	Becoming the Key Window\
+77	Relinquishing Key Window Status\
+
+\pard\tx3620\fi-1520\li3620 77	Exceptions to Ordinary Panel Behavior\
+
+\pard\tx4120\fi-2020\li4120 77	Persisting Panels\
+78	Floating Panels\
+
+\pard\tx3620\fi-1520\li3620 78	Panels with Variable Contents\
+
+\pard\tx4120\fi-2020\li4120 79	Multiform Panels\
+79	Inspector Panels\
+
+\pard\tx3120\fi-1020\li3120 81	Implementing Attention Panels\
+
+\pard\tx3620\fi-1520\li3620 81	Naming an Attention Panel\
+82	The Default Option in an Attention Panel\
+82	Dismissing an Attention Panel\
+82	Naming Buttons in an Attention Panel\
+83	Optional Explanations in an Attention Panel\
+
+\pard\tx3120\fi-1020\li3120 84	Standard Panels\
+
+\pard\tx3620\fi-1520\li3620 84	The Close Panel\
+84	The Find Panel\
+85	The Info Panel\
+86	The Preferences Panel\
+87	The Quit Panel\
+88	Panels Provided by the Application Kit\
+
+\pard\tx4120\fi-2020\li4120 88	The Colors Panel\
+89	The Font Panel\
+90	The Open Panel\
+90	The Page Layout Panel\
+91	The Print Panel\
+92	The Save Panel\
+92	The Spelling Panel\
+
+\pard\tx3120\b\fs16\fi-1020\li3120 \
+\
+
+\fs28 95	Chapter 6:  Menus \
+
+\b0 96	How Menus Work\
+
+\pard\tx3620\fi-1520\li3620 97	The Main Menu\
+
+\pard\tx4120\fi-2020\li4120 97	Bringing the Main Menu to the Cursor\
+
+\pard\tx3620\fi-1520\li3620 97	Submenus\
+
+\pard\tx4120\fi-2020\li4120 98	Keeping a Submenu Attached\
+98	Tearing Off an Attached Submenu\
+99	Removing a Submenu from the Screen\
+
+\pard\tx3620\fi-1520\li3620 99	Commands\
+
+\pard\tx3120\fi-1020\li3120 101	Implementing Menus\
+
+\pard\tx3620\fi-1520\li3620 101	Designing the Menu Hierarchy\
+102	Choosing Command Names\
+
+\pard\tx4120\fi-2020\li4120 102	Commands that Perform Actions\
+102	Commands that Bring Up Panels\
+103	Commands that Bring Up Submenus\
+104	Commands that Bring Up Standard Windows\
+104	Sample Command Names\
+
+\pard\tx3620\fi-1520\li3620 104	Disabling Invalid Commands\
+105	Graphical Devices in Menu Commands\
+
+\pard\tx3120\fi-1020\li3120 106	Standard Menus and Commands\
+
+\pard\tx3620\fi-1520\li3620 106	The Main Menu\
+
+\pard\tx4120\fi-2020\li4120 107	Adding to the Main Menu\
+
+\pard\tx3620\fi-1520\li3620 109	The Info Menu\
+110	The Document Menu\
+112	The Edit Menu\
+
+\pard\tx4120\fi-2020\li4120 113	The Paste As Menu\
+113	Spell Checking\
+
+\pard\tx3620\fi-1520\li3620 115	The Find Menu\
+116	The Format Menu\
+117	The Font Menu\
+119	The Text Menu\
+120	The Windows Menu\
+122	The Services Menu\
+
+\pard\tx4120\fi-2020\li4120 122	Providing Services\
+
+\pard\tx3620\fi-1520\li3620 124	Adding a Tools Menu\
+
+\pard\tx3120\b\fs16\fi-1020\li3120 \
+\
+
+\fs28 125	Chapter 7:  Controls \
+
+\b0 127	Buttons\
+
+\pard\tx3620\fi-1520\li3620 127	How Buttons Work\
+
+\pard\tx4120\fi-2020\li4120 128	Buttons that Bring Up Lists\
+
+\pard\tx4620\fi-2520\li4620 128	Pop-Up Lists\
+129	Pull-Down Lists\
+
+\pard\tx3620\fi-1520\li3620 129	Implementing Buttons\
+
+\pard\tx4120\fi-2020\li4120 129	Choosing the Button's Result\
+130	Choosing the Button's Image or Label\
+
+\pard\tx4620\fi-2520\li4620 131	Pop-Up Lists\
+
+\pard\tx4120\fi-2020\li4120 131	Changing the Button's Appearance During a Click\
+
+\pard\tx3120\fi-1020\li3120 133	Text Fields\
+135	Sliders\
+136	Color Wells\
+137	Scrollers\
+
+\pard\tx3620\fi-1520\li3620 138	How Scrollers Work\
+
+\pard\tx4120\fi-2020\li4120 138	The Knob and Bar\
+139	The Scroll Buttons\
+139	Automatic Scrolling\
+140	Fine Tuning Mode\
+
+\pard\tx3620\fi-1520\li3620 140	Implementing Scrollers\
+
+\pard\tx3120\fi-1020\li3120 142	Browsers and Selection Lists\
+143	Choosing the Appropriate Control\
+
+\pard\tx3620\fi-1520\li3620 143	Controls that Start Actions\
+144	Controls that Show State\
+
+\pard\tx4120\fi-2020\li4120 144	Displaying a Single Option\
+144	Displaying a Group with an Unrestricted Relationship\
+145	Displaying a Group with a One-of-Many Relationship\
+
+\pard\tx3120\b\fs16\fi-1020\li3120 \
+\
+
+\fs28 147	Chapter 8:  Conventions for Graphic Design \
+
+\b0 147	Laying Out Windows and Panels\
+
+\pard\tx3620\fi-1520\li3620 148	Window Size\
+148	Arranging Pop-Up Lists\
+148	Placing Windows\
+
+\pard\tx3120\fi-1020\li3120 148	Displaying Text\
+
+\pard\tx3620\fi-1520\li3620 149	Displaying File Names\
+
+\pard\tx3120\fi-1020\li3120 149	Designing Images\
+
+\pard\tx3620\fi-1520\li3620 150	Application Icons\
+
+\pard\tx3120\b\fs16\fi-1020\li3120 \
+\
+
+\fs28 151	Chapter 9:  The Interface to the File System \
+
+\b0 151	How the File System Is Organized\
+
+\pard\tx3620\fi-1520\li3620 152	Home Folders\
+152	NeXT Folders\
+153	Local and Personal Folders\
+153	Net\
+154	Paths\
+154	File Name Extensions\
+
+\pard\tx3120\fi-1020\li3120 155	Using Paths\
+155	Using File Name Extensions\
+156	Using File Packages\
+156	Creating Unrequested Files and Folders\
+
+\pard\tx2620\tx3120\tx3620\fs16\li2100 \
+
+}

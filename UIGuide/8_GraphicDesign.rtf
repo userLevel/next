@@ -1,0 +1,302 @@
+{\rtf0\ansi{\fonttbl\f0\fnil Times-Roman;\f1\ftech Symbol;\f3\fswiss Helvetica;\f2\fmodern Ohlfs;}
+\paperw16220
+\paperh13360
+\margl120
+\margr0
+\f0\b0\i0\ul0\ql\fs24\fi0\li0\gray0\up0\dn0 Release 2.0  Copyright 
+\f1 „
+\f0 1991 by NeXT Computer, Inc.  All Rights Reserved.\
+\
+
+\pard\tx2620\tx3120\tx3620\fs16\li2100 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\pard\fs56\li2100 Chapter 8\
+Conventions for Graphic Design\
+
+\fs16 \
+\
+\
+\
+\
+\
+\
+\
+\
+
+\pard\tx2620\tx3120\tx3620\i\fs28\li2100 <<This chapter is mostly unwritten.  The proposed contents are listed below.>>\
+
+\fs16 \
+\
+
+\pard\tx3120\b\i0\fs28\li3120 The NeXTstep Look\
+
+\b0 Color\
+Three-Dimensionality\
+
+\pard\tx3600\li3120 	Bezels\
+
+\pard\tx3120\b\fs16\li3120 \
+\
+
+\fs28 Laying Out Windows and Panels\
+
+\b0 Window Size \
+Window Placement \
+Using Boxes\
+Using Split Views\
+Arranging Pop-Up Lists\
+
+\pard\b\fs16 \
+\
+
+\pard\tx3120\fs28\li3120 Displaying Text\
+
+\b0 Displaying File Names\
+
+\pard\b\fs16 \
+\
+
+\pard\tx3120\fs28\li3120 Designing Images\
+
+\b0 Application Icons\
+Document Icons\
+Button Images\
+
+\pard\tx3600\li3120 	Highlight Images\
+
+\pard\tx3120\li3120 Cursors\
+Other Graphics\
+
+\pard\b\fs16 \
+\
+
+\pard\tx3120\fs28\li3120 Dimming Inactive Controls\
+
+\fs16 \
+
+\pard \
+
+\pard\tx3120\fs28\li3120 Arranging Windows on the Screen\
+
+\pard\fs16\li100 \
+\
+\
+\
+\
+
+\fs36 Laying Out Windows and Panels\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\i\fs28\li2100 <<Also see the Window and Panel chapters (Chapters 4 & 5) for discussions on window order, multiform panels, when panels should disappear, the position of attention panels, etc.>>\
+
+\fs16 \
+\
+
+\i0\fs28 A substantial proportion of the window should be free of objects that respond to the first click.  It shouldn't be difficult for the user to find a place to click within the window to just select it.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Window Size\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 The only windows that have a fixed size are miniwindows and icons.  The initial size of all other windows is determined by the application.  Generally, standard windows are larger than panels and panels are larger than menus, but there are no fixed rules.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Window Placement\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 The user is free to rearrange windows on the screen, but the initial placement of windows is up to the application.  \
+
+\fs16 \
+\
+
+\fs28 To ensure a consistent user interface, all applications should follow these guidelines for locating windows:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ∑	When an application is launched, its main menu should appear in the upper left corner of the screen.  Users who prefer a different default location for the main menu can choose one with the Preferences application, and you may want to let users specify a preference just for your application.\
+
+\fs16 \
+\
+
+\fs28 ∑	Standard windows should come up to the right of the main menu, allowing enough room for submenus that might later be attached to the main menu.  Some applications also allow room for panels to come up to the left of the standard window and below the main menu.\
+
+\fs16 \
+\
+
+\fs28 ∑	Attention panels should come up in the center of the screen, where they won't be overlooked.\
+
+\fs16 \
+\
+
+\fs28 ∑	No part of any window (other than miniwindows and icons) should be placed off-screen.\
+
+\pard\tx2620\tx3120\tx3620\fs16\li2100 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Arranging Pop-Up Lists\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 When a panel includes a pop-up list, it's important to pay attention to the look of the panel when the list is on-screen.  Be sure, for example, that the list doesn't obscure any objects in the panel that provide a context for understanding the content of the list.  Also make sure that the open list doesn't blend in with the panel.  If an item in the list pops up alongside an object in the panel, it might lead users to interpret them in combination.\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs16\fi-520\li2620 \
+\
+
+\pard\b\li100 \
+\
+\
+
+\fs36 Displaying Text\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Editable or selectable text (unless its a label or title) should be displayed against a white background; text that isn't selectable or editable should be displayed against a background other than white (usually gray).  The white background indicates that the text is selectable or editable; in certain contexts (a panel, for example), it also prompts for user input.\
+
+\fs16 \
+\
+
+\fs28 Selectable or editable text should normally be enclosed by a border of some kind to set it off from the background.\
+
+\fs16 \
+\
+
+\fs28 Labels and titles are displayed against a gray background without a border.  If they can be selected or edited, the background should turn white when the user first initiates a selection (i.e., on the first mouse-down event).\
+
+\fs16 \
+\
+
+\fs28 The text in a text field is normally editable, so it's displayed against a white background.  When the text field is temporarily disabled, the text becomes gray (just like the label of a button) but the background color doesn't change.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Displaying File Names\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 File names can be displayed in one of two ways.  Usually, the file's name should be displayed, followed by two spaces, an em dash, two more spaces, and then the directory path.  For example:\
+
+\fs16 \
+\
+
+\pard\tx3120\tx3620\tx4120\f3\fs28\li2620 jobRecords  –  /Net/machine/home/records\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\f0\fs28\li2100 However, when there's not much space to display the file name–as in a menu command–the directory path can be shortened to the minimum necessary to differentiate the file name.  The part of the path that isn't shown should be replaced with ellipsis (...).  \
+
+\fs16 \
+\
+
+\fs28 For example, if one file called 
+\b jobRecords
+\b0  is listed in limited space, it should be listed as:\
+
+\fs16 \
+\
+
+\pard\tx3120\tx3620\tx4120\f3\fs28\li2620 jobRecords\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\f0\fs28\li2100 If two files called 
+\b jobRecords
+\b0  are listed in limited space, they might be listed as:\
+
+\fs16 \
+\
+
+\pard\tx3120\tx3620\tx4120\f3\fs28\li2620 jobRecords  –  .../recordsjobRecords  –  .../backup\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\f0\fs28\li2100 \
+
+\fs16 \
+\
+
+\pard\b\li100 \
+\
+\
+
+\fs36 Designing Images \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\i\fs28\li2100 <<You should use our images/cursors when appropriate>>\
+
+\fs16 \
+\
+
+\b\i0\li1100 \
+\
+\
+
+\fs36 Application Icons\
+
+\fs16 \
+\
+
+\b0\fs28\li2100 Freestanding and docked icons are the same size as miniwindows and have the same beveled border to make them look raised above the screen.  Each icon window displays the icon for an application–an image that on the MegaPixel Display can be no more than 48 pixels high by 48 pixels wide, so that it can fit comfortably in the 64 pixel by 64 pixel window.\
+
+\fs16 \
+\
+
+\fs28 The docked icon for an application that isn't running displays the same image that represents the application in a directory window.  However, you can provide an icon for the application when it's running that's different from, but related to, the icon found in a directory window.\
+
+}

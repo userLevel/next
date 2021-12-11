@@ -1,0 +1,537 @@
+{\rtf0\ansi{\fonttbl\f0\fnil Times-Roman;\f1\ftech Symbol;\f2\fmodern Ohlfs;}
+\paperw16220
+\paperh12580
+\margl120
+\margr0
+\f0\b0\i0\ul0\ql\fs24\fi0\li0\gray0\up0\dn0 Release 2.0  Copyright 
+\f1 ã
+\f0 1991 by NeXT Computer, Inc.  All Rights Reserved.\
+\
+
+\pard\tx2620\tx3120\tx3620\fs16\li2100 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\pard\fs56\li2100 Chapter 1\
+A Visual Guide to the User Interface\
+
+\fs16 \
+\
+\
+\
+\
+\
+\
+\
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 A user interface is more than the way an application looks on-screen.  It's all the ways the application communicates with the user, and the user with the application.  Sounds such as beeps are part of the user interface, as is the speed with which the application reacts to a mouse click.  Still, the appearance of an application is a large part of its user interface.  This chapter concentrates on how things look; how things act is covered in detail elsewhere.\
+
+\fs16 \
+\
+
+\fs28 The appearance of the NeXTstep user interface is influenced by the following goals:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	A look and feel that's consistent across all applications\
+·	A simple, elegant appearance that uses shading to give a 3-dimensional effect \
+·	A color scheme based on black, white, and gray\
+·	The mouse as the primary input device\
+
+\pard\fs16 \
+\
+\
+
+\fs28 \
+
+{\li2120{\NeXTGraphic925 F1.eps \width8020 \height5840
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 The figure above shows a typical NeXTstep screen (the 
+\i workspace
+\i0 ).  In it, two applications have standard windows visible.  (One of them also has a menu and a panel visible.)  Other applications are running but have no visible screen presence besides an application icon and perhaps a miniaturized window (a miniwindow).\
+
+\fs16 \
+\
+
+\fs28 Although many applications can run at once, only one is the 
+\i active application
+\i0 Ðthe application that accepts all user input such as typing and mouse clicks.  The user can tell which application is active by checking the menu displayed in the upper left of the screen; this menu always belongs to the active application.  In the picture above, Edit is the active application.\
+
+\fs16 \
+\
+
+\pard\b\li100 \
+\
+\
+
+\fs36 An Application's Windows\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Applications present their functionality to the user in three kinds of windows:  standard windows, panels, and menus.  Two other kinds of windows also appear on-screen:  application icons and miniwindows.\
+
+\fs16 \
+\
+
+\fs28 All the user's typing goes to the current 
+\i key window
+\i0 , which is one of the active application's standard windows or panels.  The user can tell which is the key window by seeing which one has the black title bar.  In the figure above, the Find panel is the key window.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Standard Windows\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 The parts of a standard window are labeled in the figure below.  Not all standard windows need every partÐfor example, the first window displayed by the Workspace Manager has no close button, so that beginning users won't accidentally close the one window they need to use the Workspace Manager.\
+
+\fs16 \
+\
+
+\li0 \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic2455 F16.eps \width7800 \height4800
+}
+,}\pard\tx2620\tx3120\tx3620\f0\b0\i0\ul0\fs28 \
+
+\fs16 \
+\
+
+\fs28\li2100 More information on standard windows, as well as windows in general, is in Chapter 4, ªThe Window Interface to Applications.º\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Panels\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Although panels can look just like standard windows, they have a different role:  They help perform secondary functionality, supporting the work done in standard windows.  Often, they let the user manage the contents of standard windows in specific ways.  For example, in a text editor, a standard window holds the document being edited, and panels appear as necessary to get informationÐfor printing, saving, searching, and so on.  \
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic3037 F15.tiff \width5960 \height6580
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 The Font panel shown above is an 
+\i ordinary panel
+\i0 .  Ordinary panels let the user work in other windows and panels of the application while the panel's displayed.  \
+
+\fs16 \
+\
+
+\fs28 Sometimes, however, a panel requires the user's immediate attentionÐfor example, when the user must confirm a possibly destructive command.  In this case, an 
+\i attention panel
+\i0  is used.  While an attention panel is displayed, the user can't do anything else in the application (although the user can work in 
+\i other
+\i0  applications).  Because attention panels work so differently from ordinary panels, they look different, as shown below.\
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic3640 F18.eps \width6160 \height2600
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 The Font panel above is a standard panel that lets the user change the font of the selected text.  Using standard panels in your application helps the user be more productive, since the user has less to learn.  Chapter 5, ªPanels,º gives more information about the standard panels and about creating application-specific panels.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Menus  \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Menus give the user access to the full breadth of an application's functionality.  A user should be able to get a good idea of what an application does by looking at its menu commands.  The application's menu commands are grouped into menus, as shown below.\
+
+\fs16 \
+\
+
+\li0 \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic4250 F0.eps \width6900 \height2860
+}
+,}\pard\tx2620\tx3120\tx3620\f0\b0\i0\ul0\fs28 \
+
+\fs16 \
+\
+
+\fs28\li2100 A keyboard alternative is a combination of keys that can be used instead of the mouse for choosing a command.  To choose a command from the keyboard, the user holds down the Command key while typing the character shown in the menu command.  For example, to quit, the user can either click the Quit menu command or hold down the Command key and press 
+\b q
+\b0 .\
+
+\fs16 \
+\
+
+\fs28 The main menu and many submenus are standardÐin almost any application, they should have many of the same commands in the same order.  Chapter 6, ªMenus,º describes the standard menus and commands, and gives guidelines on creating application-specific menus and commands.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Miniwindows\
+
+\fs16 \
+\
+
+\b0\li0 \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic4902 F10.tiff \width7120 \height2680
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 When the user clicks a window's miniaturize button (the left button in the title bar), the window shrinks down to become a miniwindow.  To get the full-size window again, the user double-clicks the miniwindow.\
+
+\fs16 \
+\
+
+\b\li1100 \
+\
+\
+
+\fs36 Application Icons\
+
+\fs16 \
+\
+
+\b0\fs28\li2100 Every running application is represented on-screen by an icon.  This icon lets the user choose which application to work in.  To choose an application, the user simply double-clicks its icon. \
+
+\fs16 \
+\
+
+\fs28 An application icon can be either freestanding or docked.  Docked icons line up along the right edge of the screen.  They stay on-screen even when the applications they represent aren't running; this makes it easy to launch commonly used applications (by double-clicking the docked icon).  A freestanding icon stays on-screen only as long as the application is running.  Users can customize their environment by dragging application icons into and out of the application dock.   \
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic5820 F13.eps \width4900 \height3260
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 The Workspace Manager adds three small dotsÐsimilar to an ellipsisÐin the lower left corner of a docked icon when the application the icon represents isn't running.  The ellipsis disappears when the application is launched.  While it's launching, the icon is highlighted in white, as shown above.\
+
+\fs16 \
+\
+
+\b\li100 \
+\
+\
+
+\fs36 Controls\
+
+\fs16 \
+\
+
+\b0\fs28\li2100 Controls are devices that let users give information to or choose an action in an application.  Controls are usually presented to users in panels or menus, although standard windows can also contain controls.  The following figure shows some of the controls used in NeXTstep.  (Although menu commands are controls, they're used only in menus, so they're illustrated in the ªMenusº section, above).\
+
+\fs16 \
+\
+
+\li0 \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic6539 F5.eps \width6400 \height4340
+}
+,}\pard\tx2620\tx3120\tx3620\f0\b0\i0\ul0\fs28 \
+
+\fs16 \
+\
+
+\fs28\li2100 The following sections describe each of the NeXTstep controls in more detail.  If necessary, you can also create your own controls.  Chapter 7, ªControls,º has more information.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Buttons\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Buttons are the primary controls for starting an action or setting a state.  Users manipulate buttons by moving the mouse so that the cursor is over the button on-screen, and then clickingÐpressing and releasing the mouse button.\
+
+\fs16 \
+\
+
+\fs28 Buttons can be very basicÐwith just a word or picture on a rectangular, raised-looking buttonÐor they can be more complex.  The following figure shows some simple buttons that are typical of those used to start actions.\
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic7192 F17.eps \width4660 \height1180
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Another kind of button that initiates actions is one that controls a 
+\i pull-down list
+\i0 .  A pull-down list is a combination of a button and a menu-like list.  The button itself doesn't cause an action (other than displaying the list), but it lets the user choose a list item that causes an action.  For example:\
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic7508 F4.tiff \width9220 \height1680
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Buttons that set a state, as opposed to initiating an action, tend to be a little more complex than action buttons.  Typical state buttons are shown in the figure below.\
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic7686 F2.eps \width7620 \height1740
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 A pop-up list, like a pull-down list, is a combination of a button and a list.  A pop-up list's button doesn't actually set a state, but it brings up a menu-like list from which the user can choose an option that sets the state.  Unlike a pull-down list, the title of a pop-up list's button changes to display the list item that was chosen (such as from ªInchesº to ªCentimetersº).  \
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic8078 F3.tiff \width11920 \height2040
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\b\li1100 \
+\
+\
+
+\fs36 Text Fields\
+
+\fs16 \
+\
+
+\b0\li0 \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic8101 F8.tiff \width1520 \height1120
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Text fields let the user enter data by typing.  When the user presses Return or clicks a button, the application acts on the data.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Sliders\
+
+\fs16 \
+\
+
+\b0\li0 \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic8253 F9.tiff \width4520 \height580
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 A slider sets a value between some minimum and maximum.  The user can change the value by dragging the slider's knob.\
+
+\fs16 \
+\
+
+\b\li1100 \
+\
+\
+
+\fs36 Color Wells\
+
+\fs16 \
+\
+
+\b0\li0 \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic8396 F12.tiff \width2520 \height1100
+}
+,}\pard\tx2620\tx3120\tx3620\f0\b0\i0\ul0\fs28 \
+
+\fs16 \
+\
+
+\fs28\li2100 A color well lets the user set the color of an object or the color to use for drawing.  Color wells are often used in groupsÐfor example, so the user can choose one color for the outline of an object and another color for its fill.  One of the ways the user can change the color in a color well is by dragging in a color from another well.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Scrollers\
+
+\fs16 \
+\
+
+\b0\li0 \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic8759 F14.tiff \width7460 \height5760
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Scrollers let the user control which part of a document or other data is displayed within a rectangular area.  The user changes which part is displayed by dragging the scroller's knob or pressing its arrow buttons.  The figure above shows two scrollers, a vertical scroller and a horizontal scroller.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Browsers and Selection Lists\
+
+\fs16 \
+\
+
+\b0\li0 \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic9102 F11.eps \width7160 \height2720
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 A browser shows text data that's organized in a hierarchy, such as files and folders.  A selection list is like a browser, but it has only a single level.  The user moves down the browser's hierarchy by clicking names that have a  
+{\li2120{\NeXTGraphic9337 EPS6.eps \width160 \height180
+}
+,}\pard\tx2620\tx3120\tx3620\f0\b0\i0\ul0\fs28\li2100 after them.  In both browsers and selection lists, the user can select items by clicking them.\
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+}

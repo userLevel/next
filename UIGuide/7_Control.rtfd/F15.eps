@@ -1,0 +1,2771 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%Creator: Adobe Illustrator(TM) 3.0.1.
+%%For: () ()
+%%Title: (/Net/vermont/lyndon/donoughe/Art/TechDoc_Edited/UIGuide/01_VisualGuide/Browser.ai)
+%%CreationDate: (11/19/91) (15:05)
+%%BoundingBox: 180 602 538 738
+%%DocumentProcessColors: Cyan Magenta Yellow Black
+%%DocumentFonts: Helvetica
+%%DocumentFiles:/Net/vermont/lyndon/donoughe/Art/TechDoc/UIGuide/01_VisualGuide/Browser/Browser.eps
+%%+/Net/vermont/lyndon/donoughe/Art/TechDoc/UIGuide/01_VisualGuide/Browser/SelectionListLabeled.eps
+%%DocumentSuppliedResources: procset Adobe_packedarray 2.0 0
+%%+ procset Adobe_cmykcolor 1.1 0
+%%+ procset Adobe_cshow 1.1 0
+%%+ procset Adobe_customcolor 1.0 0
+%%+ procset Adobe_typography_AI3 1.0 1
+%%+ procset Adobe_pattern_AI3 1.0 0
+%%+ procset Adobe_Illustrator_AI3 1.0 1
+%AI3_ColorUsage: Color
+%AI3_IncludePlacedImages
+%AI3_TemplateBox: 288 360 288 360
+%AI3_TileBox: 30 31 582 761
+%AI3_DocumentPreview: Header
+%%Template:
+%%PageOrigin:30 31
+%%AI3_PaperRect:0 792 612 0
+%%AI3_Margin:30 31 30 31
+%%EndComments
+%%BeginProlog
+%%BeginResource: procset Adobe_packedarray 2.0 0
+%%Title: (Packed Array Operators)
+%%Version: 2.0 
+%%CreationDate: (8/2/90) ()
+%%Copyright: ((C) 1987-1990 Adobe Systems Incorporated All Rights Reserved)
+
+userdict /Adobe_packedarray 5 dict dup begin put
+/initialize			% - initialize -
+{
+/packedarray where
+	{
+	pop
+	}
+	{
+	Adobe_packedarray begin
+	Adobe_packedarray
+		{
+		dup xcheck
+			{
+			bind
+			} if
+		userdict 3 1 roll put
+		} forall
+	end
+	} ifelse
+} def
+/terminate			% - terminate -
+{
+} def
+/packedarray		% arguments count packedarray array
+{
+array astore readonly
+} def
+/setpacking			% boolean setpacking -
+{
+pop
+} def
+/currentpacking		% - setpacking boolean
+{
+false
+} def
+currentdict readonly pop end
+%%EndResource
+Adobe_packedarray /initialize get exec
+
+%%BeginResource: procset Adobe_cmykcolor 1.1 0
+%%Title: (CMYK Color Operators)
+%%Version: 1.1 
+%%CreationDate: (1/23/89) ()
+%%Copyright: ((C) 1987-1990 Adobe Systems Incorporated All Rights Reserved)
+
+currentpacking true setpacking
+userdict /Adobe_cmykcolor 4 dict dup begin put
+/initialize			% - initialize -
+{
+/setcmykcolor where
+	{
+	pop
+	}
+	{
+	userdict /Adobe_cmykcolor_vars 2 dict dup begin put
+	/_setrgbcolor
+		/setrgbcolor load def
+	/_currentrgbcolor
+		/currentrgbcolor load def
+	Adobe_cmykcolor begin
+	Adobe_cmykcolor
+		{
+		dup xcheck
+			{
+			bind
+			} if
+		pop pop
+		} forall
+	end
+	end
+	Adobe_cmykcolor begin
+	} ifelse
+} def
+/terminate			% - terminate -
+{
+currentdict Adobe_cmykcolor eq
+	{
+	end
+	} if
+} def
+/setcmykcolor		% cyan magenta yellow black setcmykcolor -
+{
+1 sub 4 1 roll
+3
+	{
+	3 index add neg dup 0 lt
+		{
+		pop 0
+		} if
+	3 1 roll
+	} repeat
+Adobe_cmykcolor_vars /_setrgbcolor get exec
+pop
+} def 
+/currentcmykcolor	% - currentcmykcolor cyan magenta yellow black
+{
+Adobe_cmykcolor_vars /_currentrgbcolor get exec
+3
+	{
+	1 sub neg 3 1 roll
+	} repeat
+0
+} def
+currentdict readonly pop end
+setpacking
+
+%%EndResource
+%%BeginResource: procset Adobe_cshow 1.1 0
+%%Title: (cshow Operator)
+%%Version: 1.1 
+%%CreationDate: (1/23/89) ()
+%%Copyright: ((C) 1987-1990 Adobe Systems Incorporated All Rights Reserved)
+
+currentpacking true setpacking
+userdict /Adobe_cshow 3 dict dup begin put
+/initialize			% - initialize -
+{
+/cshow where
+	{
+	pop
+	}
+	{
+	userdict /Adobe_cshow_vars 1 dict dup begin put
+	/_cshow		% - _cshow proc
+		{} def
+	Adobe_cshow begin
+	Adobe_cshow
+		{
+		dup xcheck
+			{
+			bind
+			} if
+		userdict 3 1 roll put
+		} forall
+	end
+	end
+	} ifelse
+} def
+/terminate			% - terminate -
+{
+} def
+/cshow				% proc string cshow -
+{
+exch
+Adobe_cshow_vars
+	exch /_cshow
+	exch put
+	{
+	0 0 Adobe_cshow_vars /_cshow get exec
+	} forall
+} def
+currentdict readonly pop end
+setpacking
+
+%%EndResource
+%%BeginResource: procset Adobe_customcolor 1.0 0
+%%Title: (Custom Color Operators)
+%%Version: 1.0 
+%%CreationDate: (5/9/88) ()
+%%Copyright: ((C) 1987-1990 Adobe Systems Incorporated All Rights Reserved)
+
+currentpacking true setpacking
+userdict /Adobe_customcolor 5 dict dup begin put
+/initialize			% - initialize -
+{
+/setcustomcolor where
+	{
+	pop
+	}
+	{
+	Adobe_customcolor begin
+	Adobe_customcolor
+		{
+		dup xcheck
+			{
+			bind
+			} if
+		pop pop
+		} forall
+	end
+	Adobe_customcolor begin
+	} ifelse
+} def
+/terminate			% - terminate -
+{
+currentdict Adobe_customcolor eq
+	{
+	end
+	} if
+} def
+/findcmykcustomcolor	% cyan magenta yellow black name findcmykcustomcolor object
+{
+5 packedarray
+}  def
+/setcustomcolor		% object tint setcustomcolor -
+{
+exch
+aload pop pop
+4
+	{
+	4 index mul 4 1 roll
+	} repeat
+5 -1 roll pop
+setcmykcolor
+} def
+/setoverprint		% boolean setoverprint -
+{
+pop
+} def
+currentdict readonly pop end
+setpacking
+
+%%EndResource
+%%BeginResource: procset Adobe_typography_AI3 1.0 1
+%%Title: (Typography Operators)
+%%Version: 1.0 
+%%CreationDate:(5/31/90) ()
+%%Copyright: ((C) 1987-1990 Adobe Systems Incorporated All Rights Reserved)
+
+currentpacking true setpacking
+userdict /Adobe_typography_AI3 47 dict dup begin put
+/initialize			% - initialize -
+{
+/TZ
+ where
+	{
+	pop
+	}
+	{
+	Adobe_typography_AI3 begin
+	Adobe_typography_AI3
+		{
+		dup xcheck
+			{
+			bind
+			} if
+		pop pop
+		} forall
+	end
+	Adobe_typography_AI3 begin
+	} ifelse
+} def
+/terminate			% - terminate -
+{
+currentdict Adobe_typography_AI3 eq
+	{
+	end
+	} if
+} def
+
+% [ number value stream [ array for encoding modification ] modifyEncoding ==> [ modified array ]
+/modifyEncoding
+{
+	/_tempEncode exch ddef
+	
+	% pointer for sequential encodings
+	/_pntr 0 ddef
+	
+	{
+		% get bottom object
+		counttomark -1 roll
+
+		% is it a mark ?
+		dup type dup /marktype eq 		
+		{
+			% exit
+			pop pop exit
+		}
+		{
+			% ... object ... type ....
+
+			% insert if a nametype
+			/nametype eq
+			{
+				% insert the name at _pntr and increment pointer
+				_tempEncode /_pntr dup load dup 3 1 roll 1 add ddef 3 -1 roll
+				put
+			}
+			{
+				% reset _pntr if it's a number
+				/_pntr exch ddef					
+			}
+			ifelse
+		}
+		ifelse
+	}
+	loop	
+	
+	% return the modified encoding
+	_tempEncode
+}
+def
+
+/TE	% Set std platform encoding 	% (encoding pairs) TE -
+{
+	StandardEncoding 256 array copy modifyEncoding 
+	/_nativeEncoding exch def
+} def
+
+% re-define font
+% expected arguments
+% for 'normal fonts : 
+%	[ /_Helvetica-Bold/Helvetica-Bold direction fontScript defaultEncoding TZ
+%
+% for cartographic, pictographic, and expert fonts :
+% 	[ ... number value stream ... /_Helvetica-Bold/Helvetica-Bold 
+%	direction fontScript defaultEncoding TZ
+/TZ		
+{
+	% platform dependent coding flag
+	/_useNativeEncoding exch def
+
+	% pop fontScript & direction
+	pop pop
+	
+	% create a new dictionary with length
+	% equal to original dictionary length + 2
+	% copy all the key/value pairs except FID
+	findfont dup length 2 add dict
+	
+	begin
+	
+		% copy all the values but the FID
+		% into the new dictionary
+		mark exch
+		{
+			1 index /FID ne { def } if cleartomark mark
+		}
+		forall
+		% discard last mark
+		pop
+		
+		% define FontName
+		/FontName exch def
+		
+		% if no re-encoding stream is present
+		% then if the use platform encoding flag is true
+		% install AI platform encoding
+		% else leave the base encoding in effect
+
+		counttomark 0 eq
+		{
+			1 _useNativeEncoding eq
+			{
+				/Encoding _nativeEncoding def
+			}
+			if
+			% clean up
+			cleartomark
+		}
+		{	
+			% custom encoding to be done
+			% start off with a copy of the font's standard encoding
+			/Encoding load 256 array copy 
+			modifyEncoding /Encoding exch def
+		}
+		ifelse		
+		FontName currentdict
+	end
+	
+	% register the new font
+	definefont pop
+}
+def
+
+% text painting operators
+/tr					% string tr ax ay string 
+{
+_ax _ay 3 2 roll
+} def
+/trj				% string trj cx cy fillchar ax ay string 
+{
+_cx _cy _sp _ax _ay 6 5 roll
+} def
+
+/a0
+{
+/Tx	% text							% textString Tx -
+	{
+	dup 
+	currentpoint 3 2 roll
+	tr _psf
+	newpath moveto
+	tr _ctm _pss
+	} ddef
+/Tj	% justified text				% textString Tj -
+	{
+	dup
+	currentpoint 3 2 roll
+	trj _pjsf
+	newpath moveto
+	trj _ctm _pjss
+	} ddef
+	
+} def
+/a1
+{
+/Tx	% text							% textString Tx -
+	{
+	dup currentpoint 4 2 roll gsave
+	dup currentpoint 3 2 roll
+	tr _psf
+	newpath moveto
+	tr _ctm _pss
+	grestore 3 1 roll moveto tr sp
+	} ddef
+/Tj	% justified text				% textString Tj -
+	{
+	dup currentpoint 4 2 roll gsave
+	dup currentpoint 3 2 roll
+	trj _pjsf
+	newpath moveto
+	trj _ctm _pjss
+	grestore 3 1 roll moveto tr sp
+	} ddef
+	
+} def
+
+/e0
+{
+/Tx	% text							% textString Tx -
+	{
+	tr _psf
+	} ddef
+/Tj	% justified text				% textString Tj -
+	{
+	trj _pjsf
+	} ddef
+} def
+
+/e1
+{
+/Tx	% text							% textString Tx -
+	{
+	dup currentpoint 4 2 roll gsave 
+	tr _psf  
+	grestore 3 1 roll moveto tr sp 
+	} ddef
+/Tj	% justified text				% textString Tj -
+	{
+	dup currentpoint 4 2 roll gsave 
+	trj _pjsf
+	grestore 3 1 roll moveto tr sp 
+	} ddef
+} def
+
+/i0
+{
+/Tx	% text							% textString Tx -
+	{
+	tr sp
+	} ddef
+/Tj	% justified text				% textString Tj -
+	{
+	trj jsp
+	} ddef
+} def
+
+/i1
+{
+W N
+} def
+
+/o0
+{
+/Tx	% text							% textString Tx -
+	{
+	tr sw rmoveto
+	} ddef
+/Tj	% justified text				% textString Tj -
+	{
+	trj swj rmoveto
+	} ddef
+} def
+
+/r0
+{
+/Tx	% text							% textString Tx -
+	{
+	tr _ctm _pss
+	} ddef
+/Tj	% justified text				% textString Tj -
+	{
+	trj _ctm _pjss
+	} ddef
+} def
+
+/r1
+{
+/Tx	% text							% textString Tx -
+	{
+	dup currentpoint 4 2 roll currentpoint gsave newpath moveto
+	tr _ctm _pss 
+	grestore 3 1 roll moveto tr sp 
+	} ddef
+/Tj	% justified text				% textString Tj -
+	{
+	dup currentpoint 4 2 roll currentpoint gsave newpath moveto
+	trj _ctm _pjss
+	grestore 3 1 roll moveto tr sp 
+	} ddef
+} def
+
+% font operators
+
+% Binding
+/To	% begin text 					% bindType To -
+{
+	pop _ctm currentmatrix pop
+} def
+
+/TO	% end text					% TO -
+{
+	Te _ctm setmatrix newpath
+} def
+
+% Text paths
+/Tp	% begin text path				% a b c d tx ty startPt Tp -
+{
+	pop _tm astore pop _ctm setmatrix 
+	_tDict begin /W {} def /h {} def
+} def
+
+/TP	% end text path					% TP -
+{
+	end
+	iTm 0 0 moveto
+} def
+
+% Render mode & matrix operators
+/Tr	% begin render					% render Tr - 
+{
+	_render 3 le {currentpoint newpath moveto} if
+	dup 8 eq {pop 0} {dup 9 eq {pop 1} if} ifelse
+	dup /_render exch ddef
+	_renderStart exch get load exec
+} def
+
+/iTm % internal set text matrix		% - iTm -	(uses _tm as implicit argument)
+{
+_ctm setmatrix _tm concat 0 _rise translate _hs 1 scale
+} def
+
+/Tm % set text matrix				% a b c d tx ty Tm -
+{
+_tm astore pop iTm 0 0 moveto
+} def
+
+/Td % translate text matrix 		% tx ty Td -
+{
+_mtx translate _tm _tm concatmatrix pop iTm 0 0 moveto
+} def
+
+/Te	% end render					% - Te -
+{
+	_render -1 eq {} {_renderEnd _render get dup null ne {load exec} {pop} ifelse} ifelse
+	/_render -1 ddef
+} def
+
+
+% Attributes
+/Ta	% set alignment					% alignment Ta -
+{
+pop
+} def
+
+/Tf	% set font name and size		% fontname size Tf -
+{
+dup 1000 div /_fScl exch ddef
+exch findfont exch scalefont setfont
+} def
+
+/Tl	% set leading					% leading paragraphLeading Tl -
+{
+pop
+0 exch _leading astore pop
+} def
+
+/Tt	% set user tracking				% userTracking Tt -
+{
+pop
+} def
+
+/TW % set word spacing				% minSpace optSpace maxSpace TW -
+{
+3 npop
+} def
+
+/Tw	% set computed word spacing		% wordSpace Tw
+{
+/_cx exch ddef
+} def
+
+/TC % set character spacing			% minSpace optSpace maxSpace TC -
+{
+3 npop
+} def
+
+/Tc	% set computed char spacing 	% charSpace Tc -
+{
+/_ax exch ddef
+} def
+
+/Ts % set super/subscripting (rise)	% rise Ts -
+{
+/_rise exch ddef
+currentpoint
+iTm
+moveto
+} def
+
+/Ti	% set indentation				% firstStartIndent otherStartIndent stopIndent Ti -
+{
+3 npop
+} def
+
+/Tz % set horizontal scaling		% scalePercent Tz -
+{
+100 div /_hs exch ddef
+iTm
+} def
+
+/TA % set pairwise kerning			% autoKern TA -
+									%	autoKern = 0 -> no pair kerning
+									%			 = 1 -> automatic pair kerning
+{
+pop
+} def
+
+/Tq % set hanging quotes			% hangingQuotes Tq -
+									%	hangingQuotes 	= 0 -> no hanging quotes
+									%			 		= 1 -> hanging quotes
+{
+pop
+} def
+
+
+% Text Bodies
+/TX {pop} def
+
+%/Tx	% non-justified text			% textString Tx -
+%/Tj	% justified text				% textString Tj -
+
+/Tk	% kern							% autoKern kernValue Tk -
+									%  	autoKern = 0 -> manual kern, = 1 -> auto kern
+									%	kernValue = kern value in em/1000 space
+{
+exch pop _fScl mul neg 0 rmoveto
+} def
+/TK	% non-printing kern				% autoKern kernValue TK -
+{
+2 npop
+} def
+
+/T* % carriage return & line feed	% - T* -
+{
+_leading aload pop neg Td
+} def
+
+/T*- % carriage return & negative line feed	% - T*- -
+{
+_leading aload pop Td
+} def
+
+/T-	% print a discretionary hyphen	% - T- -
+{
+_hyphen Tx
+} def
+
+/T+	% discretionary hyphen hyphen	% - T+ -
+{} def
+
+/TR	% reset pattern matrix 			% a b c d tx ty TR -
+{
+_ctm currentmatrix pop 	
+_tm astore pop 
+iTm 0 0 moveto 
+} def
+
+/TS	% special chars					% textString justified TS -
+{
+0 eq {Tx} {Tj} ifelse
+} def
+
+currentdict readonly pop end
+setpacking
+
+%%EndResource
+
+%%BeginResource: procset Adobe_pattern_AI3 1.0 0
+%%Title: (Adobe Illustrator (R) Version 3.0 Pattern Operators)
+%%Version: 1.0 
+%%CreationDate: (7/21/89) ()
+%%Copyright: ((C) 1987-1990 Adobe Systems Incorporated All Rights Reserved)
+
+currentpacking true setpacking
+userdict /Adobe_pattern_AI3 16 dict dup begin put
+/initialize			% - initialize -
+{
+/definepattern where
+	{
+	pop
+	}
+	{
+	Adobe_pattern_AI3 begin
+	Adobe_pattern_AI3
+		{
+		dup xcheck
+			{
+			bind
+			} if
+		pop pop
+		} forall
+	mark
+	cachestatus 7 1 roll pop pop pop pop exch pop exch
+		{
+		{
+		10000 add
+		dup 2 index gt
+			{
+			break
+			} if
+		dup setcachelimit
+		} loop
+		} stopped
+	cleartomark
+	} ifelse
+} def
+/terminate			% - terminate -
+{
+currentdict Adobe_pattern_AI3 eq
+	{
+	end
+	} if
+} def
+errordict
+/nocurrentpoint		% operator nocurrentpoint -
+{
+pop
+stop
+} put
+errordict
+/invalidaccess		% operator invalidaccess -
+{
+pop
+stop
+} put
+/patternencoding
+256 array def
+0 1 255
+{
+patternencoding exch ( ) 2 copy exch 0 exch put cvn put
+} for
+/definepattern		% width height matrix procarray key cache uniform definepattern font
+{
+17 dict begin
+/uniform exch def
+/cache exch def
+/key exch def
+/procarray exch def
+/mtx exch matrix invertmatrix def
+/height exch def
+/width exch def
+/ctm matrix currentmatrix def
+/ptm matrix def
+/str 32 string def
+/slice 9 dict def
+slice /s 1 put
+slice /q 256 procarray length div sqrt floor cvi put
+slice /b 0 put
+/FontBBox [0 0 0 0] def
+/FontMatrix mtx matrix copy def
+/Encoding patternencoding def
+/FontType 3 def
+/BuildChar		% dict char BuildChar -
+	{
+	exch
+	begin
+	slice begin
+	dup q dup mul mod s idiv /i exch def
+	dup q dup mul mod s mod /j exch def
+	q dup mul idiv procarray exch get
+	/xl j width s div mul def
+	/xg j 1 add width s div mul def
+	/yl i height s div mul def
+	/yg i 1 add height s div mul def
+	uniform
+		{
+		1 1
+		}
+		{
+		width 0 dtransform
+		dup mul exch dup mul add sqrt dup 1 add exch div
+		0 height dtransform
+		dup mul exch dup mul add sqrt dup 1 add exch div
+		} ifelse
+	width 0 cache
+		{
+		xl 4 index mul yl 4 index mul xg 6 index mul yg 6 index mul
+		setcachedevice
+		}
+		{
+		setcharwidth
+		} ifelse
+	gsave
+	scale
+	newpath
+	xl yl moveto
+	xg yl lineto
+	xg yg lineto
+	xl yg lineto
+	closepath
+	clip
+	newpath
+	end
+	end
+	exec
+	grestore
+	} def
+key currentdict definefont
+end
+} def
+/patterncachesize	% - patterncachesize bits
+{
+gsave
+newpath
+0 0 moveto
+width 0 lineto
+width height lineto
+0 height lineto
+closepath
+patternmatrix setmatrix
+pathbbox
+exch ceiling 4 -1 roll floor sub 3 1 roll
+ceiling exch floor sub
+mul 1 add
+grestore
+} def
+/patterncachelimit	% - patterncachelimit bits
+{
+cachestatus 7 1 roll 6 npop 8 mul
+} def
+/patternpath		% index font matrix patternpath -
+{
+exch dup begin setfont
+ctm setmatrix
+concat
+slice exch /b exch slice /q get dup mul mul put
+FontMatrix concat
+uniform
+	{
+	width 0 dtransform round width div exch round width div exch
+	0 height dtransform round height div exch height div exch
+	0 0 transform round exch round exch
+	ptm astore setmatrix
+	}
+	{
+	ptm currentmatrix pop
+	} ifelse
+{currentpoint} stopped not
+	{
+	2 npop
+	pathbbox
+	true
+	4 index 3 index eq
+	4 index 3 index eq
+	and
+		{
+		pop false
+			{
+			{2 npop}
+			{3 npop true}
+			{7 npop true}
+			{pop true}
+			pathforall
+			} stopped
+			{
+			5 npop true
+			} if
+		} if
+		{
+		height div ceiling height mul 4 1 roll
+		width div ceiling width mul 4 1 roll
+		height div floor height mul 4 1 roll
+		width div floor width mul 4 1 roll
+		2 index sub height div ceiling cvi exch
+		3 index sub width div ceiling cvi exch
+		4 2 roll moveto
+		FontMatrix mtx invertmatrix
+		dup dup 4 get exch 5 get rmoveto
+		ptm ptm concatmatrix pop
+		slice /s
+		patterncachesize patterncachelimit div ceiling sqrt ceiling cvi
+		dup slice /q get gt
+			{
+			pop slice /q get
+			} if
+		put
+		0 1 slice /s get dup mul 1 sub
+			{
+			slice /b get add
+			gsave
+			0 1 str length 1 sub
+				{
+				str exch 2 index put
+				} for
+			pop
+			dup
+				{
+				gsave
+				ptm setmatrix
+				1 index str length idiv {str show} repeat
+				1 index str length mod str exch 0 exch getinterval show
+				grestore
+				0 height rmoveto
+				} repeat
+			grestore
+			} for
+		2 npop
+		}
+		{
+		4 npop
+		} ifelse
+	} if
+end
+} def
+/patternclip		% - patternclip -
+{
+clip
+} def
+/patternstrokepath	% - patternstrokepath -
+{
+strokepath
+} def
+/patternmatrix		% - patternmatrix matrix
+matrix def
+/patternfill		% index font patternfill -
+					% index font matrix patternfill -
+{
+dup type /dicttype eq
+	{
+	Adobe_pattern_AI3 /patternmatrix get
+	} if
+gsave
+patternclip
+Adobe_pattern_AI3 /patternpath get exec
+grestore
+newpath
+} def
+/patternstroke		% index font patternstroke -
+					% index font matrix patternstroke -
+{
+dup type /dicttype eq
+	{
+	Adobe_pattern_AI3 /patternmatrix get
+	} if
+gsave
+patternstrokepath
+true
+	{
+		{
+			{
+			newpath 
+			moveto
+			}
+			{
+			lineto
+			}
+			{
+			curveto
+			}
+			{
+			closepath
+			3 copy
+			Adobe_pattern_AI3 /patternfill get exec
+			} pathforall
+		3 npop
+		} stopped
+			{
+			5 npop
+			patternclip
+			Adobe_pattern_AI3 /patternfill get exec
+			} if
+	}
+	{
+	patternclip
+	Adobe_pattern_AI3 /patternfill get exec
+	} ifelse
+grestore
+newpath
+} def
+/patternashow		% index font ax ay string patternashow -
+					% index font matrix ax ay string patternashow -
+{
+3 index type /dicttype eq
+	{
+	Adobe_pattern_AI3 /patternmatrix get 4 1 roll
+	} if
+	{
+	2 npop (0) exch
+	2 copy 0 exch put pop
+	gsave
+	false charpath currentpoint
+	6 index 6 index 6 index
+	Adobe_pattern_AI3 /patternfill get exec
+	grestore
+	newpath moveto
+	2 copy rmoveto
+	} exch cshow
+5 npop
+} def
+/patternawidthshow		% index font cx cy char ax ay string patternawidthshow -
+						% index font matrix cx cy char ax ay string patternawidthshow -
+{
+6 index type /dicttype eq
+	{
+	Adobe_pattern_AI3 /patternmatrix get 7 1 roll
+	} if
+	{
+	2 npop (0) exch
+	2 copy 0 exch put 
+	gsave
+	_sp eq {5 index 5 index rmoveto} if
+	false charpath currentpoint
+	9 index 9 index 9 index
+	Adobe_pattern_AI3 /patternfill get exec
+	grestore
+	newpath moveto
+	2 copy rmoveto
+	} exch cshow
+8 npop
+} def
+/patternashowstroke	% index font ax ay string matrix patternashowstroke
+					% index font matrix ax ay string matrix patternashowstroke
+{
+4 index type /dicttype eq
+	{
+	patternmatrix /patternmatrix get 5 1 roll
+	} if
+4 1 roll
+	{
+	2 npop (0) exch
+	2 copy 0 exch put pop
+	gsave
+	false charpath
+	currentpoint
+	4 index setmatrix
+	7 index 7 index 7 index
+	Adobe_pattern_AI3 /patternstroke get exec
+	grestore
+	newpath moveto
+	2 copy rmoveto
+	} exch cshow
+6 npop
+} def
+/patternawidthshowstroke	% index font cx cy char ax ay string matrix patternashowstroke
+					% index font matrix cx cy char ax ay string matrix patternashowstroke
+{
+7 index type /dicttype eq
+	{
+	patternmatrix /patternmatrix get 8 1 roll
+	} if
+7 1 roll
+	{
+	2 npop (0) exch
+	2 copy 0 exch put
+	gsave
+	_sp eq {5 index 5 index rmoveto} if
+	false charpath currentpoint
+	7 index setmatrix
+	10 index 10 index 10 index
+	Adobe_pattern_AI3 /patternstroke get exec
+	grestore
+	newpath moveto
+	2 copy rmoveto
+	} exch cshow
+9 npop
+} def
+currentdict readonly pop end
+setpacking
+
+%%EndResource
+%%BeginResource: procset Adobe_Illustrator_AI3 1.0 1
+%%Title: (Adobe Illustrator (R) Version 3.0 Full Prolog)
+%%Version: 1.0 
+%%CreationDate: (7/22/89) ()
+%%Copyright: ((C) 1987-1990 Adobe Systems Incorporated All Rights Reserved)
+
+currentpacking true setpacking
+userdict /Adobe_Illustrator_AI3 71 dict dup begin put
+% initialization
+/initialize				% - initialize -
+{
+% 56 vars, but leave slack of 10 entries for custom Postscript fragments
+userdict /Adobe_Illustrator_AI3_vars 66 dict dup begin put
+
+% paint operands
+/_lp /none def
+/_pf {} def		% paint fill
+/_ps {} def		% paint stroke
+/_psf {} def	% paint string fill
+/_pss {} def	% paint string stroke
+/_pjsf {} def	% paint justified string fill
+/_pjss {} def	% paint justified string stroke
+/_pola 0 def
+/_doClip 0 def
+
+% paint operators
+/cf	currentflat def	% - cf flatness
+
+% typography operands
+/_tm matrix def
+/_renderStart [/e0 /r0 /a0 /o0 /e1 /r1 /a1 /i0] def 
+/_renderEnd [null null null null /i1 /i1 /i1 /i1] def
+/_render -1 def
+/_rise 0 def
+/_ax 0 def			% x character spacing	(_ax, _ay, _cx, _cy follows awidthshow naming convention)
+/_ay 0 def			% y character spacing
+/_cx 0 def			% x word spacing
+/_cy 0 def			% y word spacing
+/_leading [0 0] def
+/_ctm matrix def
+/_mtx matrix def
+/_sp 16#020 def
+/_hyphen (-) def
+/_fScl 0 def
+/_cnt 0 def
+/_hs 1 def
+/_nativeEncoding 0 def
+/_useNativeEncoding 0 def
+/_tempEncode 0 def
+/_pntr 0 def
+/_tDict 2 dict def
+
+% typography operators
+/Tx {} def
+/Tj {} def
+
+% compound path operators
+/CRender {} def
+
+% printing
+/_AI3_savepage {} def
+
+% color operands
+/_gf null def
+/_cf 4 array def
+/_if null def
+/_of false def
+/_fc {} def
+/_gs null def
+/_cs 4 array def
+/_is null def
+/_os false def
+/_sc {} def
+
+% pattern operands
+/_pd 1 dict def
+/_ed 15 dict def
+/_pm matrix def
+/_fm null def
+/_fd null def
+/_fdd null def
+/_sm null def
+/_sd null def
+/_sdd null def
+/_i null def
+Adobe_Illustrator_AI3 begin
+Adobe_Illustrator_AI3 dup /nc get begin
+	{
+	dup xcheck
+		{
+		bind
+		} if
+	pop pop
+	} forall
+end
+end
+end
+Adobe_Illustrator_AI3 begin
+Adobe_Illustrator_AI3_vars begin
+newpath
+} def
+/terminate				% - terminate -
+{
+end
+end
+} def
+
+% definition operators
+/_					% - _ null
+null def
+/ddef				% key value ddef -
+{
+Adobe_Illustrator_AI3_vars 3 1 roll put
+} def
+/xput				% key value literal xput -
+{
+dup load dup length exch maxlength eq
+	{
+	dup dup load dup
+	length 2 mul dict copy def
+	} if
+load begin def end
+} def
+/npop				% integer npop -
+{
+	{
+	pop
+	} repeat
+} def
+
+% marking operators
+/sw					% ax ay string sw x y
+{
+dup length exch stringwidth
+exch 5 -1 roll 3 index 1 sub mul add
+4 1 roll 3 1 roll 1 sub mul add
+} def
+/swj				% cx cy fillchar ax ay string swj x y
+{
+dup 4 1 roll
+dup length exch stringwidth 
+exch 5 -1 roll 3 index 1 sub mul add
+4 1 roll 3 1 roll 1 sub mul add 
+6 2 roll /_cnt 0 ddef
+{1 index eq {/_cnt _cnt 1 add ddef} if} forall pop
+exch _cnt mul exch _cnt mul 2 index add 4 1 roll 2 index add 4 1 roll pop pop
+} def
+/ss					% ax ay string matrix ss -
+{
+4 1 roll
+	{				% matrix ax ay char 0 0 {proc} -
+	2 npop 
+	(0) exch 2 copy 0 exch put pop
+	gsave
+	false charpath currentpoint
+	4 index setmatrix
+	stroke
+	grestore
+	moveto
+	2 copy rmoveto
+	} exch cshow
+3 npop
+} def
+/jss				% cx cy fillchar ax ay string matrix jss -
+{
+4 1 roll
+	{				% cx cy fillchar matrix ax ay char 0 0 {proc} -   
+	2 npop 
+	(0) exch 2 copy 0 exch put 
+	gsave
+	_sp eq 
+		{
+		exch 6 index 6 index 6 index 5 -1 roll widthshow  
+		currentpoint
+		}
+		{
+		false charpath currentpoint
+		4 index setmatrix stroke
+		}ifelse
+	grestore
+	moveto
+	2 copy rmoveto
+	} exch cshow
+6 npop
+} def
+
+% path operators
+/sp					% ax ay string sp -
+{
+	{
+	2 npop (0) exch
+	2 copy 0 exch put pop
+	false charpath
+	2 copy rmoveto
+	} exch cshow
+2 npop
+} def
+/jsp					% cx cy fillchar ax ay string jsp -
+{
+	{					% cx cy fillchar ax ay char 0 0 {proc} -
+	2 npop 
+	(0) exch 2 copy 0 exch put 
+	_sp eq 
+		{
+		exch 5 index 5 index 5 index 5 -1 roll widthshow  
+		}
+		{
+		false charpath
+		}ifelse
+	2 copy rmoveto
+	} exch cshow
+5 npop
+} def
+
+% path construction operators
+/pl					% x y pl x y
+{
+transform
+0.25 sub round 0.25 add exch
+0.25 sub round 0.25 add exch
+itransform
+} def
+/setstrokeadjust where
+	{
+	pop true setstrokeadjust
+	/c				% x1 y1 x2 y2 x3 y3 c -
+	{
+	curveto
+	} def
+	/C
+	/c load def
+	/v				% x2 y2 x3 y3 v -
+	{
+	currentpoint 6 2 roll curveto
+	} def
+	/V
+	/v load def
+	/y				% x1 y1 x2 y2 y -
+	{
+	2 copy curveto
+	} def
+	/Y
+	/y load def
+	/l				% x y l -
+	{
+	lineto
+	} def
+	/L
+	/l load def
+	/m				% x y m -
+	{
+	moveto
+	} def
+	}
+	{
+	/c
+	{
+	pl curveto
+	} def
+	/C
+	/c load def
+	/v
+	{
+	currentpoint 6 2 roll pl curveto
+	} def
+	/V
+	/v load def
+	/y
+	{
+	pl 2 copy curveto
+	} def
+	/Y
+	/y load def
+	/l
+	{
+	pl lineto
+	} def
+	/L
+	/l load def
+	/m
+	{
+	pl moveto
+	} def
+	} ifelse
+
+% graphic state operators
+/d					% array phase d -
+{
+setdash
+} def
+/cf	{} def			% - cf flatness
+/i					% flatness i -
+{
+dup 0 eq
+	{
+	pop cf
+	} if
+setflat
+} def
+/j					% linejoin j -
+{
+setlinejoin
+} def
+/J					% linecap J -
+{
+setlinecap
+} def
+/M					% miterlimit M -
+{
+setmiterlimit
+} def
+/w					% linewidth w -
+{
+setlinewidth
+} def
+
+% path painting operators
+/H					% - H -
+{} def
+/h					% - h -
+{
+closepath
+} def
+/N					% - N -
+{
+_pola 0 eq 
+	{
+	_doClip 1 eq {clip /_doClip 0 ddef} if 
+	newpath
+	} 
+	{
+	/CRender {N} ddef
+	}ifelse
+} def
+/n					% - n -
+{N} def
+/F					% - F -
+{
+_pola 0 eq 
+	{
+	_doClip 1 eq 
+		{
+		gsave _pf grestore clip newpath /_lp /none ddef _fc 
+		/_doClip 0 ddef
+		}
+		{
+		_pf
+		}ifelse
+	} 
+	{
+	/CRender {F} ddef
+	}ifelse
+} def
+/f					% - f -
+{
+closepath
+F
+} def
+/S					% - S -
+{
+_pola 0 eq 
+	{
+	_doClip 1 eq 
+		{
+		gsave _ps grestore clip newpath /_lp /none ddef _sc 
+		/_doClip 0 ddef
+		}
+		{
+		_ps
+		}ifelse
+	} 
+	{
+	/CRender {S} ddef
+	}ifelse
+} def
+/s					% - s -
+{
+closepath
+S
+} def
+/B					% - B -
+{
+_pola 0 eq 
+	{
+	_doClip 1 eq 	% F clears _doClip
+	gsave F grestore 
+		{
+		gsave S grestore clip newpath /_lp /none ddef _sc
+		/_doClip 0 ddef
+		} 
+		{
+		S
+		}ifelse
+	}
+	{
+	/CRender {B} ddef
+	}ifelse
+} def
+/b					% - b -
+{
+closepath
+B
+} def
+/W					% - W -
+{
+/_doClip 1 ddef
+} def
+/*					% - [string] * -
+{
+count 0 ne 
+	{
+	dup type (stringtype) eq {pop} if
+	} if 
+_pola 0 eq {newpath} if
+} def
+
+% group operators
+/u					% - u -
+{} def
+/U					% - U -
+{} def
+/q					% - q -
+{
+_pola 0 eq {gsave} if
+} def
+/Q					% - Q -
+{
+_pola 0 eq {grestore} if
+} def
+/*u					% - *u -
+{
+_pola 1 add /_pola exch ddef
+} def
+/*U					% - *U -
+{
+_pola 1 sub /_pola exch ddef 
+_pola 0 eq {CRender} if
+} def
+/D					% polarized D -
+{pop} def
+/*w					% - *w -
+{} def
+/*W					% - *W -
+{} def
+
+% place operators
+/`					% matrix llx lly urx ury string ` -
+{
+/_i save ddef
+6 1 roll 4 npop
+concat
+userdict begin
+/showpage {} def
+false setoverprint
+pop
+} def
+/~					% - ~ -
+{
+end
+_i restore
+} def
+
+% pattern operators
+/@					% - @ -
+{} def
+/&					% - & -
+{} def
+
+% color operators
+/O					% flag O -
+{
+0 ne
+/_of exch ddef
+/_lp /none ddef
+} def
+/R					% flag R -
+{
+0 ne
+/_os exch ddef
+/_lp /none ddef
+} def
+/g					% gray g -
+{
+/_gf exch ddef
+/_fc
+{
+_lp /fill ne
+	{
+	_of setoverprint
+	_gf setgray
+	/_lp /fill ddef
+	} if
+} ddef
+/_pf
+{
+_fc
+fill
+} ddef
+/_psf
+{
+_fc
+ashow
+} ddef
+/_pjsf
+{
+_fc
+awidthshow
+} ddef
+/_lp /none ddef
+} def
+/G					% gray G -
+{
+/_gs exch ddef
+/_sc
+{
+_lp /stroke ne
+	{
+	_os setoverprint
+	_gs setgray
+	/_lp /stroke ddef
+	} if
+} ddef
+/_ps
+{
+_sc
+stroke
+} ddef
+/_pss
+{
+_sc
+ss
+} ddef
+/_pjss
+{
+_sc
+jss
+} ddef
+/_lp /none ddef
+} def
+/k					% cyan magenta yellow black k -
+{
+_cf astore pop
+/_fc
+{
+_lp /fill ne
+	{
+	_of setoverprint
+	_cf aload pop setcmykcolor
+	/_lp /fill ddef
+	} if
+} ddef
+/_pf
+{
+_fc
+fill
+} ddef
+/_psf
+{
+_fc
+ashow
+} ddef
+/_pjsf
+{
+_fc
+awidthshow
+} ddef
+/_lp /none ddef
+} def
+/K					% cyan magenta yellow black K -
+{
+_cs astore pop
+/_sc
+{
+_lp /stroke ne
+	{
+	_os setoverprint
+	_cs aload pop setcmykcolor
+	/_lp /stroke ddef
+	} if
+} ddef
+/_ps
+{
+_sc
+stroke
+} ddef
+/_pss
+{
+_sc
+ss
+} ddef
+/_pjss
+{
+_sc
+jss
+} ddef
+/_lp /none ddef
+} def
+/x					% cyan magenta yellow black name gray x -
+{
+/_gf exch ddef
+findcmykcustomcolor
+/_if exch ddef
+/_fc
+{
+_lp /fill ne
+	{
+	_of setoverprint
+	_if _gf 1 exch sub setcustomcolor
+	/_lp /fill ddef
+	} if
+} ddef
+/_pf
+{
+_fc
+fill
+} ddef
+/_psf
+{
+_fc
+ashow
+} ddef
+/_pjsf
+{
+_fc
+awidthshow
+} ddef
+/_lp /none ddef
+} def
+/X					% cyan magenta yellow black name gray X -
+{
+/_gs exch ddef
+findcmykcustomcolor
+/_is exch ddef
+/_sc
+{
+_lp /stroke ne
+	{
+	_os setoverprint
+	_is _gs 1 exch sub setcustomcolor
+	/_lp /stroke ddef
+	} if
+} ddef
+/_ps
+{
+_sc
+stroke
+} ddef
+/_pss
+{
+_sc
+ss
+} ddef
+/_pjss
+{
+_sc
+jss
+} ddef
+/_lp /none ddef
+} def
+% pattern operators
+/dp					% width height matrix proc key cache uniform dp [index key]
+					% null dp -
+{
+dup null eq
+{
+pop
+_dp 0 ne
+	{
+	0 1 _dp 1 sub _dl mod
+		{
+		_da exch get 3 get
+		} for
+	_dp 1 sub _dl mod 1 add packedarray
+	_da 0 get aload pop 8 -1 roll 5 -1 roll pop 4 1 roll
+	definepattern pop
+	} if
+}
+{
+_dp 0 ne _dp _dl mod 0 eq and
+	{
+	null dp
+	} if
+7 packedarray _da exch _dp _dl mod exch put
+_dp _dl mod _da 0 get 4 get 2 packedarray
+/_dp _dp 1 add def
+} ifelse
+} def
+/E					% name llx lly urx ury desc E -
+{
+_ed begin
+dup 0 get type /arraytype ne
+	{
+	0
+		{
+		dup 1 add index type /arraytype eq
+			{
+			1 add
+			}
+			{
+			exit
+			} ifelse
+		} loop
+	array astore
+	} if
+/_dd exch def
+/_ury exch def
+/_urx exch def
+/_lly exch def
+/_llx exch def
+/_n exch def
+/_y 0 def
+/_dl 4 def
+/_dp 0 def
+/_da _dl array def
+0 1 _dd length 1 sub
+	{
+	/_d exch _dd exch get def
+	0 2 _d length 2 sub
+		{
+		/_x exch def
+		/_c _d _x get _ ne def
+		/_r _d _x 1 add get cvlit def
+		_r _ ne
+			{
+			_urx _llx sub _ury _lly sub [1 0 0 1 0 0] 
+				[
+				/save cvx
+				_llx neg _lly neg /translate cvx
+				_c
+					{
+					nc /begin cvx
+					} if
+				_r dup type /stringtype eq
+					{
+					cvx
+					}
+					{
+					{exec} /forall cvx
+					} ifelse
+				_c
+					{
+					/end cvx
+					} if
+				/restore cvx
+				] cvx
+			/_fn 12 _n length add string def
+			_y _fn cvs pop
+			/_y _y 1 add def
+			_fn 12 _n putinterval
+			_fn _c false dp
+			_d exch _x 1 add exch put
+			} if
+		} for
+	} for
+null dp
+_n _dd /_pd
+end xput
+} def
+/fc
+{
+_fm dup concatmatrix pop
+} def
+/p					% name px py sx sy a rf r k ka matrix p -
+{
+/_fm exch ddef
+9 -2 roll _pm translate fc
+7 -2 roll _pm scale fc
+5 -1 roll _pm rotate fc
+4 -2 roll exch 0 ne
+	{
+	dup _pm rotate fc
+	1 -1 _pm scale fc
+	neg _pm rotate fc
+	}
+	{
+	pop
+	} ifelse
+dup _pm rotate fc
+exch dup sin exch cos div 1 0 0 1 0 6 2 roll
+_pm astore fc
+neg _pm rotate fc
+_pd exch get /_fdd exch ddef
+/_pf
+{
+save
+/_doClip 0 ddef
+0 1 _fdd length 1 sub
+	{
+	/_fd exch _fdd exch get ddef
+	_fd
+	0 2 _fd length 2 sub
+		{
+		gsave
+		2 copy get dup _ ne
+			{
+			cvx exec _fc
+			}
+			{
+			pop
+			} ifelse
+		2 copy 1 add get dup _ ne
+			{
+			aload pop findfont _fm
+			patternfill
+			}
+			{
+			pop
+			fill
+			} ifelse
+		grestore
+		pop
+		} for
+	pop
+	} for
+restore
+newpath
+} ddef
+/_psf		% ax ay string _psf -
+{
+save
+/_doClip 0 ddef
+0 1 _fdd length 1 sub
+	{
+	/_fd exch _fdd exch get ddef
+	_fd
+	0 2 _fd length 2 sub
+		{
+		gsave
+		2 copy get dup _ ne
+			{
+			cvx exec _fc
+			}
+			{
+			pop
+			} ifelse
+		2 copy 1 add get dup _ ne
+			{
+			aload pop findfont _fm
+			9 copy 6 npop patternashow
+			}
+			{
+			pop
+			6 copy 3 npop ashow
+			} ifelse
+		grestore
+		pop
+		} for
+	pop
+	} for
+restore
+%3 npop newpath
+sw rmoveto
+} ddef
+/_pjsf		% cx cy char ax ay string _pjsf
+{
+save
+/_doClip 0 ddef
+0 1 _fdd length 1 sub
+	{
+	/_fd exch _fdd exch get ddef
+	_fd
+	0 2 _fd length 2 sub
+		{
+		gsave
+		2 copy get dup _ ne
+			{
+			cvx exec _fc
+			}
+			{
+			pop
+			} ifelse
+		2 copy 1 add get dup _ ne
+			{
+			aload pop findfont _fm
+			12 copy 6 npop patternawidthshow
+			}
+			{
+			pop 9 copy 3 npop awidthshow
+			} ifelse
+		grestore
+		pop
+		} for
+	pop
+	} for
+restore
+swj rmoveto
+} ddef
+/_lp /none ddef
+} def
+/sc
+{
+_sm dup concatmatrix pop
+} def
+/P					% name px py sx sy a rf r k ka matrix P -
+{
+/_sm exch ddef
+9 -2 roll _pm translate sc
+7 -2 roll _pm scale sc
+5 -1 roll _pm rotate sc
+4 -2 roll exch 0 ne
+	{
+	dup _pm rotate sc
+	1 -1 _pm scale sc
+	neg _pm rotate sc
+	}
+	{
+	pop
+	} ifelse
+dup _pm rotate sc
+exch dup sin exch cos div 1 0 0 1 0 6 2 roll
+_pm astore sc
+neg _pm rotate sc
+_pd exch get /_sdd exch ddef
+/_ps
+{
+save
+/_doClip 0 ddef
+0 1 _sdd length 1 sub
+	{
+	/_sd exch _sdd exch get ddef
+	_sd
+	0 2 _sd length 2 sub
+		{
+		gsave
+		2 copy get dup _ ne
+			{
+			cvx exec _sc
+			}
+			{
+			pop
+			} ifelse
+		2 copy 1 add get dup _ ne
+			{
+			aload pop findfont _sm
+			patternstroke
+			}
+			{
+			pop stroke
+			} ifelse
+		grestore
+		pop
+		} for
+	pop
+	} for
+restore
+newpath
+} ddef
+/_pss
+{
+save
+/_doClip 0 ddef
+0 1 _sdd length 1 sub
+	{
+	/_sd exch _sdd exch get ddef
+	_sd
+	0 2 _sd length 2 sub
+		{
+		gsave
+		2 copy get dup _ ne
+			{
+			cvx exec _sc
+			}
+			{
+			pop
+			} ifelse
+		2 copy 1 add get dup _ ne
+			{
+			aload pop findfont _sm
+			10 copy 6 npop patternashowstroke
+			}
+			{
+			pop 7 copy 3 npop ss
+			} ifelse
+		grestore
+		pop
+		} for
+	pop
+	} for
+restore
+pop sw rmoveto
+} ddef
+/_pjss
+{
+save
+/_doClip 0 ddef
+0 1 _sdd length 1 sub
+	{
+	/_sd exch _sdd exch get ddef
+	_sd
+	0 2 _sd length 2 sub
+		{
+		gsave
+		2 copy get dup _ ne
+			{
+			cvx exec _sc
+			}
+			{
+			pop
+			} ifelse
+		2 copy 1 add get dup _ ne
+			{
+			aload pop findfont _sm
+			13 copy 6 npop patternawidthshowstroke
+			}
+			{
+			pop 10 copy 3 npop jss
+			} ifelse
+		grestore
+		pop
+		} for
+	pop
+	} for
+restore
+pop swj rmoveto
+} ddef
+/_lp /none ddef
+} def
+
+% locked object operator
+/A					% value A -
+{
+pop
+} def
+
+% null color operators
+/nc 3 dict def
+nc begin
+/setgray			% gray setgray -
+{
+pop
+} bind def
+/setcmykcolor		% cyan magenta yellow black setcmykcolor -
+{
+4 npop
+} bind def
+/setcustomcolor		% object tint setcustomcolor -
+{
+2 npop
+} bind def
+currentdict readonly pop end
+currentdict readonly pop end
+setpacking
+
+% annotate page operator
+/annotatepage
+{
+} def
+
+%%EndResource
+%AI3-Grid.0 18 18 3 0 0 0 3
+%%EndProlog
+%%BeginSetup
+%%IncludeFont: Helvetica
+Adobe_cmykcolor /initialize get exec
+
+Adobe_cshow /initialize get exec
+
+Adobe_customcolor /initialize get exec
+
+Adobe_typography_AI3 /initialize get exec
+
+
+Adobe_pattern_AI3 /initialize get exec
+
+Adobe_Illustrator_AI3 /initialize get exec
+
+[
+129/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/Ccedilla
+/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex
+/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis
+/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn/mu/multiply
+/divide/copyright 176/registered 181/brokenbar 190/logicalnot 
+192/onesuperior 201/twosuperior 204/threesuperior 209/plusminus
+/onequarter/onehalf/threequarters/agrave/aacute/acircumflex
+/atilde/adieresis/aring/ccedilla/egrave/eacute/ecircumflex
+/edieresis/igrave 226/iacute 228/icircumflex/idieresis/eth/ntilde 
+236/ograve/oacute/ocircumflex/otilde/odieresis 242/ugrave/uacute
+/ucircumflex 246/udieresis/yacute 252/thorn/ydieresis
+TE
+%AI3_BeginEncoding: _Helvetica Helvetica
+[/_Helvetica/Helvetica 0 0 1 TZ
+%AI3_EndEncoding
+%AI3_BeginPattern: (Alpha)
+(Alpha) 431.75 634.875 447.75 648.125 [
+%AI3_Tile
+(0 O 0 R 0 g 0 G) @
+(
+0 To
+1 0 0 1 447.75 648.125 0 Tp
+TP
+-2.8395 0 Td
+0 Tr
+0 i 0 J 0 j 1 w 4 M []0 d
+%AI3_Note:
+0 D
+/_Symbol 9 Tf
+0 Ts
+100 Tz
+0 Tt
+0 TA
+0 0 5 TC
+100 100 200 TW
+0 0 0 Ti
+1 Ta
+0 Tq
+12 0 Tl
+0 Tc
+0 Tw
+(a) Tx 
+(\r) TX 
+TO
+0 To
+1 0 0 1 439.75 648.125 0 Tp
+TP
+-2.8395 0 Td
+0 Tr
+(a) Tx 
+(\r) TX 
+TO
+0 To
+1 0 0 1 431.75 648.125 0 Tp
+TP
+-2.8395 0 Td
+0 Tr
+(a) Tx 
+(\r) TX 
+TO
+0 To
+1 0 0 1 439.75 634.875 0 Tp
+TP
+-2.8395 0 Td
+0 Tr
+(a) Tx 
+(\r) TX 
+TO
+0 To
+1 0 0 1 431.75 634.875 0 Tp
+TP
+-2.8395 0 Td
+0 Tr
+(a) Tx 
+(\r) TX 
+TO
+0 To
+1 0 0 1 443.75 641.5 0 Tp
+TP
+-2.8395 0 Td
+0 Tr
+(a) Tx 
+(\r) TX 
+TO
+0 To
+1 0 0 1 435.75 641.5 0 Tp
+TP
+-2.8395 0 Td
+0 Tr
+(a) Tx 
+(\r) TX 
+TO
+0 To
+1 0 0 1 447.75 634.875 0 Tp
+TP
+-2.8395 0 Td
+0 Tr
+(a) Tx 
+(\r) TX 
+TO
+) &
+] E
+%AI3_EndPattern
+%%EndSetup
+0 A
+[0.65 0 0 0.65 396.9513 660.0007] 0 0 217 120
+(/Net/vermont/lyndon/donoughe/Art/TechDoc/UIGuide/01_VisualGuide/Browser/SelectionListLabeled.eps)`
+%%BeginDocument: /Net/vermont/lyndon/donoughe/Art/TechDoc/UIGuide/01_VisualGuide/Browser/SelectionListLabeled.eps
+%!PS-Adobe-2.0 EPSF-2.0
+%%Title: Browser.ai    __    /Net/vermont/lyndon/donoughe/Art/TechDoc/UIGuide/01_VisualGuide
+%%Creator: Adobe_Illustrator
+%%CreationDate: Thu Nov  7 11:42:04 1991
+%%For: donoughe
+%%DocumentFonts: (atend)
+%%Pages: 0 -1
+%%BoundingBox: 0 0 217 120
+%%EndComments
+
+%%BeginDocument: /usr/lib/NextStep/printPackage.ps
+%!PS-Adobe-2.0
+%%Title: Printing Package
+%%EndComments
+%Version: 2.0
+%Copyright: 1988, NeXT, Inc.
+
+/__NXdef{1 index where{pop pop pop}{def}ifelse}bind def
+/__NXbdef{1 index where{pop pop pop}{bind def}ifelse}bind def
+/UserObjects 10 array __NXdef
+/defineuserobject{
+	exch dup 1 add dup UserObjects length gt{
+		array dup 0 UserObjects putinterval
+		/UserObjects exch def
+	}{pop}ifelse UserObjects exch 3 -1 roll put
+}__NXbdef
+/undefineuserobject{UserObjects exch null put}__NXbdef
+/execuserobject{UserObjects exch get exec}__NXbdef
+/__NXRectPath{4 2 roll moveto 1 index 0 rlineto
+0 exch rlineto neg 0 rlineto closepath}__NXbdef
+/__NXProcessRectArgs{
+	1 index type /arraytype eq{
+		exch 0 4 2 index length 1 sub{
+			dup 3 add 1 exch{1 index exch get exch}for
+			5 1 roll 5 index exec
+		}for pop pop
+	}{exec}ifelse
+}__NXbdef
+/rectfill{gsave newpath {__NXRectPath fill} __NXProcessRectArgs grestore}__NXbdef
+/rectclip{newpath {__NXRectPath} __NXProcessRectArgs clip newpath}__NXbdef
+/rectstroke{
+	gsave newpath dup type /arraytype eq{dup length 6 eq}{false}ifelse{
+		{gsave __NXRectPath null concat stroke grestore}
+		dup length array cvx copy dup 2 4 -1 roll put __NXProcessRectArgs
+	}{{__NXRectPath stroke} __NXProcessRectArgs}ifelse grestore
+}__NXbdef
+/xyshow{
+	0 1 3 index length 1 sub{
+		currentpoint 4 index 3 index 1 getinterval show
+		3 index 3 index 2 mul 1 add get add exch
+		3 index	3 index 2 mul get add exch moveto pop
+	}for pop pop
+}__NXbdef
+/xshow{
+	0 1 3 index length 1 sub{
+		currentpoint 4 index 3 index 1 getinterval show
+		exch 3 index 3 index get add exch moveto pop
+	}for pop pop
+}__NXbdef
+/yshow{
+	0 1 3 index length 1 sub{
+		currentpoint 4 index 3 index 1 getinterval show
+		3 index 3 index get add moveto pop
+	}for pop pop
+}__NXbdef
+/arct{arcto pop pop pop pop}__NXbdef
+/setbbox{pop pop pop pop}__NXbdef
+/ucache{}__NXbdef
+/ucachestatus{mark 0 0 0 0 0}__NXbdef
+/setucacheparams{cleartomark}__NXbdef
+/uappend{systemdict begin cvx exec end}__NXbdef
+/ueofill{gsave newpath uappend eofill grestore}__NXbdef
+/ufill{gsave newpath uappend fill grestore}__NXbdef
+/ustroke{
+	gsave newpath dup length 6 eq
+	{exch uappend concat}{uappend}ifelse
+	stroke grestore
+}__NXbdef
+/__NXustrokepathMatrix dup where {pop pop}{matrix def}ifelse
+/ustrokepath{
+	newpath dup length 6 eq{
+		exch uappend __NXustrokepathMatrix currentmatrix exch concat
+		strokepath setmatrix
+	}{uappend strokepath}ifelse
+} __NXbdef
+/upath{
+	[exch {/ucache cvx}if pathbbox /setbbox cvx
+	 {/moveto cvx}{/lineto cvx}{/curveto cvx}{/closepath cvx}pathforall]cvx
+} __NXbdef
+/setstrokeadjust{pop}__NXbdef
+/currentstrokeadjust{false}__NXbdef
+/selectfont{exch findfont exch
+dup type /arraytype eq {makefont}{scalefont}ifelse setfont}__NXbdef
+/_NXCombineArrays{
+	counttomark dup 2 add index dup length 3 -1 roll {
+		2 index length sub dup 4 1 roll 1 index exch 4 -1 roll putinterval exch
+	}repeat pop pop pop
+}__NXbdef
+/setcmykcolor{
+	1.0 exch sub dup dup 6 -1 roll
+	sub dup 0 lt{pop 0}if 5 1 roll
+	4 -1 roll sub dup 0 lt{pop 0}if 3 1 roll
+	exch sub dup 0 lt{pop 0}if setrgbcolor
+}__NXbdef
+/currentcmykcolor{currentrgbcolor 3{1.0 exch sub 3 1 roll}repeat 0}__NXbdef
+/flushgraphics{}def
+/setwindowtype{pop pop}def
+/currentwindowtype{pop 0}def
+/setalpha{pop}def
+/currentalpha{1.0}def
+/hidecursor{}def
+/obscurecursor{}def
+/revealcursor{}def
+/setcursor{4 {pop}repeat}bind def
+/showcursor{}def
+/NextStepEncoding where not{
+/NextStepEncoding StandardEncoding 256 array copy def
+0 [129/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/Ccedilla/Egrave
+/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex/Idieresis
+/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/Ugrave/Uacute
+/Ucircumflex/Udieresis/Yacute/Thorn/mu/multiply/divide/copyright
+176/registered 181/brokenbar 190/logicalnot 192/onesuperior 201/twosuperior
+204/threesuperior 209/plusminus/onequarter/onehalf/threequarters/agrave
+/aacute/acircumflex/atilde/adieresis/aring/ccedilla/egrave/eacute
+/ecircumflex/edieresis/igrave 226/iacute 228/icircumflex/idieresis/eth
+/ntilde 236/ograve/oacute/ocircumflex/otilde/odieresis 242/ugrave/uacute
+/ucircumflex 246/udieresis/yacute 252/thorn/ydieresis]
+{dup type /nametype eq
+ {NextStepEncoding 2 index 2 index put pop 1 add}{exch pop}ifelse
+}forall pop
+/NextStepEncoding NextStepEncoding readonly def   
+/_NXfstr 128 string dup 0 (_NX) putinterval def   
+/findfont{
+ % Because we can never let NextStepEncoding get into
+ % SharedFontDirectory, we cannot reencode a font to NextStepEncoding
+ % if we are in shared mode.  So if currentshared is true,
+ % we call the normal findfont and return that
+ /currentshared where {pop currentshared} {false} ifelse
+ {//findfont exec}
+ {dup _NXfstr 3 125 getinterval cvs length 3 add _NXfstr 0 3 -1 roll
+  getinterval cvn exch FontDirectory 2 index known 
+  {pop FontDirectory exch get}
+  {//findfont exec dup /Encoding get StandardEncoding eq
+   {	dup length dict exch
+	{1 index /FID ne {2 index 3 1 roll put}{pop pop}ifelse}forall
+	 dup /Encoding NextStepEncoding put definefont
+	}{exch pop} ifelse
+   }ifelse
+ }ifelse
+}bind def
+}{pop}ifelse
+/_NXProcArray 5 array __NXdef
+/_NXChannels 0 __NXdef
+/_NXTotalBytes 0 __NXdef
+/_NXDoImageOp{
+	1 index{dup}{1}ifelse /_NXChannels exch store
+	_NXChannels 2 add 2 roll _NXProcArray 0 _NXChannels getinterval astore pop
+	5 index 4 index mul 2 index{1 sub 8 idiv 1 add mul}{mul 1 sub 8 idiv 1 add}ifelse
+	4 index mul /_NXTotalBytes exch store pop exch pop
+	gsave matrix invertmatrix concat 0.5 setgray 0 0 4 2 roll rectfill grestore
+	{	0 1 _NXChannels 1 sub{
+			_NXProcArray exch get exec
+			length _NXTotalBytes exch sub /_NXTotalBytes exch store}for
+		_NXTotalBytes 0 le{exit}if
+	}loop /_NXProcArray 5 array def
+}__NXbdef
+/colorimage{_NXDoImageOp}__NXbdef
+/alphaimage{1 add _NXDoImageOp}def
+%%EndDocument
+
+gsave
+317 -930 translate
+ /__NXbasematrix matrix currentmatrix def
+grestore
+%%EndProlog
+%%BeginSetup
+%%EndSetup
+0 0 217 120 rectclip
+0 0 217 120 rectclip
+gsave
+<ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc0eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac0eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac0eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac0eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac0eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac0eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac0eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa802aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac0eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa2a8aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac0eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa8aaaa2a2a02a82a82aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac0eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa8aaaa2a28a8a28a28aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac0eaa9555555555555555555555555555555555555555aa8a80a2a28a8a2aa2aaaa5555555555555555555555555555555555555555aaac0eaa9fffffffffffffffffffffffffffffffffffffffaa8aa8a2a2800a82a82aaaffffffffffffffffffffffffffffffffffffffffaaac0eaa9eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa8aa8a2a28aaaa8aa8aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa7aaac0eaa9eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa2a8a2828a8a28a28aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa7aaac0eaa9eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa802a822a02a82a82aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa7aaac0eaa9eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa7aaac0eaa9eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa7aaac0eaa9eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa7aaac0eaa9eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa7aaac0eaa9eaa5555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555eaa7aaac0eaa9eaa4000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000002eaa7aaac0eaa9eaa4aaaaaaaaa3ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffeeaa7aaac0eaa9eaa4bfffffff23ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffeeaa7aaac0eaa9eaa4baaaaaa923ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffeeaa7aaac0eaa9eaa4baaaaaa923ffffffcfff3fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffeeaa7aaac0eaa9eaa4baaaaaa923ffffffcfff3fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffeeaa7aaac0eaa9eaa4baaaaaa923fc0ff0cfc33fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffeeaa7aaac0eaa9eaa4baaaaaa923f3f3cf0f3c3fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffeeaa7aaac0eaa9eaa4baaaaaa923fff3cfcf3f3fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffeeaa7aaac0eaa9eaa4baaaaaa923fc03cfcf3f3fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffeeaa7aaac0eaa9eaa4baaaaaa923f3f3cfcf3f3fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffeeaa7aaac0eaa9eaa4baa40aa923f3f3cf0f3c3fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffeeaa7aaac0eaa9eaa4ba9156a923fc0cf0cfc33fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffeeaa7aaac0eaa9eaa4ba85aaa923ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffeeaa7aaac0eaa9eaa4ba86bea923ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffeeaa7aaac0eaa9eaa4ba86fea923ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffeeaa7aaac0eaa9eaa4baa6faa923ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffeeaa7aaac0eaa9eaa4baaaaaa923ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffeeaa7aaac0eaa9eaa4baaaaaa922aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaac0eaa9eaa4baaaaaa922aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaac0eaa9eaa4baaaaaa922aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaac0eaa9eaa4baaaaaa922a2aaaaaa2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaaf6eaa9eaa4baaaaaa922a2aaaaaa2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaad0eaa9eaa4baaaaaa922a2a02a822aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaaf7eaa9eaa4baaaaaa922a28a8a282aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaaf2eaa9eaa4baaaaaa922a2aa8a2a2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaae4eaa9eaa4baaaaaa922a2a00a2a2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaae9eaa9eaa4b555555522a28a8a2a2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaaf1eaa9eaa48000000022a28a8a282aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaae9eaa9eaa4a666666662a2a022822aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaae9eaa9eaa499999999a2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaac2eaa9eaa4a666666662aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaaffeaa9eaa499999999a2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaad4eaa9eaa4a666666662aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaac0eaa9eaa499999999a2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaaf3eaa9eaa4a666666662aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaae9eaa9eaa499999999a2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaaf3eaa9eaa4a666666662aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaae9eaa9eaa499999999a2a2aaaaaa2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaae9eaa9eaa4a666666662a2aaaaaa2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaae1eaa9eaa499999999a2a2a02a822aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaac2eaa9eaa4a666666662a28a8a282aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaae5eaa9eaa499999999a2a28aaa2a2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaac0eaa9eaa4a666666662a28aaa2a2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaacfeaa9eaa499999999a2a28aaa2a2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaae9eaa9eaa4a666666662a28a8a282aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaac0eaa9eaa499999999a2a2a02a822aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaaf0eaa9eaa4a666666662aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaaf0eaa9eaa4aaaaaaaaa2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaaf1eaa9eaa4bfffffff22aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaaf0eaa9eaa4baaaaaa922aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaae0eaa9eaa4baaaaaa922aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaaf2eaa9eaa4baaa6aa922aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaac0eaa9eaa4baaa2aa922aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaaeceaa9eaa4baa91aa922aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaaf2eaa9eaa4baa80aa922a2aaaaaa2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaac0eaa9eaa4baa406a922a2aaaaaa2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaac1eaa9eaa4baa002a922a2a02a822aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaac1eaa9eaa4ba9001a922a28a8a282aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaaf7eaa9eaa4ba8000a922a28a8a2a2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaae6eaa9eaa4ba40006922a2800a2a2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaac2eaa9eaa4baaaaaa922a28aaa2a2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaaeeeaa9eaa4baaaaaa922a28a8a282aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaaedeaa9eaa4b555555522a2a02a822aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaac0eaa9eaa48000000022aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaac0eaa9eaa4aaaaaaaaa2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaaefeaa9eaa4bfffffff22aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaae1eaa9eaa4baaaaaa922aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaaf5eaa9eaa4baaaaaa922aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaaf3eaa9eaa4ba40006922aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaaeceaa9eaa4ba8000a922aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaaf4eaa9eaa4ba9001a922aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaae3eaa9eaa4baa002a922a28aaa2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaae9eaa9eaa4baa406a922a2aaaa2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaacfeaa9eaa4baa80aa922a28a822aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaae5eaa9eaa4baa91aa922a28a282aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaaedeaa9eaa4baaa2aa922a28a2a2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaaebeaa9eaa4baaa6aa922a28a2a2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaad0eaa9eaa4baaaaaa922a28a2a2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaaeceaa9eaa4baaaaaa922a28a282aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaac0eaa9eaa4b555555522a28a822aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaaedeaa9eaa48000000022aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaacfeaa9eaa4aaaaaaaaa2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaaf9eaa9eaa6aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaa7aaaf2eaa9eaaffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffeaa7aaaf2eaa9eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa7aaac1eaa9eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa7aaae1eaa9eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa7aaad0eaa9eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa7aaaeceaa9eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa7aaae1eaa9d5555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555557aaaeceaa9fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffaaac0eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac4eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaf3eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacdeaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaacaeaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaae4eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaae4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff>
+217
+120
+2
+[1 0 0 -1 0 120]
+ {}  image
+grestore
+%%Trailer
+%%EndDocument
+~
+[0.65 0 0 0.65 180 620.3511] 0 0 294 181
+(/Net/vermont/lyndon/donoughe/Art/TechDoc/UIGuide/01_VisualGuide/Browser/Browser.eps)`
+%%BeginDocument: /Net/vermont/lyndon/donoughe/Art/TechDoc/UIGuide/01_VisualGuide/Browser/Browser.eps
+%!PS-Adobe-2.0 EPSF-2.0
+%%Title: Browser.ai    __    /Net/vermont/lyndon/donoughe/Art/TechDoc/UIGuide/01_VisualGuide
+%%Creator: Adobe_Illustrator
+%%CreationDate: Thu Nov  7 11:41:56 1991
+%%For: donoughe
+%%DocumentFonts: (atend)
+%%Pages: 0 -1
+%%BoundingBox: 0 0 294 181
+%%EndComments
+
+%%BeginDocument: /usr/lib/NextStep/printPackage.ps
+%!PS-Adobe-2.0
+%%Title: Printing Package
+%%EndComments
+%Version: 2.0
+%Copyright: 1988, NeXT, Inc.
+
+/__NXdef{1 index where{pop pop pop}{def}ifelse}bind def
+/__NXbdef{1 index where{pop pop pop}{bind def}ifelse}bind def
+/UserObjects 10 array __NXdef
+/defineuserobject{
+	exch dup 1 add dup UserObjects length gt{
+		array dup 0 UserObjects putinterval
+		/UserObjects exch def
+	}{pop}ifelse UserObjects exch 3 -1 roll put
+}__NXbdef
+/undefineuserobject{UserObjects exch null put}__NXbdef
+/execuserobject{UserObjects exch get exec}__NXbdef
+/__NXRectPath{4 2 roll moveto 1 index 0 rlineto
+0 exch rlineto neg 0 rlineto closepath}__NXbdef
+/__NXProcessRectArgs{
+	1 index type /arraytype eq{
+		exch 0 4 2 index length 1 sub{
+			dup 3 add 1 exch{1 index exch get exch}for
+			5 1 roll 5 index exec
+		}for pop pop
+	}{exec}ifelse
+}__NXbdef
+/rectfill{gsave newpath {__NXRectPath fill} __NXProcessRectArgs grestore}__NXbdef
+/rectclip{newpath {__NXRectPath} __NXProcessRectArgs clip newpath}__NXbdef
+/rectstroke{
+	gsave newpath dup type /arraytype eq{dup length 6 eq}{false}ifelse{
+		{gsave __NXRectPath null concat stroke grestore}
+		dup length array cvx copy dup 2 4 -1 roll put __NXProcessRectArgs
+	}{{__NXRectPath stroke} __NXProcessRectArgs}ifelse grestore
+}__NXbdef
+/xyshow{
+	0 1 3 index length 1 sub{
+		currentpoint 4 index 3 index 1 getinterval show
+		3 index 3 index 2 mul 1 add get add exch
+		3 index	3 index 2 mul get add exch moveto pop
+	}for pop pop
+}__NXbdef
+/xshow{
+	0 1 3 index length 1 sub{
+		currentpoint 4 index 3 index 1 getinterval show
+		exch 3 index 3 index get add exch moveto pop
+	}for pop pop
+}__NXbdef
+/yshow{
+	0 1 3 index length 1 sub{
+		currentpoint 4 index 3 index 1 getinterval show
+		3 index 3 index get add moveto pop
+	}for pop pop
+}__NXbdef
+/arct{arcto pop pop pop pop}__NXbdef
+/setbbox{pop pop pop pop}__NXbdef
+/ucache{}__NXbdef
+/ucachestatus{mark 0 0 0 0 0}__NXbdef
+/setucacheparams{cleartomark}__NXbdef
+/uappend{systemdict begin cvx exec end}__NXbdef
+/ueofill{gsave newpath uappend eofill grestore}__NXbdef
+/ufill{gsave newpath uappend fill grestore}__NXbdef
+/ustroke{
+	gsave newpath dup length 6 eq
+	{exch uappend concat}{uappend}ifelse
+	stroke grestore
+}__NXbdef
+/__NXustrokepathMatrix dup where {pop pop}{matrix def}ifelse
+/ustrokepath{
+	newpath dup length 6 eq{
+		exch uappend __NXustrokepathMatrix currentmatrix exch concat
+		strokepath setmatrix
+	}{uappend strokepath}ifelse
+} __NXbdef
+/upath{
+	[exch {/ucache cvx}if pathbbox /setbbox cvx
+	 {/moveto cvx}{/lineto cvx}{/curveto cvx}{/closepath cvx}pathforall]cvx
+} __NXbdef
+/setstrokeadjust{pop}__NXbdef
+/currentstrokeadjust{false}__NXbdef
+/selectfont{exch findfont exch
+dup type /arraytype eq {makefont}{scalefont}ifelse setfont}__NXbdef
+/_NXCombineArrays{
+	counttomark dup 2 add index dup length 3 -1 roll {
+		2 index length sub dup 4 1 roll 1 index exch 4 -1 roll putinterval exch
+	}repeat pop pop pop
+}__NXbdef
+/setcmykcolor{
+	1.0 exch sub dup dup 6 -1 roll
+	sub dup 0 lt{pop 0}if 5 1 roll
+	4 -1 roll sub dup 0 lt{pop 0}if 3 1 roll
+	exch sub dup 0 lt{pop 0}if setrgbcolor
+}__NXbdef
+/currentcmykcolor{currentrgbcolor 3{1.0 exch sub 3 1 roll}repeat 0}__NXbdef
+/flushgraphics{}def
+/setwindowtype{pop pop}def
+/currentwindowtype{pop 0}def
+/setalpha{pop}def
+/currentalpha{1.0}def
+/hidecursor{}def
+/obscurecursor{}def
+/revealcursor{}def
+/setcursor{4 {pop}repeat}bind def
+/showcursor{}def
+/NextStepEncoding where not{
+/NextStepEncoding StandardEncoding 256 array copy def
+0 [129/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/Ccedilla/Egrave
+/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex/Idieresis
+/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/Ugrave/Uacute
+/Ucircumflex/Udieresis/Yacute/Thorn/mu/multiply/divide/copyright
+176/registered 181/brokenbar 190/logicalnot 192/onesuperior 201/twosuperior
+204/threesuperior 209/plusminus/onequarter/onehalf/threequarters/agrave
+/aacute/acircumflex/atilde/adieresis/aring/ccedilla/egrave/eacute
+/ecircumflex/edieresis/igrave 226/iacute 228/icircumflex/idieresis/eth
+/ntilde 236/ograve/oacute/ocircumflex/otilde/odieresis 242/ugrave/uacute
+/ucircumflex 246/udieresis/yacute 252/thorn/ydieresis]
+{dup type /nametype eq
+ {NextStepEncoding 2 index 2 index put pop 1 add}{exch pop}ifelse
+}forall pop
+/NextStepEncoding NextStepEncoding readonly def   
+/_NXfstr 128 string dup 0 (_NX) putinterval def   
+/findfont{
+ % Because we can never let NextStepEncoding get into
+ % SharedFontDirectory, we cannot reencode a font to NextStepEncoding
+ % if we are in shared mode.  So if currentshared is true,
+ % we call the normal findfont and return that
+ /currentshared where {pop currentshared} {false} ifelse
+ {//findfont exec}
+ {dup _NXfstr 3 125 getinterval cvs length 3 add _NXfstr 0 3 -1 roll
+  getinterval cvn exch FontDirectory 2 index known 
+  {pop FontDirectory exch get}
+  {//findfont exec dup /Encoding get StandardEncoding eq
+   {	dup length dict exch
+	{1 index /FID ne {2 index 3 1 roll put}{pop pop}ifelse}forall
+	 dup /Encoding NextStepEncoding put definefont
+	}{exch pop} ifelse
+   }ifelse
+ }ifelse
+}bind def
+}{pop}ifelse
+/_NXProcArray 5 array __NXdef
+/_NXChannels 0 __NXdef
+/_NXTotalBytes 0 __NXdef
+/_NXDoImageOp{
+	1 index{dup}{1}ifelse /_NXChannels exch store
+	_NXChannels 2 add 2 roll _NXProcArray 0 _NXChannels getinterval astore pop
+	5 index 4 index mul 2 index{1 sub 8 idiv 1 add mul}{mul 1 sub 8 idiv 1 add}ifelse
+	4 index mul /_NXTotalBytes exch store pop exch pop
+	gsave matrix invertmatrix concat 0.5 setgray 0 0 4 2 roll rectfill grestore
+	{	0 1 _NXChannels 1 sub{
+			_NXProcArray exch get exec
+			length _NXTotalBytes exch sub /_NXTotalBytes exch store}for
+		_NXTotalBytes 0 le{exit}if
+	}loop /_NXProcArray 5 array def
+}__NXbdef
+/colorimage{_NXDoImageOp}__NXbdef
+/alphaimage{1 add _NXDoImageOp}def
+%%EndDocument
+
+gsave
+317 -869 translate
+ /__NXbasematrix matrix currentmatrix def
+grestore
+%%EndProlog
+%%BeginSetup
+%%EndSetup
+0 0 294 181 rectclip
+0 0 294 181 rectclip
+gsave
+<aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaa9555555555555555555555555555555555555555555555555555555555555555ea9555555555555555555555555555555555555555555555555555555555555555eaabaaaaaaaaaaaaaa9000000000000000000000000000000000000000000000000000000000000001ea9000000000000000000000000000000000000000000000000000000000000001eaabaaaaaaaaaaaaaa9155555555555555555555555555555555555555555555555555555555555556ea9155555555555555555555555555555555555555555555555555555555555556eaabaaaaaaaaaaaaaa9155555555555555555555555555555555555555555555555555555555555556ea9155555555555555555555555555555555555555555555555555555555555556eaabaaaaaaaaaaaaaa9155555555555555555555555555555555555555555555555555555555555556ea9155555555555555555555555555555555555555555555555555555555555556eaabaaaaaaaaaaaaaa9155555555555557d5f55555555f57d57df55555555555555555555555555556ea9155555555555555fff555557f55555555555555555555555555555555555556eaabfaaaaaaaaaaaaa9155555555555557f5f55555555f57d555f55555555555555555555555555556ea9155555555555555f57d5555f555555555555555555555555555555555555556eaabaaaaaaaaaaaaaa9155555555555557f5f5ff5f5f7fd7d57df7d7df7fd7dff57d55555555555556ea9155555555555555f57d7fd7fd7fd7df7fd7df57fd5ff57fd555555555555556eaab1aaaaaaaaaaaaa9155555555555557ddf7d7df5f5f57d57dfdf7fdf5f7fdf57d55555555555556ea9155555555555555f57df5f5f5f5f7fdf5f7f7df5f7d7df5f555555555555556eaab0aaaaaaaaaaaaa9155555555555557ddf7d7d7fd5f57d57df5f7f555f7f57df555555555555556ea9155555555555555fff5f5f5f5f5f7f5f5f7d7df557d7dfd5555555555555556eaab0aaaaaaaaaaaaa9155555555555557d7f7ffd5f55f57d57df5f7d57ff7d57df555555555555556ea9155555555555555f5f5fff5f5fff7d5fff7d7df557ffd5fd555555555555556eaab0aaaaaaaaaaaaa9155555555555557d7f7d557fd5f57d57df5f7d5f5f7d55fd555555555555556ea9155555555555555f57df555f5f557d5f557d7df557d5557f555555555555556eaab0aaaaaaaaaaaaa9155555555555557d5f7d7df5f5f77d57dfdf7d5f5f7d55fd555555555555556ea9155555555555555f57df5f5f5f5f7d5f5f7d7df5f7d7df5f555555555555556eaab0aaaaaaaaaaaaa9155555555555557d5f5ff5f5f57d7fffdf7d7d57f7fd557d555555555555556ea9155555555555555f57d7fd5f57fd7d57fd7d7d7fd5ff57fd555555555555556eaab0aaaaaaaaaaaaa9155555555555555555555555555555555555555555555575555555555555556ea9155555555555555555555555555555555555555555555555555555555555556eaab0aaaaaaaaaaaaa91555555555555555555555555555555555555555555555f5555555555555556ea9155555555555555555555555555555555555555555555555555555555555556eaab0aaaaaaaaaaaaa91555555555555555555555555555555555555555555557d5555555555555556ea9155555555555555555555555555555555555555555555555555555555555556eaabeaaaaaaaaaaaaa9155555555555555555555555555555555555555555555555555555555555556ea9155555555555555555555555555555555555555555555555555555555555556eaab2aaaaaaaaaaaaa96aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea96aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab0aaaaaaaaaaaaabfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffeabfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffeaab0aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab0aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab0aaafffffffff29555555555555555555555555555555555555555555555555555555555555555ea9555555555555555555555555555555555555555555555555555555555555555eaab0aaaeaaaaaaa929000000000000000000000000000000000000000000000000000000000000001ea9000000000000000000000000000000000000000000000000000000000000001eaab0aaaeaaaaaaa9292aaaaaaaa8a8aa8a2a28aaa2a28a28a2a28a8a2aa8a28a2a28a8aaaaa2aaeaaea92aaaaaaaa8aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab0aaaeaaaaaaa9292666666668a8aa8a2a28aaa2a28a28a0028a8a2a00a28a2a28a8aaaaa2afaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab0aaaeaaaaaaa9292999999998a8aa8a2a28aaa2a28a28a2aa8a8a28a8a28a2a28a8aaaaa2faaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab0aaaeaaaaaaa9292666666668a8aa2a2a28a8a2828a28a2a28a8a28a8a28a2a28a8aaaaa3aaaaaea92666666668aa802aaaaa0aaaaaaa8aa00aaaaaaaaa2aaaa28aaaaaaaaaaaaaaeaab0aaaeaaaaaaa9292999999998a800aa80aa02a8228a28a80a8a8a0a02208a80a8a8aaaaaaaaaaaea92999999998aa2a8aaaa8aaaaaaaa8a8aa2aaaaaaaa2aaaa2aaaaaaaaa1aaaaaeaab0aaaeaaaaaaa9292666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668a8aaa22a80280a88a08a2aa8a2a2a0280a02808a80a8aaa25aaaaeaab0aaaeaaaaaaa9292999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92999999998a8aaa28a28a2a2828a0a2aa8a2a28a8a28a8a28a2a282aa2a5aaaeaab0aaaeaaaaaaa9292666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668a8aaa2a0a8a2a28a8a8a2aa8a2a28a8a2aa8a28a2a28aaa2aaeaaeaab0aaaeaaaaaaa9292999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92999999998a8aaa2a0a8a2a28a8a8a2a28a2a28a8a2a00a28a2a28aaa2afaaaeaab0aaaeaaaaaaa9292666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668a8aaa28a28a2a28a8a8a2a88a2a28a8a28a8a28a2a28aaa2faaaaeaab0aaaeaaaaaaa9292999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92999999998aa2a8a2a88a2a28a8a0a8aa2a2828a8a28a8a28a2a28aaa3aaaaaeaab0aaaeaaaaaaa9292666666668a8002aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668aa802a2a88a80a8aa08aa008a822a02a0a02208a80a8aaaaaaaaaeaab0aaaeaaaaaaa9292999999998a8aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa1aaaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab0aaaeaaaaaaa9292666666668a8aaaa028aa2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa25aaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab0aaaeaaaaaaa9292999999998a8aaa8a8a28aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa2a5aaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab0aaaeaaaaaaa9292666666668a800aaa8a82aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa2aaeaaea92666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffeeaab0aaaeaaaaaaa9292fffffffc8a8aaaa00a82aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa2afaaaea92999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffeeaab0aaaeaaaaaaa9292eaaaaaa48a8aaa8a8a28aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa2faaaaea92666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffeeaab0aaaeaaaaaaa9292eaaaaaa48a8aaa8a88aa2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa3aaaaaea92999999998fc00fc003ff3ff003fcfffcf000ffffcfc3fffffffffffffffffeeaab0aaaeaaaaaaa9292eaaaaaa48a8aaaa020aa2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668fcff3cffffccff3fcfc3ff0f3ffffffcf3ffffffffffffffffffeeaab0aaaeaaaaaaa9292eaaaaaa48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92999999998fcff3cffffccff3ff3c3ff0f3ffffcc000ffffffffffffffffffeeaab0aaaeaaaaaaa9292eaaaaaa48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668fcff3cffff3f3f3ff3ccfccf3ffffc3cf3ffffffffffffffffffeeaab0aaaeaaaaaaa9292eaaaaaa48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92999999998fc00fc003f3f3f3ff3ccfccf000ffcfcf3ffffffffffffffffffeeaab0aaaeaaaaaaa9292eaaaaaa48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668fcfcfcffff003f3ff3cf33cf3ffffcfcf3ffffffffffffffffffeeaab0aaaeaaaaaaa9292eaaaaaa48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92999999998fcff3cfffcffcf3ff3cf33cf3ffffcfcf3ffffffffffffffffffeeaab0aaaeaaaaaaa9292eaaaaaa48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668fcff3cfffcffcf3fcfcfcfcf3ffffcfcf3ffffffffffffffffffeeaab0aaaeaaaaaaa9292eaaaaaa48a8002aaaaaaa8aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92999999998fcff3c003cffcf003fcfcfcf000f3cfc33ffffffffffffffffffeeaab3aaaeaaaaaaa9292eaaaaaa48a8aaaaaaaaaa8aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa1aaaaaea92666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffeeaab2aaaeaaaaaaa9292eaaaaaa48a8aaaa02a20a0282aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa25aaaaea92999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffeeaab1aaaeaaaaaaa9292eaaaaaa48a8aaa8a8a0a28a28aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa2a5aaaea92666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffeeaab5aaaeaaaaa4a9292eaaaaaa48a800a8a8a2a28a2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa2aaeaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaaeaaaa40a9292eaaaaaa48a8aaa8a8a2a28a82aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa2afaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab9aaaeaaa400a9292eaaaaaa48a8aaa8a8a2a28aa8aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa2faaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab0aaaeaa4000a9292eaaaaaa48a8aaa8a8a2a28a28aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa3aaaaaea92666666668a8a8a8aaaa8aaaaaa2aaaaaaaa002a8aaaa8a2aaaaaaaaaaaaaaaeaab8aaaea40000a9292eaaaaaa48a8aaaa02a2a28282aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92999999998a8a8a8aaaa8aaaaaa2aaaaaaaa2a8aaaaaa8aaaaaaaaaaa1aaaaaeaab3aaaeaa4000a9292eaaaaaa48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668a8a8a8a80a882a8280a02a22aa2aa28a80a022a02a20aaa25aaaaeaab4aaaeaaa400a9292eaaaaaa48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92999999998aa28a2a2a2828a28a28a8a0aaa2aa28a2a28a28a8a0a2aa2a5aaaeaab2aaaeaaaa40a9292eaaaaaa48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668aa2222a2a28a8a2aa28a8a2aaa2aa28a2aa8a28a8a2a2aa2aaeaaeaabfaaaeaaaaa4a9292eaaaaaa48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92999999998aa2222a0028a8a82a2800a280a2aa28a2aa8a28a8a2a2aa2afaaaeaab8aaaeaaaaaaa9292eaaaaaa48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668aa8a8aa2aa8a8aa8a28aaa2aaa2aa28a2aa8a28a8a2a2aa2faaaaeaabfaaaeaaaaaaa9292eaaaaaa48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92999999998aa8a8aa2a2828a28a28a8a2aaa2a8a8a2a28a28a8a2a2aa3aaaaaeaabdaaaeaaaaaaa9292eaaaaaa48a8aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668aa8a8aa80a882a82a0a02a2aaa002a8a80a822a02a2a2aaaaaaaaeaab8aaaeaaaaaaa9292eaaaaaa48a8aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa1aaaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab0aaaeaaaaaaa9292eaaaaaa48a8a228aa02a822a02a82aaaaaaaaaaaaaaaaaaaaaaaaaaa25aaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab2aaaeaaaaaaa9292eaaaaaa48a8a08228a8a2828a8a28aaaaaaaaaaaaaaaaaaaaaaaaaaa2a5aaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaabcaaaeaaaaaaa9292eaaaaaa48a8a28a2aa8a2a28a8a2aaaaaaaaaaaaaaaaaaaaaaaaaaaa2aaeaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab6aaaeaaaaaaa9292eaaaaaa48a8a28a2a00a2a2800a82aaaaaaaaaaaaaaaaaaaaaaaaaaa2afaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab1aaaeaaaaaaa9292eaaaaaa48a8a28a28a8a2a28aaaa8aaaaaaaaaaaaaaaaaaaaaaaaaaa2faaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaabeaaaeaaaaaaa9292eaaaaaa48a8a28a28a8a2828a8a28aaaaaaaaaaaaaaaaaaaaaaaaaaa3aaaaaea92999999998a8a8a8aaaa8aaaaaa2aaaaaaa80008aaaaaaaaaaaaaaaaaaaaaaaeaabbaaaeaaaaaaa9292eaaaaaa48a8a28a2a022822a02a82aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668a8a8a8aaaa8aaaaaa2aaaaaaaaa2a8aaaaaaaaaaaaaaaaa1aaaaaeaabaaaaeaaaaaaa9292eaaaaaa48aaaaaaaaaaaaa2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92999999998a8a8a8a80a882a8280a02a22aaa2a882a80aa0aa02a2aaa25aaaaeaab0aaaeaaaaaaa9292eaaaaaa48aaaaaaaaaaa2a2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668aa28a2a2a2828a28a28a8a0aaaa2a828a2a28a28a8a2aaa2a5aaaeaabfaaaeaaaaaaa9292eaaaaaa48aaaaaaaaaaa80aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92999999998aa2222a2a28a8a2aa28a8a2aaaa2a8a8a2a28aaaa8a2aaa2aaeaaeaab3aaaeaaaaaaa9292eaaaaaa48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668aa2222a0028a8a82a2800a280aa2a8a8a002a0aa00a2aaa2afaaaeaab6aaaeaaaaaaa9292eaaaaaa48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92999999998aa8a8aa2aa8a8aa8a28aaa2aaaa2a8a8a2aaaa28a8a2aaa2faaaaeaab6aaaeaaaaaaa9292eaaaaaa48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668aa8a8aa2a2828a28a28a8a2aaaa2a8a8a2a28a28a8a2aaa3aaaaaeaabfaaaeaaaaaaa9292eaaaaaa48a8aa2aaaaaaa8aaaaaaaaaaaaaa2aaaaaaaaaaaaaaaaaaaaaaaaaea92999999998aa8a8aa80a882a82a0a02a2aaaa2a8a8a80aa0aa02282aaaaaaaaeaabeaaaeaaaaaaa9292eaaaaaa48a8a8aaaaaaaa8aaaaaaaaaaaaaa2aaaaaaaaaaaaaaaaaaa1aaaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab1aaaeaaaaaaa9292ea902aa48a8a2aa02a2a2882a80aa02a22822a0aaaaaaaaaaaaaaaaa25aaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaaeaaaaaaa9292ea455aa48a88aa8a8a2a2828a2a28a8a0a2828a2aaaaaaaaaaaaaaaa2a5aaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaabfaaaeaaaaaaa9292ea16aaa48a80aa8a8a2a28a8a2a2aa8a2a2a28aaaaaaaaaaaaaaaaaa2aaeaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab9aaaeaaaaaaa9292ea1afaa48a8a2a800a28a8a8a2a2a00a2a2a2a0aaaaaaaaaaaaaaaaa2afaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab0aaaeaaaaaaa9292ea1bfaa48a8a8a8aaa88a8a8a2a28a8a2a2a2aa2aaaaaaaaaaaaaaaa2faaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab2aaaeaaaaaaa9292ea9beaa48a8aa28a8a88a828a2a28a8a2a2828a2aaaaaaaaaaaaaaaa3aaaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab0aaaeaaaaaaa9292eaaaaaa48a8aa8a02aa2a882a80aa0222a822a0aaaaaaaaaaaaaaaaaaaaaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab2aaaeaaaaaaa9292eaaaaaa48aaaaaaaaaa2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaaeaaaaaaa9292eaaaaaa48aaaaaaaaa8aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab9aaaeaaaaaaa9292eaaaaaa48aaaaaaaaa2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab0aaaeaaaaaaa9292eaaaaaa48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab4aaad55555555292eaaaaaa48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaabeaaa000000000292eaaaaaa48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaafffffffff292eaaaaaa48a8aaa28aaaaaaaaaa2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab0aaaeaaaaaaa9292eaaaaaa48a8aaaa8aaaaaaaaaa2aaaaaaaaaaaaaaaaaaaaaaaaaaaaa1aaaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaabfaaaeaaaaaaa9292eaaaaaa48a8aaa20280a88a02808a8a2280aaaaaaaaaaaaaaaaaaaaa25aaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab4aaaeaaaaaaa9292eaaaaaa48a8aaa28a2a2828a8a28a8a0a2a2aaaaaaaaaaaaaaaaaaaa2a5aaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaabfaaaeaaaaaaa9292eaaaaaa48a8aaa28a2a28aaa8a28a8a2a2a2aaaaaaaaaaaaaaaaaaaa2aaeaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaabcaaaeaaaaaaa9292eaaaaaa48a8aaa28a0028aa00a28a8a2a002aaaaaaaaaaaaaaaaaaaa2afaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaaeaaaaaaa9292eaaaaaa48a8aaa28a2aa8a8a8a28a8a2a2aaaaaaaaaaaaaaaaaaaaaa2faaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab1aaaeaaaaaaa9292eaaaaaa48a8aaa28a2a28a8a8a28a0a2a2a2aaaaaaaaaaaaaaaaaaaa3aaaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab2aaaeaaaaaaa9292eaaaaaa48a800a28280a8aa0220a08a2a80aaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab0aaaeaaaaaaa9292eaaaaaa48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab8aaaeaaaaaaa9292eaaaaaa48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab0aaaeaaaaaaa9292eaaaaaa48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab2aaaeaaaaaaa9292eaaaaaa48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab0aaaeaaaaaaa9292eaaaaaa48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaabfaaaeaaaaaaa9292eaaaaaa48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab0aaaeaaaaaaa9292eaaaaaa48a8aaa8aaaaaaa8aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaabfaaaeaaaaaaa9292eaaaaaa48a82aa0aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa1aaaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaaeaaaaaaa9292eaaaaaa48a82aa0a2a2a0a8a80aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa25aaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab6aaaeaaaaaaa9292eaaaaaa48a88a88a2a28a28a2a2aaaaaaaaaaaaaaaaaaaaaaaaaaaaa2a5aaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab0aaaeaaaaaaa9292eaaaaaa48a88a88a2a28aa8a2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa2aaeaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaabfaaaeaaaaaaa9292eaaaaaa48a8a228a2a2a0a8a2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa2afaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaabcaaaeaaaaaaa9292eaaaaaa48a8a228a2a2aa28a2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa2faaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab1aaaeaaaaaaa9292eaaaaaa48a8a8a8a2828a28a2a2aaaaaaaaaaaaaaaaaaaaaaaaaaaaa3aaaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab8aaaeaaaaaaa9292eaaaaaa48a8a8a8a822a0a8a80aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab0aaaeaaaaaaa9292eaaaaaa48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaaeaaaaaaa9292eaaaaaa48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab1aaaeaaaaaaa9292eaaaaaa48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab3aaaeaaaaaaa9292eaaaaaa48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab3aaaeaaaaaaa9292eaaaaaa48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab3aaaeaaaaaaa9292eaaaaaa48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab0aaaeaaaaaaa9292eaaaaaa48a800aaaaaaaa8aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab2aaaeaaaaaaa9292eaaaaaa48a8aa2aaaaaaa8aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa1aaaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaaea5aaaaa9292eaaaaaa48a8aa2a02a80a8a2a02a822a02a82aaaaaaaaaaaaaaaaaaa25aaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaaea55aaaa9292eaaaaaa48a8aa28a8a2a288a8a8a2828a8a28aaaaaaaaaaaaaaaaaaa2a5aaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaaea555aaa9292eaaaaaa48a800aaa8a2aa82aaa8a2a28a8a2aaaaaaaaaaaaaaaaaaaa2aaeaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaaea5555aa9292d55555548a8aaaa00a2aa82aa00a2a2800a82aaaaaaaaaaaaaaaaaaa2afaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaaea55555a9292000000008a8aaa8a8a2aa88a8a8a2a28aaaa8aaaaaaaaaaaaaaaaaaa2faaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaaea5555aa9292aaaaaaaa8a8aaa8a8a2a28a28a8a2828a8a28aaaaaaaaaaaaaaaaaaa3aaaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaabfaaaea555aaa9292fffffffc8a8aaaa02280a8a8a022822a02a82aaaaaaaaaaaaaaaaaaaaaaaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaaea55aaaa9292eaaaaaa48aaaaaaaaaaaaaaaaaaaaa2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaaea5aaaaa9292eaaaaaa48aaaaaaaaaaaaaaaaaaa2a2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaaeaaaaaaa9292eaa9aaa48aaaaaaaaaaaaaaaaaaa80aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaabaaaaeaaaaaaa9292eaa8aaa48ffffffffffffffffffffffffffffffffffffffffffffffffffffeea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaabaaaaeaaaaaaa9292eaa46aa48ffffffffffffffffffffffffffffffffffffffffffffffffffffeea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaaeaaaaaaa9292eaa02aa48ffffffffffffffffffffffffffffffffffffffffffffffffffffeea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaaeaaaaaaa9292ea901aa48fc00fffffc3fffffffffffffffffffffffffffffffffffffffffeea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaabfaaaeaaaaaaa9292ea800aa48fcff3ffff3fffffffffffffffffffffffffffffffffffff1ffffeea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaaeaaaaaaa9292ea4006a48fcff3f03c0f03f33c0fcc3fc0ff03fc3fffffffffffffff35fffeea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaaeaaaaaaa9292ea0002a48fcff3cfcf3cfcf0f3f3c3cf3f3cfcf3cfffffffffffffff3f5ffeea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaaeaaaaaaa9292e90001a48fc00fcfcf3cfcf3f3f3cfcf3ffcfcf3ffffffffffffffff3ffbfeea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaaeaaaaaaa9292eaaaaaa48fcfcfc00f3c00f3f003cfcf3ffc00fc3fffffffffffffff3faffeea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaaeaaaaaaa9292eaaaaaa48fcff3cfff3cfff3f3ffcfcf3ffcffffcfffffffffffffff3afffeea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaaeaaaaaaa9292d55555548fcff3cfcf3cfcf3f3f3cfcf3f3cfcf3cfffffffffffffff2ffffeea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaaeaaaaaaa9292000000008fcff3f03f3f03f3fc0fcfcfc0ff03fc3ffffffffffffffffffffeea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaabaaaaeaaaaaaa9292aaaaaaaa8ffffffffffffffffffffffffffffffffffffffffffffffffffffeea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaabaaaaeaaaaaaa9292fffffffc8ffffffffffffffffffffffffffffffffffffffffffffffffffffeea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaaeaaaaaaa9292eaaaaaa48ffffffffffffffffffffffffffffffffffffffffffffffffffffeea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaabfaaaeaaaaaaa9292eaaaaaa48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaabfaaaeaaaaaaa9292e90001a48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaaeaaaaaaa9292ea0002a48aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaaeaaaaaaa9292ea4006a48aa00aaaaaaaaaaaaaa2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaaeaaaaaaa9292ea800aa48a8aa2aaaaaaaaaaaaa2aaaaaaaaaaaaaaaaaaaaaaaaaaaa1aaaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaabfaaaeaaaaaaa9292ea901aa48a8aaaa02a2a2882a822a0aaaaaaaaaaaaaaaaaaaaaaaaaa25aaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaabfaaaeaaaaaaa9292eaa02aa48aa0aa8a8a2a2828a2828a2aaaaaaaaaaaaaaaaaaaaaaaaa2a5aaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaabfaaaeaaaaaaa9292eaa46aa48aaa0a8a8a2a28a8a2a28aaaaaaaaaaaaaaaaaaaaaaaaaaa2aaeaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaaeaaaaaaa9292eaa8aaa48aaaa28a8a2a28a8a2a2a0aaaaaaaaaaaaaaaaaaaaaaaaaa2afaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaabaaaaeaaaaaaa9292eaa9aaa48a8aa28a8a2a28a8a2a2aa2aaaaaaaaaaaaaaaaaaaaaaaaa2faaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaabaaaaeaaaaaaa9292eaaaaaa48a8aa28a8a2828a8a2828a2aaaaaaaaaaaaaaaaaaaaaaaaa3aaaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaaeaaaaaaa9292eaaaaaa48aa00aa02a8228a8a822a0aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaaeaaaaaaa9292d55555548aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92999999998aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaabfaaaeaaaaaaa9292000000008aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea92666666668aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaabfaaad55555555296aaaaaaaa8aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaea96aaaaaaaa8aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaeaab5aaa0000000002bfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffeabfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffeaab5aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab5aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabfaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabfaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab5aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab5fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff5>
+294
+181
+2
+[1 0 0 -1 0 181]
+ {}  image
+grestore
+%%Trailer
+%%EndDocument
+~
+0 To
+1 0 0 1 275.125 603.7941 0 Tp
+TP
+-16.0019 0 Td
+0 Tr
+0 O
+0 g
+0 i 0 J 0 j 1 w 4 M []0 d
+%AI3_Note:
+0 D
+/_Helvetica 9 Tf
+0 Ts
+100 Tz
+0 Tt
+0 TA
+0 0 5 TC
+100 100 200 TW
+0 0 0 Ti
+1 Ta
+0 Tq
+10 0 Tl
+0 Tc
+0 Tw
+(browser) Tx 
+(\r) TX 
+TO
+0 R
+0 G
+0.75 w 1.25 M
+183.75 617.1451 m
+183.75 615.5211 185.066 614.2051 186.69 614.2051 C
+273.146 614.2051 L
+274.239 614.2051 275.125 613.3191 275.125 612.2261 C
+275.125 613.3191 276.012 614.2051 277.105 614.2051 C
+363.561 614.2051 L
+365.184 614.2051 366.5 615.5211 366.5 617.1451 c
+S
+u
+278.187 614.2261 m
+278.187 620.3511 L
+272.062 620.3511 L
+272.062 614.2261 L
+278.187 614.2261 L
+n
+275.125 617.2891 m
+N
+U
+0 To
+1 0 0 1 467.75 643.4437 0 Tp
+TP
+-24.5067 0 Td
+0 Tr
+0 O
+0 g
+1 w 4 M
+(selection list) Tx 
+(\r) TX 
+TO
+0 R
+0 G
+0.75 w 1.25 M
+407 656.7947 m
+407 655.1707 408.316 653.8547 409.94 653.8547 C
+465.771 653.8547 L
+466.864 653.8547 467.75 652.9687 467.75 651.8757 C
+467.75 652.9687 468.637 653.8547 469.73 653.8547 C
+525.561 653.8547 L
+527.184 653.8547 528.5 655.1707 528.5 656.7947 c
+S
+u
+470.812 653.8757 m
+470.812 660.0007 L
+464.687 660.0007 L
+464.687 653.8757 L
+470.812 653.8757 L
+n
+467.75 656.9387 m
+N
+U
+%%PageTrailer
+%%Trailer
+Adobe_Illustrator_AI3 /terminate get exec
+
+Adobe_pattern_AI3 /terminate get exec
+
+Adobe_typography_AI3 /terminate get exec
+
+
+Adobe_customcolor /terminate get exec
+
+Adobe_cshow /terminate get exec
+
+Adobe_cmykcolor /terminate get exec
+
+Adobe_packedarray /terminate get exec
+
+%%EOF

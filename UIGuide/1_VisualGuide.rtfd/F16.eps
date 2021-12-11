@@ -1,0 +1,2655 @@
+%!PS-Adobe-3.0 EPSF-3.0
+%%Creator: Adobe Illustrator(TM) 3.0.1.
+%%For: () ()
+%%Title: (/Net/vermont/lyndon/donoughe/Art/TechDoc_Edited/UIGuide/01_VisualGuide/StandardWindow.ai)
+%%CreationDate: (11/19/91) (15:47)
+%%BoundingBox: 140 517 530 757
+%%DocumentProcessColors: Cyan Magenta Yellow Black
+%%DocumentFonts: Helvetica
+%%DocumentFiles:/Net/vermont/lyndon/donoughe/Art/TechDoc/UIGuide/01_VisualGuide/StandardWindow/StandardWindow.eps
+%%DocumentSuppliedResources: procset Adobe_packedarray 2.0 0
+%%+ procset Adobe_cmykcolor 1.1 0
+%%+ procset Adobe_cshow 1.1 0
+%%+ procset Adobe_customcolor 1.0 0
+%%+ procset Adobe_typography_AI3 1.0 1
+%%+ procset Adobe_pattern_AI3 1.0 0
+%%+ procset Adobe_Illustrator_AI3 1.0 1
+%AI3_ColorUsage: Color
+%AI3_IncludePlacedImages
+%AI3_TemplateBox: 288 360 288 360
+%AI3_TileBox: 30 31 582 761
+%AI3_DocumentPreview: Header
+%%Template:
+%%PageOrigin:30 31
+%%AI3_PaperRect:0 792 612 0
+%%AI3_Margin:30 31 30 31
+%%EndComments
+%%BeginProlog
+%%BeginResource: procset Adobe_packedarray 2.0 0
+%%Title: (Packed Array Operators)
+%%Version: 2.0 
+%%CreationDate: (8/2/90) ()
+%%Copyright: ((C) 1987-1990 Adobe Systems Incorporated All Rights Reserved)
+
+userdict /Adobe_packedarray 5 dict dup begin put
+/initialize			% - initialize -
+{
+/packedarray where
+	{
+	pop
+	}
+	{
+	Adobe_packedarray begin
+	Adobe_packedarray
+		{
+		dup xcheck
+			{
+			bind
+			} if
+		userdict 3 1 roll put
+		} forall
+	end
+	} ifelse
+} def
+/terminate			% - terminate -
+{
+} def
+/packedarray		% arguments count packedarray array
+{
+array astore readonly
+} def
+/setpacking			% boolean setpacking -
+{
+pop
+} def
+/currentpacking		% - setpacking boolean
+{
+false
+} def
+currentdict readonly pop end
+%%EndResource
+Adobe_packedarray /initialize get exec
+
+%%BeginResource: procset Adobe_cmykcolor 1.1 0
+%%Title: (CMYK Color Operators)
+%%Version: 1.1 
+%%CreationDate: (1/23/89) ()
+%%Copyright: ((C) 1987-1990 Adobe Systems Incorporated All Rights Reserved)
+
+currentpacking true setpacking
+userdict /Adobe_cmykcolor 4 dict dup begin put
+/initialize			% - initialize -
+{
+/setcmykcolor where
+	{
+	pop
+	}
+	{
+	userdict /Adobe_cmykcolor_vars 2 dict dup begin put
+	/_setrgbcolor
+		/setrgbcolor load def
+	/_currentrgbcolor
+		/currentrgbcolor load def
+	Adobe_cmykcolor begin
+	Adobe_cmykcolor
+		{
+		dup xcheck
+			{
+			bind
+			} if
+		pop pop
+		} forall
+	end
+	end
+	Adobe_cmykcolor begin
+	} ifelse
+} def
+/terminate			% - terminate -
+{
+currentdict Adobe_cmykcolor eq
+	{
+	end
+	} if
+} def
+/setcmykcolor		% cyan magenta yellow black setcmykcolor -
+{
+1 sub 4 1 roll
+3
+	{
+	3 index add neg dup 0 lt
+		{
+		pop 0
+		} if
+	3 1 roll
+	} repeat
+Adobe_cmykcolor_vars /_setrgbcolor get exec
+pop
+} def 
+/currentcmykcolor	% - currentcmykcolor cyan magenta yellow black
+{
+Adobe_cmykcolor_vars /_currentrgbcolor get exec
+3
+	{
+	1 sub neg 3 1 roll
+	} repeat
+0
+} def
+currentdict readonly pop end
+setpacking
+
+%%EndResource
+%%BeginResource: procset Adobe_cshow 1.1 0
+%%Title: (cshow Operator)
+%%Version: 1.1 
+%%CreationDate: (1/23/89) ()
+%%Copyright: ((C) 1987-1990 Adobe Systems Incorporated All Rights Reserved)
+
+currentpacking true setpacking
+userdict /Adobe_cshow 3 dict dup begin put
+/initialize			% - initialize -
+{
+/cshow where
+	{
+	pop
+	}
+	{
+	userdict /Adobe_cshow_vars 1 dict dup begin put
+	/_cshow		% - _cshow proc
+		{} def
+	Adobe_cshow begin
+	Adobe_cshow
+		{
+		dup xcheck
+			{
+			bind
+			} if
+		userdict 3 1 roll put
+		} forall
+	end
+	end
+	} ifelse
+} def
+/terminate			% - terminate -
+{
+} def
+/cshow				% proc string cshow -
+{
+exch
+Adobe_cshow_vars
+	exch /_cshow
+	exch put
+	{
+	0 0 Adobe_cshow_vars /_cshow get exec
+	} forall
+} def
+currentdict readonly pop end
+setpacking
+
+%%EndResource
+%%BeginResource: procset Adobe_customcolor 1.0 0
+%%Title: (Custom Color Operators)
+%%Version: 1.0 
+%%CreationDate: (5/9/88) ()
+%%Copyright: ((C) 1987-1990 Adobe Systems Incorporated All Rights Reserved)
+
+currentpacking true setpacking
+userdict /Adobe_customcolor 5 dict dup begin put
+/initialize			% - initialize -
+{
+/setcustomcolor where
+	{
+	pop
+	}
+	{
+	Adobe_customcolor begin
+	Adobe_customcolor
+		{
+		dup xcheck
+			{
+			bind
+			} if
+		pop pop
+		} forall
+	end
+	Adobe_customcolor begin
+	} ifelse
+} def
+/terminate			% - terminate -
+{
+currentdict Adobe_customcolor eq
+	{
+	end
+	} if
+} def
+/findcmykcustomcolor	% cyan magenta yellow black name findcmykcustomcolor object
+{
+5 packedarray
+}  def
+/setcustomcolor		% object tint setcustomcolor -
+{
+exch
+aload pop pop
+4
+	{
+	4 index mul 4 1 roll
+	} repeat
+5 -1 roll pop
+setcmykcolor
+} def
+/setoverprint		% boolean setoverprint -
+{
+pop
+} def
+currentdict readonly pop end
+setpacking
+
+%%EndResource
+%%BeginResource: procset Adobe_typography_AI3 1.0 1
+%%Title: (Typography Operators)
+%%Version: 1.0 
+%%CreationDate:(5/31/90) ()
+%%Copyright: ((C) 1987-1990 Adobe Systems Incorporated All Rights Reserved)
+
+currentpacking true setpacking
+userdict /Adobe_typography_AI3 47 dict dup begin put
+/initialize			% - initialize -
+{
+/TZ
+ where
+	{
+	pop
+	}
+	{
+	Adobe_typography_AI3 begin
+	Adobe_typography_AI3
+		{
+		dup xcheck
+			{
+			bind
+			} if
+		pop pop
+		} forall
+	end
+	Adobe_typography_AI3 begin
+	} ifelse
+} def
+/terminate			% - terminate -
+{
+currentdict Adobe_typography_AI3 eq
+	{
+	end
+	} if
+} def
+
+% [ number value stream [ array for encoding modification ] modifyEncoding ==> [ modified array ]
+/modifyEncoding
+{
+	/_tempEncode exch ddef
+	
+	% pointer for sequential encodings
+	/_pntr 0 ddef
+	
+	{
+		% get bottom object
+		counttomark -1 roll
+
+		% is it a mark ?
+		dup type dup /marktype eq 		
+		{
+			% exit
+			pop pop exit
+		}
+		{
+			% ... object ... type ....
+
+			% insert if a nametype
+			/nametype eq
+			{
+				% insert the name at _pntr and increment pointer
+				_tempEncode /_pntr dup load dup 3 1 roll 1 add ddef 3 -1 roll
+				put
+			}
+			{
+				% reset _pntr if it's a number
+				/_pntr exch ddef					
+			}
+			ifelse
+		}
+		ifelse
+	}
+	loop	
+	
+	% return the modified encoding
+	_tempEncode
+}
+def
+
+/TE	% Set std platform encoding 	% (encoding pairs) TE -
+{
+	StandardEncoding 256 array copy modifyEncoding 
+	/_nativeEncoding exch def
+} def
+
+% re-define font
+% expected arguments
+% for 'normal fonts : 
+%	[ /_Helvetica-Bold/Helvetica-Bold direction fontScript defaultEncoding TZ
+%
+% for cartographic, pictographic, and expert fonts :
+% 	[ ... number value stream ... /_Helvetica-Bold/Helvetica-Bold 
+%	direction fontScript defaultEncoding TZ
+/TZ		
+{
+	% platform dependent coding flag
+	/_useNativeEncoding exch def
+
+	% pop fontScript & direction
+	pop pop
+	
+	% create a new dictionary with length
+	% equal to original dictionary length + 2
+	% copy all the key/value pairs except FID
+	findfont dup length 2 add dict
+	
+	begin
+	
+		% copy all the values but the FID
+		% into the new dictionary
+		mark exch
+		{
+			1 index /FID ne { def } if cleartomark mark
+		}
+		forall
+		% discard last mark
+		pop
+		
+		% define FontName
+		/FontName exch def
+		
+		% if no re-encoding stream is present
+		% then if the use platform encoding flag is true
+		% install AI platform encoding
+		% else leave the base encoding in effect
+
+		counttomark 0 eq
+		{
+			1 _useNativeEncoding eq
+			{
+				/Encoding _nativeEncoding def
+			}
+			if
+			% clean up
+			cleartomark
+		}
+		{	
+			% custom encoding to be done
+			% start off with a copy of the font's standard encoding
+			/Encoding load 256 array copy 
+			modifyEncoding /Encoding exch def
+		}
+		ifelse		
+		FontName currentdict
+	end
+	
+	% register the new font
+	definefont pop
+}
+def
+
+% text painting operators
+/tr					% string tr ax ay string 
+{
+_ax _ay 3 2 roll
+} def
+/trj				% string trj cx cy fillchar ax ay string 
+{
+_cx _cy _sp _ax _ay 6 5 roll
+} def
+
+/a0
+{
+/Tx	% text							% textString Tx -
+	{
+	dup 
+	currentpoint 3 2 roll
+	tr _psf
+	newpath moveto
+	tr _ctm _pss
+	} ddef
+/Tj	% justified text				% textString Tj -
+	{
+	dup
+	currentpoint 3 2 roll
+	trj _pjsf
+	newpath moveto
+	trj _ctm _pjss
+	} ddef
+	
+} def
+/a1
+{
+/Tx	% text							% textString Tx -
+	{
+	dup currentpoint 4 2 roll gsave
+	dup currentpoint 3 2 roll
+	tr _psf
+	newpath moveto
+	tr _ctm _pss
+	grestore 3 1 roll moveto tr sp
+	} ddef
+/Tj	% justified text				% textString Tj -
+	{
+	dup currentpoint 4 2 roll gsave
+	dup currentpoint 3 2 roll
+	trj _pjsf
+	newpath moveto
+	trj _ctm _pjss
+	grestore 3 1 roll moveto tr sp
+	} ddef
+	
+} def
+
+/e0
+{
+/Tx	% text							% textString Tx -
+	{
+	tr _psf
+	} ddef
+/Tj	% justified text				% textString Tj -
+	{
+	trj _pjsf
+	} ddef
+} def
+
+/e1
+{
+/Tx	% text							% textString Tx -
+	{
+	dup currentpoint 4 2 roll gsave 
+	tr _psf  
+	grestore 3 1 roll moveto tr sp 
+	} ddef
+/Tj	% justified text				% textString Tj -
+	{
+	dup currentpoint 4 2 roll gsave 
+	trj _pjsf
+	grestore 3 1 roll moveto tr sp 
+	} ddef
+} def
+
+/i0
+{
+/Tx	% text							% textString Tx -
+	{
+	tr sp
+	} ddef
+/Tj	% justified text				% textString Tj -
+	{
+	trj jsp
+	} ddef
+} def
+
+/i1
+{
+W N
+} def
+
+/o0
+{
+/Tx	% text							% textString Tx -
+	{
+	tr sw rmoveto
+	} ddef
+/Tj	% justified text				% textString Tj -
+	{
+	trj swj rmoveto
+	} ddef
+} def
+
+/r0
+{
+/Tx	% text							% textString Tx -
+	{
+	tr _ctm _pss
+	} ddef
+/Tj	% justified text				% textString Tj -
+	{
+	trj _ctm _pjss
+	} ddef
+} def
+
+/r1
+{
+/Tx	% text							% textString Tx -
+	{
+	dup currentpoint 4 2 roll currentpoint gsave newpath moveto
+	tr _ctm _pss 
+	grestore 3 1 roll moveto tr sp 
+	} ddef
+/Tj	% justified text				% textString Tj -
+	{
+	dup currentpoint 4 2 roll currentpoint gsave newpath moveto
+	trj _ctm _pjss
+	grestore 3 1 roll moveto tr sp 
+	} ddef
+} def
+
+% font operators
+
+% Binding
+/To	% begin text 					% bindType To -
+{
+	pop _ctm currentmatrix pop
+} def
+
+/TO	% end text					% TO -
+{
+	Te _ctm setmatrix newpath
+} def
+
+% Text paths
+/Tp	% begin text path				% a b c d tx ty startPt Tp -
+{
+	pop _tm astore pop _ctm setmatrix 
+	_tDict begin /W {} def /h {} def
+} def
+
+/TP	% end text path					% TP -
+{
+	end
+	iTm 0 0 moveto
+} def
+
+% Render mode & matrix operators
+/Tr	% begin render					% render Tr - 
+{
+	_render 3 le {currentpoint newpath moveto} if
+	dup 8 eq {pop 0} {dup 9 eq {pop 1} if} ifelse
+	dup /_render exch ddef
+	_renderStart exch get load exec
+} def
+
+/iTm % internal set text matrix		% - iTm -	(uses _tm as implicit argument)
+{
+_ctm setmatrix _tm concat 0 _rise translate _hs 1 scale
+} def
+
+/Tm % set text matrix				% a b c d tx ty Tm -
+{
+_tm astore pop iTm 0 0 moveto
+} def
+
+/Td % translate text matrix 		% tx ty Td -
+{
+_mtx translate _tm _tm concatmatrix pop iTm 0 0 moveto
+} def
+
+/Te	% end render					% - Te -
+{
+	_render -1 eq {} {_renderEnd _render get dup null ne {load exec} {pop} ifelse} ifelse
+	/_render -1 ddef
+} def
+
+
+% Attributes
+/Ta	% set alignment					% alignment Ta -
+{
+pop
+} def
+
+/Tf	% set font name and size		% fontname size Tf -
+{
+dup 1000 div /_fScl exch ddef
+exch findfont exch scalefont setfont
+} def
+
+/Tl	% set leading					% leading paragraphLeading Tl -
+{
+pop
+0 exch _leading astore pop
+} def
+
+/Tt	% set user tracking				% userTracking Tt -
+{
+pop
+} def
+
+/TW % set word spacing				% minSpace optSpace maxSpace TW -
+{
+3 npop
+} def
+
+/Tw	% set computed word spacing		% wordSpace Tw
+{
+/_cx exch ddef
+} def
+
+/TC % set character spacing			% minSpace optSpace maxSpace TC -
+{
+3 npop
+} def
+
+/Tc	% set computed char spacing 	% charSpace Tc -
+{
+/_ax exch ddef
+} def
+
+/Ts % set super/subscripting (rise)	% rise Ts -
+{
+/_rise exch ddef
+currentpoint
+iTm
+moveto
+} def
+
+/Ti	% set indentation				% firstStartIndent otherStartIndent stopIndent Ti -
+{
+3 npop
+} def
+
+/Tz % set horizontal scaling		% scalePercent Tz -
+{
+100 div /_hs exch ddef
+iTm
+} def
+
+/TA % set pairwise kerning			% autoKern TA -
+									%	autoKern = 0 -> no pair kerning
+									%			 = 1 -> automatic pair kerning
+{
+pop
+} def
+
+/Tq % set hanging quotes			% hangingQuotes Tq -
+									%	hangingQuotes 	= 0 -> no hanging quotes
+									%			 		= 1 -> hanging quotes
+{
+pop
+} def
+
+
+% Text Bodies
+/TX {pop} def
+
+%/Tx	% non-justified text			% textString Tx -
+%/Tj	% justified text				% textString Tj -
+
+/Tk	% kern							% autoKern kernValue Tk -
+									%  	autoKern = 0 -> manual kern, = 1 -> auto kern
+									%	kernValue = kern value in em/1000 space
+{
+exch pop _fScl mul neg 0 rmoveto
+} def
+/TK	% non-printing kern				% autoKern kernValue TK -
+{
+2 npop
+} def
+
+/T* % carriage return & line feed	% - T* -
+{
+_leading aload pop neg Td
+} def
+
+/T*- % carriage return & negative line feed	% - T*- -
+{
+_leading aload pop Td
+} def
+
+/T-	% print a discretionary hyphen	% - T- -
+{
+_hyphen Tx
+} def
+
+/T+	% discretionary hyphen hyphen	% - T+ -
+{} def
+
+/TR	% reset pattern matrix 			% a b c d tx ty TR -
+{
+_ctm currentmatrix pop 	
+_tm astore pop 
+iTm 0 0 moveto 
+} def
+
+/TS	% special chars					% textString justified TS -
+{
+0 eq {Tx} {Tj} ifelse
+} def
+
+currentdict readonly pop end
+setpacking
+
+%%EndResource
+
+%%BeginResource: procset Adobe_pattern_AI3 1.0 0
+%%Title: (Adobe Illustrator (R) Version 3.0 Pattern Operators)
+%%Version: 1.0 
+%%CreationDate: (7/21/89) ()
+%%Copyright: ((C) 1987-1990 Adobe Systems Incorporated All Rights Reserved)
+
+currentpacking true setpacking
+userdict /Adobe_pattern_AI3 16 dict dup begin put
+/initialize			% - initialize -
+{
+/definepattern where
+	{
+	pop
+	}
+	{
+	Adobe_pattern_AI3 begin
+	Adobe_pattern_AI3
+		{
+		dup xcheck
+			{
+			bind
+			} if
+		pop pop
+		} forall
+	mark
+	cachestatus 7 1 roll pop pop pop pop exch pop exch
+		{
+		{
+		10000 add
+		dup 2 index gt
+			{
+			break
+			} if
+		dup setcachelimit
+		} loop
+		} stopped
+	cleartomark
+	} ifelse
+} def
+/terminate			% - terminate -
+{
+currentdict Adobe_pattern_AI3 eq
+	{
+	end
+	} if
+} def
+errordict
+/nocurrentpoint		% operator nocurrentpoint -
+{
+pop
+stop
+} put
+errordict
+/invalidaccess		% operator invalidaccess -
+{
+pop
+stop
+} put
+/patternencoding
+256 array def
+0 1 255
+{
+patternencoding exch ( ) 2 copy exch 0 exch put cvn put
+} for
+/definepattern		% width height matrix procarray key cache uniform definepattern font
+{
+17 dict begin
+/uniform exch def
+/cache exch def
+/key exch def
+/procarray exch def
+/mtx exch matrix invertmatrix def
+/height exch def
+/width exch def
+/ctm matrix currentmatrix def
+/ptm matrix def
+/str 32 string def
+/slice 9 dict def
+slice /s 1 put
+slice /q 256 procarray length div sqrt floor cvi put
+slice /b 0 put
+/FontBBox [0 0 0 0] def
+/FontMatrix mtx matrix copy def
+/Encoding patternencoding def
+/FontType 3 def
+/BuildChar		% dict char BuildChar -
+	{
+	exch
+	begin
+	slice begin
+	dup q dup mul mod s idiv /i exch def
+	dup q dup mul mod s mod /j exch def
+	q dup mul idiv procarray exch get
+	/xl j width s div mul def
+	/xg j 1 add width s div mul def
+	/yl i height s div mul def
+	/yg i 1 add height s div mul def
+	uniform
+		{
+		1 1
+		}
+		{
+		width 0 dtransform
+		dup mul exch dup mul add sqrt dup 1 add exch div
+		0 height dtransform
+		dup mul exch dup mul add sqrt dup 1 add exch div
+		} ifelse
+	width 0 cache
+		{
+		xl 4 index mul yl 4 index mul xg 6 index mul yg 6 index mul
+		setcachedevice
+		}
+		{
+		setcharwidth
+		} ifelse
+	gsave
+	scale
+	newpath
+	xl yl moveto
+	xg yl lineto
+	xg yg lineto
+	xl yg lineto
+	closepath
+	clip
+	newpath
+	end
+	end
+	exec
+	grestore
+	} def
+key currentdict definefont
+end
+} def
+/patterncachesize	% - patterncachesize bits
+{
+gsave
+newpath
+0 0 moveto
+width 0 lineto
+width height lineto
+0 height lineto
+closepath
+patternmatrix setmatrix
+pathbbox
+exch ceiling 4 -1 roll floor sub 3 1 roll
+ceiling exch floor sub
+mul 1 add
+grestore
+} def
+/patterncachelimit	% - patterncachelimit bits
+{
+cachestatus 7 1 roll 6 npop 8 mul
+} def
+/patternpath		% index font matrix patternpath -
+{
+exch dup begin setfont
+ctm setmatrix
+concat
+slice exch /b exch slice /q get dup mul mul put
+FontMatrix concat
+uniform
+	{
+	width 0 dtransform round width div exch round width div exch
+	0 height dtransform round height div exch height div exch
+	0 0 transform round exch round exch
+	ptm astore setmatrix
+	}
+	{
+	ptm currentmatrix pop
+	} ifelse
+{currentpoint} stopped not
+	{
+	2 npop
+	pathbbox
+	true
+	4 index 3 index eq
+	4 index 3 index eq
+	and
+		{
+		pop false
+			{
+			{2 npop}
+			{3 npop true}
+			{7 npop true}
+			{pop true}
+			pathforall
+			} stopped
+			{
+			5 npop true
+			} if
+		} if
+		{
+		height div ceiling height mul 4 1 roll
+		width div ceiling width mul 4 1 roll
+		height div floor height mul 4 1 roll
+		width div floor width mul 4 1 roll
+		2 index sub height div ceiling cvi exch
+		3 index sub width div ceiling cvi exch
+		4 2 roll moveto
+		FontMatrix mtx invertmatrix
+		dup dup 4 get exch 5 get rmoveto
+		ptm ptm concatmatrix pop
+		slice /s
+		patterncachesize patterncachelimit div ceiling sqrt ceiling cvi
+		dup slice /q get gt
+			{
+			pop slice /q get
+			} if
+		put
+		0 1 slice /s get dup mul 1 sub
+			{
+			slice /b get add
+			gsave
+			0 1 str length 1 sub
+				{
+				str exch 2 index put
+				} for
+			pop
+			dup
+				{
+				gsave
+				ptm setmatrix
+				1 index str length idiv {str show} repeat
+				1 index str length mod str exch 0 exch getinterval show
+				grestore
+				0 height rmoveto
+				} repeat
+			grestore
+			} for
+		2 npop
+		}
+		{
+		4 npop
+		} ifelse
+	} if
+end
+} def
+/patternclip		% - patternclip -
+{
+clip
+} def
+/patternstrokepath	% - patternstrokepath -
+{
+strokepath
+} def
+/patternmatrix		% - patternmatrix matrix
+matrix def
+/patternfill		% index font patternfill -
+					% index font matrix patternfill -
+{
+dup type /dicttype eq
+	{
+	Adobe_pattern_AI3 /patternmatrix get
+	} if
+gsave
+patternclip
+Adobe_pattern_AI3 /patternpath get exec
+grestore
+newpath
+} def
+/patternstroke		% index font patternstroke -
+					% index font matrix patternstroke -
+{
+dup type /dicttype eq
+	{
+	Adobe_pattern_AI3 /patternmatrix get
+	} if
+gsave
+patternstrokepath
+true
+	{
+		{
+			{
+			newpath 
+			moveto
+			}
+			{
+			lineto
+			}
+			{
+			curveto
+			}
+			{
+			closepath
+			3 copy
+			Adobe_pattern_AI3 /patternfill get exec
+			} pathforall
+		3 npop
+		} stopped
+			{
+			5 npop
+			patternclip
+			Adobe_pattern_AI3 /patternfill get exec
+			} if
+	}
+	{
+	patternclip
+	Adobe_pattern_AI3 /patternfill get exec
+	} ifelse
+grestore
+newpath
+} def
+/patternashow		% index font ax ay string patternashow -
+					% index font matrix ax ay string patternashow -
+{
+3 index type /dicttype eq
+	{
+	Adobe_pattern_AI3 /patternmatrix get 4 1 roll
+	} if
+	{
+	2 npop (0) exch
+	2 copy 0 exch put pop
+	gsave
+	false charpath currentpoint
+	6 index 6 index 6 index
+	Adobe_pattern_AI3 /patternfill get exec
+	grestore
+	newpath moveto
+	2 copy rmoveto
+	} exch cshow
+5 npop
+} def
+/patternawidthshow		% index font cx cy char ax ay string patternawidthshow -
+						% index font matrix cx cy char ax ay string patternawidthshow -
+{
+6 index type /dicttype eq
+	{
+	Adobe_pattern_AI3 /patternmatrix get 7 1 roll
+	} if
+	{
+	2 npop (0) exch
+	2 copy 0 exch put 
+	gsave
+	_sp eq {5 index 5 index rmoveto} if
+	false charpath currentpoint
+	9 index 9 index 9 index
+	Adobe_pattern_AI3 /patternfill get exec
+	grestore
+	newpath moveto
+	2 copy rmoveto
+	} exch cshow
+8 npop
+} def
+/patternashowstroke	% index font ax ay string matrix patternashowstroke
+					% index font matrix ax ay string matrix patternashowstroke
+{
+4 index type /dicttype eq
+	{
+	patternmatrix /patternmatrix get 5 1 roll
+	} if
+4 1 roll
+	{
+	2 npop (0) exch
+	2 copy 0 exch put pop
+	gsave
+	false charpath
+	currentpoint
+	4 index setmatrix
+	7 index 7 index 7 index
+	Adobe_pattern_AI3 /patternstroke get exec
+	grestore
+	newpath moveto
+	2 copy rmoveto
+	} exch cshow
+6 npop
+} def
+/patternawidthshowstroke	% index font cx cy char ax ay string matrix patternashowstroke
+					% index font matrix cx cy char ax ay string matrix patternashowstroke
+{
+7 index type /dicttype eq
+	{
+	patternmatrix /patternmatrix get 8 1 roll
+	} if
+7 1 roll
+	{
+	2 npop (0) exch
+	2 copy 0 exch put
+	gsave
+	_sp eq {5 index 5 index rmoveto} if
+	false charpath currentpoint
+	7 index setmatrix
+	10 index 10 index 10 index
+	Adobe_pattern_AI3 /patternstroke get exec
+	grestore
+	newpath moveto
+	2 copy rmoveto
+	} exch cshow
+9 npop
+} def
+currentdict readonly pop end
+setpacking
+
+%%EndResource
+%%BeginResource: procset Adobe_Illustrator_AI3 1.0 1
+%%Title: (Adobe Illustrator (R) Version 3.0 Full Prolog)
+%%Version: 1.0 
+%%CreationDate: (7/22/89) ()
+%%Copyright: ((C) 1987-1990 Adobe Systems Incorporated All Rights Reserved)
+
+currentpacking true setpacking
+userdict /Adobe_Illustrator_AI3 71 dict dup begin put
+% initialization
+/initialize				% - initialize -
+{
+% 56 vars, but leave slack of 10 entries for custom Postscript fragments
+userdict /Adobe_Illustrator_AI3_vars 66 dict dup begin put
+
+% paint operands
+/_lp /none def
+/_pf {} def		% paint fill
+/_ps {} def		% paint stroke
+/_psf {} def	% paint string fill
+/_pss {} def	% paint string stroke
+/_pjsf {} def	% paint justified string fill
+/_pjss {} def	% paint justified string stroke
+/_pola 0 def
+/_doClip 0 def
+
+% paint operators
+/cf	currentflat def	% - cf flatness
+
+% typography operands
+/_tm matrix def
+/_renderStart [/e0 /r0 /a0 /o0 /e1 /r1 /a1 /i0] def 
+/_renderEnd [null null null null /i1 /i1 /i1 /i1] def
+/_render -1 def
+/_rise 0 def
+/_ax 0 def			% x character spacing	(_ax, _ay, _cx, _cy follows awidthshow naming convention)
+/_ay 0 def			% y character spacing
+/_cx 0 def			% x word spacing
+/_cy 0 def			% y word spacing
+/_leading [0 0] def
+/_ctm matrix def
+/_mtx matrix def
+/_sp 16#020 def
+/_hyphen (-) def
+/_fScl 0 def
+/_cnt 0 def
+/_hs 1 def
+/_nativeEncoding 0 def
+/_useNativeEncoding 0 def
+/_tempEncode 0 def
+/_pntr 0 def
+/_tDict 2 dict def
+
+% typography operators
+/Tx {} def
+/Tj {} def
+
+% compound path operators
+/CRender {} def
+
+% printing
+/_AI3_savepage {} def
+
+% color operands
+/_gf null def
+/_cf 4 array def
+/_if null def
+/_of false def
+/_fc {} def
+/_gs null def
+/_cs 4 array def
+/_is null def
+/_os false def
+/_sc {} def
+
+% pattern operands
+/_pd 1 dict def
+/_ed 15 dict def
+/_pm matrix def
+/_fm null def
+/_fd null def
+/_fdd null def
+/_sm null def
+/_sd null def
+/_sdd null def
+/_i null def
+Adobe_Illustrator_AI3 begin
+Adobe_Illustrator_AI3 dup /nc get begin
+	{
+	dup xcheck
+		{
+		bind
+		} if
+	pop pop
+	} forall
+end
+end
+end
+Adobe_Illustrator_AI3 begin
+Adobe_Illustrator_AI3_vars begin
+newpath
+} def
+/terminate				% - terminate -
+{
+end
+end
+} def
+
+% definition operators
+/_					% - _ null
+null def
+/ddef				% key value ddef -
+{
+Adobe_Illustrator_AI3_vars 3 1 roll put
+} def
+/xput				% key value literal xput -
+{
+dup load dup length exch maxlength eq
+	{
+	dup dup load dup
+	length 2 mul dict copy def
+	} if
+load begin def end
+} def
+/npop				% integer npop -
+{
+	{
+	pop
+	} repeat
+} def
+
+% marking operators
+/sw					% ax ay string sw x y
+{
+dup length exch stringwidth
+exch 5 -1 roll 3 index 1 sub mul add
+4 1 roll 3 1 roll 1 sub mul add
+} def
+/swj				% cx cy fillchar ax ay string swj x y
+{
+dup 4 1 roll
+dup length exch stringwidth 
+exch 5 -1 roll 3 index 1 sub mul add
+4 1 roll 3 1 roll 1 sub mul add 
+6 2 roll /_cnt 0 ddef
+{1 index eq {/_cnt _cnt 1 add ddef} if} forall pop
+exch _cnt mul exch _cnt mul 2 index add 4 1 roll 2 index add 4 1 roll pop pop
+} def
+/ss					% ax ay string matrix ss -
+{
+4 1 roll
+	{				% matrix ax ay char 0 0 {proc} -
+	2 npop 
+	(0) exch 2 copy 0 exch put pop
+	gsave
+	false charpath currentpoint
+	4 index setmatrix
+	stroke
+	grestore
+	moveto
+	2 copy rmoveto
+	} exch cshow
+3 npop
+} def
+/jss				% cx cy fillchar ax ay string matrix jss -
+{
+4 1 roll
+	{				% cx cy fillchar matrix ax ay char 0 0 {proc} -   
+	2 npop 
+	(0) exch 2 copy 0 exch put 
+	gsave
+	_sp eq 
+		{
+		exch 6 index 6 index 6 index 5 -1 roll widthshow  
+		currentpoint
+		}
+		{
+		false charpath currentpoint
+		4 index setmatrix stroke
+		}ifelse
+	grestore
+	moveto
+	2 copy rmoveto
+	} exch cshow
+6 npop
+} def
+
+% path operators
+/sp					% ax ay string sp -
+{
+	{
+	2 npop (0) exch
+	2 copy 0 exch put pop
+	false charpath
+	2 copy rmoveto
+	} exch cshow
+2 npop
+} def
+/jsp					% cx cy fillchar ax ay string jsp -
+{
+	{					% cx cy fillchar ax ay char 0 0 {proc} -
+	2 npop 
+	(0) exch 2 copy 0 exch put 
+	_sp eq 
+		{
+		exch 5 index 5 index 5 index 5 -1 roll widthshow  
+		}
+		{
+		false charpath
+		}ifelse
+	2 copy rmoveto
+	} exch cshow
+5 npop
+} def
+
+% path construction operators
+/pl					% x y pl x y
+{
+transform
+0.25 sub round 0.25 add exch
+0.25 sub round 0.25 add exch
+itransform
+} def
+/setstrokeadjust where
+	{
+	pop true setstrokeadjust
+	/c				% x1 y1 x2 y2 x3 y3 c -
+	{
+	curveto
+	} def
+	/C
+	/c load def
+	/v				% x2 y2 x3 y3 v -
+	{
+	currentpoint 6 2 roll curveto
+	} def
+	/V
+	/v load def
+	/y				% x1 y1 x2 y2 y -
+	{
+	2 copy curveto
+	} def
+	/Y
+	/y load def
+	/l				% x y l -
+	{
+	lineto
+	} def
+	/L
+	/l load def
+	/m				% x y m -
+	{
+	moveto
+	} def
+	}
+	{
+	/c
+	{
+	pl curveto
+	} def
+	/C
+	/c load def
+	/v
+	{
+	currentpoint 6 2 roll pl curveto
+	} def
+	/V
+	/v load def
+	/y
+	{
+	pl 2 copy curveto
+	} def
+	/Y
+	/y load def
+	/l
+	{
+	pl lineto
+	} def
+	/L
+	/l load def
+	/m
+	{
+	pl moveto
+	} def
+	} ifelse
+
+% graphic state operators
+/d					% array phase d -
+{
+setdash
+} def
+/cf	{} def			% - cf flatness
+/i					% flatness i -
+{
+dup 0 eq
+	{
+	pop cf
+	} if
+setflat
+} def
+/j					% linejoin j -
+{
+setlinejoin
+} def
+/J					% linecap J -
+{
+setlinecap
+} def
+/M					% miterlimit M -
+{
+setmiterlimit
+} def
+/w					% linewidth w -
+{
+setlinewidth
+} def
+
+% path painting operators
+/H					% - H -
+{} def
+/h					% - h -
+{
+closepath
+} def
+/N					% - N -
+{
+_pola 0 eq 
+	{
+	_doClip 1 eq {clip /_doClip 0 ddef} if 
+	newpath
+	} 
+	{
+	/CRender {N} ddef
+	}ifelse
+} def
+/n					% - n -
+{N} def
+/F					% - F -
+{
+_pola 0 eq 
+	{
+	_doClip 1 eq 
+		{
+		gsave _pf grestore clip newpath /_lp /none ddef _fc 
+		/_doClip 0 ddef
+		}
+		{
+		_pf
+		}ifelse
+	} 
+	{
+	/CRender {F} ddef
+	}ifelse
+} def
+/f					% - f -
+{
+closepath
+F
+} def
+/S					% - S -
+{
+_pola 0 eq 
+	{
+	_doClip 1 eq 
+		{
+		gsave _ps grestore clip newpath /_lp /none ddef _sc 
+		/_doClip 0 ddef
+		}
+		{
+		_ps
+		}ifelse
+	} 
+	{
+	/CRender {S} ddef
+	}ifelse
+} def
+/s					% - s -
+{
+closepath
+S
+} def
+/B					% - B -
+{
+_pola 0 eq 
+	{
+	_doClip 1 eq 	% F clears _doClip
+	gsave F grestore 
+		{
+		gsave S grestore clip newpath /_lp /none ddef _sc
+		/_doClip 0 ddef
+		} 
+		{
+		S
+		}ifelse
+	}
+	{
+	/CRender {B} ddef
+	}ifelse
+} def
+/b					% - b -
+{
+closepath
+B
+} def
+/W					% - W -
+{
+/_doClip 1 ddef
+} def
+/*					% - [string] * -
+{
+count 0 ne 
+	{
+	dup type (stringtype) eq {pop} if
+	} if 
+_pola 0 eq {newpath} if
+} def
+
+% group operators
+/u					% - u -
+{} def
+/U					% - U -
+{} def
+/q					% - q -
+{
+_pola 0 eq {gsave} if
+} def
+/Q					% - Q -
+{
+_pola 0 eq {grestore} if
+} def
+/*u					% - *u -
+{
+_pola 1 add /_pola exch ddef
+} def
+/*U					% - *U -
+{
+_pola 1 sub /_pola exch ddef 
+_pola 0 eq {CRender} if
+} def
+/D					% polarized D -
+{pop} def
+/*w					% - *w -
+{} def
+/*W					% - *W -
+{} def
+
+% place operators
+/`					% matrix llx lly urx ury string ` -
+{
+/_i save ddef
+6 1 roll 4 npop
+concat
+userdict begin
+/showpage {} def
+false setoverprint
+pop
+} def
+/~					% - ~ -
+{
+end
+_i restore
+} def
+
+% pattern operators
+/@					% - @ -
+{} def
+/&					% - & -
+{} def
+
+% color operators
+/O					% flag O -
+{
+0 ne
+/_of exch ddef
+/_lp /none ddef
+} def
+/R					% flag R -
+{
+0 ne
+/_os exch ddef
+/_lp /none ddef
+} def
+/g					% gray g -
+{
+/_gf exch ddef
+/_fc
+{
+_lp /fill ne
+	{
+	_of setoverprint
+	_gf setgray
+	/_lp /fill ddef
+	} if
+} ddef
+/_pf
+{
+_fc
+fill
+} ddef
+/_psf
+{
+_fc
+ashow
+} ddef
+/_pjsf
+{
+_fc
+awidthshow
+} ddef
+/_lp /none ddef
+} def
+/G					% gray G -
+{
+/_gs exch ddef
+/_sc
+{
+_lp /stroke ne
+	{
+	_os setoverprint
+	_gs setgray
+	/_lp /stroke ddef
+	} if
+} ddef
+/_ps
+{
+_sc
+stroke
+} ddef
+/_pss
+{
+_sc
+ss
+} ddef
+/_pjss
+{
+_sc
+jss
+} ddef
+/_lp /none ddef
+} def
+/k					% cyan magenta yellow black k -
+{
+_cf astore pop
+/_fc
+{
+_lp /fill ne
+	{
+	_of setoverprint
+	_cf aload pop setcmykcolor
+	/_lp /fill ddef
+	} if
+} ddef
+/_pf
+{
+_fc
+fill
+} ddef
+/_psf
+{
+_fc
+ashow
+} ddef
+/_pjsf
+{
+_fc
+awidthshow
+} ddef
+/_lp /none ddef
+} def
+/K					% cyan magenta yellow black K -
+{
+_cs astore pop
+/_sc
+{
+_lp /stroke ne
+	{
+	_os setoverprint
+	_cs aload pop setcmykcolor
+	/_lp /stroke ddef
+	} if
+} ddef
+/_ps
+{
+_sc
+stroke
+} ddef
+/_pss
+{
+_sc
+ss
+} ddef
+/_pjss
+{
+_sc
+jss
+} ddef
+/_lp /none ddef
+} def
+/x					% cyan magenta yellow black name gray x -
+{
+/_gf exch ddef
+findcmykcustomcolor
+/_if exch ddef
+/_fc
+{
+_lp /fill ne
+	{
+	_of setoverprint
+	_if _gf 1 exch sub setcustomcolor
+	/_lp /fill ddef
+	} if
+} ddef
+/_pf
+{
+_fc
+fill
+} ddef
+/_psf
+{
+_fc
+ashow
+} ddef
+/_pjsf
+{
+_fc
+awidthshow
+} ddef
+/_lp /none ddef
+} def
+/X					% cyan magenta yellow black name gray X -
+{
+/_gs exch ddef
+findcmykcustomcolor
+/_is exch ddef
+/_sc
+{
+_lp /stroke ne
+	{
+	_os setoverprint
+	_is _gs 1 exch sub setcustomcolor
+	/_lp /stroke ddef
+	} if
+} ddef
+/_ps
+{
+_sc
+stroke
+} ddef
+/_pss
+{
+_sc
+ss
+} ddef
+/_pjss
+{
+_sc
+jss
+} ddef
+/_lp /none ddef
+} def
+% pattern operators
+/dp					% width height matrix proc key cache uniform dp [index key]
+					% null dp -
+{
+dup null eq
+{
+pop
+_dp 0 ne
+	{
+	0 1 _dp 1 sub _dl mod
+		{
+		_da exch get 3 get
+		} for
+	_dp 1 sub _dl mod 1 add packedarray
+	_da 0 get aload pop 8 -1 roll 5 -1 roll pop 4 1 roll
+	definepattern pop
+	} if
+}
+{
+_dp 0 ne _dp _dl mod 0 eq and
+	{
+	null dp
+	} if
+7 packedarray _da exch _dp _dl mod exch put
+_dp _dl mod _da 0 get 4 get 2 packedarray
+/_dp _dp 1 add def
+} ifelse
+} def
+/E					% name llx lly urx ury desc E -
+{
+_ed begin
+dup 0 get type /arraytype ne
+	{
+	0
+		{
+		dup 1 add index type /arraytype eq
+			{
+			1 add
+			}
+			{
+			exit
+			} ifelse
+		} loop
+	array astore
+	} if
+/_dd exch def
+/_ury exch def
+/_urx exch def
+/_lly exch def
+/_llx exch def
+/_n exch def
+/_y 0 def
+/_dl 4 def
+/_dp 0 def
+/_da _dl array def
+0 1 _dd length 1 sub
+	{
+	/_d exch _dd exch get def
+	0 2 _d length 2 sub
+		{
+		/_x exch def
+		/_c _d _x get _ ne def
+		/_r _d _x 1 add get cvlit def
+		_r _ ne
+			{
+			_urx _llx sub _ury _lly sub [1 0 0 1 0 0] 
+				[
+				/save cvx
+				_llx neg _lly neg /translate cvx
+				_c
+					{
+					nc /begin cvx
+					} if
+				_r dup type /stringtype eq
+					{
+					cvx
+					}
+					{
+					{exec} /forall cvx
+					} ifelse
+				_c
+					{
+					/end cvx
+					} if
+				/restore cvx
+				] cvx
+			/_fn 12 _n length add string def
+			_y _fn cvs pop
+			/_y _y 1 add def
+			_fn 12 _n putinterval
+			_fn _c false dp
+			_d exch _x 1 add exch put
+			} if
+		} for
+	} for
+null dp
+_n _dd /_pd
+end xput
+} def
+/fc
+{
+_fm dup concatmatrix pop
+} def
+/p					% name px py sx sy a rf r k ka matrix p -
+{
+/_fm exch ddef
+9 -2 roll _pm translate fc
+7 -2 roll _pm scale fc
+5 -1 roll _pm rotate fc
+4 -2 roll exch 0 ne
+	{
+	dup _pm rotate fc
+	1 -1 _pm scale fc
+	neg _pm rotate fc
+	}
+	{
+	pop
+	} ifelse
+dup _pm rotate fc
+exch dup sin exch cos div 1 0 0 1 0 6 2 roll
+_pm astore fc
+neg _pm rotate fc
+_pd exch get /_fdd exch ddef
+/_pf
+{
+save
+/_doClip 0 ddef
+0 1 _fdd length 1 sub
+	{
+	/_fd exch _fdd exch get ddef
+	_fd
+	0 2 _fd length 2 sub
+		{
+		gsave
+		2 copy get dup _ ne
+			{
+			cvx exec _fc
+			}
+			{
+			pop
+			} ifelse
+		2 copy 1 add get dup _ ne
+			{
+			aload pop findfont _fm
+			patternfill
+			}
+			{
+			pop
+			fill
+			} ifelse
+		grestore
+		pop
+		} for
+	pop
+	} for
+restore
+newpath
+} ddef
+/_psf		% ax ay string _psf -
+{
+save
+/_doClip 0 ddef
+0 1 _fdd length 1 sub
+	{
+	/_fd exch _fdd exch get ddef
+	_fd
+	0 2 _fd length 2 sub
+		{
+		gsave
+		2 copy get dup _ ne
+			{
+			cvx exec _fc
+			}
+			{
+			pop
+			} ifelse
+		2 copy 1 add get dup _ ne
+			{
+			aload pop findfont _fm
+			9 copy 6 npop patternashow
+			}
+			{
+			pop
+			6 copy 3 npop ashow
+			} ifelse
+		grestore
+		pop
+		} for
+	pop
+	} for
+restore
+%3 npop newpath
+sw rmoveto
+} ddef
+/_pjsf		% cx cy char ax ay string _pjsf
+{
+save
+/_doClip 0 ddef
+0 1 _fdd length 1 sub
+	{
+	/_fd exch _fdd exch get ddef
+	_fd
+	0 2 _fd length 2 sub
+		{
+		gsave
+		2 copy get dup _ ne
+			{
+			cvx exec _fc
+			}
+			{
+			pop
+			} ifelse
+		2 copy 1 add get dup _ ne
+			{
+			aload pop findfont _fm
+			12 copy 6 npop patternawidthshow
+			}
+			{
+			pop 9 copy 3 npop awidthshow
+			} ifelse
+		grestore
+		pop
+		} for
+	pop
+	} for
+restore
+swj rmoveto
+} ddef
+/_lp /none ddef
+} def
+/sc
+{
+_sm dup concatmatrix pop
+} def
+/P					% name px py sx sy a rf r k ka matrix P -
+{
+/_sm exch ddef
+9 -2 roll _pm translate sc
+7 -2 roll _pm scale sc
+5 -1 roll _pm rotate sc
+4 -2 roll exch 0 ne
+	{
+	dup _pm rotate sc
+	1 -1 _pm scale sc
+	neg _pm rotate sc
+	}
+	{
+	pop
+	} ifelse
+dup _pm rotate sc
+exch dup sin exch cos div 1 0 0 1 0 6 2 roll
+_pm astore sc
+neg _pm rotate sc
+_pd exch get /_sdd exch ddef
+/_ps
+{
+save
+/_doClip 0 ddef
+0 1 _sdd length 1 sub
+	{
+	/_sd exch _sdd exch get ddef
+	_sd
+	0 2 _sd length 2 sub
+		{
+		gsave
+		2 copy get dup _ ne
+			{
+			cvx exec _sc
+			}
+			{
+			pop
+			} ifelse
+		2 copy 1 add get dup _ ne
+			{
+			aload pop findfont _sm
+			patternstroke
+			}
+			{
+			pop stroke
+			} ifelse
+		grestore
+		pop
+		} for
+	pop
+	} for
+restore
+newpath
+} ddef
+/_pss
+{
+save
+/_doClip 0 ddef
+0 1 _sdd length 1 sub
+	{
+	/_sd exch _sdd exch get ddef
+	_sd
+	0 2 _sd length 2 sub
+		{
+		gsave
+		2 copy get dup _ ne
+			{
+			cvx exec _sc
+			}
+			{
+			pop
+			} ifelse
+		2 copy 1 add get dup _ ne
+			{
+			aload pop findfont _sm
+			10 copy 6 npop patternashowstroke
+			}
+			{
+			pop 7 copy 3 npop ss
+			} ifelse
+		grestore
+		pop
+		} for
+	pop
+	} for
+restore
+pop sw rmoveto
+} ddef
+/_pjss
+{
+save
+/_doClip 0 ddef
+0 1 _sdd length 1 sub
+	{
+	/_sd exch _sdd exch get ddef
+	_sd
+	0 2 _sd length 2 sub
+		{
+		gsave
+		2 copy get dup _ ne
+			{
+			cvx exec _sc
+			}
+			{
+			pop
+			} ifelse
+		2 copy 1 add get dup _ ne
+			{
+			aload pop findfont _sm
+			13 copy 6 npop patternawidthshowstroke
+			}
+			{
+			pop 10 copy 3 npop jss
+			} ifelse
+		grestore
+		pop
+		} for
+	pop
+	} for
+restore
+pop swj rmoveto
+} ddef
+/_lp /none ddef
+} def
+
+% locked object operator
+/A					% value A -
+{
+pop
+} def
+
+% null color operators
+/nc 3 dict def
+nc begin
+/setgray			% gray setgray -
+{
+pop
+} bind def
+/setcmykcolor		% cyan magenta yellow black setcmykcolor -
+{
+4 npop
+} bind def
+/setcustomcolor		% object tint setcustomcolor -
+{
+2 npop
+} bind def
+currentdict readonly pop end
+currentdict readonly pop end
+setpacking
+
+% annotate page operator
+/annotatepage
+{
+} def
+
+%%EndResource
+%AI3-Grid.0 18 18 3 0 0 0 3
+%%EndProlog
+%%BeginSetup
+%%IncludeFont: Helvetica
+Adobe_cmykcolor /initialize get exec
+
+Adobe_cshow /initialize get exec
+
+Adobe_customcolor /initialize get exec
+
+Adobe_typography_AI3 /initialize get exec
+
+
+Adobe_pattern_AI3 /initialize get exec
+
+Adobe_Illustrator_AI3 /initialize get exec
+
+[
+129/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/Ccedilla
+/Egrave/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex
+/Idieresis/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis
+/Ugrave/Uacute/Ucircumflex/Udieresis/Yacute/Thorn/mu/multiply
+/divide/copyright 176/registered 181/brokenbar 190/logicalnot 
+192/onesuperior 201/twosuperior 204/threesuperior 209/plusminus
+/onequarter/onehalf/threequarters/agrave/aacute/acircumflex
+/atilde/adieresis/aring/ccedilla/egrave/eacute/ecircumflex
+/edieresis/igrave 226/iacute 228/icircumflex/idieresis/eth/ntilde 
+236/ograve/oacute/ocircumflex/otilde/odieresis 242/ugrave/uacute
+/ucircumflex 246/udieresis/yacute 252/thorn/ydieresis
+TE
+%AI3_BeginEncoding: _Helvetica Helvetica
+[/_Helvetica/Helvetica 0 0 1 TZ
+%AI3_EndEncoding
+%AI3_BeginPattern: (Alpha)
+(Alpha) 431.75 634.875 447.75 648.125 [
+%AI3_Tile
+(0 O 0 R 0 g 0 G) @
+(
+0 To
+1 0 0 1 447.75 648.125 0 Tp
+TP
+-2.8395 0 Td
+0 Tr
+0 i 0 J 0 j 1 w 4 M []0 d
+%AI3_Note:
+0 D
+/_Symbol 9 Tf
+0 Ts
+100 Tz
+0 Tt
+0 TA
+0 0 5 TC
+100 100 200 TW
+0 0 0 Ti
+1 Ta
+0 Tq
+12 0 Tl
+0 Tc
+0 Tw
+(a) Tx 
+(\r) TX 
+TO
+0 To
+1 0 0 1 439.75 648.125 0 Tp
+TP
+-2.8395 0 Td
+0 Tr
+(a) Tx 
+(\r) TX 
+TO
+0 To
+1 0 0 1 431.75 648.125 0 Tp
+TP
+-2.8395 0 Td
+0 Tr
+(a) Tx 
+(\r) TX 
+TO
+0 To
+1 0 0 1 439.75 634.875 0 Tp
+TP
+-2.8395 0 Td
+0 Tr
+(a) Tx 
+(\r) TX 
+TO
+0 To
+1 0 0 1 431.75 634.875 0 Tp
+TP
+-2.8395 0 Td
+0 Tr
+(a) Tx 
+(\r) TX 
+TO
+0 To
+1 0 0 1 443.75 641.5 0 Tp
+TP
+-2.8395 0 Td
+0 Tr
+(a) Tx 
+(\r) TX 
+TO
+0 To
+1 0 0 1 435.75 641.5 0 Tp
+TP
+-2.8395 0 Td
+0 Tr
+(a) Tx 
+(\r) TX 
+TO
+0 To
+1 0 0 1 447.75 634.875 0 Tp
+TP
+-2.8395 0 Td
+0 Tr
+(a) Tx 
+(\r) TX 
+TO
+) &
+] E
+%AI3_EndPattern
+%%EndSetup
+0 A
+[0.5 0 0 0.5 180 518.5] 0 0 557 439
+(/Net/vermont/lyndon/donoughe/Art/TechDoc/UIGuide/01_VisualGuide/StandardWindow/StandardWindow.eps)`
+%%BeginDocument: /Net/vermont/lyndon/donoughe/Art/TechDoc/UIGuide/01_VisualGuide/StandardWindow/StandardWindow.eps
+%!PS-Adobe-2.0 EPSF-2.0
+%%Title: StandardWindow.ai    __    /Net/vermont/lyndon/donoughe/Art/TechDoc/UIGuide/01_VisualGuide
+%%Creator: Adobe_Illustrator
+%%CreationDate: Mon Oct 28 10:13:40 1991
+%%For: donoughe
+%%DocumentFonts: (atend)
+%%Pages: 0 -1
+%%BoundingBox: 0 0 557 439
+%%EndComments
+
+%%BeginDocument: /usr/lib/NextStep/printPackage.ps
+%!PS-Adobe-2.0
+%%Title: Printing Package
+%%EndComments
+%Version: 2.0
+%Copyright: 1988, NeXT, Inc.
+
+/__NXdef{1 index where{pop pop pop}{def}ifelse}bind def
+/__NXbdef{1 index where{pop pop pop}{bind def}ifelse}bind def
+/UserObjects 10 array __NXdef
+/defineuserobject{
+	exch dup 1 add dup UserObjects length gt{
+		array dup 0 UserObjects putinterval
+		/UserObjects exch def
+	}{pop}ifelse UserObjects exch 3 -1 roll put
+}__NXbdef
+/undefineuserobject{UserObjects exch null put}__NXbdef
+/execuserobject{UserObjects exch get exec}__NXbdef
+/__NXRectPath{4 2 roll moveto 1 index 0 rlineto
+0 exch rlineto neg 0 rlineto closepath}__NXbdef
+/__NXProcessRectArgs{
+	1 index type /arraytype eq{
+		exch 0 4 2 index length 1 sub{
+			dup 3 add 1 exch{1 index exch get exch}for
+			5 1 roll 5 index exec
+		}for pop pop
+	}{exec}ifelse
+}__NXbdef
+/rectfill{gsave newpath {__NXRectPath fill} __NXProcessRectArgs grestore}__NXbdef
+/rectclip{newpath {__NXRectPath} __NXProcessRectArgs clip newpath}__NXbdef
+/rectstroke{
+	gsave newpath dup type /arraytype eq{dup length 6 eq}{false}ifelse{
+		{gsave __NXRectPath null concat stroke grestore}
+		dup length array cvx copy dup 2 4 -1 roll put __NXProcessRectArgs
+	}{{__NXRectPath stroke} __NXProcessRectArgs}ifelse grestore
+}__NXbdef
+/xyshow{
+	0 1 3 index length 1 sub{
+		currentpoint 4 index 3 index 1 getinterval show
+		3 index 3 index 2 mul 1 add get add exch
+		3 index	3 index 2 mul get add exch moveto pop
+	}for pop pop
+}__NXbdef
+/xshow{
+	0 1 3 index length 1 sub{
+		currentpoint 4 index 3 index 1 getinterval show
+		exch 3 index 3 index get add exch moveto pop
+	}for pop pop
+}__NXbdef
+/yshow{
+	0 1 3 index length 1 sub{
+		currentpoint 4 index 3 index 1 getinterval show
+		3 index 3 index get add moveto pop
+	}for pop pop
+}__NXbdef
+/arct{arcto pop pop pop pop}__NXbdef
+/setbbox{pop pop pop pop}__NXbdef
+/ucache{}__NXbdef
+/ucachestatus{mark 0 0 0 0 0}__NXbdef
+/setucacheparams{cleartomark}__NXbdef
+/uappend{systemdict begin cvx exec end}__NXbdef
+/ueofill{gsave newpath uappend eofill grestore}__NXbdef
+/ufill{gsave newpath uappend fill grestore}__NXbdef
+/ustroke{
+	gsave newpath dup length 6 eq
+	{exch uappend concat}{uappend}ifelse
+	stroke grestore
+}__NXbdef
+/__NXustrokepathMatrix dup where {pop pop}{matrix def}ifelse
+/ustrokepath{
+	newpath dup length 6 eq{
+		exch uappend __NXustrokepathMatrix currentmatrix exch concat
+		strokepath setmatrix
+	}{uappend strokepath}ifelse
+} __NXbdef
+/upath{
+	[exch {/ucache cvx}if pathbbox /setbbox cvx
+	 {/moveto cvx}{/lineto cvx}{/curveto cvx}{/closepath cvx}pathforall]cvx
+} __NXbdef
+/setstrokeadjust{pop}__NXbdef
+/currentstrokeadjust{false}__NXbdef
+/selectfont{exch findfont exch
+dup type /arraytype eq {makefont}{scalefont}ifelse setfont}__NXbdef
+/_NXCombineArrays{
+	counttomark dup 2 add index dup length 3 -1 roll {
+		2 index length sub dup 4 1 roll 1 index exch 4 -1 roll putinterval exch
+	}repeat pop pop pop
+}__NXbdef
+/setcmykcolor{
+	1.0 exch sub dup dup 6 -1 roll
+	sub dup 0 lt{pop 0}if 5 1 roll
+	4 -1 roll sub dup 0 lt{pop 0}if 3 1 roll
+	exch sub dup 0 lt{pop 0}if setrgbcolor
+}__NXbdef
+/currentcmykcolor{currentrgbcolor 3{1.0 exch sub 3 1 roll}repeat 0}__NXbdef
+/flushgraphics{}def
+/setwindowtype{pop pop}def
+/currentwindowtype{pop 0}def
+/setalpha{pop}def
+/currentalpha{1.0}def
+/hidecursor{}def
+/obscurecursor{}def
+/revealcursor{}def
+/setcursor{4 {pop}repeat}bind def
+/showcursor{}def
+/NextStepEncoding where not{
+/NextStepEncoding StandardEncoding 256 array copy def
+0 [129/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/Ccedilla/Egrave
+/Eacute/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex/Idieresis
+/Eth/Ntilde/Ograve/Oacute/Ocircumflex/Otilde/Odieresis/Ugrave/Uacute
+/Ucircumflex/Udieresis/Yacute/Thorn/mu/multiply/divide/copyright
+176/registered 181/brokenbar 190/logicalnot 192/onesuperior 201/twosuperior
+204/threesuperior 209/plusminus/onequarter/onehalf/threequarters/agrave
+/aacute/acircumflex/atilde/adieresis/aring/ccedilla/egrave/eacute
+/ecircumflex/edieresis/igrave 226/iacute 228/icircumflex/idieresis/eth
+/ntilde 236/ograve/oacute/ocircumflex/otilde/odieresis 242/ugrave/uacute
+/ucircumflex 246/udieresis/yacute 252/thorn/ydieresis]
+{dup type /nametype eq
+ {NextStepEncoding 2 index 2 index put pop 1 add}{exch pop}ifelse
+}forall pop
+/NextStepEncoding NextStepEncoding readonly def   
+/_NXfstr 128 string dup 0 (_NX) putinterval def   
+/findfont{
+ % Because we can never let NextStepEncoding get into
+ % SharedFontDirectory, we cannot reencode a font to NextStepEncoding
+ % if we are in shared mode.  So if currentshared is true,
+ % we call the normal findfont and return that
+ /currentshared where {pop currentshared} {false} ifelse
+ {//findfont exec}
+ {dup _NXfstr 3 125 getinterval cvs length 3 add _NXfstr 0 3 -1 roll
+  getinterval cvn exch FontDirectory 2 index known 
+  {pop FontDirectory exch get}
+  {//findfont exec dup /Encoding get StandardEncoding eq
+   {	dup length dict exch
+	{1 index /FID ne {2 index 3 1 roll put}{pop pop}ifelse}forall
+	 dup /Encoding NextStepEncoding put definefont
+	}{exch pop} ifelse
+   }ifelse
+ }ifelse
+}bind def
+}{pop}ifelse
+/_NXProcArray 5 array __NXdef
+/_NXChannels 0 __NXdef
+/_NXTotalBytes 0 __NXdef
+/_NXDoImageOp{
+	1 index{dup}{1}ifelse /_NXChannels exch store
+	_NXChannels 2 add 2 roll _NXProcArray 0 _NXChannels getinterval astore pop
+	5 index 4 index mul 2 index{1 sub 8 idiv 1 add mul}{mul 1 sub 8 idiv 1 add}ifelse
+	4 index mul /_NXTotalBytes exch store pop exch pop
+	gsave matrix invertmatrix concat 0.5 setgray 0 0 4 2 roll rectfill grestore
+	{	0 1 _NXChannels 1 sub{
+			_NXProcArray exch get exec
+			length _NXTotalBytes exch sub /_NXTotalBytes exch store}for
+		_NXTotalBytes 0 le{exit}if
+	}loop /_NXProcArray 5 array def
+}__NXbdef
+/colorimage{_NXDoImageOp}__NXbdef
+/alphaimage{1 add _NXDoImageOp}def
+%%EndDocument
+
+gsave
+317 -611 translate
+ /__NXbasematrix matrix currentmatrix def
+grestore
+%%EndProlog
+%%BeginSetup
+%%EndSetup
+0 0 557 439 rectclip
+0 0 557 439 rectclip
+gsave
+<000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003f2aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa15200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000012a200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000012a20fffffff40000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000fffffff012a20eaaaaa900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000eaaaaa9012a20e00000900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e1aaa49012a20e00000900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f00f3c00000000003c000000000003c03f00f000000fff0ffff3ffc000000000000000003c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e46a919012a20e00000900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f0003c000000000000000000000003c0f000f000000f03c03c03c00000000000000000003c0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e91a469012a20e2aaa8900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f00f3cf0f3cff0f3fc3fc3cf003cfff3fc3cf000000f03c03c03c00000000000000000003f3f3f03fc00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ea451a9012a20e2aaa8900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f00f3f3cff3c3cff3cf0f3f3c03fc3c0f0f3f000000f03c03c03c0000000000000000000f3c3c3cf0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ea906a9012a20e2aaa8900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f00f3c3cfc003cfc3c00f3c3c03f03c0f0f0f000000fff003c03ff000000000000000000f3c3c3cf0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ea906a9012a20e2aaa8900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f00f3c3cf00ffcf03c3ff3c3c03c03c0f0f0f00fc00f0f003c03c000fc00003fffffc000f3c3c3cfff00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ea451a9012a20e2aaa8900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f00f3c3cf03c3cf03cf0f3c3c03c03c0f0f0f000000f03c03c03c0000000000000000003c3c3c3cf0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e91a469012a20e2aaa8900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f00f3f3cf03c3cf03cf0f3c3cf3c03ccf0f3f000000f03c03c03c0000000000000000003c3c3c3cf0f00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e46a919012a20e00000900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ffff3cf0f00fcff03c3f3fc3cf3c00f0f03cf000000f03c03c03c0000000000000000003c3c3c3c3fc00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000e1aaa49012a20eaaaaa900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000eaaaaa9012a20d55555500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000d555555012a204000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000012a200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000012a200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000012a255555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555552a000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000003f2aaaaaaaa8ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3f2666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffff55555555555555555555555555555554ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152fffffffc8ffffffffffff7ffffffffffffffffffffffffffffff4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152eaaaaaa48ffffffffffff7aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152eaaaaaa48ffffffffffff7aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152eaaaaaa48ffffffffffff7aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152ea902aa48ffffffffffff7aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152ea455aa48ffffffffffff7aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff002ea16aaa48ffffffffffff7aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff172ea1afaa48ffffffffffff7aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152ea1bfaa48ffffffffffff7aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152ea9beaa48ffffffffffff7aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152eaaaaaa48ffffffffffff7aaaaaaaac7fcaaaaaaaaaaaaaaaaaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152eaaaaaa48ffffffffffff7aaaaaaab1bf0aaaaaaaaaab8f8aaaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152eaaaaaa48ffffffffffff7aaaaaaac6fc0aaaaaaaaaab8bc6aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152eaaaaaa48ffffffffffff7aaaaaab1bf00aaab9fd2aabe3e2aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152d55555548ffffffffffff7aaaaaabffe40aaab3fd2aabe2f1aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152000000008ffffffffffff7aaaaaabaaa00aaae7f82aabfbf4aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffff7aaaaaabaaa4087ccff82aabfa54aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffff7aaaaaaa555001b8ffe42aabf400aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff202999999998ffffffffffff7aaaaaabaaa402f4eaa42aabf400aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffff7aaaacbe555003e4eaa42aaaf400aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffff7aaab1fe555416a0955013f8fa54aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffff7aaac6f6555016a4eaa413f8b400aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffff7aaaffe7aaa40150eaa413f87a54aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffff7aaae552555016a4955013fd3a54aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffff7aaae553aaa40150eaa41ffd3a54aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffff7aaad003aaa016a4e9a415553a54aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffff7aaae553aaa40150e9a415553a94aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffff7aaad00399a016a4e9a41aa93a94aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffff7aaad00399a41660eaa415553a94aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffff7aaad0039aa016a4e9a41aa93a54aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffff7aaae553a9a41660e9a41aa93a94aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffff7aaad00399a016a4e9a41aa93a54aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffff7aaae553aaa416a0eaa415553a94aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffff7aaae55399a016a4e9a41aa93a94aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffff7aaae5539aa416a0eaa415553a54aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffff7aaae553a9a016a4e9a415553a94aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffff7aaae55399a416a0eaa415553a94aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffff7aaae55399a016a4e9a415553a54aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffff7aaae553aaa41660eaa415553a54aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffff7aaad003aaa016a4eaa415553a54aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffff7aaae553aaa41660eaa415553a54aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffff7aaad003aaa01664eaa41aa93a54aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffff7aaad00255541660eaa415553400aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffff7aaad003aaa01664e5641aa93a54aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff2b2999999998ffffffffffff7aaae55255541660e5641aa93400aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff172666666668ffffffffffff7aaad002555016a4e5641aa93400aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffff7aaae55255540150e56415553400aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffff7aaae553aaa016a4e5641aa93a54aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffff7aaa4006555416a0eaa415552a54aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffff7aaaaaabaaa04001aaa415551001aaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffff7aaaaaabaaa4aaaa400040006aaaaaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffff7aaaaaa90001aaaaaaaaaaaaaaaaaaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffff7aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa4ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffff7aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa4ffffffffffff00030fffffffc000ff3ffff3fffffc3ff03ffcc3fffffffffff3fffffffffffffffffff0f3fffffffffcfffffffff0ffffffffffffffffffffffffffffff3fffc3ff0fffffc3ffffffffffffffffff3ffffc0fffffffffffffffff3fffffffff3fffffffffffffffffff152999999998ffffffffffff7aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa4ffffffffffff3cf3cffffffffcfc3f3ffff3ffffff3ffcfffcf3fffffffffff3fffffffffffffffffffcf3fffffffffcfffffffffcffffffffffffffffffffffffffffff3ffff3ffcffffff3ffffffffffffffffff3ffff0ffffffffffffffffff3fffffffff3fffffffffffffffffff152666666668ffffffffffff7aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa4ffffffffffff3cf3cffffffffcff3fffffffcfffff3ffcfffff3fffffffffffffffffffffffffffffffcfffffffffcfffffffffffcffffcffffffffffffffffffffffffffffff3ffcffffff3fffffffffff3fffffffffff3ffffffffffffffff3fffffffffffffffffffffffffffffff152999999998ffffffffffff7aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa4fffffffffffffcffcc3fc0fffcffcc3f00c300f03f3ffcfff0f30f303c0f3003f03c30fffc0f0c3c30fcc3f03fc0f000fc0f0c3ffcfc0f00f03fc0c0f03c3c3ffc030f0c3f03f3c3cc0c0ff3f03fc0ff03c03c0ffc30c3c00c0f30030c0ff03c003f03c30ffc30c3fff03fffffffffff152666666668ffffffffffff7aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa4fffffffffffffcffc30f3f3ffcffcf3c33f3cfc3cf3ffcfffcf0c3c3f0f3c3f3c3cf0c3ff0f3c30f0c3cf3c3cf0f3cfcf0c3c30ffcf3f3cfcf3ff3f3c30f3f3ff0f3cfcf3c3cf3cfcf3f3ff3c30f0f3c3cf3f3f3ff3c30f3f0c3c3f0c0c3c3cf3f3c30f0c3ff3c30ffc3cfffffffffff152999999998ffffffffffff7aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa4fffffffffffffcffcfcf003ffcffcf3cfcf3cfff0f3ffcfffcf3f3cfffc3cff3ff0f3f3fffc3cfcf3f3cf3cffffc3cfcf3f3cfcffcf003cfc3fff3f3cfcf3f3ff3f3cfcf3cfff03fcf3f3ff3cfcf3ffff0f3f003ff3cfcf3f3f3cff3f3f3ff0f3f3cfcf3f3ff3cfcffff0fffffffffff152666666668ffffffffffff7aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa4fffffffffffffcffcfcf3ffffcffcf3c3cf3cff0cf3ffcfffcf3f3cffc33cff3f0cf3f3ffc33cfcf3f3cf3cfffc33cfcf3f3cfcffcf3ffcff0fffccfcfcf3f3ff3f3cfcf3cfff33fcfccfff3cfcf3fff0cf3f3ffff3cfcf3f3f3cff3f3f3f0cf3f3cfcf3f3ff3cfcfff0cfffffffffff152999999998ffffffffffff7aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa4fffffffffffffcffcfcf3ffffcff3f3f03f3cfcfcf3ffcfffcf3f3cff3f3cff3cfcf3f3ff3f3cfcf3f3cf3cfff3f3cfcf3f3cfcffcf3ffcffc3ffccfcfcf3f3ff3f3cfcf3cfff3cfcfccfff3cfcf3ffcfcf3f3ffff3cfcf3f3f3cff3f3f3cfcf3f3cfcf3f3ff3cfcffcfcfffffffffff152666666668ffffffffffff75555555555555555555555555555554fffffffffffffcffcfcf0fcffcfc3f3f3ff3cfc3cf3ffcff3cf3c3cff0f3cff3c3cf3f3ff0f3c30f0c3cf3c3f30f3cfcf0c3cfcffcf0fccfcf3fff3fc30f0c3ff0c3c30f3c3f33c3cff3fff3c30f0fcc3cf3f0fcff3cfcf3f0c3cff3f3f3c3cf3f3c30f3f3ff3cfcffc3cfffffffffff152999999998ffffffffffff50000000000000000000000000000000fffffffffffff03f0303c03fc000fc0f00c0f0f0300ff00030300f03fc0c03c0f0300c0ffc0ccc3f30f000f00fc0cf003c0f0303f03c03f0c0fffc3ff03fc30ffc03f0c00f00c0f003c3ffc0f03fc03f033c3c03fc0030003c0f03c0c0c0f033c00f03c0c0fc00303ff033ffffffffff152666666668fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcff3fffffffffffffffffffffffffffffffffffffffffcfff3ffffffffffffffffffffffffffffffffffffcfffffffffffff3ffffffffffffffcfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc3c3fffffffffffffffffffffffffffffffffffffffffcfff3fffffffffffffffffffffffffffffffffffccfffffffffffff3fffffffffffffccfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff03ffffffffffffffffffffffffffffffffffffffffff03fc0fffffffffffffffffffffffffffffffffffc3ffffffffffffc0fffffffffffffc3fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998fffffffffffffffffffffffffffffffffffffffffffffffffffffffffc3cffffcffffff0ff0f30ffffffffffffffffff03ffc3ffffc3cc3fffffff0ffffffffff3ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0ff0f30fffffffffffcffffffffffffffc3ffffff0ffffffffc3ffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3cffffcffffffcffcf3cffffffffffffffffffcffff3fffff3cf3fffffffcffffffffff3ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcffcf3cfffffffffffcfffffffffffffff3ffffffcfffffffff3ffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3fffffff3ffffcffcffcffffffffffffffffffcfcfcffffff3ff3fffffffcfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcffcffcfffffffffffffffffffffffffff3ffffff3fffffffff3ffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffc030fc030c03c0fcffcc3cc3cc0f03cc00303fffcf00fff03ff30f3c3f03ffcc3fc0f030030c3fc03fc0c0f03c3c3303ff03c0c0c00c3ff0c3fc0f303c0fc0f0c3fc0fcffcc3cc3cc0f03cc00fc0f0c3ff03030330ff03fffc0fff03f3030303c0f0303c0fffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffff0f3cf0cfcf3f0f3cffcf3c30f0fc3cf0fcfcffffcfcfffcf3ff3cf3cfcfcffc30f0f3cfcf3c30f0cfff3f3c30f3f3c3ffc30f3f3f3c30ffc30f3f3c3f3cf0c3c30f0f3cffcf3c30f0fc3cf0fcf0f3c30ffcfcfcf0c3c30fff3cffc3cf3cfcfcf0f3cfcf3cfffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3f3cf3f3cf3ffc3cffcf3cfcf3fff0f3fcfcffffcfcfffc3fff3cf03fc00ffcfcffc3cfcf3cfcf3f3ff3f3cfcf3f3cfffcfcf3f3f3cfcffcfcf003cff0ff3f3cfcffc3cffcf3cfcf3fff0f3fcffc3cfcffcfcfcf3f3cfcfff0fffff0f3cfcfcffc3cfcf0ffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3f3cf0f3cf3fc33cffcf3cfcf3ff0cf3ff33ffffcfcffff0fff3cf33fcffffcfcfc33f33f3cfcf0f3ffccfcfcf3f3cfffcfcfcf3cfcfcffcfcf3ffcffc3f3f3cfcfc33cffcf3cfcf3ff0cf3fcfc33cfcfff3cf3f3f3cfcfffc3fff0cf3f3cf3fc33f33fc3fffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3f3cfc0fcf3f3f3cffcf3cfcf3fcfcf3ff33ffffcfcffffc3ff3cf3cfcffffcfcf3f3f33f3cfcfc0fffccfcfcf3f3cfffcfcfc0c0fcfcffcfcf3ffcfff0f3f3cfcf3f3cffcf3cfcf3fcfcf3fcf3f3cfcfff0303f3f3cfcffff0ffcfcf3f0303f3f3f33ff0fffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffff0c3cfcffcf3f0f3cffcf3cf0f3fc3cf3ffcff3ffcfcfffcf3ff3cf3c3c3f3fcfcf0f3fcff3cfcfcfffff3fc30f0c3cfffc30ff3f3fcfcffc30f0fccff3cf0c3cfcf0f3cffcf3cf0f3fc3cf3fcf0f3cfcfffcfcff3f3c30fff3cffc3cf3fcfcff0f3fcff3cfffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffc0c03c0303c3c0c03f000c03c0ff0300ff0ff3ff03f0ffc0ffc0000f0f00ff0303c0cfcfc00303c03ffc3ff03fc3003fff03ff3f3f0303fcc3fc0303f03fc0f0303c0c03f000c03c0ff0300f03c0c0303ffcfcfc0c0f03fff03fff0300fcfcffc0cf0ff03fffffffffff152999999998fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3fcffffffffffffffffffffffffff3fffffffffffffffffffffffffffffffffffffffffff3fcffcfffffffffffffffffffffffffffcffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3fffffffffffffff162666666668fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0f0fffffffffffffffffffffffff33fffffffffffffffffffffffffffffffffffffffffff0f0fccfffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff33fffffffffffffff252999999998fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc0ffffffffffffffffffffffffff0ffffffffffffffffffffffffffffffffffffffffffffc0ffc3fffffffffffffffffffffffffff03ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0ffffffffffffffff172666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcc3fffc3ff0fffffffffffffc03fffffc3fffc3fffffffcfffff03ffffffffffffffffcfffffffffffffffffffffffffffffffffc3ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff2a2999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcf3ffff3ffcfffffffffffff0f3ffffff3ffff3fffffffcffffc3fffffffffffffffffcffffffffffffffffffffffffffffffffff3ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3f2666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3ffff3ffcffffff3ffffff3ffffffff3ff3f3ffffffffffffcffffffffffffffffcffffffffffffffffffffffffffffffffffff3ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffc0f0303c0f0f3f03f30fcfc0ffc03c0ffc0030c3fc03fc0330ff03ff0c30f00303cc00c303fc0f000fc0f0c3ff0303c0f0f0ff0c3fc0ff03fc03ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffff0f3cfcf0f3cf3c3cf0c3cf3f3ff3f0c3ff3f3c30f0f3ff3f0c3cfcffcf0c3cfc30f0fc3030f0f3cfcf0c3c30ffcfcf0c3cfcffc30f3f3cfcf0f3ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998fffffffffffffffffffffffffffffffffffffffffffffffffffffffffc3cfcffc3cf3ff0f3f3cf003ff3f3f3ff3f3cfcf3f3ff3f3f3c00ffcf3f3cfcfcf3fcfcfcffc3cfcf3f3cfcffcfcf3f3cfcffcfcf003c00f3f3ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffc33f33fc33cf3f0cf3f3cf3ffff3f3f3ff3f3cfcf3f3ff3f3f3cffffcf3f3cfcfcf3fcfcfcfc33cfcf3f3cfcfff33f3f3cfcffcfcf3ffcfff3f3ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3f3f33f3f3cf3cfcf3f3cf3ffff3f3f3ff3f3cfcf3f3ff3f3f3cffffcf3f3cfcfcf3fcfcfcf3f3cfcf3f3cfcfff33f3f3cfcffcfcf3ffcfff3f3ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffff0f3fcff0f3cf3c3cf3c3cf0fcff3f0c3ff3f3cfcf0c3ff3f3f3c3f3fcf3f3cfc30f3fcfcfcf0f3cfcf0c3cfcfffcff0c3c30ffcfcf0fcc3f30c3cfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffc0cfcffc0c000f03300f03c03ffc3c0ffc0000303c0cffc00c0f00ff000c000f03c0f030303c0cf003c0f0303ff0ffc0ff0c3f0303c03f00fc0ccfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff002666666668fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff33ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0e2999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff252666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff052999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff2d2999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff032999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff172666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998fffffffffffffffffffffffffffffffffffffffffffffffffffffffc0fc0ffffffffffffffffffffffffffffffffffffffffffff03ffcc3fffffffffff3ffffffffffc3cffffffffffff0ffffffc0ffffffffffffffc3fffffffffffffffffc3cffffffffff3ffffffffffc3fffffff0ffffffffffff000330ffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3ff3ffffffffffffffffffffffffffffffffffffffffffffcfffcf3fffffffffff3fffffffffff3cffffffffffffcffffff0ffffffffffffffff3ffffffffffffffffff3cffffffffff3fffffffffff3fffffffcffffffffffffcff33cffffffffffffffffffffffffff3f2999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfcfffffffffffffffffffffffff3fffffff3fffffffffffcfffff3fffffffffffffffffffffff3fffffffffffcfcffffff3ffffffffffffff3f3ffffffffffffffffff3fffffffff3fffffffffffff3fffffffcffffffffffffcffffcffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfcff03c3c3ffc0ff03c30fffc0c03c0f30003f0f0c30fffcfff0f30f303c0f3003f03c30fffc030cc0f03fc0f00cc0c0fc00c0f03c30c0ffc0330ff03fff03c30f0c3f30fc0ff03c003f03c30fffc03f03fc0fcf0fff03cc0ffcfcc3cfc0fffffffffffffffffffffff152999999998fffffffffffffffffffffffffffffffffffffffffffffffffffffffff33fc30f3f3ff0f3c3cf0c3ff3cf3f0f3c3f3ffcfcf0c3ffcfffcf0c3c3f0f3c3f3c3cf0c3ff0f3cf0fcfcf0f3cfcf3f3ff3f0fc30f0c0c3ff3f0c3cfcffc3cf0c3c30f3cf0f3c3cf3f3c30f0c3ff0f3c30f0f3cf3ffc30f0fffc00f3cf3f3ffffffffffffffffffffff3a2666666668fffffffffffffffffffffffffffffffffffffffffffffffffffffffffcffcfcf3f3ff3ffff0f3f3ff0ff3ffc3cff3ffcfcf3f3ffcfffcf3f3cfffc3cff3ff0f3f3ff3f3cf3fc00f3ffcfcf3f3ff3f3fcfcf3f3f3ff3f3f3c00ffff0f3f3cfcf3cf3ffff0f3f3cfcf3f3ff3f3cfcf3ffc0fffcfcf3fffcfcf3cf003ffffffffffffffffffffff152999999998fffffffffffffffffffffffffffffffffffffffffffffffffffffffffcffcfcf3f3ff3fff0cf3f3ffc3f3fc33cff3ffcfcf3f3ffcfffcf3f3cffc33cff3f0cf3f3ff3f3cf3fcfff3ffcfcfccfff3f3fcfcf3f3f3ff3f3f3cfffff0cf3f3cfcf3cf3fff0cf3f3cfcf3f3ff3f3cfcf3ffccfffcfcf3fffcfff3cf3ffffffffffffffffffffffff172666666668fffffffffffffffffffffffffffffffffffffffffffffffffffffffffcffcfcf3f3ff3ffcfcf3f3fff0f3f3f3cff3ffcfcf3f3ffcfffcf3f3cff3f3cff3cfcf3f3ff3f3cf3fcfff3ffcfcfccfff3f3fcfcf3f3f3ff3f3f3cffffcfcf3f3cfcf3cf3ffcfcf3f3cfcf3f3ff3f3cfcf3ffcf3ffcfcf3fffcfff3cf3ffffffffffffffffffffffff002999999998fffffffffffffffffffffffffffffffffffffffffffffffffffffffffcffc30f0c3ff0fcc3cf3f3ff3cf3f0f3cff3ffc30f0c3ffcff3cf3c3cff0f3cff3c3cf3f3ff0c3cf3fc3f30fccfcff3fff3f3fc30f3f3f3ff3f3f3c3f3fc3cf0c3c30f3cf0fcc3cf3f3c30f3f3ff0c3c30f0fccf0ffc30f3fffcfff3cf0fcffffffffffffffffffffff002666666668fffffffffffffffffffffffffffffffffffffffffffffffffffffffff03ff03fc30ffc03f0300c0ff03fc3c0c03fc3ff0c330fff00030300f03fc0c03c0f0300c0ffc0c000ff00fc03f003c3ffc000ff03c0c0c0ffc00c0f00fff03330fcc3c003c03f033c00f03c0c0ffc0cf03fc0303c3ff03c0fff03fc003c03ffffffffffffffffffffff152999999998fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3ffffffffffffffffffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffff3ffcffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3fffffffffffffffffffffffffffffffffffffffffffffffffccfffffffffffffffffffffffffffffffff3ffcffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff2d2999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc0fffffffffffffffffffffffffffffffffffffffffffffffffc3ffffffffffffffffffffffffffffffffc0ff03fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff042666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668fffffffffffffffffffffffffffffffffffffffffffffffffffffffc0fc0cfffffffffffffffffcfffffffc3fffffff03c0f03fffffc3fffffffffffffffffffff03ff03fffffffffffffffffffffffffffffffc0ffffffffffffffffffcffc3ffcffffffffffffffffff0ffffffffffffffffffffc3cffffffffff3ffffffffffffffffffff242999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3ff3cfffffffffffffffffcffffffff3fffffffcff3fcfffffff3fffffffffffffffffffffc3ff0ffffffffffffffffffffffffffffffff0fffffffffffffffffffcfff3ffcffffffffffffffffffcfffffffffffffffffffff3cffffffffff3ffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffff0fc3fffffffffffffffffffffffff3f3fffffffc3f3f0fffffff3fffffffffffffffffffffccfccffffffffffffffffffffffffffffffff3fffffffffffffffffffff3f3fffffffffffffffffffcfcfffffffffffffffffffff3fffffffff3ffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfcf0fc0f030303c0f303f0c30ffc0330ff03fff3f3f3fc0f3033c3f030c3fc0ff03fc0fffccfccff03c30ff03fc03f03cc0ffff03cc0fc00c0f03c30c0ffc0c0c00c0330f0c30fffc0f0c3fc0f00cc3fc0f303ff03c30f0c3f30fc0ff03c003f03c30ffffffffffffff2a2666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfcfcf3f3cfcfcf3f3c3ffcf0c3ff3f0c3cfcfff3f3f3f0c3c3f3cfcf3c30f0f3c3cf3f3ffcc30cfc3cf0c3c3cf0cfcfcf0ffffc30f0fff3f0fc30f0c0c3ff3f3f3cf3f0c3cf0c3ff0f3c30f0c3cfc30f3f3c3ffc3cf0c3c30f3cf0f3c3cf3f3c30f0c3fffffffffffff142999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffc30fcf003cfcfcf003cfffcf3f3ff3f3f3c00fff0ccc3f3f3cff03fc3fcfcffc3cfff003ffcf33cfff0f3f3ff0f3f3c00f3ffffcfcf3fff3f3fcfcf3f3f3ff3f3f3cf3f3f3cf3f3fffc3cfcf3f3cfcfcf003cfffff0f3f3cfcf3cf3ffff0f3f3cfcf3f3fffffffffffff152666666668fffffffffffffffffffffffffffffffffffffffffffffffffffffffff33fcf3fff3cf3f3ffcfffcf3f3ff3f3f3cfffffccccff3f3cff33ff0fcfcfc33cfff3ffffcf33cff0cf3f3f0cf0f3cfff3ffffcfcf3fff3f3fcfcf3f3f3ffcf3cfcf3f3f3cf3f3ffc33cfcf3f3cfcfcf3ffcffff0cf3f3cfcf3cf3fff0cf3f3cfcf3f3fffffffffffff152999999998fffffffffffffffffffffffffffffffffffffffffffffffffffffffff03fcf3fff0303f3ffcfffcf3f3ff3f3f3cfffffc0c0ff3f3cff3cffc3cfcf3f3cfff3ffffcf03cfcfcf3f3cfcfc0fcfff3ffffcfcf3fff3f3fcfcf3f3f3ffc0c0fcf3f3f3cf3f3ff3f3cfcf3f3cfcfcf3ffcfffcfcf3f3cfcf3cf3ffcfcf3f3cfcf3f3fffffffffffff152666666668fffffffffffffffffffffffffffffffffffffffffffffffffffffffffcffcf0fcfcfcff0fccfffcf3f3ff3f3f3c3f3fff3f3ff0c3cff3c3cf3c30f0f3c3f30fcffcfcfcfc3cf3f3c3cfcffc3f33fcffc30f3fff3f3fc30f3f3f3fff3f3fcf3f3f3cf3f3ff0f3cfcf0c3cfcfcf0fccfffc3cf0c3c30f3cf0fcc3cf3f3c30f3f3fffffffffffff152999999998fffffffffffffffffffffffffffffffffffffffffffffffffffffffffcff03c03fcfcffc0303ff000c0ffc00c0f00ffff3f3ffc0f03c0f0c0fcc3fc0cf00fc03ff03cf03f0300c0f033c03f00c0fcfff03c0ffc000ff03c0c0c0fff3f3f03c00c0000c0ffc0c0303c0ff00303c0303fff03330fcc3c003c03f033c00f03c0c0fffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcffffffffffffffffffffffffffffffff3fcffffffcfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3ffcffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcffffffffffffffffffffffffffffffff0f0ffffff3fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3ffcffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff03fffffffffffffffffffffffffffffffc0ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc0ff03fffffffffffffffffffffffffffffffffff3a2999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff2d2999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff002999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3f03ffc3fffffffffffffffffffc3cffffffffff3ffffffffc3ffffffffffffffff033ffffffffff3fffffffffffffffffffffffffffffffffff3ff0fffffffffc0fff30fffffffffffcffffffffffffffffffffffffffffffffffff0ffcffffff3fffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3c3ffff3ffffffffffffffffffff3cffffffffff3fffffffff3fffffffffffffffc3c3ffffffffff3fffffffffffffffffffffffffffffffffff3ffcffffffffff3fff3cfffffffffffcffffffffffffffffffffffffffffffffffffcffcffffff3fffffffffffffffff152999999998fffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfff3f3ffffff3fffffffffffff3fffffffff3fffffffffff3fffffffffffffffcff3fffffffffffffffffffffffffffffffffffffffffffffffcfcffffffffff3ffffcffffffffffffffffffffffffffffffffffffffffffffffffcffffffffffcffffffffffffffff152666666668fffffffffffffffffffffffffffffffffffffffffffffffffffffffc3003c0330ff03c03ff03c30f0c3f30fc0ff03c003f03c30fff30ff03fc0fff03ffc3fff03cc003003f03fc0ff03fc30c0ff03c30f0f0ff030300300cc3fff03fff3ffc3cc3cc0f03cc00fc0f0c3fff03fc0f0c303c30c0ff03c30ff00ff0c30ffc300fffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3cfff3f0c3c3cf3ffc3cf0c3c30f3cf0f3c3cf3f3c30f0c3ff0c3c3cf3cffc3cfff03fcfcf0fcfcf3c3cf3f3cf3ff0c0c3cfcf0c3cfcffcfcfcf3cfc30ffc3cfff3fff3c30f0fc3cf0fcf0f3c30ffc3cf0c3c3030f0c0c3c3cf0c3c3cffcf0c3ff3cffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3cfff3f3f3ff0f3ffff0f3f3cfcf3cf3ffff0f3f3cfcf3f3ff3f3ff0f0fffff0ffff0fc00f3fcfcf3cfff003c3fff3f3f3c00f3f3cfcffcfcfcf3cfcfcffff0fff3fff3cfcf3fff0f3fcffc3cfcffcfff3f3cfcfcf3f3f3ff0f3f3cfcffcf3f3ff3cffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3cfff3f3f3f0cf3fff0cf3f3cfcf3cf3fff0cf3f3cfcf3f3ff3f3f0cfc3fff0cfffff3cfff3ff33f3cfff3fff0fff3f3f3cfff3f3cfcfff3cf3f3cfcfcfff0cfff3fff3cfcf3ff0cf3fcfc33cfcffcfff3f3cfcfcf3f3f3f0cf3f3cfcffcf3f3ff3cffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3cfff3f3f3cfcf3ffcfcf3f3cfcf3cf3ffcfcf3f3cfcf3f3ff3f3cfcff0ffcfcffcff3cfff3ff33f3cfff3fffc3ff3f3f3cfff3f3cfcfff0303f3cfcfcffcfcfff3fff3cfcf3fcfcf3fcf3f3cfcffcfff3f3cfcfcf3f3f3cfcf3f3cfcffcf3f3ff3cffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3cfff3f3f3c3cf3ffc3cf0c3c30f3cf0fcc3cf3f3c30f3f3ff3f3c3cf3cffc3cffc3c3c3f33ffcff3c3f30fccf3ff3f3f3c3f33f3c30fffcfcff3cfcfcffc3cfff3fcf3cf0f3fc3cf3fcf0f3cfcffc3f30c3cfcfcf3f3f3c3cf3f3c30ffcf3f3ff3cffffffffffffffff352666666668fffffffffffffffffffffffffffffffffffffffffffffffffffffffc000ffc00c0f033c3ff03330fcc3c003c03f033c00f03c0c0fc0c0f03303fff033fcc0ff00c0ffcfc0f00fc03c0ffc0c0c0f00c0c0f0c3ffcfcfc0f00303ff033fc000c0c03c0ff0300f03c0c0303ff00fc0f0303000c0c0f0300c0f033f000c0fc0f0fffffffffffffff152999999998fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3ffcfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff172666666668fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3ffcfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0c2999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc0ff03ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0c2666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668fffffffffffffffffffffffffffffffffffffffffffffffffffffffff3ffffffffff0fffffffffffffcc3fffffffc3ff3fffffff0ffffffffc3fc0ffff03c0c000ff00f03fffffffffc3fffffc003fffffc3fffffffffffffffffffffffffffffffffffffffc3cffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998fffffffffffffffffffffffffffffffffffffffffffffffffffffffff3ffffffffffcfffffffffffffcf3ffffffff3ff3fffffffcfffffffff3ff3ffffcff3cf3cffcffcfffffffffff3ffffff3fcfffff33ffffffffffffffffffffffffffffffffffffffff3cffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfffffffffffcfffffffffffffff3ffffffff3ffffffffcfcfffffffff3ff3fffff3cfff3fffcff3ffffffffffcfffffff3fcfffff3fffffffffffffffffffffffffffffffffffffffff3f3fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcff03fc0fff00fc0ff03f03cc00f30ff03fc03fc30c3ff00cc3fc0fffccfcffc3ff33ffcffff3ff3fc0ff0fcc3fff03ffcff3fc3f00fc3f30fc3f0c3fc0fc3ff0c303fc0f0c3c3c3f03f3f3fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3fc3cf3cffc3cf3f3cf3c3cf0fcf0c3cfcf0f3ff3c30ffcfc30f3f3ffccfcfc3cffcfffcffff3ff3f3cf0f3f3fffcf3ffc00fc3cfcfc3cfcfc3cfc33c3cc3cffc3030f0f3c30f3f3c3cf3fcfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3fff0f0fffcfcf003c3fcfff3fcf3f3c00f3f3ff3cfcffcfcfcf003ffcf3cfcf0ffcfffcffff3fcff3ff3c3cffffcffffccffcf0fcfcf0f3fcf0f0f3cffcf0ffcfcfcffc3cfcf3f3ff0f3fcfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3ff0cfc3ffcfcf3fff0fcfff3fcf3f3cfff3f3ff3cfcffcfcfcf3ffff3f33f00fff33ff3fffcffcffcfc03fcfffff3fff3f3f00ff3f00ff3f00ff3cf3ff00fffcfcfcfc33cfcf3f3f0cf3fcfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3fcfcff0ffcfcf3fffc3cfff3fcf3f3cfff3f3ff3cfcffcfcfcf3ffff3f33f3fffcf3ff3fffcffcfff3cfff3fffffcfff3f3f3fff3f3ffcff3fff3cf3ff3ffffcfcfcf3f3cfcf3f3cfcf3fcfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3f2666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3fc3cf3cffc30f0fccf3c3f33fcf3c3c3f30c3ff3cfcffcfcfcf0fcff3fc3f0f3f3fcff3fffcff3fcf3c3cf3ffff3cfff3fcf0f3f3f0f3cff0f3cf330f30f3ffcfcfcf0f3cfcf0c3c3cf3fcf3fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcff03303fff033c03c0ff00c0f0300ff00fc0cfc00303ff00303c03fc0ff3fc0fc0f03c0ffff00ffc0ff03f3ffff03ffc0fc3c0fcffc0fcffc0fcfcfc0fc0fff030303c0c0303c30f0300f3f3fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff002666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffffffffffff3fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998fffffffffffffffffffffffffffffffffffffffffffffffffffffffff3fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffccffffffffffffffffffffffffffffffffffffffffffffcffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668fffffffffffffffffffffffffffffffffffffffffffffffffffffffff3fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc3ffffffffffffffffffffffffffffffffffffffffffffcffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff192999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff262666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff192999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff262666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff192999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff262666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff2d2999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff2a2999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff192666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffff0003fffff0ffffffffffffffffffcfffff03ffffffffffffffffcffffffffffffffffffffffffffffffffffff3ff0ffffff03ffcc3fffffffffff3ffffffffffffffcffc3ffffffffffffffffffffff0fffcfffffffffffffffffffffc3fffcfffff0fffffffffffffff002666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3cf3fffffcffffffffffffffffffcffffc3fffffffffffffffffcffffffffffffffffffffffffffffffffffff3ffcffffffcfffcf3fffffffffff3ffffffffffffffcfff3ffffffffffffffffffffffcfffcffffffffffffffffffffff3fffcfffffcfffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3cf3fffffcfffffffffffcfffffffffffcffffffffffffffffcfffffffffffffffffffffffffffffffffffffffffcffffffcfffff3ffffffffffffffffffffffffffff3f3ffffffffffffffffffffffcfff3ffffffffffffffffffffff3ffff3ffcfcffffffcffffffff152666666668fffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfff03ffcfc0ff03fc0f00f03ff0c30f00303cc00c303fc0f000fc0f0c3fffc0c0f03c3c3fc30f303c0f03003f00fc0fffcfff0f30f303c0f3003f03c30ffc0c0c00c0330fffc0ffc0c0c0f03cc0f00fff3fc0f303f030303c0f303c03f03f3ff00cc3fc0f00fffffff152999999998fffffffffffffffffffffffffffffffffffffffffffffffffffffffffcffc30ffcf0c3c3cf0f3cfcfcffcf0c3cfc30f0fc3030f0f3cfcf0c3c30ffff3f3c30f3f3ff0c3c3f0c3cfcf3c3cf3f3ffcfffcf0c3c3f0f3c3f3c3cf0c3ff3f3f3cf3f0c3ff0f3ff3f3f3c30f0fc3cffcff0c3c3ffcfcfcf0c3c3f0f3cf3fcffcfc30f0f3cffffffff172666666668fffffffffffffffffffffffffffffffffffffffffffffffffffffffffcffcfcffcf3f3cffffc3cfc00ffcf3f3cfcfcf3fcfcfcffc3cfcf3f3cfcffff3f3cfcf3f3ff3f3cff3f3cfcf3cfcf003ffcfffcf3f3cfffc3cff3ff0f3f3ff3f3f3cf3f3f3fffc3ff3f3f3cfcf3fcfcffcff3f3cfffcfcfcf3f3cff3f3c3ffcffcfcfcffc3cffffffff152999999998fffffffffffffffffffffffffffffffffffffffffffffffffffffffffcffcfcffcf3f3cfffc33cfcffffcf3f3cfcfcf3fcfcfcfc33cfcf3f3cfcffffccfcfcf3f3ff3f3cff3f3f33f3cfcf3ffffcfffcf3f3cffc33cff3f0cf3f3ffcf3cfcf3f3f3ffc33ffcf3cfcfcf3fcfcffcff3f3cffff3cf3f3f3cff3f3f0ffcffcfcfcfc33cffffffff152666666668fffffffffffffffffffffffffffffffffffffffffffffffffffffffffcffcfcffcf3f3cfff3f3cfcffffcf3f3cfcfcf3fcfcfcf3f3cfcf3f3cfcffffccfcfcf3f3ff3f3cff3f3f33f3cfcf3ffffcfffcf3f3cff3f3cff3cfcf3f3ffc0c0fcf3f3f3ff3f3ffc0c0fcfcf3fcfcffcff3f3cffff0303f3f3cff3f3fc3fcffcfcfcf3f3cffffffff152999999998fffffffffffffffffffffffffffffffffffffffffffffffffffffffffcffc30ffcf0c3c3f30f3cfc3f3fcf3f3cfc30f3fcfcfcf0f3cfcf0c3cfcf3fff3fc30f0c3ff0c3cff0c3fcff3c30f0fcffcff3cf3c3cff0f3cff3c3cf3f3fff3f3fcf3f3f3ff0f3fff3f3fc30f3fc30ffcff0c3cffffcfcff0c3cff0c3cf3fcffcfcfcf0f3cffffffff2a2666666668fffffffffffffffffffffffffffffffffffffffffffffffffffffffff03ff03ff03c0ff00fc0cf0f00ff000c000f03c0f030303c0cf003c0f03033ffc3ff03fc30ff30f03fc0ffcfc0f033c03ff00030300f03fc0c03c0f0300c0fff3f3f03c00c0ffc0cfff3f3ff03c0ff033ff3fc0f03fffcfcffc0f03fc0cc0ff3fff00303c0cf0fffffff3f2999999998fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3ffcfffffffffff3ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3fffffffffffffffffffffffffff3ffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcffccfffffffffff3ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcffffffffffffffffffffffffffcfffffffffffffffffffff152999999998fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc3ffffffffffc0ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcffffffffffffffffffffffffffcfffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff192999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff262666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc3fffffff0fffffffffffff3fffffff0fffffffc3cc3ffffffffffffffffc030ffffffffffc0fff30fffffffffffcfffffffffffffffffffffffff0fffffffffff3fffffffffffc3ffffffffffffffc3ffffffffffffffffff152999999998fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3fffffffcfffffffffffff3fffffffcffffffff3cf3ffffffffffffffff0f3cfffffffffff3fff3cfffffffffffcfffffffffffffffffffffffffcfffffffffff3ffffffffffff3fffffffffffffff3ffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfff3ffffff3fffffffcfffffffffffffffffffcfcffffffff3ff3ffffffffffffffff3ffcfffffffffff3ffffcfffffffffffffffffffffffffffffffffffffcffffffffffffffffffffffff3fffffffcfffffff3ffffffffffffffffff152999999998fffffffffffffffffffffffffffffffffffffffffffffffffffffffc0c0f03c3c3fc0c0c0f03c30f00fc03c0fff3f03fc0fcf0ff0f0c30ffc30c3ff00cc3fc0fff30f30f303c0f3000c0fc003cfc0ff03ffff3ffc3cc3cc0f03cc00fc0f0c3fff03f03fc0f303c0fcc3fc0ff03fc30c3fff03f03f3f03fc0f00f03fc03ffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3f3c30f3f3ff3f3f3c3cf0c3cfff3f0c3ff3c30f0c3cf3ffcfcf0c3ff3c30ffcfc30f3f3ff3cf0c3c3f0f3c3f3f3ff3f3cf3f3cf3ffff3fff3c30f0fc3cf0fcf0f3c30ffcf3cfcf0f3c3f0f3c30f3f3cf3ff3c30ffcf3cfcf3cfcf0f3cfcfcf0f3ffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3f3cfcf3f3ff3f3f3ff0f3f3cfff3f3f3ff3cfcf3f3c0fffcfcf3f3ff3cfcffcfcfcf003ff3cf3f3cfffc3cff3f3ff3f3cf003c3fffff3fff3cfcf3fff0f3fcffc3cfcffc3fc00ffc3cff3ffcfcf003c3fff3cfcffc3fc00f3c00f3ffcfc00f3f3ffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffccfcfcf3f3ffcf3cff0cf3f3cfff3f3f3ff3cfcf3f3ccfffcfcf3f3ff3cfcffcfcfcf3ffff3cf3f3cffc33cffccfff3f3cf3fff0fffff3fff3cfcf3ff0cf3fcfc33cfcfff0fcfffc33cff3ffcfcf3fff0fff3cfcfff0fcfff3cfff3ffcfcfff3f3ffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffccfcfcf3f3ffc0c0fcfcf3f3cfff3f3f3ff3cfcf3f3cf3ffcfcf3f3ff3cfcffcfcfcf3ffff3cf3f3cff3f3cffccfff3f3cf3fffc3ffff3fff3cfcf3fcfcf3fcf3f3cfcfffc3cfff3f3cff3ffcfcf3fffc3ff3cfcfffc3cfff3cfff3ffcfcfff3f3ffffffffffffffffff152666666668fffffffffffffffffffffffffffffffffffffffffffffffffffffffff3fc30f0c3fff3f3fc3cf3f3cfff3f0c3ff3c30f0c3cf0ffc30f0c3ff3cfcffcfcfcf0fcff3cf3c3cff0f3cfff3fff3f3cf0fccf3cfff3fcf3cf0f3fc3cf3fcf0f3cfcffcf3c3f30f3cff0fccfcf0fccf3ff3cfcffcf3c3f33c3f30fccfc3f30c3ffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffc3ff03fc30fff3f3ff0300c0f0ffc3c0ffc0f03fc0f03c3ff0c330ffc00303ff00303c03fc00300f03fc0c03fc3ffc00003c03c0fcffc000c0c03c0ff0300f03c0c0303fc0ff00fc0c03fc030303c03c0ffc00303fc0ff00c0f00fc03f0f00fc0cffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfffffffffffffffffffffffffffffffffffffffffffffffffff3ffffffffffffffffffffffffffffffffffffcffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998fffffffffffffffffffffffffffffffffffffffffffffffffffffffccfffffffffffffffffffffffffffffffffffffffffffffffffff3fffffffffffffffffffffffffffffffffffccffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668fffffffffffffffffffffffffffffffffffffffffffffffffffffffc3ffffffffffffffffffffffffffffffffffffffffffffffffffc0fffffffffffffffffffffffffffffffffffc3ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff2d2999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff03ffc3ff0ffffffffffffffffffff0ffff0f3ffffffc3fffffffffffffffffffffffffffffc3cfffffffffcffc3fffffffffcfc03fffffffffcfffffffffffffc0fffffffffffc3ffffc030fffffffc3fffffffffffffffffffffffffffffffff1d2666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc3ffff3ffcffffffffffffffffffffcffffcf3fffffff3ffffffffffffffffffffffffffffff3cfffffffffcfff3fffffffffcf0f3fffffffffcfffffffffffff0fffffffffffff3ffff0f3cffffffff3fffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3ffffffffffffff3ffcfffff3ffcffffffffffffffffffffcffffcfffffffff3ffffffffffffffffffffffffffffff3ffffffffffffff3fffffffcfff3fffffffffcfffffffffffffff3fffffffffffff3ffff3ffcffffff3f3ffffff3ffffffffffffffffffffffffff152666666668fffffffffffffffffffffffffffffffffffffffffffffffffffffffc03c0f303c03f03c03f00303f3f00fc0f303c0fff03c30ff00fff00c3f030c3f3f03c0c0f03ffc0fffc0f0c3fc0ffff30c30ff03ff0fc03f03c30f000c003f03fc0f000fc0f0c3fff03c00ff03fc0ff03f30ffc003cfc0ffc0330ff03c03fffffffffffffffffffffffff352999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3f0f3c3f0cfcfcf3ffcfc30f3c3cf3f3c3f3cffc3cf0c3c3cffc3cf3cf3c30f3c3cf3f3cf3ff0f3ff0c3c30f3f3fff3cf0c3cfcffcf0f3cfcf0c3cfcf3f3c3cf0f3cfcf0c3c30ffc30f3ffcfcf0f3c3cf0c3ff3f3cf3f3ff3f0c3c3cf3ffffffffffffffffffffffffff172666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3ffc3cff3f3c00f3ffcfcfcf3cfcf003cff0fffff0f3f3cfcffcfcf3c3fcfcf3ff0f3f3c3ffffc3ff3f3cfcf003fff3cf3f3c00ffcf3f3c00f3f3cfcf3f3cffffc3cfcf3f3cfcffcfcf3ffc00ffc3cfff3f3ff3f3cf003ff3f3f3ff0f3ffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3fc33cff0f3cfff3ffcfcfcf3cfcf3ffcffc3fff0cf3f3cfcffcfcf3f0fcfcf3f0cfccff0fffc33ff3f3cfcf3ff00f3cf3f3cffffcf3f3cfff3f3cfcf3f3cfffc33cfcf3f3cfcffcfcf3ffcfffc33cfff3f3ff3f3cf3ffff3f3f3f0cf3ffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3f3f3cffc0fcfff3ffcfcfcf3cfcf3ffcfff0ffcfcf3f3cfcffcfcf3fc3cfcf3cfcfccffc3ff3f3ff3f3cfcf3fffff3cf3f3cffffcf3f3cfff3f3cfcf3f3cfff3f3cfcf3f3cfcffcfcf3ffcfff3f3cfff3f3ff3f3cf3ffff3f3f3cfcf3ffffffffffffffffffffffffff3f2999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3f0f3cffcffc3f33ffcfc30f3c30f0fccff3cffc3cf3f3c30ffc30f3cf3c30f3c3cff3fcf3ff0f3ff0c3cfcf0fcfff3cf3f3c3f3fcf0c3c3f33f3cfcf3f3c3f30f3cfcf0c3cfcffc30f3ffc3f30f3c3f33f3ff3f3cf0fcff3f3f3c3cf3ffffffffffffffffffffffffff172666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffc3c0c03fc03f00fc3f00f03c0f033c0303f03fff0300c0f033ff0300c0fcc3c0f033c3fc0fffc0cffc0f0303c03ffc0000c0f00ff03c0cf00c0c0f000000f00fc0cf003c0f0303ff03c03ff00fc0cf00c0c0fc00003c03ffc00c0f033c3fffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3fcffffffffffffffffffffffffffffffffffffffffffffffffcffffffffcfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0f0ffffffffffffffffffffffffffffffffffffffffffffffffcfffffffccfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff262999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc0fffffffffffffffffffffffffffffffffffffffffffffffff03ffffffc3fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1d2999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3ffffffffff0fffffffffffffffffffff0fffc0fc0ffffffffffffffffffffffc3fffffffffffffffff0ffffffffffff00c3fffffffff03ffffffffffffff0fffffffc3cffffffffffffffffff3ffffffffffffc3ffffff3ffffffffffffffffffff262999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3ffffffffffcfffffffffffffffffffffcffff3ff3fffffffffffffffffffffff3fffffffffffffffffcfffffffffffc3cf3ffffffffc3fffffffffffffffcffffffff3cffffffffffffffffff3fffffffffffff3ffffff3ffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcffffffffffffffcfcfffffffffffffffffffffcffffcfcffffffffffffffffffffff3f3fffffffffffffffffcffffffff3ffcfff3ffffffffcffffffffffffffcfcffffffff3fffff3ffcffffffffffffffffffffff3f3fffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffc0ff03c30f00f03c30c3fc0ff00cc3fc0ffc0c0c0f03cc0f00ffffcfcff03c3c3ffc0ff03c30ffc0330ff03c30fffc0fc0fcfc0ff03c03f000f3f03fc0ff00303c0f0c303ff00cc3fc0fff30fc0c03f00f03ff03003f03c0c0c0fc0330ff03c3303fffffffffffffffff192666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffff0f3c30f0c3cfc3cf3c30f3cffcfc30f3f3ff3f3f3c30f0fc3cfffff33fc30f3f3ff0f3c3cf0c3ff3f0c3cfcf0c3ff3cf3f3cf3f3c3cf3ffcfcf3cfcf3cffcfc3f0c3c3030ffcfc30f3f3ff3cf3cf3ffcfc30ffcfcf3cfcf3f3f3ff3f0c3cfcf3c3ffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3ffcfcf3f3cfff0f3cfcf0fffcfcfcf003ff3f3f3cfcf3fcfcfffffcffcfcf3f3ff3ffff0f3f3ff3f3f3c00f3f3ff0ff003cf003cfff3ffcfcf3c00f0fffcfcff3f3cfcfcffcfcfcf003ff3cf0ff3ffcfcfcffcfcf3c00f3f3f3ff3f3f3c00f3cfffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3ffcfcf3f3cff0cf3cfcfc3ffcfcfcf3ffffcf3cfcfcf3fcfcfffffcffcfcf3f3ff3fff0cf3f3ff3f3f3cfff3f3ffc3f3ffcf3ffcfff3ffcfcf3cfffc3ffcfcff3f3cfcfcffcfcfcf3ffff3cfc3f3ffcfcfcfff33f3cfffcf3cfff3f3f3cfff3cfffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3ffcfcf3f3cfcfcf3cfcff0ffcfcfcf3ffffc0c0fcfcf3fcfcfffffcffcfcf3f3ff3ffcfcf3f3ff3f3f3cfff3f3fff0f3ffcf3ffcfff3ffcfcf3cffff0ffcfcff3f3cfcfcffcfcfcf3ffff3cff0f3ffcfcfcfff33f3cfffc0c0fff3f3f3cfff3cfffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffff0fcc30f3f3cfc3cf3cfcf3cffcfcfcf0fcfff3f3fc30f3fc30f3fffcffc30f0c3ff0fcc3cf3f3ff3f3f3c3f33f3ff3cf0fccf0fcc3f33ffcfcf3c3f33cffcfcff0c3cfcfcffcfcfcf0fcff3cf3cf3ffcfc30fffcff3c3f3f3f3fff3f3f3c3f33cfffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffc03f03c0c0f0f0300030303fff00303c03fff3f3ff03c0ff0333fff03ff03fc30ffc03f0300c0ffc00c0f00c0c0ff03fc0303c03f00fc3f00000f00f03ff0003fc0f030303ff00303c03fc00303fc3ff0f03fffcfc0f00ff3f3fffc00c0f00c003ffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff172999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff2d2999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcffffffffcffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffc0ff03c30f00f03c30f00f03ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffff0f3c30f0c3cfcfcf0c3cfcf3ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3ffcfcf3f3cfc00f3f3cfc3fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3ffcfcf3f3cfcfff3f3cff0fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3ffcfcf3f3cfcfff3f3cffc3ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffff0fcc30f3f3cfc3f33f3cfcf3cfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffc03f03c0c0f0f00c0c0f0c0fcfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff172666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff192999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff172666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff172999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff192999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1b2666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffff0003ffffffffffffffffffffffffffc3fffffff3f03ffffffffffffffffffffffffffffffffc3ffffffffc3ffffffffffffffffff0fffffffffffffc00ffffffff03ffffffffffffffffffffffffffffffffffff0ffc3ffffffff0ffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcff3fffffffffffffffffffffffffff3fffffff3c3ffffffffffffffffffffffffffffffffff3fffffffff3ffffffffffffffffffcffffffffffffff3c3ffffffc3fffffffffffffffffffffffffffffffffffffcfff3ffffffffcffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcffffffffffffffffffffffffffffff3ffffffffcfffffffffffffffffffffffffffcfffffff3ff3ffffff3ffffffffffffffffffcffffffffff3fff3f3ffffffcffffffffffffffffffffffffffffffffffffff3fff3ffffffffcffffffff3fffffffffffffffffffff1f2999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfcfc0f303ff03c0c0f03c30c0f0c3f3f03fffc3003c0c0f03c3c3fc0c0c0f03c30f00f03fc03fc03c0fff3f03fc0f30030fffc0fcc3fc0f0f0c03ff3f3303c0f00303cc0f03c30ff03fc0ff03fff0303c0f0f0fffc03ffc0fc0fcfc0ff03c03ffffffffffffffffffff1d2666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffc00f0c3c3ffcfcf3f3c3cf0c0c3c30f3cfcffff3cfff3f3c30f3f3ff3f3f3c3cf0c3cfcfcf0f3ff3f0c3ff3cfcf0f3c3f0c3ff0f3c30f0c3cfcf3fff3c3c3f3f3cfcfcf0fcfcf0c3c3cf3f3cf3fffcfcf0c3cfcfff0f3ff3cf3f3cf3f3c3cf3fffffffffffffffffffff052999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfcf3f3cfffc00fc0fff0f3f3f3cfcf3c00ffff3cfff3f3cfcf3f3ff3f3f3ff0f3f3cfc00f3f3ff3f3f3ff3c00ffc3cff3f3fffc3cfcf3f3cfcf3fff00fcff003cfc00f3fc00f3f3cfff003c3ffffcfcf3f3cfcfff3f3ff0ff003cf003cfff3fffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfff3f3cfffcffff3ff0cf3f3f3cfcf3cffffff3cfffccfcfcf3f3ffcf3cff0cf3f3cfcfff3f3ff3f3f3ff3cfffc33cff3f3ffc33cfcf3f3cfcf3fff3ffcff3ffcfcfff3fcfff3f3cfff3fff0fffff33f3f3cfcfff3f3ffc3f3ffcf3ffcfff3fffffffffffffffffffff352999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfff3f3cfffcfffc0fcfcf3f3f3cfcf3cffffff3cfffccfcfcf3f3ffc0c0fcfcf3f3cfcfff3f3ff3f3f3ff3cfff3f3cff3f3ff3f3cfcf3f3cfcf3fff3ffcff3ffcfcfff3fcfff3f3cfff3fffc3ffff33f3f3cfcfff3f3fff0f3ffcf3ffcfff3fffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfff0c3cfffc3f33f3c3cf3f3f3c30f3c3f33ff3cffff3fc30f0c3fff3f3fc3cf3f3cfc3f30c3ff3f0c3ff3c3f30f3cff3f3ff0f3cf0f0c3c30f3fff3ffcff0fccfc3f33fc3f33f3c3f30fccf3cfffcff0c3c30fff0c3ff3cf0fccf0fcc3f33fffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffff03ffc0f03fff00c0c0f0300c0c0cc3c0f00f3fc000ffc3ff03fc30fff3f3ff0300c0f0f00fc0cffc3c0ffc0f00fc0c03c0c0ffc0cc03fc0ff0c3c3fc0ff03fc0300f00c0ff00c0c0f00fc03c0fcfff0ffc0ff0c3ffc0cff03fc0303c03f00fc3ffffffffffffffffffff352666666668fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcffffffff3fffffffcfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfff3fffffffffffffffffffffffffffffffffffffffffffffffffffff2d2999999998fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfffffffcfffffffccfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3ff33fffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff03ffffffffffffffc3ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0ffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffff03f03ffff03c0f0003ff03c0fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0ffffffffffffffffff0fffff03ffffffffc3ffffffffffffffffffffc3ffcf3c00ffffffff03ffffffffffffffffffffffc30fffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffc3fcfffffcff3f3cf3ffcff3fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcffffffffffffffffffcffffc3ffffffffff3fffffffffffffffffffff3ff3cff3c3ffffffc3ffffffffffffffffffffffff3cfffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffccfcffffff3cff3cf3ffcff3ffffffffffffffffffffffffffffffffff3ffffffffffffff3fffffffffffcffffffffffffffffffcffffcfffffffff3f3fffffffffffffffffffff3ff0c3f3f3ffffffcffffffffffffffffffffffffcf3fffffffffffffffffffffffff172666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcc3cff03ff3cfffcffffcff3fc0fc0f303ff03fc0ff0303c0f0f0cc0fc03c0f303c03f03c03ff03c30ff00fff03f03fc0f303c0fcc3ff00303cc0fc0330ff03ff030303c0f303c03ffffff3f3303c0f00303cc0f03c30ff03fc0ff03ffff3fffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcf3cfcfcffc3fffcffffcff3f3cf3f3c3ffc3cf3cffcfcf0c3cfcf0fff3f0f3c3f0cfcfcf3ffc3cf0c3c3cffcf3cfcf0f3c3f0f3c30ffcfc30f0fff3f0c3cfcffcfcfcf0c3c3f0f3ffffff3c3c3f3f3cfcfcf0fcfcf0c3c3cf3f3cf3ffff3fffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcf0cfc00ffc3fffcffffcff3f0ff003cfffff0f0fffcfcf3f3cfcf3fff3ffc3cff3f3c00f3ffff0f3f3cfcffc3fc00ffc3cff3ffcfcffcfcfcf3fff3f3f3c00ffcfcfcf3f3cff3f3ffffff00fcff003cfc00f3fc00f3f3cfff003c3fffffffffffffffffffffffffffff352999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfccfcffff3cfffcffffcff3fc3f3ffcffff0cfc3fff33f3f3cfcf3fff3fc33cff0f3cfff3fff0cf3f3cfcfff0fcfffc33cff3ffcfcffcfcfcf3fff3f3f3cfffff3cf3f3f3cff3f3ffffff3ffcff3ffcfcfff3fcfff3f3cfff3fff0fffffffffffffffffffffffffffff172666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfccfcfffcff3ffcffffcff3ff0f3ffcfffcfcff0fff33f3f3cfcf3fff3f3f3cffc0fcfff3ffcfcf3f3cfcfffc3cfff3f3cff3ffcfcffcfcfcf3fff3f3f3cfffff0303f3f3cff3f3ffffff3ffcff3ffcfcfff3fcfff3f3cfff3fffc3ffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcff0fc3f30ff0ffcffffc3c3f3cf0fccfffc3cf3cfffcff0c3c30f3fff3f0f3cffcffc3f33ffc3cf3f3c30ffcf3c3f30f3cff0fccfcffcfc30f3fff3f3f3c3f3ffcfcff0c3cff0c3ffffff3ffcff0fccfc3f33fc3f33f3c3f30fccf3ffff3fffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffff03f0ff00c03c03f03ffff00ff03fc0303fff03303fff0ffc0ff0c00fffc3c0c03fc03f00fc3ff0300c0f033fc0ff00fc0c03fc030303f00f03c0fffc00c0f00fffcfcffc0f03fc0cfffffc0ff03fc0300f00c0ff00c0c0f00fc03c0fffff3fffffffffffffffffffffff262999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3fffffffffffffffffffff3fcfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3fffffffffffffffffffffff152666666668fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff33fffffffffffffffffffff0f0ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcffffffffffffffffffffffff152999999998fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0ffffffffffffffffffffffc0ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff262999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffff03ffcc3fffffffffff3fffffffffffffffffffff0ffc3fffc3cfffffff0ffffffffffffff0f3fffffffffff03fc030fffffffffffffffffffffffff3ffff3ffffffffffc3ffffffffffffffffffffffc3fffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfffcf3fffffffffff3fffffffffffffffffffffcfff3ffff3cfffffffcffffffffffffffcf3ffffffffffc3ff0f3cfffffffffffffffffffffffff3ffff3fffffffffff3fffffffffffffffffffffff3fffffffffffffffffffffffffffffffffffffffffffffffffff1b2666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfffff3fffffffffffffffffffffffffffffffffcfff3ffff3ffffffffcffffffffffffffcfffffcffffffcfff3ffcfffffffffffffffffffcffffffffffffffffffff3f3ffffff3ffffffffffffffff3fffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfff0f30f303c0f3003f03c30ffc0c0c0f03c3c3cfc03ffc030fc0c30fcfc0f0303ff03ffcc3f0300ffc0f003c003cfc0ff03ffc0ff03c30f00f03c30c3c30c3fc03fc0330ff03c03f030303c0f303c03fffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfffcf0c3c3f0f3c3f3c3cf0c3ff3f3f3c30f3f3cf0f3ff0f3cf3cf0c3cf0f3cfcffc3cffcf3cf3cfff0c3cfff3f3cf3f3cf3ff0f3c30f0c3cfc3cf3c30f3c30f0cfff3f0c3c3cf3ffcfcfcf0c3c3f0f3fffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfffcf3f3cfffc3cff3ff0f3f3ff3f3f3cfcf3f3cf3f3ff3f3cf0ff3f3cffc3cfcffff0ffcf3c3fcfff3f3cfff3f3cf003c3fff3ffcfcf3f3cfff0f3cfcf3cfcf3f3ff3f3f3ff0f3ffcfcfcf3f3cff3f3fffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfffcf3f3cffc33cff3f0cf3f3ffcf3cfcfcf3f3cf3f3ff3f3cfc3f3f3cfc33f33fff0cffcf3f0fcfff3f3cfff3f3cf3fff0fff3ffcfcf3f3cff0cf3cfcf3cfcf0f3ff3f3f3f0cf3fff3cf3f3f3cff3f3fffffffffffffffffffffffffffffffffffffffffffffffffff172999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfffcf3f3cff3f3cff3cfcf3f3ffc0c0fcfcf3f3cf3f3ff3f3cff0f3f3cf3f3f33ffcfcffcf3fc3cfff3f3cfff3f3cf3fffc3ff3ffcfcf3f3cfcfcf3cfcf3cfcfc0fff3f3f3cfcf3fff0303f3f3cff3f3fffffffffffffffffffffffffffffffffffffffffffffffffff372666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcff3cf3c3cff0f3cff3c3cf3f3fff3f3fc30f0c3cf0c3ff0c3cf3cf0c3cf0f3fcfffc3cffcf3cf3cfff0c3cfff3f3cf0fccf3ff0fcc30f3f3cfc3cf3cfcf3cfcfcffff3f3f3c3cf3fffcfcff0c3cff0c3cffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffff00030300f03fc0c03c0f0300c0fff3f3ff03fc3003c0cffc0c0303f30f03c0cf0ffff033f000c0ff0ffc0f00fc00003c03c0fffc03f03c0c0f0f0300030000303c03ffc00c0f033c3ffcfcffc0f03fc0ccffffffffffffffffffffffffffffffffffffffffffffffffff152666666668fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3ffffffff3ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3fcffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff3fffffff33ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0f0ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc0fffffff0fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc0fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff2d2999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998fffffffffffffffffffffffffffffffffffffffffffffffffffffffc000ffffffffc3ff0ffffffffff0f3fffc3ffcfffffffffffffff00c3fffffcfffffffc3fffffff0f3ffffffffc3cfffffff0ffffffffffffff0fffffffffffffffffffffffc3fffffffffffffffffffffffffffffff3fffffffff3fffffff0ffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfc3ffffffff3ffcffffffffffcf3ffff3ffcffffffffffffffc3cf3fffffcffffffff3fffffffcf3fffffffff3cfffffffcffffffffffffffcffffffffffffffffffffffff3fffffffffffffffffffffffffffffff3fffffffff3fffffffcffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcff3ffffffff3ffcffffffffffcffffff3fffffffffffffffffcfff3ffffffffffff3f3fffffffcfffffcfffff3ffffffffcffffffffffffcfcffffffffffffffffffffffff3fffffffffffffffffffffffcfffff3fffffffffffffffffcfcffffffcfffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcffcfc0f0f0f30fcfc0ffffc0fcc3f03f3c30c30ff00fff03ff000f3f03ff0c30ffc0330ff03ffcc3f0300ffc030fc0c30fcfc0f0303c0ff00cc3fc0ffc3c3f03f03cc0ffc03f03fc0f0f0c30c0ff03c30f00f03c003f03c30ffc30c3ff00cc3fc0f00ffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcffcf0c3cfcf0c3cf3f3fff0f3cf3c3cf3cfcf0c3c33ffc3cffcfcf3cfcffcf0c3ff3f0c3cfcffcf3cf3cfff0f3cf3cf0c3cf0f3cfcf3cffcfc30f3f3ff3f3cf3cfcf0fff0f3c30f0f3cfcf0c0c3cfcf0c3cfc3cf3f3c30f0c3ff3c30ffcfc30f0f3cfffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcffcf3f3cfcf3f3cf003fff3ffcf3cfff03fcf3f3cfcffff0ffcfcf3c00ffcf3f3ff3f3f3c00ffcf3c3fcfff3f3cf0ff3f3cffc3cfcf0fffcfcfcf003ff3f3c3fc00f3fff3f3cfcf3ffcfcf3f3f3c00f3f3cfff0f3f3cfcf3f3ff3cfcffcfcfcffc3cfffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcffcf3f3cfcf3f3cf3ff00f3ffcf3cfff33fcf3f3c3cfff0cffcfcf3cffffcf3f3ff3f3f3cffffcf3f0fcfff3f3cfc3f3f3cfc33f33fc3ffcfcfcf3ffff3f3f0fcfff3fff3f3cfcf3ffcfcf3f3f3cfff3f3cff0cf3f3cfcf3f3ff3cfcffcfcfcfc33cfffffffffffffff352666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcff3f3f3cfcf3f3cf3fffff3ffcf3cfff3cfcf3f3f03ffcfcffcfcf3cffffcf3f3ff3f3f3cffffcf3fc3cfff3f3cff0f3f3cf3f3f33ff0ffcfcfcf3ffff3f3fc3cfff3fff3f3cfcf3ffcfcf3f3f3cfff3f3cfcfcf3f3cfcf3f3ff3cfcffcfcfcf3f3cfffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffcfc3f0c3c30f3c3cf0fcfff0fccf3c3f33c3cf3f3f3fffc3cffcfcf3c3f3fcf3f3ff3f3f3c3f3fcf3cf3cfff0c3cf3cf0c3cf0f3fcff3cffcfcfcf0fcff0c3cf3c3f33fff0c3c30f0fcc30f3f3f3c3f33f3cfc3cf3f3c30f3f3ff3cfcffcfcfcf0f3cfffffffffffffff152666666668fffffffffffffffffffffffffffffffffffffffffffffffffffffffc000ffc0ff0c300f03c03fffc03000f00c0f0000c0f00fff033f00000f00ff000c0ffc00c0f00ff000c0ff0ffc0c0303f30f03c0cf0ff03fff00303c03ffc30c0ff00c0fffc0cf03fc03f0c00c0c0f00c0c0f0f033c00f03c0c0fc00303ff00303c0cf0ffffffffffffff1f2999999998fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffcff3fffffffffffffffffffffffffffffffffffffffffffffffffff3ffffffff3ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff172666666668fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc3c3fffffffffffffffffffffffffffffffffffffffffffffffffff3fffffff33ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff03fffffffffffffffffffffffffffffffffffffffffffffffffffc0fffffff0fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff192999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff262666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffffc030ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff002999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffff0f3cffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff002666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3ffcffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff192999999998fffffffffffffffffffffffffffffffffffffffffffffffffffffffc003cfc0fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3f3cf3f3ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3f3cf003ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1b2666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3f3cf3ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152999999998ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3f3cf3ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152666666668ffffffffffffffffffffffffffffffffffffffffffffffffffffffff3f3cf0fccfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152aaaaaaaa8fffffffffffffffffffffffffffffffffffffffffffffffffffffffc00003c03cfffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152fffffffc8ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152eaaaaaa48ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152eaaaaaa48ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152eaa9aaa48ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152eaa8aaa48ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152eaa46aa48ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152eaa02aa48ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152ea901aa48ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1d2ea800aa48ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff2d2ea4006a48ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152ea0002a48ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152e90001a48ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152eaaaaaa48ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152eaaaaaa48ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152d55555548ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152000000008ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152aaaaaaaa8ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152fffffffc8ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152eaaaaaa48ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152eaaaaaa48ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152e90001a48ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152ea0002a48ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff172ea4006a48ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152ea800aa48ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152ea901aa48ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff262eaa02aa48ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152eaa46aa48ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1d2eaa8aaa48ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff192eaa9aaa48ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152eaaaaaa48ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152eaaaaaa48ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff262d55555548ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1d2000000008ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152aaaaaaaa8ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1b15555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555153fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff152aaaaaaaaaaaaa9eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa7aaaaaaaaaaaaaa152aaaaaaaaaaaaa9eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa7aaaaaaaaaaaaaa152aaaaaaaaaaaaa9eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa7aaaaaaaaaaaaaa152aaaaaaaaaaaaa9eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa7aaaaaaaaaaaaaa152aaaaaaaaaaaaa9eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa7aaaaaaaaaaaaaa052aaaaaaaaaaaaa9eaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa7aaaaaaaaaaaaaa150000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000015>
+557
+439
+2
+[1 0 0 -1 0 439]
+ {}  image
+grestore
+%%Trailer
+%%EndDocument
+~
+u
+0 To
+1 0 0 1 184.8421 749.557 0 Tp
+TP
+-35.5137 0 Td
+0 Tr
+0 O
+0 g
+0 i 0 J 0 j 1 w 4 M []0 d
+%AI3_Note:
+0 D
+/_Helvetica 9 Tf
+0 Ts
+100 Tz
+0 Tt
+0 TA
+0 0 5 TC
+100 100 200 TW
+0 0 0 Ti
+1 Ta
+0 Tq
+10 0 Tl
+0 Tc
+0 Tw
+(miniaturize button) Tx 
+(\r) TX 
+TO
+u
+0.75 w 1.25 M
+188.125 744.125 m
+188.1793 737.75 L
+182.0543 737.75 L
+182 744.125 L
+188.125 744.125 L
+n
+185.063 741.063 m
+N
+U
+0 R
+0 G
+185.063 746.209 m
+185.063 732.5 l
+S
+U
+u
+0 To
+1 0 0 1 268.7171 749.557 0 Tp
+TP
+-14.7553 0 Td
+0 Tr
+0 O
+0 g
+1 w 4 M
+(title bar) Tx 
+(\r) TX 
+TO
+0 R
+0 G
+0.75 w 1.25 M
+268.938 746.209 m
+268.938 736 l
+S
+u
+272 744.125 m
+272 738 L
+265.875 738 L
+265.875 744.125 L
+272 744.125 L
+n
+268.938 741.063 m
+N
+U
+U
+u
+0 To
+1 0 0 1 452.2171 749.557 0 Tp
+TP
+-24.2639 0 Td
+0 Tr
+0 O
+0 g
+1 w 4 M
+(close button) Tx 
+(\r) TX 
+TO
+u
+0.75 w 1.25 M
+455.5 744.125 m
+455.5 738 L
+449.375 738 L
+449.375 744.125 L
+455.5 744.125 L
+n
+452.438 741.063 m
+N
+U
+0 R
+0 G
+452.438 746.209 m
+452.438 733.75 l
+S
+U
+0 To
+1 0 0 1 470.146 625.8422 0 Tp
+TP
+0 Tr
+0 O
+0 g
+1 w 4 M
+0 Ta
+(content area) Tx 
+(\r) TX 
+TO
+u
+0.75 w 1.25 M
+464.625 625.1872 m
+458.5 625.1872 L
+458.5 631.3122 L
+464.625 631.3122 L
+464.625 625.1872 L
+n
+461.562 628.2502 m
+N
+U
+0 R
+0 G
+461.706 726.25 m
+463.33 726.25 464.646 724.934 464.646 723.31 C
+464.646 630.2292 L
+464.646 629.1362 465.532 628.2502 466.625 628.2502 C
+465.532 628.2502 464.646 627.3632 464.646 626.2702 C
+464.646 525.8144 L
+464.646 524.1914 463.33 522.8754 461.706 522.8754 c
+S
+466.708 520.438 m
+451.708 520.438 l
+S
+u
+464.625 517.375 m
+458.5 517.375 L
+458.5 523.5 L
+464.625 523.5 L
+464.625 517.375 L
+n
+461.562 520.438 m
+N
+U
+0 To
+1 0 0 1 470.146 518.03 0 Tp
+TP
+0 Tr
+0 O
+0 g
+1 w 4 M
+(resize bar ) Tx 
+(\r) TX 
+TO
+%%PageTrailer
+%%Trailer
+Adobe_Illustrator_AI3 /terminate get exec
+
+Adobe_pattern_AI3 /terminate get exec
+
+Adobe_typography_AI3 /terminate get exec
+
+
+Adobe_customcolor /terminate get exec
+
+Adobe_cshow /terminate get exec
+
+Adobe_cmykcolor /terminate get exec
+
+Adobe_packedarray /terminate get exec
+
+%%EOF

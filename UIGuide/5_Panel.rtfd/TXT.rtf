@@ -1,0 +1,1208 @@
+{\rtf0\ansi{\fonttbl\f0\fnil Times-Roman;\f1\ftech Symbol;\f3\fswiss Helvetica;\f2\fmodern Ohlfs;}
+\paperw16220
+\paperh14500
+\margl120
+\margr0
+\f0\b0\i0\ul0\ql\fs24\fi0\li0\gray0\up0\dn0 Release 2.0  Copyright 
+\f1 ã
+\f0 1991 by NeXT Computer, Inc.  All Rights Reserved.\
+\
+
+\pard\tx2620\tx3120\tx3620\fs16\li2100 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\pard\fs56\li2100 Chapter 5\
+Panels\
+
+\fs16 \
+\
+\
+\
+\
+\
+\
+\
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Panels support the work done in the principal windows of an application.  Like menus, most panels are vehicles through which the user can give instructions to the application.  But unlike menus, they aren't restricted to a single column of commands; a panel can provide the user with a variety of different control objectsÐbuttons, sliders, text fields, and moreÐarranged as best suits its purpose.  The Font, Find, Page Layout, and Open panels are all examples.  Such panels can be viewed as generalized and more versatile menus.\
+
+\fs16 \
+\
+
+\fs28 Some panels play a different role, however.  Instead of letting the user give instructions to the application, they give information to the user.  Help panels, the Info panel, and attention panels that display warnings are examples.\
+
+\fs16 \
+\
+
+\fs28 What unites all panelsÐwhether they convey instructions from the user to the application or information from the application to the userÐis that they play conventional, supporting roles.  Unlike windows, none of them is a site for the user's main work in the application.  In a panel, the dialog between the application and the user is highly structured in both form and content.\
+
+\fs16 \
+\
+
+\fs28 This chapter first describes the basic attributes of ordinary panels, and then describes how attention panels are different.  The last section gives guidelines on creating your own panels and using the ones supplied by the Application Kit.\
+
+\fs16 \
+\
+
+\pard\b\li100 \
+\
+\
+
+\fs36 How Panels Work\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Because panels are a type of window, many of their characteristics are discussed in Chapter 4, ªThe Window Interface to Applications.º  Only the unique characteristics of panels are discussed in this section.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+
+{\f3\b0\li2120{\NeXTGraphic1740 EPS20_1.eps \width13760 \height660
+}
+,}\f3\b0\i0\ul0\ql\fs16\fi0\li2620\gray0\up0\dn0 \
+
+\b\fs28 Programming Note:  Creating Panels\
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\b0\fs24\li2620 The Application Kit contains several ready-made ordinary and attention panels that you can use, as well as functions that let you easily create basic attention panels.  You can also create custom panelsÐeither ordinary panels or more complex attention panels.  If you create a custom attention panel, you are responsible for making sure that the panel looks like an attention panel.  (Similarly, custom ordinary panels should look like ordinary panels, and not like attention panels.)\
+
+\fs16 \
+
+\pard\li2620 \
+
+{\li2120{\NeXTGraphic2265 EPS21_1.eps \width13760 \height660
+}
+,}\f3\b0\i0\ul0\ql\fs16\fi0\li2620\gray0\up0\dn0 \
+
+\pard\tx2620\tx3120\tx3620\f0\li2100 \
+
+\pard\tx960\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\b\li1100 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\li2100 \
+
+\fs28 \
+
+\pard\b\fs36\li1100 Ordinary Panels\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Ordinary panelsÐthose that aren't attention panelsÐlook and act very much like standard windows.  They're typically in the same tier as standard windows, so they compete with them for screen space.  They have title bars just like standard windows, although panels don't usually have miniaturize buttons.  However, ordinary panels differ from windows in a number of ways:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	They can never be the main window.\
+
+\fs16 \
+\
+
+\fs28 ·	They shouldn't become the key window unless they accept characters from the keyboard.\
+
+\fs16 \
+\
+
+\fs28 ·	They generally aren't visible unless they belong to the active application; they rarely persist on-screen once the application has been deactivated.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 In addition, some ordinary panels are in a tier above standard windows, as discussed later in the ªFloating Panelsº section.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Attention Panels\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 An attention panel demands attention from users by denying them the ability to work in any other window of the active application.  Until it's explicitly dismissed, the panel limits what the user can do within the application to just rearranging windows.  Nothing elseÐtitle bar buttons, text entry, miniwindows, or controls in other panelsÐwill work.  The only menu commands that work are those that can affect the panel itselfÐfor example, Cut, Copy, and Paste, if the panel includes a text field.\
+
+\fs16 \
+\
+
+\fs28 It's possible to activate another application while an attention panel is on-screen, but when the user returns to the previous application, the mode created by the attention panel is still in effect.\
+
+\fs16 \
+\
+
+\fs28 An attention panel differs from ordinary panels in the following ways:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	It has an empty title bar.\
+·	It's closed by one or more buttons in its content area, not by a button in the title bar.\
+·	It stays on-screenÐeven when the application isn't activeÐuntil dismissed by the user.\
+·	It's the key window whenever the application is active.\
+·	It's isolated in a tier above everything on the screen except spring-loaded windows such as pop-up lists.\
+
+\pard\tx2620\tx3120\tx3620\fs16\li2100 \
+\
+
+\fs28 Attention panels come up centered in the upper part of the screen, so the user can't overlook them.  (The user can move them out of the way, though.)\
+
+\fs16 \
+\
+
+\fs28 Because an attention panel sets an exclusive mode for itself, in effect disabling the rest of the application, it must be unmistakable and immediately apparent to the user.  Some of the features that distinguish attention panels from other windows are illustrated below.\
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic4676 F16.eps \width7400 \height2600
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 											\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Attention panels are dismissed from the screen as soon as the user takes the required action, which can be as simple as typing Return.  When dismissed, the panel's mode ends.\
+
+\fs16 \
+\
+
+\pard\b\li100 \
+\
+\
+
+\fs36 Implementing Ordinary Panels\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Ordinary panels can be used in many ways, so you have many choices when implementing them.  This chapter discusses the conventions for ordinary panels that are different from those for standard windows.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Window Considerations\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Although ordinary panels are similar to standard windows, conventions for title bar buttons and key window status differ slightly from those for standard windows.  For more detailed information on the title bar buttons and on key windows, see ªImplementing Standard Windowsº in Chapter 4. \
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 The Close Button\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Every ordinary panel should have a close button so the user can dismiss the panel when it's not needed.  The close button is never broken, since panels don't contain the main work of the application.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 The Miniaturize Button\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 A panel can have a miniaturize button, but it's rare that one would be needed.  Like menus, panels can be closed and returned to the screen through a menu command.  A miniaturize button is redundant unless a miniwindow would, for some reason, be more convenient for the user than the command, or unless the panel persists on-screen when the application isn't active (see ªPersisting Panels,º below).\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 The Resize Bar\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 If resizing the panel might be useful, then it should have a resize bar.  Like a standard window, a panel should constrain its shape if necessary to prevent the panel from becoming a size that's too large or too small.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Becoming the Key Window\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 An ordinary panel should become the key window only if it accepts keystrokes (typing).  For example, the Find panel becomes the key window so that the user can type in the word to be found.  But the Colors panel (described later in this chapter) never becomes key window because it's operated only by the mouse.\
+
+\fs16 \
+\
+
+\fs28 A panel that accepts keystrokes can delay becoming the key window until the user indicates a readiness to begin typing (such as by clicking in a text field), provided that both of the following are true:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	Text entry is not essential to using the panel.\
+·	Users typically don't enter text when using it.  \
+
+\pard\tx2620\tx3120\tx3620\fs16\li2100 \
+\
+
+\fs28 This is likely to be the case if most of the control devices in the panel are not text fields (they are buttons, selection lists, and so on) and if the choices that can be made by entering text can also be made in an alternative way (for example, by selecting items from a list).  The Font panel is an example.  This kind of panel should not show any selection until the user indicates a readiness to begin typing.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Relinquishing Key Window Status\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 A panel should remain the key window only as long as necessary.  If user actions within the panel affect the main window, key window status should be returned to the main window as soon as those actions are completed.\
+
+\fs16 \
+\
+
+\fs28 For example, when the user clicks the Set button (or types Return) in a Font panel to change the font of the current selection in the main window, the panel gives up key window status (if it had it).  In all likelihood, the user is finished with the Font panel (at least until the selection has changed) and is ready to resume working in the main window.  Under these circumstances, the user should be free to begin working in the main window immediately, without being forced to click it just to make it the key window.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Exceptions to Ordinary Panel Behavior\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 In general, ordinary panels are unobtrusive.  They're in the lowest tier on-screen, and they disappear when their application is deactivated.  Sometimes, though, an ordinary panel needs to be more prominent, as described in the following sections.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Persisting Panels\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 By default, an ordinary panel is removed from the screen when its application is deactivated.  The user sees only panels related to the active application.  This prevents confusionÐsuch as might arise when similar Find panels for two different applications are on-screen at once.\
+
+\fs16 \
+\
+
+\fs28 An application can override this default behavior and allow a panel to remain on-screen after the application has been deactivated, but only if the panel contains information that would be pertinent to the user's activities in another application.  This should be a rare occurrence.  \
+
+\fs16 \
+\
+
+\fs28 An example is Workspace Manager's Info panel, which contains system-level information such as the amount of memory in the computer.  Because the user might want to copy this information downÐfor example, into a mail messageÐthis panel persists even when the Workspace Manager is deactivated.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Floating Panels\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Ordinary panels are normally in the same tier as standard windows.  Sometimes, though, it's useful to have a panel float above all other standard windows and ordinary panels.  For example, a small panel containing a palette of drawing tools is most useful if it floats above the application's other windows.  An example of a palette is below.\
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic9718 F18.tiff \width2820 \height1860
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 A panel should be allowed to float above standard windows only if it passes all four of the following tests:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	It's oriented to the mouse rather than the keyboard.  Thus a panel that can become the key window should not be made a floating panel, unless it only becomes the key window when the user is ready to type (see ªBecoming the Key Windowº above).\
+
+\fs16 \
+\
+
+\fs28 ·	It's important that the panel remain visible while the user works in the application's standard windows.  This test is passed if the user must frequently move the cursor from a standard window to the panel and back again (as for a tool palette) or the panel gives information relevant to the user's actions in the standard window (as in some inspector panels).\
+
+\fs16 \
+\
+
+\fs28 ·	It's small enough not to obscure much of what's behind it.\
+
+\fs16 \
+\
+
+\fs28 ·	It doesn't persist (remain on-screen) when the application is deactivated.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Thus, panels float for some of the same reasons that menus do.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Panels with Variable Contents\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Two types of ordinary panelsÐ
+\i multiform panels
+\i0  and 
+\i inspector panels
+\i0 Ðare used in many applications to show specialized information in a limited amount of space.  Both multiform and inspector panels can be used for many different purposes, even within the same application.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Multiform Panels\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 A multiform panel is a panel that has a pop-up list or set of graphical radio buttons at the top that lets the user choose which form the panel takes.  For example, the panel below lets the user choose any one of six different forms.  \
+
+\fs16 \
+\
+
+\li0 \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic11222 F1.tiff \width7900 \height13200
+}
+,}\pard\tx2620\tx3120\tx3620\f0\b0\i0\ul0\fs28 \
+
+\fs16 \
+\
+
+\fs28\li2100 Multiform panels conserve screen space by combining many related panels into a single panel.  Since all their contents aren't visible all the time, multiform panels shouldn't be used for an application's most basic functionality.  \
+
+\fs16 \
+\
+
+\b \
+\
+\
+
+\fs28 Inspector Panels\
+
+\fs16 \
+\
+
+\b0\fs28 An inspector panel is any panel that displays information about the object that's currently selected.  Inspectors usually let the user set properties of the object, as well.  The Font panel (see ªThe Font Panelº section below) is an inspector panel; it displays information about the font of the current selection.  The Workspace Manager's Inspector panel (shown below) lets the user see and set information about the currently selected file or folder.  Inspectors are often multiform panels, with each form displaying a different kind of information about an object.\
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic12054 F19.tiff \width5480 \height8480
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\b\li100 \
+\
+\
+
+\fs36 Implementing Attention Panels\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Attention panels are appropriate only in a limited number of situations.  Because they create a mode that severely limits the user's freedom of action, their use should be restricted as much as possible.  A panel can be made an attention panel when:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	It gives the user information about the current context.  Such panels usually warn of an error, of a potentially dangerous or unexpected result of the user's current course of action, or of a condition that makes it impossible to carry out a requested action.  But they may also simply supply information the user will need to proceed intelligently with the application.\
+
+\fs16 \
+\
+
+\fs28 ·	It interrupts an action to give the user an opportunity to take corrective stepsÐas, for example, the panel that interrupts the Quit command to let users save altered files before the application terminates.\
+
+\fs16 \
+\
+
+\fs28 ·	It clarifies or completes a user actionÐas, for example, the panel that completes the Save As and Save To menu commands.  (In this case, the menu command must have three dots after its nameÐfor example, ªSave As...º.  This is discussed under ªCommands that Bring Up Panels,º in Chapter 6.)\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Attention panels that interrupt or complete an action must have a Cancel button.  The Cancel button gives the user the option of canceling the action, in which case it should be as if the user had never initiated the action in the first place.  Panels that inform or warn should, if possible, let the user choose what to do in response to the information they convey.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Naming an Attention Panel\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Attention panels that come up as the result of a command or a command-like user action should be named after the action that brought them to the screen.  For example, the panel that appears as the result of a Save, Save As, Save To, or Save All command should be named ªSave.º  The panel that comes up when the user wants to close an edited but unsaved document should be named ªClose,º whether it's invoked from the close button or through the Close or Close Window commands.  The panel's name appears just to the right of the application icon, as shown in the following figure.\
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic14211 F14.tiff \width7240 \height3700
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 											\
+
+\fs16 \
+\
+
+\b\li1100 \
+\
+\
+
+\fs36 The Default Option in an Attention Panel\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 When a user action brings up an attention panel with a variety of choices, the default button, the one in the lower right corner of the panel, should allow the user to easily carry through with the action.  It should not contradict what the user set out to do.  Specifically, it should not be the Cancel button.\
+
+\fs16 \
+\
+
+\fs28 The default button should not perform any additional action not implied by the user request that brought up the panel.  In general, it should be the safest of the alternatives (for example, Open Copy rather than Open Anyway when the user tries to open a document that someone's already opened).\
+
+\fs16 \
+\
+
+\fs28 The default button in an attention panel should normally be operable by pressing the Return key on the keyboard (when the panel is the key window).  If so, it should be marked by the Return symbol 
+{\li2120{\NeXTGraphic15080 EPS15.eps \width320 \height220
+}
+,}\pard\tx2620\tx3120\tx3620\f0\b0\i0\ul0\fs28\li2100 .  However, if the button has dangerous side effects, it's acceptable to require that the user press the button.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Dismissing an Attention Panel\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Each action that can dismiss an attention panel is represented by a separate button inside its content area.  In contrast, an ordinary panel is closed only by its close button (or the Close Window command), never by a button in the content area.\
+
+\fs16 \
+\
+
+\fs28 The buttons that dismiss an attention panel should be located along the right and lower edges of the panel, with the default button in the lower right corner.  No button except for the default button should be operable by the Return key.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Naming Buttons in an Attention Panel\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 When naming buttons in an attention panel, you should label each one clearly with a verb or verb phrase describing the action it performs.  The user shouldn't have to read the text of the attention panel to be able to choose the right button.  Thus, generic labels (like ªYesº and ªNoº) aren't appropriate; they tend to cause user errors.  Avoid using ªOKº unless it's the only button in the attention panel.\
+
+\fs16 \
+\
+
+\fs28 Good names for attention panel buttons include:\
+
+\fs16 \
+\
+
+\pard\tx3120\tx3620\tx4120\fs28\li2620 Cancel\
+Close Anyway\
+Don't Close\
+Don't Save\
+Explain\
+Open\
+Open Copy\
+Open Anyway\
+Quit Anyway\
+Replace\
+Revert\
+Review Unsaved\
+Save\
+Save All\
+Set\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Optional Explanations in an Attention Panel\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 An Explain button can offer users a way of getting more information before dismissing the panel.  A typical example is shown below.\
+
+\fs16 \
+\
+
+\li0 \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic16547 F9.tiff \width7560 \height10000
+}
+,}\pard\tx2620\tx3120\tx3620\f0\b0\i0\ul0\fs28 											\
+
+\fs16 \
+\
+
+\b\li100 \
+\
+\
+
+\fs36 Standard Panels\
+
+\fs16 \
+\
+
+\b0\fs28\li2100 Some panels show up in many different applications.  For example, every application must have an Info panel, which gives certain kinds of general information about the application.  Text processing applications also have a Font panel, which lets the user set the font of the text selection.  \
+
+\fs16 \
+\
+
+\fs28 This section describes all the standard panels.  Some of them you have to create from scratch, using the guidelines in this section.  Others are provided by the Application Kit.  If a standard panel exists for functionality in your application, you should use it rather than designing your own.  \
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 The Close Panel\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 When the user closes a document that has been edited but not saved, the application must bring up a Close panel giving the user an opportunity to cancel the operation, save the document before closing, or confirm that it should be closed without saving.  This attention panel should have at least these three buttons:\
+
+\fs16 \
+\
+
+\pard\tx4620\tx6900\f3\fs28\li2620 Cancel	Don't Save	Save\
+
+\pard\tx2620\tx3120\tx3620\f0\fs16\li2100 \
+\
+
+\fs28 Save is the default option because many users don't think of closing a document and saving the most recent changes to it as separate operationsÐfor many, closing implies saving.\
+
+\fs16 \
+\
+
+\fs28 If closing a document or window has consequences other than that unsaved changes would be lost, the application must still bring up a Close panel informing the user.  For example, when the user closes a terminal emulation window, the application should notify the user that closing the window will cause the running command to be terminated.  If the panel can't offer the user any way of avoiding the side effects, it should have these buttons:\
+
+\fs16 \
+\
+
+\pard\tx4620\tx6900\f3\fs28\li2620 Cancel	Close Anyway\
+
+\pard\f0\fs16\li2100 \
+\
+
+\b\fs28 Note:  
+\b0 Do 
+\i not
+\i0  bring up the Close panel unless work is about to be lost.\
+
+\fs16 \
+\
+
+\b\li1100 \
+\
+\
+
+\fs36 The Find Panel\
+
+\fs16 \
+\
+
+\b0\li0 \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic18288 F12.tiff \width6440 \height1840
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 											\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 This ordinary panel lets the user enter a string for the application to search for.  It should have at least a field to enter the search string and a button to find the next instance of the string.  It's also good to have a button for finding the previous instance of the string.\
+
+\fs16 \
+\
+
+\pard\b\fs28\li2100 Note:  
+\b0 Although we recommend that buttons have verbs as titles, it isn't appropriate in the panel above, for two reasons.  First, changing the titles to ªFind Previousº and ªFind Nextº hides the real difference between the buttons; it's easy to miss the second word in a button.  Second, since ªFindº is already mentioned in the panel twice (and no other verb is), it's redundant to put ªFindº in the button titles.  See ªChoosing the Button's Image or Labelº in Chapter 7 for more information on naming buttons.  \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Many Find panels have more controls than the one shown above, such as the following:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	A checkbox that lets the user choose whether capitalization matters (by default, it shouldn't)\
+
+\fs16 \
+\
+
+\fs28 ·	A checkbox to choose whether partial words should be considered matches (by default, they should)\
+
+\fs16 \
+\
+
+\fs28 ·	A ªReplace with:º field (and related buttons; see Edit for an example) so that the user can replace the selected string\
+
+\fs16 \
+\
+
+\fs28 ·	Radio buttons that determine the scope of global searches or replacements (by default, the scope should be global rather than just the selected region)\
+
+\fs16 \
+\
+
+\fs28 ·	Options for finding objects other than strings (such as paragraph characteristics)\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Although the Find panel usually stays up until the user explicitly closes it, it's common to dismiss the panel early in one case.  This case is described in ªDetermining the Action that Is Performedº in Chapter 3, ªUser Actions: The Keyboard and Mouse.º\
+
+\fs16 \
+\
+
+\fs28 The Find Panel menu command brings up this panel; the Find Next and Find Previous commands correspond to its two buttons.  (See ªThe Find Menuº in Chapter 6.) \
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 The Info Panel\
+
+\fs16 \
+\
+
+\b0\li0 \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic20197 F11.tiff \width7400 \height3000
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 											\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Each application must have an Info panel.  This ordinary panel displays a small amount of basic information about the application:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	The name of the application\
+·	The application icon\
+·	Copyright information\
+·	The current version of the application\
+·	The names of the authors (optional)\
+
+\pard\tx2620\tx3120\tx3620\fs16\li2100 \
+\
+
+\fs28 The Info panel should not offer help for using the application or give an extensive amount of other information about it (such as its history or purpose).  \
+
+\fs16 \
+\
+
+\fs28 Interface Builder provides a sample Info panel that you can use in your application.  See ªThe Info Menuº in Chapter 6 for information on the command that brings up the Info panel.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 The Preferences Panel\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Most applications have a Preferences panel, an ordinary panel that allows the user to determine details of how the application looks and works.  A user typically uses this panel only a few times.  It should not be necessary to bring up the Preferences panel during normal use of the application.  \
+
+\fs16 \
+\
+
+\fs28 Preferences typically include such things as:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	The default font size\
+·	The format for displaying data\
+·	Whether to make backup files\
+·	The default size of windows\
+·	Options that increase the power of the application\
+·	The application's keyboard alternatives\
+
+\pard\tx2620\tx3120\tx3620\fs16\li2100 \
+\
+
+\fs28 Do 
+\i not
+\i0  use the Preferences panel for anything the user might want to set from time to time during a session.  Also, the contents of the Preferences panel should be valid application-wide; they shouldn't change depending on which window or data is selected.\
+
+\fs16 \
+\
+
+\fs28 All preferences should carry over from session to session; most will also affect the way the application works during the current session.  All of an application's options must be settable in some way from within the application; for example, it isn't acceptable to have options that are settable only by using the 
+\b dwrite
+\b0  command.\
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic22029 F13.tiff \width5480 \height8480
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 											\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Preferences panels are often implemented as multiform panels to reduce their size and to organize their options. The Preferences panel is brought up by the Preferences command in the Info menu.  See Chapter 6 for information on the Info menu.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 The Quit Panel\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 When the user tries to quit an application that has unsaved or uncompleted work, the application should bring up a Quit panel.  For example, if the user has edited a document and not saved the changes, or if the application is still computing (for example, a command is executing in a UNIX shell), a Quit panel should appear.  In both cases, one or more of the application's windows should have a broken close button, as described in ªImplementing the Close Buttonº in Chapter 4.  \
+
+\fs16 \
+\
+
+\fs28 The Quit panel should be an attention panel that has a Cancel button, a Quit Anyway button, and (for document-oriented applications) a Review Unsaved button that cycles through unsaved documents, letting users decide which ones to save before quitting.  The buttons are arranged as follows:\
+
+\fs16 \
+\
+
+\pard\tx4620\tx6900\f3\fs28\li2620 Cancel	Quit Anyway	Review Unsaved\
+
+\pard\tx2620\tx3120\tx3620\f0\fs16\li2100 \
+\
+
+\fs28 An application could also add a Save All button that saves every unsaved document, exactly as the Save All command does.\
+
+\fs16 \
+\
+
+\fs28 Review Unsaved is the default button.  It brings up a Review Unsaved panel for each unsaved document.  This panel is essentially the same as the Close panel described above, though with a different name to reflect the different manner in which it's invoked.\
+
+\fs16 \
+\
+
+\fs28 The Cancel button in the Review Unsaved panel cancels the review process and returns the user to the Quit panel.  Once the user has finished cycling through all the documents (without clicking Cancel), the application should quit.\
+
+\fs16 \
+\
+
+\pard\b\fs28\li2100 Note:  
+\b0 Do 
+\i not
+\i0  bring up the Quit panel unless work is about to be lost.\
+
+\fs16 \
+\
+
+\b\li1100 \
+\
+\
+
+\fs36 Panels Provided by the Application Kit\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 You can customize the panels shown in this section, if necessary, by adding controls and information to what the Application Kit provides.  For example, the Open panel on the left, below, has a checkbox added to it.  Compare it to the normal Open panel on the right. \
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic24127 F17.tiff \width12400 \height7320
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\b\li2100 \
+\
+\
+
+\fs28 The Colors Panel\
+
+\fs16 \
+\
+
+\b0\li0 \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic24155 F8.tiff \width6380 \height4000
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 This ordinary panel lets the user preview and specify colors in any of the following seven modes:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	Color wheel\
+·	Gray scale\
+·	Red-Green-Blue (RGB)\
+·	Cyan-Magenta-Yellow-Black (CMYK)\
+·	Hue-Saturation-Brightness (HSB)\
+·	Custom palette (loads an image from which the user can choose colors\
+·	Custom color lists\
+
+\pard\tx2620\tx3120\tx3620\fs16\li2100 \
+\
+
+\fs28 A Colors panel sometimes works with color wells; see the ªColor Wellsº section in Chapter 7, ªControls,º for more information on color wells.  \
+
+\fs16 \
+\
+
+\fs28 The Colors panel isn't associated with one of the standard menus; its associated command should go wherever is most appropriate for the application.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 The Font Panel\
+
+\fs16 \
+\
+
+\b0\li0 \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic24791 F7.tiff \width5960 \height6580
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 											\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 This ordinary panel lets the user preview fonts and change the font of the currently selected text.  See ªThe Font Menuº in Chapter 6 for more information.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 The Open Panel\
+
+\fs16 \
+\
+
+\b0\li0 \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic24986 F0.tiff \width5960 \height6780
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 											\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 This attention panel lets the user specify the name of a file to open.  If your application can open only certain types of files, then it should show only those files in the Open panel.  The Open panel should come up showing the folder of the main window, or, if there is no main window, the user's home folder.\
+
+\fs16 \
+\
+
+\fs28 The Document menu's Open command brings up this panel, as described in Chapter 6.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 The Page Layout Panel\
+
+\fs16 \
+\
+
+\b0\li0 \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic25428 F5.tiff \width5960 \height6400
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 											\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 This panel queries the user for information that's needed for displaying the document on-screen, as well as for printing.  It's brought up by a command in the Format menu, as described in ªThe Format Menuº in Chapter 6.  This panel can be replaced by one more appropriate to your application, especially if your application has extensive page layout capabilities.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 The Print Panel\
+
+\fs16 \
+\
+
+\b0\li0 \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic25832 F4.tiff \width6740 \height8420
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 											\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 This attention panel comes up every time the user prints a document or other data.  After specifying the information needed for printing, the user can do any of the following:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	Send the output to a printer\
+·	Save the output to a PostScript file, instead of printing it \
+·	Send the output to a fax modem, instead of a printer\
+·	Preview on-screen what will be printed\
+·	Cancel any of the above actions, even after they've started.\
+
+\pard\tx2620\tx3120\tx3620\fs16\li2100 \
+\
+
+\fs28 The main menu's Print command brings up this panel, as described under ªThe Main Menuº in Chapter 6.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 The Save Panel\
+
+\fs16 \
+\
+
+\b0\li0 \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic26406 F6.tiff \width5960 \height6780
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 											\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 This attention panel queries the user for the name of a file to save to.  The Save panel should come up showing the folder of the document being saved (the document in the main window).\
+
+\fs16 \
+\
+
+\fs28 A document's folder is reflected in its window's title bar.  For example, if the title bar shows\
+
+\fs16 \
+\
+
+\pard\tx3120\tx3620\tx4120\f3\fs28\li2620 UNTITLED-1  Ð  /Net/machine/home\
+
+\pard\tx2620\tx3120\tx3620\f0\fs16\li2100 \
+\
+
+\fs28 then the Save panel should come up showing 
+\b /Net/machine/home
+\b0 .\
+
+\fs16 \
+\
+
+\fs28 See ªThe Document Menuº in Chapter 6 for information on when the Save panel is used.  \
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 The Spelling Panel\
+
+\fs16 \
+\
+
+\b0\li0 \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic26922 F10.tiff \width4420 \height3720
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 											\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 This ordinary panel helps the user check the spelling of text.  The panel might display guesses at the correct spelling of misspelled words or allow the user to load project-specific dictionaries.  \
+
+\fs16 \
+\
+
+\fs28 You can use the Spelling panel that the Text object provides, or you can design your own.  If you design your own Spelling panel, it must have a button that searches for and selects the next misspelled word in the main window (such as the Find Next button shown above).  See ªSpell Checkingº in Chapter 6 for more guidelines on checking spelling.\
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\pard\f3\li2620 \
+
+}

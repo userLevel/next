@@ -1,0 +1,1282 @@
+{\rtf0\ansi{\fonttbl\f0\fnil Times-Roman;\f1\ftech Symbol;\f3\fswiss Helvetica;\f2\fmodern Ohlfs;}
+\paperw16220
+\paperh12400
+\margl120
+\margr0
+\f0\b0\i0\ul0\ql\fs24\fi0\li0\gray0\up0\dn0 Release 2.0  Copyright 
+\f1 ã
+\f0 1991 by NeXT Computer, Inc.  All Rights Reserved.\
+\
+
+\pard\tx2620\tx3120\tx3620\fs16\li2100 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\pard\fs56\li2100 Chapter 7\
+Controls\
+
+\fs16 \
+\
+\
+\
+\
+\
+\
+\
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Controls are graphical objects that users manipulate with the keyboard and mouse to give instructions to an application.  They're patterned after familiar control devices from everyday lifeÐswitches, knobs, forms, gauges, and the likeÐand perform analogous functions.  Like the dials and levers on a machine, graphical control objects let the user ªoperateº an application.\
+
+\fs16 \
+\
+
+\fs28 Every control responds visually to direct manipulation by the userÐa dial turns, a button pushes in or highlights, the knob of a slider slides.  Controls go beyond this direct response, however, to cause the application to do something.  They, in effect, translate the user's direct manipulation into an instruction for the application.  A button sets a state or initiates a program action, a slider sets a value, and so on.\
+
+\fs16 \
+\
+
+\fs28 Which keyboard and mouse actions a control responds to and how it reacts visually are part of the definition of the control; they're discussed in this chapter.  What the control causes an application to do is part of the definition of the application; it depends solely on how the application uses the control.  In this respect, graphical controls are no different from control devices in the real world.  For example, identical mass-produced switches can be installed on a variety of different machines.  The manufacturer of the switch provides it with a user interface; the installer gives it specific meaning for a specific machine.    \
+
+\fs16 \
+\
+
+\fs28 The NeXTstep user interface has several standard controls:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	Buttons \
+·	Menu commands \
+·	Text fields \
+·	Sliders \
+·	Color wells\
+·	Scrollers\
+·	Browsers and selection lists\
+
+\pard\tx2620\tx3120\tx3620\fs16\li2100 \
+\
+
+\fs28 Because they're widely used, each of these controls is described in some detail in its own section.  Menu commands were described under in Chapter 6, ªMenusº; the others are described in the sections below.  \
+
+\fs16 \
+\
+
+\fs28 You can also design your own controlsÐthe Application Kit makes this relatively easyÐbut they should adhere to these basic design principles:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	Every control must provide immediate feedback to let the user know that an action has ªtaken.º  Just as users can look at a dial on a stove to see whether it has been turned, a graphical control must alter its appearance in response to user actions.  It shouldn't depend on a reaction elsewhere in the application to give the user feedback.\
+
+\fs16 \
+\
+
+\fs28 ·	Every control should have a distinctive appearance and behavior.  Don't design controls that look so similar to the canonical controls that users will confuse one with the other.\
+
+\fs16 \
+\
+
+\fs28 ·	The behavior of a control should be apparent from its appearance.  After a bit of familiarity with NeXTstep, users should be able to easily recognize a control object and know almost instinctively how to operate it.\
+
+\fs16 \
+\
+
+\pard\b\li100 \
+\
+\
+
+\fs36 Buttons\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Buttons are the primary controls for setting a state or initiating an application action.  They're used for the controls in title bars (the miniaturize and close buttons), for Cancel and the other choices that dismiss attention panels, and in most other situations where a basic control device is called for.\
+
+\fs16 \
+\
+
+\fs28 Buttons can assume a variety of different shapes and sizes, some of them standard.  The figure below shows the standard types of buttons. \
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic3306 F1.eps \width5980 \height5420
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\b\li1100 \
+\
+\
+
+\fs36 How Buttons Work\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 The Application Kit provides two basic kinds of buttons:  
+\i one-state
+\i0  (or 
+\i action
+\i0 ) buttons and 
+\i two-state
+\i0  buttons.  Action buttons perform a single task, such as scrolling a document forward or starting a search.  A two-state button sets a single characteristic on or off, such as whether to restrict a search to whole words.  Standard two-state buttons include switches and radio buttons.  Some buttons also bring up lists, as described in the following section.\
+
+\fs16 \
+\
+
+\fs28 All buttons respond to a click; some also respond to being pressed.  A button that responds to being pressed sends an instruction to the application immediately as the user pushes the mouse button down.  Typically, it repeats the instruction at regular intervalsÐas long as the mouse button is held down and the cursor is kept over the button on-screenÐfor a continuous, iterative action.  Users can drag away from the button and back again to stop and restart the action.  A button that responds only to being clicked sends its instruction to the application when the user releases the mouse button, provided the cursor is over the button on-screen.\
+
+\fs16 \
+\
+
+\fs28 Whether it responds to being clicked or to being pressed, a button changes its appearance as soon as the mouse button goes down.  It retains its altered appearance while it's under the cursor and the mouse button remains down.  When the user releases the mouse button, the button on-screen keeps its altered appearance long enough for its instruction to be carried out.  Usually this is momentary (though it need not be), so users generally notice the button changing as soon as the click is over.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Buttons that Bring Up Lists\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 The Application Kit has support for two kinds of button-list combinations:  pop-up lists and pull-down lists.  A pop-up or pull-down list is a window that comes to the screen when the user presses a button.  The user can drag through the list to choose an option or action.  The list stays on-screen only as long as the user keeps the mouse button down.  Although pop-up lists and pull-down lists look similar, they have very different roles in the user interface.\
+
+\fs16 \
+\
+
+\pard\b\i\li2100 \
+\
+\
+
+\fs28 Pop-Up Lists\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\i0\fs28\li2100 Pop-up lists are used in lieu of a series of radio buttons.  They save screen space and prevent overcrowding in panels.  Each list is controlled by a button that can be recognized by a special symbol, 
+{\li2120{\NeXTGraphic5666 EPS7.eps \width240 \height180
+}
+,}\pard\tx2620\tx3120\tx3620\f0\b0\i0\ul0\fs28\li2100 , as illustrated below.  The label on the button that precedes the symbol indicates the current selection from the list.  When the user makes a new selection, the button label changes.\
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic5856 F8.tiff \width9560 \height3660
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Pressing the button pops the list up so that the item matching the button label appears on top of the button.  The list remains up only while the user holds the mouse button down.  When the user releases the mouse button after dragging to a different item in the list, the label on the button changes to that item.\
+
+\fs16 \
+\
+
+\pard\b\i\li2100 \
+\
+\
+
+\fs28 Pull-Down Lists\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\i0\fs28\li2100 Pull-down lists are similar to pop-lists, but they're used to perform actions, rather than to set a state.  In this respect, pull-down lists are somewhat like menus.  \
+
+\fs16 \
+\
+
+\fs28 Visually, pull-down lists differ from pop-up lists in that the controlling button's label never changes, and it's marked by a different symbol, .  Because the button's label doesn't change, pull-down lists don't need a titled box around them.\
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic6615 F16.tiff \width9220 \height1680
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\b\li1100 \
+\
+\
+
+\fs36 Implementing Buttons\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 When implementing a button, you must make the following decisions:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	what's the end result of clicking the button\
+·	what image or label (or both) to put on the button\
+·	how the button's appearance changes during a click\
+
+\pard\tx2620\tx3120\tx3620\fs16\li2100 \
+\
+
+\fs28 Of course, before using a button, you should be sure that it's the best control for the job.  ªChoosing the Appropriate Control,º at the end of this chapter, discusses which controls can be used for which types of functionality.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Choosing the Button's Result\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 A one-state (action) button shouldn't change the action it performs.  Although it's sometimes tempting to alter the action with the application's stateÐto switch between ªStartº and ªStop,º or between ªEraseº and ªRestore,º for exampleÐit's best to provide a different button for each action and disable those that aren't operable.  This lets the user safely click in the accustomed place without having to consider which state the application is in.\
+
+\fs16 \
+\
+
+\fs28 One-state (action) buttons are generally labeled with a verb or verb phrase (such as ªFindº), but occasionally they have only a graphic (such as the arrowhead in a scroll bar button).  Labeling conventions are discussed in ªChoosing the Button's Image or Label,º below.\
+
+\fs16 \
+\
+
+\fs28 Two-state buttons should never perform actions, although the characteristic they affect might result in some visible change.  For example, an inspector for a graph might have a set of radio buttons that control the graph's type (line, bar, and so on).  Clicking one of the buttons resets the graph's type, which in turn results in the graph being redrawn.  However, it wouldn't be acceptable for the radio button to, for example, create a second graph of the new type. \
+
+\fs16 \
+\
+
+\fs28 Ideally, as soon as the user clicks a two-state button, the visible consequences (if any) should be shown immediately.  However, that's not always practical, as when changing the characteristic takes a long time or isn't easy to reverse.  For example, if changing the type of a graph takes a long time, then the application might wait for the user to click a ªRedraw Graphº button before redrawing the graph.  \
+
+\fs16 \
+\
+
+\fs28 However, whether or not a two-state button's associated characteristic changes immediately, the button's appearance always changes immediately, as described in ªChanging the Button's Appearance During a Click,º below.\
+
+\fs16 \
+\
+
+\fs28 Buttons with more than two states aren't recommended:  It's very difficult to convey their result to the user.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Choosing the Button's Image or Label\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 A button's label should say, in a succinct shorthand, what action it causes the application to take.  Even when a button purports to label a state (such as ªAMº or ªPMº), users are apt to think of it not as the current state, but as the state that will be set if the button is clicked.  In other words, they're liable to interpret it as an action.  An ªOnº button, for example, is more likely to be interpreted to mean ªPress this to turn something onº than ªThis is now on.º\
+
+\fs16 \
+\
+
+\fs28 It's best, therefore, to use images and highlighting to show the current state, and reserve the button's label as a brief statement of what the button does.  Buttons that do label a state, like a button that switches between ªAMº and ªPM,º should be used only where what they label is clearly visible.  For example, ªAMº/ºPMº buttons can be used alongside a digital representation of the time, but they can't stand alone.  These and other two-state buttons are shown in the figure in the following section.\
+
+\fs16 \
+\
+
+\pard\b\fs28\li2100 Note:  
+\b0 Make sure that the button clearly looks like either an action button or a two-state button.  It's confusing to the user to see a two-state button that doesn't clearly have two states, or an action button that doesn't look like it performs an action.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Button labels should be capitalized like menu commands:  The first and last words begin with uppercase letters and the words between are capitalized as they would be in a title.  Like menu commands, buttons that always bring up a panel (unless it's a warning panel) should have three dots (...) at the end of the label.\
+
+\fs16 \
+\
+
+\fs28 You should always dim the label of a button (using gray text) whenever pushing the button will have no effect.  A dimmed button is completely disabledÐpushing it shouldn't cause it to highlight, push in, or change in any other way. \
+
+\fs16 \
+\
+
+\b\i \
+\
+\
+
+\fs28 Pop-Up Lists\
+
+\fs16 \
+\
+
+\b0\i0\fs28 You must provide a title for each pop-up list; usually this is done by putting a titled box around the pop-up list's button.  The figure below shows a typical example, using a box with the title ªNumber.º\
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic11149 F19.tiff \width9560 \height3660
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Because the label on a pull-down list's button doesn't change, pull-down lists don't need a titled box around them.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Changing the Button's Appearance During a Click\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 A button's appearance during a click (or while it's pressed) should change in one of the following ways:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	It can highlight.\
+·	It can both highlight and appear to be pushed in.\
+·	It can alter the image it displays. \
+
+\pard\fs16\li2100 \
+\
+
+\b\fs28 Note:  
+\b0 Highlighting is discussed in Chapter 8, ªConventions for Graphic Design.º  It can be done either automatically or by changing the image to a custom, ªhighlightedº image.  \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Buttons normally both push in and highlight.  However, for aesthetic reasons, buttons that are right next to each other (such as scroll buttons and graphical radio buttons) shouldn't push in.  This is because buttons that have no space around their bezeled edges look less three-dimensional than normal.\
+
+\fs16 \
+\
+
+\pard\b\fs28\li2100 Note:  
+\b0 Although it's possible to have a button only push in (without highlighting), this isn't recommended because it's hard to see.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 The recommended changes for action (one-state) buttons are illustrated in the following figure.  The scroll button in the bottom row doesn't push in, since it's very small and is right up against another scroll button.\
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic12389 F2.eps \width3740 \height1480
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 The possibilities for two-state buttons are illustrated below.  \
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic12462 F3.eps \width6220 \height5000
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\b\fs28\li2100 Note:  
+\b0 In the figure above, the button in the bottom row is a graphical radio button.  It doesn't push in because it's right next to the other radio buttons in its group (although they aren't shown in this figure).\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 The figure above also illustrates some of the principles that determine how a button looks during a click:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	A button must change its appearance during a click, as soon as the mouse button goes down.\
+
+\fs16 \
+\
+
+\fs28 ·	The appearance of a button during a click should reflect what's about to happen.  Buttons that display a state should reflect the new state both during and after the click.\
+
+\fs16 \
+\
+
+\pard\b\li100 \
+\
+\
+
+\fs36 Text Fields\
+
+\fs16 \
+\
+
+\b0\li0 \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic13083 F20.tiff \width1060 \height660
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 A text field is a slot where the user can type in a single line of dataÐsuch as a file name, a part number, or an address.  The text is editable and selectable; the data is entered only when the user types Return or clicks a button that's associated with the field.  If the user enters more text than will fit in the field, the entry automatically scrolls so that the insertion point stays visible.\
+
+\fs16 \
+\
+
+\fs28 Like all editable text, a text field should have a white background.  To indicate that it's editable, it should be surrounded by a bezeled border that makes it appear inset from the surface of the screen.  \
+
+\fs16 \
+\
+
+\fs28 If a text field is not usually edited or selected but can beÐas is, for example, the name associated with a file icon in Workspace Manager's file viewerÐit's acceptable to give the text a gray background with no bezeled border.  When the user selects the text, the text field's background should turn white, and the selected text's background should be light gray.\
+
+\fs16 \
+\
+
+\fs28 Text fields can be titled and arranged in groups to produce an on-screen form, such as the one illustrated below.\
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic14182 F4.tiff \width6280 \height2660
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 When there's more than one text field in a window, the Tab key can move the selectionÐthe point where typing will appearÐfrom one field to another:\
+
+\fs16 \
+\
+
+\pard\tx4620\tx6640\tx8660\tx10680\fs28\fi-2020\li4620 Tab 	Moves from one text field to the next one in series.  For example, in the form illustrated above, Tab would cause the current selection to jump from the name field to the street address field to the city field, and so on.\
+
+\fs16 \
+\
+
+\fs28\fi0\li2620 Shift-Tab 	Moves from one text field to the previous one in series.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 When the user presses the Return key after typing in a text field, the field usually makes something happen.  Data might be entered and processed, a search might begin for text that matches the string in the field, or a document might be saved to a file name the user typed.  Exactly what happens is up to the application.  \
+
+\fs16 \
+\
+
+\fs28 To let users know what to expect, it's recommended that you include a button in the display to act as the equivalent of Return.  The button's label is an explicit reminder of what Return will do; from the user's point of view, Return is simply a shortcut for the action of the button.  \
+
+\fs16 \
+\
+
+\fs28 The Print panel below has an example of using a button for the Return key's action.  The user can start printing the document either by pressing the Print button or by pressing Return while editing any of the three text fields.  If the user presses Return, the Print button pushes in and highlights as if it were pressed. \
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic15578 F21.tiff \width6740 \height8420
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 											\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 For the user's convenience, if the action associated with Return is repeatable, Return may select all the text in the same field so the user can easily replace it. \
+
+\fs16 \
+\
+
+\fs28 When a text field is part of a form, Return might not perform any particular action of its own.  Instead, it will do just what Tab doesÐmove the selection to the next field.  Action on a button or other control is required to enter data typed into the form.\
+
+\fs16 \
+\
+
+\fs28 Generally, text fields accept unrestricted data, but sometimes an entry won't be acceptable if it's the wrong data typeÐif, for example, the user types in a floating-point number when an integer is called for.  Typical examples of restricted data include the following:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	unsigned or signed integers \
+·	unsigned or signed floating-point numbers \
+·	dates\
+
+\pard\tx2620\tx3120\tx3620\fs16\li2100 \
+\
+
+\fs28 If the user's entry isn't acceptable, all of the text in the field should be selected and highlighted.  The user can make any necessary corrections and try again.\
+
+\fs16 \
+\
+
+\pard\b\li100 \
+\
+\
+
+\fs36 Sliders\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 A slider is a device that sets a value.  As illustrated below, it consists of a vertical or horizontal 
+\i bar
+\i0  and a 
+\i knob
+\i0  that moves on the bar.\
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic16701 F0.eps \width1200 \height2000
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 The position of the knob in the slider indicates its current value.  Users can move the knob, and thus alter the value, by positioning the cursor anywhere over the bar (even the part of the bar that's covered by the knob) and pressing the mouse button.  The knob immediately jumps to the location of the cursor.  The user can release the mouse button to fix the knob in its new location, or begin dragging the knob along the bar.\
+
+\fs16 \
+\
+
+\fs28 A slider can set values on a continuous scale (between some maximum and minimum) or values at discrete intervals.  If the latter, the knob jumps to the position of the nearest permitted value when the user releases the mouse button.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx2620\tx3120\tx3120\tx3620\tx3620\fs28\li2100 The user should always be able to detect a direct effect of manipulating the slider's knobÐthis is usually done in a text field or label next to the slider (as shown in the following figure).  \
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic17570 F9.tiff \width4380 \height660
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\b\li100 \
+\
+\
+
+\fs36 Color Wells\
+
+\fs16 \
+\
+
+\b0\li0 \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic17593 F22.tiff \width2360 \height1320
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Color wells are controls that let the user choose a color.  They're powerful but inherently indirect, so you should use them only when they're absolutely necessary.  Color wells let the user choose many colors from the Colors panel simultaneously, one for each possible aspect of an object's color.  For example, in the figure above, an object can have two colorsÐits fill color and the color of its outline. \
+
+\fs16 \
+\
+
+\pard\b\fs28\li2100 Note:  
+\b0 The Colors panel is an Application Kit panel discussed in Chapter 5, ªPanels.º\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 One alternative to using a color well, when the group of acceptable colors is small, is to use graphical radio buttons (as pictured in the ªButtonsº section earlier in this chapter).  Another alternative, when a wide range of colors is needed, is to use the Colors panel alone; the user can change an object's color by selecting it and then choosing the new color in the Colors panel.  You can also use a new, customized control, if it's more appropriate in appearance and functionality than a color well.\
+
+\fs16 \
+\
+
+\fs28 To choose a color for a color well, the user drags a color either from the Colors panel or from another color well.  Another way to set the color is to select the border of the color well; the well's color then changes every time a new color is chosen in the Colors panel.  Because the user might not realize a border is selected, this scheme can be confusing; you should be careful to unselect the border whenever the user isn't likely to want to change the color.  For example, you should make sure that color wells are deselected when their window is miniaturized.  \
+
+\fs16 \
+\
+
+\fs28 When an object is selected, each visible color well should change its color to reflect the object's associated color.  For example, if a white box with a red border is selected, then the Fill well shown above should contain white, and the Line well should contain red.  Once the user changes the color in a well, that change should be reflected in the selected object.  For example, dragging a swatch of green from the Colors panel into the Line well should immediately make the outline of the selected box green.\
+
+\fs16 \
+\
+
+\fs28 Whenever the user selects a color well's border, your application should automatically bring up the Colors panel .  (The Colors panel should also be accessible through its own menu command.)  However, whether the border is selected should have no effect on whether the color well affects the object that's currently selected.\
+
+\fs16 \
+\
+
+\pard\b\li100 \
+\
+\
+
+\fs36 Scrollers\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Scrollers are used to control what's displayed within a window or panel, or within a rectangular subsection of a window or panel.  When the material to be displayed is larger than the opening available to display it, the user must scroll unseen portions into the opening in order to view them.  The figure below shows, diagrammatically, a scrollable document, the area available to view it, and the scrollers that can move the opening around on the surface of the document.\
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic20514 F5.eps \width6160 \height7960
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\b\li1100 \
+\
+\
+
+\fs36 How Scrollers Work\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 As illustrated below, a scroller has just three parts, a 
+\i bar
+\i0 , a 
+\i knob
+\i0 , and an optional set of 
+\i scroll buttons
+\i0 .  This figure shows a vertical scroller, which scrolls information up and down.  A horizontal scroller scrolls from side to side.\
+
+\fs16 \
+\
+
+\li0 \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic20784 F6.eps \width1760 \height2500
+}
+,}\pard\tx2620\tx3120\tx3620\f0\b0\i0\ul0\fs28 \
+
+\fs16 \
+\
+
+\fs28\li2100 If the material to be displayed is provided with scrollers, but happens, perhaps temporarily, to fit within the opening, then the knob and scroll buttons disappear, so the scroller looks like a plain gray strip.  The strip indicates that the material will be scrollable, should it grow larger than the opening.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 The Knob and Bar\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 The bar of a scroller represents the entire scrollable area; the knob represents the part of the area that's visible.  The placement of the knob in the bar shows which part is currently visible in the opening.  On a vertical scroller, the height of the knob relative to the height of the bar indicates how much of the material, from top to bottom, is visible.  On a horizontal scroller, the width of the knob indicates how much of the material is visible from side to side.  The knob shrinks as the user adds to the material, and grows as material is deleted.  However, the knob never shrinks to be smaller than a square.\
+
+\fs16 \
+\
+
+\fs28 Users scroll the display by moving the knob in the bar.  The knob can be moved in four ways:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	By dragging it to a new location.  The display is adjusted as the knob moves.\
+
+\fs16 \
+\
+
+\fs28 ·	By clicking in the bar (outside the knob).  The knob jumps to the location of the click, and the display is adjusted accordingly.  If the user doesn't immediately release the mouse button from the click, the knob can be dragged to a new location.  This permits users, in a single mouse action, to select the general part of a document they want to view (by clicking in the bar) and then to adjust the display (by dragging the knob).\
+
+\fs16 \
+\
+
+\fs28 ·	By clicking or pressing the scroll buttons.  The arrows on the scroll buttons point in the direction the knob will move.\
+
+\fs16 \
+\
+
+\fs28 ·	By extending a selection outside the opening where it's displayed.  This automatically scrolls unseen portions of the selection into view.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 The Scroll Buttons\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 The scroll buttons permit more precise scrolling than direct manipulation of the knob.  When clicked, a vertical scroll button scrolls a single line of text.  When pressed, it repeatedly scrolls one line after another.  Horizontal scroll buttons work in a similar way, scrolling a small fixed amount in a horizontal direction.\
+
+\fs16 \
+\
+
+\fs28 The two scroll buttons on the same scroller form a related pair.  When the user drags from one to the other without releasing the mouse button, each button acts as if it had been pressed.  It's not possible to slide from the scroll buttons on one scroller to those on the other scroller, however.\
+
+\fs16 \
+\
+
+\fs28 When the Alternate key is held down, the scroll buttons scroll one viewful at a time.  Generally, when scrolling down a document, the bottom line (or two) is redisplayed at the top of the opening each time the display changes.  When scrolling toward the beginning of a document, the top line (or two) is redisplayed at the bottom.  This provides users with a bit of overlapping context and reassures them that nothing was skipped over when the display changed.\
+
+\fs16 \
+\
+
+\fs28 Sometimes scroll buttons appear alone, without the rest of the scroller.  Since the knob and bar aren't present to indicate when it's impossible to scroll further in one direction or the other, the arrow on a scroll button must be dimmed when the button won't work.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Automatic Scrolling\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 When the user begins a selection in the visible part of a document then drags outside the opening, the document will scroll continuously to bring more of the selection into view, until the user releases the mouse button.  The farther the user drags outside the opening, the greater each repeated change in the display.  It's as if the application tries repeatedly to bring the point under the cursor into view.\
+
+\fs16 \
+\
+
+\fs28 As the document scrolls, the scroller knob is adjusted to reflect the current position of the display.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Fine Tuning Mode\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 If a document is large, small movements of the knob may correspond to sweeping changes in the display.  This makes it difficult for users to adjust the display with precision when dragging the knob.\
+
+\fs16 \
+\
+
+\fs28 To make fine adjustments possible even for large documents, scrollers have a ªfine tuningº mode.  When the user holds down the Alternate key and drags the knob, the knob and display move only slightly in response to large movements of the mouse.  In this mode, the knob moves in the direction it's dragged, but doesn't stay with the cursor; it continues to reflect the position of the document being displayed.\
+
+\fs16 \
+\
+
+\fs28 Once the Alternate key is released, any subsequent dragging action will cause the knob to jump to the position of the cursor.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+{\f3\b0\li2120{\NeXTGraphic25322 EPS12_1.eps \width13760 \height660
+}
+,}\f3\b0\i0\ul0\ql\fs16\fi0\li2620\gray0\up0\dn0 \
+
+\b\fs28 Programming Note:  Scrolling   \
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\b0\fs24\li2620 Using Interface Builder, it's easy to put scrollers around an area.  The Application Kit handles all scrolling behavior, including Alternate-clicking to scroll a large amount and Shift-dragging to scroll a tiny amount.  All you might want to do is adjust the amount that a click scrolls (even for graphics, it should be a distance comparable to a single line of text) and optimize drawing performance so that scrolling is as fast as possible.  \
+
+{\li2120{\NeXTGraphic25802 EPS11_1.eps \width13760 \height660
+}
+,}\pard\tx3120\tx3620\tx4120\f3\b0\i0\ul0\fs24\li2620 \
+
+\fs16 \
+
+\pard\tx2620\tx3120\tx3620\f0\li2100 \
+
+\fs28 \
+
+\fs16 \
+\
+
+\pard\f3\li2620 \
+
+\f0\b\fs36\li1100 Implementing Scrollers\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 If the material to be displayed is taller than the opening available to view it, it should have a vertical scroller.  If it's wider than the opening, it should have a horizontal scroller.  \
+
+\fs16 \
+\
+
+\fs28 The scroll buttons for both vertical and horizontal scrollers should occupy the lower left corner, where the two scrollers meet.  Keeping all the scroll buttons in the same region makes it easy for users to move from one set to the other.\
+
+\fs16 \
+\
+
+\fs28 Controls that determine how a scrollable document is viewed can be placed within the area normally occupied by the scrollers (beneath and to the left of the document).  Other sorts of controls should not be placed within this area.\
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic26504 F14.tiff \width11380 \height7840
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Among the controls that can be placed in the scroller area are these:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	An editable text field to display the current page number can be located to the far right of the horizontal scroller (as shown above).\
+
+\fs16 \
+\
+
+\fs28 ·	A ªzoomº pop-up list that lets the user scale the display can be located in the area of the horizontal scroller (as shown above).\
+
+\fs16 \
+\
+
+\fs28 ·	A pop-up list used to control the viewing mode for the display (for example, preview versus drawing mode in a graphics application) can be similarly situated to the zoom pop-up list in the area of the vertical scroller.\
+
+\fs16 \
+\
+
+\fs28 ·	ªPageº scroll buttons that scroll from page to page or by viewfuls can be grouped next to the line scroll buttons in the lower left corner where the vertical and horizontal scrollers meet.  Since there is no Application Kit support for page scroll buttons, but there might be in the future, a precise arrangement is not currently specified.  (Typical page scroll buttons are shown above.)\
+
+\fs16 \
+\
+
+\pard\b\li100 \
+\
+\
+
+{\f3\b0\li2120{\NeXTGraphic27473 EPS18_1.eps \width13760 \height660
+}
+,}\f3\b0\i0\ul0\ql\fs16\fi0\li2620\gray0\up0\dn0 \
+
+\b\fs28 Writing Note:  The User's View\
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\b0\fs24\li2620 By moving the knob in the bar, users metaphorically move an opening around on the surface of a document so that they can see the portions they desire.  Visually, of course, it's the document that appears to move, not the opening.  This means that the knob and the display move in opposite directions.  To avoid confusion, the user interface and the application's documentation should concentrate on the metaphor of adjusting the portion of the document that's visible, rather than adjusting the document to make it visible.\
+
+\fs16 \
+
+\pard \
+
+{\li2120{\NeXTGraphic28033 EPS24_1.eps \width13760 \height660
+}
+,}\f3\b0\i0\ul0\ql\fs16\fi0\li0\gray0\up0\dn0 \
+
+\pard\tx2620\tx3120\tx3620\f0\li2100 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\pard\b\fs36\li100 Browsers and Selection Lists\
+
+\fs16 \
+\
+
+\b0\li0 \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic28073 F15.eps \width7160 \height2720
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Browsers and selection lists are similarÐthey both let the user select one or more names in a list.  A browser shows text data that's organized in a hierarchy, such as:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	Files and folders\
+·	Cities, counties, and states\
+·	The managerial structure of a company\
+
+\pard\tx2620\tx3120\tx3620\fs16\li2100 \
+\
+
+\fs28 Selection lists look something like a single-level browser.  They usually have scrollers, but they don't have to.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx2620\tx3120\tx3120\tx3620\tx3620\fs28\li2100 See the ªSelectionº section in Chapter 3, ªUser Actions: The Keyboard and Mouse,º for information on how users should select items in a browser or scrolling list.  \
+
+\fs16 \
+\
+
+\pard\tx2620\tx2620\tx2620\tx3120\tx3120\tx3120\tx3620\tx3620\tx3620\fs28\li2100 If double-clicking an item within a selection list or browser does anything, it should perform the same action as pressing the Return key (that is, the same action as the button marked with the Return symbol).\
+
+\fs16 \
+\
+
+\pard\b\li100 \
+\
+\
+
+\fs36 Choosing the Appropriate Control\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 For some situations, it's clear what control is appropriate:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	Scrollers are used only when material is displayed in an area that might be too small.\
+
+\fs16 \
+\
+
+\fs28 ·	Sliders are used when there's a need to graphically set a value that's in a bounded range (of colors, numbers, or sound levels, for example).\
+
+\fs16 \
+\
+
+\fs28 ·	Text fields are used whenever it's impossible or impractical to provide a list of all possible values.\
+
+\fs16 \
+\
+
+\fs28 ·	Color wells are used only with the Colors panel, and only where complex color characteristics are needed.\
+
+\fs16 \
+\
+
+\fs28 ·	Browsers are used only for data that's organized in a hierarchy.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Buttons and selection lists are flexible, though.  They can be used in many ways.  The following sections describe how to decide which type of button to use, and when to use a selection list.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Controls that Start Actions\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Actions should usually be started by either a menu command or a button.  If necessary, you can even duplicate a menu command in a button.  Even though text fields can start actions as the result of pressing Return, they should always have a button nearby that appears to be clicked when Return is pressed.  \
+
+\fs16 \
+\
+
+\fs28 Sometimes an action is relatively unimportant, and having a button for it takes up too much screen space.  If the action isn't appropriate for a menu command for some reason, then another choice is to make it an item in a pull-down list.  <When to use a menu vs. a button will eventually be discussed in Chapter 2.
+\i >\
+
+\fs16 \
+\
+
+\i0\fs28 The following figure shows how the same action (printing) might appear as a menu command, button, and pull-down list item.  (It normally appears as a menu command.)
+\i   \
+
+\fs16 \
+\
+
+\pard\i0 \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic30486 F13.eps \width4160 \height1160
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\b\li1100 \
+\
+\
+
+\fs36 Controls that Show State\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Pop-up lists, selection lists, and two-state buttons are used to show state.  (Menu commands should never be used to show state.)  Sometimes a single control shows the state of a single option.  Often, though, options are grouped.  Such a group should have either a one-of-many relationship, where exactly one option is always selected, or an unrestricted relationship, where any number of options (or none at all) might be selected.\
+
+\fs16 \
+\
+
+\pard\b\fs28\li2100 Note:  
+\b0 A third relationship is currently possible only in selection lists:  a relationship in which either zero or one choice can be selected.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Controls that show state should be used strictly to show and set state, not to initiate actions.  For example, although double-clicking an item in a selection list might cause an action to happen, the double-click is really a shortcut for selecting the item and then clicking a button.  If setting state has visible consequences, such as causing the format of a document to change, then the consequences should merely be immediate feedback that the state has changed, and not a full action such as creating another document with the new format.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Displaying a Single Option\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Often options are grouped together.  Sometimes, however, a single option stands alone.  In this case, a switch is the preferred control.  Another possibility is a graphical two-state button, as long as it's very clear that that button has two states. \
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic31936 F23.tiff \width2580 \height540
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\b\li2100 \
+\
+\
+
+\fs28 Displaying a Group with an Unrestricted Relationship\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 To show a group of choices with an unrestricted relationship, as opposed to a one-of-many relationship, you should use one of the following:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	A group of switches\
+·	A group of graphical two-state buttons that don't look like graphical radio buttons\
+·	A selection list\
+
+\pard\fs16 \
+\
+\
+
+\fs28 \
+
+{\li2120{\NeXTGraphic32272 F10.eps \width6720 \height1740
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Switches and graphical two-state buttons are preferred, since selection lists are less attractive and don't give clues as to how many selections can be made at once.  (If you use two-state buttons, be careful that they don't look like graphical radio buttons.)  When space is tight or the list of choices can grow or shrink, a selection list might be more appropriate.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Displaying a Group with a One-of-Many Relationship\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Several kinds of controls can be used to show a one-of-many relationshipÐthat is, to let the user choose one and only one setting out of a list of possible choices:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	A group of radio buttons (standard or graphical)\
+·	A pop-up list \
+·	A selection list\
+
+\pard\tx2620\tx3120\tx3620\fs16\li2100 \
+\
+
+\fs28 The figure below shows these controls as if they were being used to set the background color of a text field.  Because this use is inherently graphical and there are only a few valid choices, graphical radio buttons are the best choice, followed by standard radio buttons.  A pop-up list is marginally acceptable for this use, and a selection list is the least appropriate choice.\
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic33344 F17.eps \width6920 \height1600
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 In general, you should use radio buttons (standard or graphical) for one-of-many relationships unless there's a reason to use another type of control.  If radio buttons aren't appropriate, then usually a pop-up list  is appropriate.  A selection list is the last choice, since it isn't as obvious to the user that exactly one item must be selected at all times.  \
+
+\fs16 \
+\
+
+\fs28 The following considerations might help you decide which control to use:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	If the control will be used frequently, consider using radio buttons (standard or graphical), since they're easier to operate and more accessible to the user.\
+
+\fs16 \
+\
+
+\fs28 ·	If text doesn't adequately describe the choices, consider using a group of graphical radio buttons.\
+
+\fs16 \
+\
+
+\fs28 ·	If space is limited or the window or panel looks too complex, consider using a pop-up list.\
+
+\fs16 \
+\
+
+\fs28 ·	If the list of choices can grow or shrink, consider using a pop-up list or a selection list.  \
+
+\fs16 \
+\
+
+\fs28 ·	If the list of choices can grow larger than the screen, use a selection list with a scroller.\
+
+\fs16 \
+\
+
+\fs28 ·	If the user needs to see more than one of the choices on-screen to understand them, then avoid using a pop-up list.\
+
+\fs16 \
+\
+
+\fs28 ·	If the control will usually appear the edge of the screen, you might want to avoid a pop-up list.  The reason:  A pop-up list usually pops up so that the current selection is under the cursor.  But if the list is long and near the edge of the screen, it shifts so that the entire list can appear on-screen; this may change the selection under the cursor.  Users might therefore unwittingly make a new selection while intending only to see what's in the list.  When considering a pop-up list, think about whether it's important to avoid this behavior.\
+
+\fs16 \
+\
+
+\fs28 ·	If many ordinary, text-based buttons are in the panel, a pop-up list might fit in better graphically.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 \
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\pard\f3\li2620 \
+
+}

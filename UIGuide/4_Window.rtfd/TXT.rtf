@@ -1,0 +1,1096 @@
+{\rtf0\ansi{\fonttbl\f0\fnil Times-Roman;\f1\ftech Symbol;\f3\fswiss Helvetica;\f2\fmodern Ohlfs;}
+\paperw16220
+\paperh12580
+\margl120
+\margr0
+\f0\b0\i0\ul0\ql\fs24\fi0\li0\gray0\up0\dn0 Release 2.0  Copyright 
+\f1 ã
+\f0 1991 by NeXT Computer, Inc.  All Rights Reserved.\
+\
+
+\pard\tx2620\tx3120\tx3620\fs16\li2100 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\pard\fs56\li2100 Chapter 4\
+The Window Interface to Applications\
+
+\fs16 \
+\
+\
+\
+\
+\
+\
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 The NeXT user interface is window-based.  Each window is placed on the screen by a particular application, and each application typically owns a variety of different windows.  The screen shown below has several kinds of windows belonging to several applications.  \
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic419 F1.tiff \width22400 \height16640
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 This chapter discusses windows in generalÐstandard windows, panels, menus, pop-up and pull-down lists, miniwindows, and application iconsÐbefore going on to discuss standard windows in particular.  For more information on panels and menus, see Chapter 5, ªPanels,º and Chapter 6, ªMenus,º respectively.  For more information on pop-up and pull-down lists, see Chapter 7, ªControls.º  Miniwindows and application icons are described in Chapter 1, ªA Visual Guide to the User Interface.º\
+
+\fs16 \
+\
+
+\pard\b\li100 \
+\
+\
+
+{\f3\b0\li2120{\NeXTGraphic914 EPS9_1.eps \width13760 \height660
+}
+,}\f3\b0\i0\ul0\ql\fs16\fi0\li2620\gray0\up0\dn0 \
+
+\b\fs28 Writing Note:  The Meaning of ªWindowº\
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\b0\fs24\li2620 In documentation for users, the term ªwindowº generally refers only to standard windows, though panels and menus are acknowledged to be windows of a special type.  Miniwindows, lists, and icons are referred to only by their specific names; they should not be included within the generic term ªwindowº as this would imply common behavior that's lacking.\
+
+\fs16 \
+
+\pard \
+
+{\li2120{\NeXTGraphic1311 EPS10_1.eps \width13760 \height660
+}
+,}\f3\b0\i0\ul0\ql\fs16\fi0\li0\gray0\up0\dn0 \
+
+\pard\tx2620\tx3120\tx3620\f0\li2100 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\pard\f3\li2620 \
+
+\f0\b\fs36\li100 How Windows Work\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Every window has a content area, where the application is free to draw (although the Application Kit draws default miniwindows and application icons for you).  Standard windows, panels, and menus also have a title bar above the content area, and a border surrounding both the content area and title bar.\
+
+\fs16 \
+\
+
+\fs28 The title bar is the center of control for the window.  It holds the window's title, if it has one, and may contain buttons that can be used to dismiss it from the screen.  If a window has a title bar, users move the window by dragging it by its title bar.\
+
+\fs16 \
+\
+
+\fs28 Panels and standard windows can also have a resize bar at the bottom, below the content area but within the border.  By dragging any of the regions of the resize bar, the user can alter the size and shape of the window.  Resizing is the only window control located outside the title bar.\
+
+\fs16 \
+\
+
+\fs28 The parts of a window are illustrated below.\
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic2242 F7.eps \width5500 \height3360
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\b\li1100 \
+\
+\
+
+\fs36 Window Order\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Windows on-screen are ordered from front to back.  Like sheets of paper loosely stacked together, windows in front can overlap, or even completely cover, those behind them.  Each window has a unique position in the order.  When two windows are placed side-by-side, one is still technically in front of the other.\
+
+\fs16 \
+\
+
+\fs28 If any window could be in front of any other window, then small but important windowsÐlike menus and docked iconsÐmight get lost behind larger ones.  Windows that require user action, like attention panels and pop-up lists, might disappear behind another window and go unnoticed.  To prevent this, all the windows on-screen are organized into 
+\i tiers
+\i0 .\
+
+\fs16 \
+\
+
+\fs28 When two windows belong to the same tier, either one can be in front.  When two windows belong to different tiers, however, the one in the higher tier will always be above the other.  On-screen windows are divided into these seven tiers:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	Windows that appear in a spring-loaded modeÐpop-up lists, pull-down lists, and menus that come to the cursorÐare assigned the frontmost tier.  (Menus that come to the cursor are an option that the user can enable with the Preferences application; they're described in the ªBringing the Main Menu to the Cursorº section of Chapter 6.)  Spring-loaded windows remain on-screen only while the user holds a mouse button down, so they only momentarily obscure other windows.  Putting them in the first tier guarantees that they won't appear in back of another window.\
+
+\fs16 \
+\
+
+\fs28 ·	Attention panels are assigned to the second tier.  Like spring-loaded windows, they're only temporarily on-screen.  But unlike spring-loaded windows, the user must do something to dismiss them, rather than continue an action to keep them visible.  Keeping an attention panel in front, where it can't be covered by other windows, confronts the user with it until it's dismissed and thus encourages prompt user action.\
+
+\fs16 \
+\
+
+\fs28 ·	The main menu is assigned the next tier back.  In the absence of an attention panel or spring-loaded window, the usual case, it's the frontmost window on-screen.\
+
+\fs16 \
+\
+
+\fs28 ·	Other menus are assigned to a tier just below the main menu.  They can cover each other, but not the main menu.\
+
+\fs16 \
+\
+
+\fs28 ·	Docked application icons occupy the fifth tier.  They can be covered by lists, attention panels, and menus, but not by the ordinary windows of your application.\
+
+\fs16 \
+\
+
+\fs28 ·	Floating panels are in the sixth tier.  Floating panels are defined and discussed in Chapter 5.\
+
+\fs16 \
+\
+
+\fs28 ·	All other windows are grouped in the seventhÐthe last and largestÐtier.  Most of the windows seen on-screen are in this tier.  They can cover each other, but can't come in front of the dock, menus, attention panels, or spring-loaded windows.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 This seven-tier system keeps attention panels, menus, and docked application icons in view, and thus readily available to the user; it prevents them from being inadvertently lost in a large pile of windows.  Although attention panels, menus, and docked application icons can cover other windows, the user can get them out of the way when needed.  Menus can be moved to the side or closed; the dock can be slid mostly off-screen.  Attention panels should be attended to and dismissed.\
+
+\fs16 \
+\
+
+\fs28 To get the user's attention, when a window is first placed on-screen it comes up at the front of its tier.  \
+
+\fs16 \
+\
+
+\pard\b\fs28\li2100 Note:  
+\b0 Even when a window is totally obscured by other windows, it's still considered to be on-screen; it retains its ranking in the order and can be exposed by moving the windows in front to the side.\
+
+\fs16 \
+\
+
+\b\li1100 \
+\
+\
+
+\fs36 Window Behavior\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Windows respond to user actions in the following ways:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	Any window can be brought to the front of the screen, relative to other windows in its tier.\
+
+\fs16 \
+\
+
+\fs28 ·	Any window with a title bar can be moved to a new location on the screen, as can any miniwindow or application icon.\
+
+\fs16 \
+\
+
+\fs28 ·	Any window with a resize bar can be resized.\
+
+\fs16 \
+\
+
+\fs28 ·	A window with the appropriate buttons in its title bar can be closed or miniaturized.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 A window's title bar can display two buttons:\
+
+\fs16 \
+\
+
+\pard\tx5140\tx6640\tx8660\tx10680\fs28\fi-2520\li5140 Miniaturize button 	Clicking this replaces the window with its miniwindow counterpart.  The miniwindow represents the window on-screen and gives the user access to it; double-clicking the miniwindow causes it to disappear and the miniaturized window to reappear.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx6640\tx6640\tx8660\tx8660\tx10680\tx10680\fs28\fi-2520\li5140 Close button 	Clicking this removes the window from the screen.  \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 When the user clicks a button in the title bar, the action of the button is performed.  The click doesn't count as ªclicking in a windowº for the purpose of bringing the window to the front, making it the key window, or activating an application (the key window and active application are discussed in the ªApplication and Window Statusº section of this chapter).\
+
+\fs16 \
+\
+
+\fs28 Title bar buttons are illustrated below.  The window in front has both buttons as they normally appear.  The miniaturize button is on the left and the close button is on the right.  The window in back shows a 
+\i broken
+\i0  close button; this is how the close button should look when the user would lose work by closing the windowÐfor example, when the window displays a document that the user has edited but not saved.  More information on the miniaturize and close buttons is in the ªImplementing Standard Windowsº section of this chapter.\
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic7472 F3.eps \width8340 \height1980
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\b\li2100 \
+\
+\
+
+\fs28 Reordering\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Clicking in a window brings it to the front of its tier, provided that the click isn't in a title bar button.  The window is reordered immediately as the mouse button is pressed.  If the user is dragging the window to a new location, this lets the window assume its reordered position before being moved.\
+
+\fs16 \
+\
+
+\fs28 Another way the user can reorder windows is to press the Command key while pressing the arrow up or down key.  Command-up arrow moves the backmost panel (if it's in the lowest tier) or standard window to the front of the tier; Command-down arrow moves the frontmost one to the back.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Moving\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 The user can drag any window by its title bar (if it has one).  The action of pressing and releasing the mouse button to drag the window also counts as a click and brings the window to the front of its tier.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Resizing\
+
+\fs16 \
+\
+
+\b0\li0 \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic8322 F2.tiff \width11140 \height10160
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 If a window has a resize bar, the user can change the size of the window by dragging the resize bar.  An outline of the window edge follows the cursor, as shown in the figure above.  When the user releases the mouse button, the window resizes to the outline.\
+
+\fs16 \
+\
+
+\fs28 \
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Closing\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 The close button removes a window from the screen.  What this means depends on the type of window:\
+
+\fs16 \
+\
+
+\pard\tx5140\tx6640\tx8660\tx10680\fs28\fi-2520\li5140 Menus and panels 	A menu that's closed is removed from the screen, but the user retains a way to quickly retrieve it through a command in another menu.  Panels that are closed are retrievable in the same way.  (See Chapter 6 for more information on menus.)\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx6640\tx6640\tx8660\tx8660\tx10680\tx10680\fs28\fi-2520\li5140 	When a panel that was closed is returned to the screen, it assumes its former size and location, and it retains its former state.  From the user's point of view, and programmatically, it's the same panel that was closed.\
+
+\fs16 \
+\
+
+\pard\tx5140\tx5140\tx5140\tx6640\tx6640\tx6640\tx8660\tx8660\tx8660\tx10680\tx10680\tx10680\fs28\fi-2520\li5140 Standard windows 	Closing a standard window usually removes it from the application as well as from the screen.  From the user's point of view, the same window can't necessarily be made visible again.  The application might create a new window with the same title and a similar display, but there might be differences.  The selection might not be preserved, and the new window won't necessarily be located in the same place or have the same shape as the old one, especially if the user had moved or resized the window that was closed.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Miniaturizing \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Miniaturizing a window removes it from the screen without destroying it or its contents.  From the user's point of view, the window is transformed into a miniwindow.  Double-clicking the miniwindow reverses the miniaturization.  \
+
+\fs16 \
+\
+
+\fs28 Most standard windows and some panels have a miniaturize button.  Windows that have a miniaturize button can be miniaturized using either the button or the standard Miniaturize Window menu command.  A group of windows representing a single document can be miniaturized into a single miniwindow, as described under ªThe Document Menuº in Chapter 6.\
+
+\fs16 \
+\
+
+\fs28 Users can't work in a miniaturized window, but programs can continue to alter the window's display.  For example, if you begin compiling a program in a Terminal window, and then miniaturize the window, you'll see any error messages written by the compiler when you return the window to the screen.\
+
+\fs16 \
+\
+
+\fs28 Miniaturizing differs from closing in a number of ways:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	Miniaturizing preserves the window as it was last seen on-screen; a window that's closed can't necessarily be retrieved in the same state.\
+
+\fs16 \
+\
+
+\fs28 ·	Miniaturizing a window leaves behind a miniwindow so that it can be brought back to the screen; closing a window doesn't provide the user with a way of getting it back.\
+
+\fs16 \
+\
+
+\fs28 ·	Miniaturizing a window that displays a file won't close the file or change the way it's displayed; closing a window usually closes the file it displays.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 Hiding and Retrieving Windows\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 The Hide menu command and its keyboard alternative, Command-h, let the user clear the screen of all the windows belonging to an application.  This opens up the workspace so that it's easier to work in another application.\
+
+\fs16 \
+\
+
+\fs28 When an application is hidden, only its application icon remains on-screen.  When the user double-clicks the icon, the hidden windows reappear on-screen.  Users can resume working in the application, picking up again at exactly the same point where they left off.\
+
+\fs16 \
+\
+
+\fs28 Double-clicking an application icon has one other effect:  It activates the application (as discussed in the next section), and so may cause the menus and panels of another application to disappear while those of the newly activated application reappear.\
+
+\fs16 \
+\
+
+\fs28 Double-clicking the icon for a running application activates it and brings at least its key window to the front, even if the application wasn't hidden.  (The user can bring covered windows forward using commands in the Windows menu, as described in Chapter 6.)  Since the double-click activates the application, its menus also return to the screen.\
+
+\fs16 \
+\
+
+\pard\b\fs28\li2100 Note:  
+\b0 A window that's completely obscured by other windows is ªcovered,º but not ªhiddenº in the sense used here.  A covered window can be made visible by moving the windows in front of it to the side.  A hidden window can't be; it's completely removed from the workspace.\
+
+\fs16 \
+\
+
+\b\li1100 \
+\
+\
+
+\fs36 Application and Window Status\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Since more than one application can run at a time, the screen is likely to display windows for a variety of different applications.  The Workspace Manager is one application that will often have a window on-screen.  Some users will also run Mail and a spreadsheet, or perhaps a word processor and Webster (a dictionary and thesaurus application), at the same time as other applications.\
+
+\fs16 \
+\
+
+\fs28 The user must be able to pick a particular application, and a particular window in that application, to work in.  The application that the user is currently working in is known as the 
+\i active application
+\i0 ; the windows that are the current focus of user attention in the active application are the 
+\i key window
+\i0  and the 
+\i main window
+\i0 .  The key window and main window are usually one and the same; the two terms identify different functional roles that can be assumed by the same window:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	The key window is the window that receives characters from the keyboard.\
+
+\fs16 \
+\
+
+\fs28 ·	The main window is the window containing the selected target for controls.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 These three conceptsÐthe active application, key window, and main windowÐrefer not to inherent properties of applications and windows, but to their status at a particular point in time.  They're discussed more fully in the three sections that follow.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 The Active Application\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Out of all running applications, at most one is selected to be the active application (the principal application the user is working in).  An application must be activatedÐmade to be the active applicationÐbefore the user can type in its windows or use its menus.\
+
+\fs16 \
+\
+
+\fs28 The active application differs from other running applications in four ways:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	It's the only application with visible menus.  When an application is deactivated, its menus are hidden from view; when it's reactivated, they're restored to the screen.\
+
+\fs16 \
+\
+
+\fs28 ·	It's the application that owns most, if not all, of the panels that are visible on-screen.  In general, panels behave like menus; they hide when the application isn't active and return to the screen when the application is reactivated.  In exceptional cases, however, the application may choose to leave a panel on-screen even when the application isn't active.  (See Chapter 5 for guidelines on when it's appropriate to allow a panel to persist.)\
+
+\fs16 \
+\
+
+\fs28 ·	It's the application that receives the user's keyboard actions.  Typing and keyboard alternatives can affect only the active application.  When there's no active application, the user's keystrokes have no effect.\
+
+\fs16 \
+\
+
+\fs28 ·	It's the application that contains the key window and main window (if there is a current key window or main window), and its windows are likely to be in front of the windows of other applications.\
+
+\fs16 \
+\
+
+\pard\b\i\li2100 \
+\
+\
+
+\fs28 Application Activation\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\i0\fs28\li2100 In general, the task of selecting the active application is left to the user.  With one exception, an application never becomes active unless the user does something to activate it.  The user's action can be direct, such as launching the application or clicking in one of its windows, or indirect, such as having one application send a message to another application.  \
+
+\fs16 \
+\
+
+\fs28 The exception is that when the user hides or terminates an application, the Workspace Manager guesses which application should be activated next (based on which applications have on-screen windows, as described below).  This method saves the user from always having to click to choose the new active application.  \
+
+\fs16 \
+\
+
+\fs28 An application is activated when:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	The user launches it, unless the user activates another application while the newly launched application is being read into memory.\
+
+\fs16 \
+\
+
+\fs28 ·	The user double-clicks a miniwindow belonging to the application, or double-clicks the application's freestanding or docked icon.  Double-clicking a docked icon will launch the application if it's not already running.\
+
+\fs16 \
+\
+
+\fs28 ·	The user clicks within one of the windows belonging to the application, provided the window isn't a miniwindow or application icon.\
+
+\fs16 \
+\
+
+\fs28 ·	It receives a message from another application, if the message asks it to do something that may require interaction with the user.  A message from the Workspace Manager asking the receiver to open a file is one such message.  A message sent to Webster asking it to define a word is another.  (See ªActivating an Applicationº below for details.)\
+
+\fs16 \
+\
+
+\fs28 ·	It has the frontmost panel or standard window on-screen after the current application is hidden or terminated.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 A docked application that's launched automatically when the Workspace Manager starts up is not activated; the Workspace Manager remains the active application.  Only applications that are launched due to direct user action are given the opportunity to become active.\
+
+\fs16 \
+\
+
+\pard\b\i\li2100 \
+\
+\
+
+\fs28 Application Deactivation\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\i0\fs28\li2100 There can be only one active application per workspace (that is, one per Window Server) at a time.  Whenever the user chooses a new active application, the previous one is automatically deactivated.  The Application Kit and Workspace Manager take care of this task.\
+
+\fs16 \
+\
+
+\fs28 The active application is also deactivated when:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	The user hides its windows (by using the Hide command).\
+·	The user terminates it (by choosing the Quit command).\
+
+\pard\tx2620\tx3120\tx3620\fs16\li2100 \
+\
+
+\fs28 In either case, if another application has panels or standard windows onscreen, then the Workspace Manager activates the application with the frontmost panel or window.  If no other applications have panels or standard windows on-screen, then no application becomes active.\
+
+\fs16 \
+\
+
+\fs28 In addition, an application should deactivate itself just before sending a message to another application, if the intent of the message is to have the other application become active.  (See ªActivating an Applicationº below for details.)\
+
+\fs16 \
+\
+
+\pard\b\fs28\li2100 Note:  
+\b0 A deactivated but running application can still do work.  It's ªdeactivatedº only in the sense that it no longer is the active application, so the user can't interact with it without activating it again. \
+
+\fs16 \
+\
+
+\b \
+\
+\
+
+\fs28 The Key Window\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Users expect to see their actions on the keyboard and mouse take effect not only in a particular application, but also in a particular window of that application.  Each user action is associated with a window by the Window Server and Application Kit.  Before acting, the user needs to know which window will be affected; there should be no surprises.\
+
+\fs16 \
+\
+
+\fs28 Since the mouse controls a cursor, it's quite easy for the user to determine which window a mouse action is associated with; it's whatever window the cursor is over.  But the keyboard doesn't have a cursor, so there's no natural way to determine where typing will appear.\
+
+\fs16 \
+\
+
+\fs28 The window associated with keyboard actions, the one where typing will appear, is known as the key window.  To mark the key window for users, the Application Kit highlights its title bar (by turning it black).  \
+
+\fs16 \
+\
+
+\fs28 Key window highlighting is illustrated below.\
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic19384 F4.eps \width4600 \height3600
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 You can think of the highlighting as a kind of cursor for the keyboard.  It shifts from window to window as the key window changes.  Key-window status also moves from application to application as the active application changes.  Only one window on the screen is marked at a time, and it must be in the active application.  There's just one key window per machine and keyboard.  Even a system that has two screens, but only one keyboard, has at most one key window.\
+
+\fs16 \
+\
+
+\pard\b\fs28\li2100 Note:  
+\b0 A window doesn't have to become the key window (or even be on-screen) to receive, and act on, keyboard alternatives.  It does, however, have to be in the active application.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Since the key window belongs to the active application, its black title bar has the secondary effect of helping to show which application is currently active.  The key window is the most prominently marked window in the active application, making it ªkeyº in a second sense:  It's the main focus of the user's attention on the screen.\
+
+\fs16 \
+\
+
+\pard\b\li2100 \
+\
+\
+
+\fs28 The Main Window\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 The 
+\i main window
+\i0  is the standard window where the user is currently working.  It's the focus of user actions carried out in panels and menus.  The Find panel, for example, requires the user to supply information by typing it.  Since the panel is the destination of the user's keystrokes, it's marked as the key window.  But the panel is just an instrument through which users can do work in another windowÐthe main window.\
+
+\fs16 \
+\
+
+\fs28 Whenever a standard window becomes the key window, it also becomes the main window.  When key window status shifts from a standard window to a panel, main window status remains with the standard window.  \
+
+\fs16 \
+\
+
+\fs28 So that users can pick out the main window when it's not the key window, the Application Kit highlights its title bar in dark gray.  If the main window is also the key window, it has only the black highlighting of the key window.  The following figure illustrates the main window when it's marked as the key window and when it's not.\
+
+\fs16 \
+\
+
+\fs28 A menu command might effect either the key window or the main window, depending on the command.  For example, the Paste command can be used to enter text in a Find panel.  But the Save command saves the document displayed in the main window, and the Bold command turns the current selection in the main window bold.  For this reason, user actions in a panel or menu are associated with both the key window and the main window:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	An action is first associated with the key window.\
+
+\fs16 \
+\
+
+\fs28 ·	If the key window is a panel and it can't handle the action, the action is next associated with the main window.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Note that this order of precedence is reflected in the way windows are highlighted:  The key window is always marked; the main window is marked only when it's not the key window.\
+
+\fs16 \
+\
+
+\fs28 The main window is always in the same application as the key window, the active application.  It follows the key window as the user's actions shift the focus from window to window and from application to application.\
+
+\fs16 \
+\
+
+\pard \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic22367 F8.eps \width6500 \height9360
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\b\li2100 \
+\
+\
+
+\fs28 How Windows Become Key Window and Main Window\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Whenever possible, the user, rather than the application, selects the key window and main window.  This section describes how this happens and the part that the Application Kit plays.  Later in this chapter, the section ªChoosing the Key Windowº describes when and how an application needs to choose its own key window.\
+
+\fs16 \
+\
+
+\pard\b\i\li2100 \
+\
+\
+
+\fs28 In the Active Application\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\i0\fs28\li2100 In the active application, the user can select a new key window by clicking in it.  If the window is a standard window, it's also made the main window.  If it's a panel that accepts keystrokes, it's highlighted as the new key window, but the former main window retains its status and is highlighted in dark gray.  The user can't select a main window without also making it the key window.\
+
+\fs16 \
+\
+
+\fs28 The Application Kit chooses a new key window (or main window) for the active application whenever the user closes or miniaturizes the window currently having that status.  Even if the application has no more windows on-screen, and thus no new key window can be chosen, the application still remains active:  It's up to the user to decide whether to continue working in it.\
+
+\fs16 \
+\
+
+\pard\b\i\li2100 \
+\
+\
+
+\fs28 When an Application Is Activated\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\i0\fs28\li2100 When an application is activated, one of its windows is made the key window and one (usually the same one) is made the main window.  Again, whenever possible, the user makes the selection:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	If the user activates the application by clicking in a window that accepts keystrokes, it becomes the key window.  If the window is a standard window, it's also made the main window.\
+
+\fs16 \
+\
+
+\fs28 ·	If the user activates the application by double-clicking a miniwindow, the window it represents again appears on-screen and becomes the key window and main window.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 If an application is activated without the user directly selecting a new key window, the user's previous selections are honored.  For example, if the user reactivates an application by double-clicking its icon, the previous key window and main window are restored.\
+
+\fs16 \
+\
+
+\pard\b\fs28\li2100 Note:  
+\b0 When a new application is activated, its key window may be highlighted before the former key window (in the deactivated application) loses its highlighting.  This is an unavoidable consequence of a multitasking environment.  Users can begin working in one process (the new active application) before their instructions to another process (the previous active application) have been completed.  Although the former key window may retain its highlighting for a short time, it's no longer the key window; all keyboard actions are associated with the new active application.\
+
+\fs16 \
+\
+
+\b \
+\
+\
+
+\fs28 The Results of Clicking in a Window\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Clicking in a window has two separate, but related, results:\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\tx4120\fs28\fi-520\li2620 ·	The window usually becomes the key window (and usually also the main window), and its application is activated.  Standard windows always become key when clicked, but panels might not, as described in Chapter 5.\
+
+\fs16 \
+\
+
+\fs28 ·	The window comes to the front of its tier.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 The first is a change in the window's status, the second in its position on-screen.\
+
+\fs16 \
+\
+
+\fs28 Both results are required to make the window available to the user to work in.  The window needs to be reordered in front of other windows so that its contents aren't covered.  It also must become the key window for the user to be able to type in it and for it to receive menu commands.  For a window to become the key window, its application must be activated.\
+
+\fs16 \
+\
+
+\fs28 In NeXTstep, however, these two results of a mouse click, while logically related, are not inseparable.  If the click is in the window's title bar and is modified by the Alternate key, it brings the window to the front, but doesn't make it the key window or activate its application.  Alternate-clicking in the title bar thus lets users rearrange and reorder windows on the screen without changing the current key window, main window, or active application.\
+
+\fs16 \
+\
+
+\pard\b\li100 \
+\
+\
+
+{\f3\b0\li2120{\NeXTGraphic26251 EPS5_1.eps \width13760 \height660
+}
+,}\f3\b0\i0\ul0\ql\fs16\fi0\li2620\gray0\up0\dn0 \
+
+\b\fs28 Programming Note:  Windows and the Application Kit\
+
+\fs16 \
+
+\pard\tx3120\tx3620\tx4120\b0\fs24\li2620 Everything that the ªHow Windows Workº section discusses is automatically handled by the Application Kit's Window class and its subclasses.  For example, when the user closes the key window, a new one is automatically chosen.  The few decisions you must make are discussed later under ªImplementing Standard Windows.º\
+
+\fs16 \
+
+\pard \
+
+{\li2120{\NeXTGraphic26625 EPS6_1.eps \width13760 \height660
+}
+,}\f3\b0\i0\ul0\ql\fs16\fi0\li0\gray0\up0\dn0 \
+
+\pard\tx2620\tx3120\tx3620\f0\li2100 \
+\
+
+\fs28 \
+
+\fs16 \
+
+\pard\b\fs36\li100 Implementing Standard Windows\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Every standard window has a title bar; most also have window controlsÐa resize bar, close button, and miniaturize button.  This section discusses choosing the window's title and everything that you need to implement when the window controls are present.  It also describes cases when it's acceptable to omit them.\
+
+\fs16 \
+\
+
+\fs28 Placing and designing the layout of standard windows is discussed in Chapter 8, ªConventions for Graphic Design.º\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Choosing a Title\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 If a window displays a document that can be saved, the title bar of the window should display the name of the document, followed by an em dash and the path of the folder where the document is located.  The em dash is set off by two spaces on either side.  For example:\
+
+\fs16 \
+\
+
+\pard\tx3120\tx3620\tx4120\f3\fs28\li2620 jobRecords  Ð  /Net/machine/home/records\
+
+\pard\tx2620\tx3120\tx3620\f0\fs16\li2100 \
+\
+
+\fs28 The title bar is not usually a good place to show status, such as what the application is currently doing.  It's usually clearer to display this status in the window or in a panel.  Status within a window is often displayed in small, dark gray text (as in the Workspace Manager's file viewer).\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Implementing the Resize Bar\
+
+\fs16 \
+\
+
+\b0\li0 \
+
+\fs28 \
+
+{\li2120{\NeXTGraphic27762 F0.tiff \width7600 \height180
+}
+,}\f0\b0\i0\ul0\ql\fs28\fi0\li0\gray0\up0\dn0 \
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 Most standard windowsÐespecially those with scrollable contentsÐshould have a resize bar.  It gives users control of their environment by letting them choose how much screen space to devote to the contents of the window.\
+
+\fs16 \
+\
+
+\fs28 If a window has a resize bar, you should be careful that the window remains as useful and attractive as possible, no matter how small or large it becomes.  If necessary, your application can constrain the shape of the window so that it doesn't become too big or too small, or so that it grows and shrinks in unit amounts.  For example, Workspace Manager's File Viewer grows and shrinks only by the width of its browser columns; this eliminates the possibility of showing only a partial column. \
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Implementing the Miniaturize Button 
+{\pard\tx960\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\li2120{\NeXTGraphic28525 EPS0.eps \width240 \height240
+}
+,}\pard\tx960\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\f0\b\i0\ul0\fs36\li1100 \
+
+\pard\fs16\li1100 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Except when an application is useless without a particular standard window, each standard window should have a miniaturize button.  When a window is miniaturized, it should remain miniaturized until the user explicitly unminiaturizes it.  \
+
+\i\fs16 \
+\
+
+\i0\fs28 Because a miniaturized window isn't likely to be foremost in the user's thoughts, the application should never alter a miniaturized window without the user's knowledge.  For example, it's fine for an application to continue doing some work in a miniaturized window, as long as the user requested that the work be done.  For example, the Terminal application completes commands that the user entered in a Terminal window.  But it's unacceptable to, for example, change the font in a miniaturized window unless the user specified a font change for 
+\i all
+\i0  windows.  \
+
+\fs16 \
+\
+
+\fs28 The miniaturize button has a counterpart command in the Windows menu that miniaturizes the key window.  You can also provide a command in the Document menu that miniaturizes several related windows into a single miniwindow.  See ªThe Windows Menuº and ªThe Document Menuº in Chapter 6 for information on how these commands work.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Implementing the Close Button 
+{\pard\tx960\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\li2120{\NeXTGraphic29698 EPS1.eps \width240 \height240
+}
+,}\pard\tx960\tx1920\tx2880\tx3840\tx4800\tx5760\tx6720\tx7680\tx8640\tx9600\f0\b\i0\ul0\fs36\li1100 \
+
+\pard\fs16\li1100 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Most standard windows have a close button.  However, sometimes the close button isn't necessary.  For example, the Digital Webster application is useless if its only standard window isn't visible, so the window has no close button. \
+
+\fs16 \
+\
+
+\fs28 Your application should break the close button 
+{{\NeXTGraphic29984 EPS2.eps \width240 \height240
+}
+,}\pard\tx2620\tx3120\tx3620\f0\b0\i0\ul0\fs28\li2100  whenever the user would lose work by closing the window.  From the user's point of view, a broken close button means that the application won't let the user lose work by accidentally closing the window.  If the user tries to close a window that has a broken close button or tries to quit its application, the application should bring up a Close or Quit panel, respectively.  (See Chapter 5 for more information on these standard panels.)\
+
+\fs16 \
+\
+
+\pard\b\fs28\li2100 Note:  
+\b0 If an application uses multiple windows to display a single file, then all the windows' close buttons should break when unsaved work is in any window.  However, the application shouldn't bring up a Close panel until the user closes the last window for the file.\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\fs28\li2100 An example of breaking the close button is in the Mail application.  Mail breaks a Send window's close button as soon as the user types in the message area of the window.  If the user then tries to close the window (either directly or by quitting the application), Mail puts up an attention panel that makes the user either confirm that the window should be closed or cancel the close. \
+
+\fs16 \
+\
+
+\fs28 If an application does no work that can be saved, but merely shows data that can change, then it can break the close button to show that the window isn't up-to-date.  The application should also provide a way for the user to force the window to update.  Workspace Manager uses the close button this way.\
+
+\fs16 \
+\
+
+\fs28 Like the miniaturize button, the close button has a matching command in the Window menu.  The command has a keyboard alternative, Command-w (for ªwindowº).  (See ªThe Windows Menuº in Chapter 6 for details.)\
+
+\fs16 \
+\
+
+\pard\b\li100 \
+\
+\
+
+\fs36 Implementing Window and Application Status\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Most aspects of window and application status are handled automatically.  However, you still must choose the first key window and decide which windows can become key window.  (For information on when to make a panel the key window, see Chapter 5.)  The application should also activate itself in the appropriate way, as discussed below.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Choosing the Key Window\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 In general, all the standard windows in your application should be permitted to become the key window, even if they don't respond to keyboard actions.  Giving key window status to a window focuses attention on it and prevents the user from typing in any other window.  If the key window doesn't do anything with the user's typing, it should beep as it receives the keystrokes to indicate to the user that typing isn't appropriate.\
+
+\fs16 \
+\
+
+\fs28 When an application is activated on launch, it should designate one of its windows to be the initial key (and main) window.  If the application opens a document file for the user, the window that displays the document should be the key window.\
+
+\fs16 \
+\
+
+\pard\b\li1100 \
+\
+\
+
+\fs36 Activating an Application\
+
+\fs16 \
+\
+
+\pard\tx2620\tx3120\tx3620\b0\fs28\li2100 Applications communicate with each other through messages.  When an application receives a message asking it to do something that might require user participationÐeven to the extent of operating a scrollerÐit needs to become active.  However, it should activate itself only if the user hasn't turned to another application and made it the active application.\
+
+\fs16 \
+\
+
+\fs28 For example, when the user double-clicks a word processor file's icon, the Workspace Manager sends a message to the word processor, telling it to open the file.  The first application (the Workspace Manager) deactivates itself immediately before sending the message to the second application (the word processor).  The second application then activates itself on condition that no other application is currently active.  Since the first application had deactivated itself, this condition will be met, unless the user has activated another application in the meantime.\
+
+\fs16 \
+\
+
+\fs28 In summary, every application should activate itself conditionally (and deactivate itself unconditionally).  Any other behavior violates the principle of user control, since it ignores the user's desire to turn to something else.\
+
+\fs16 \
+\
+
+\pard\f3\li2620 \
+
+}
